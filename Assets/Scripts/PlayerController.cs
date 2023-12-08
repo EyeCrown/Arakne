@@ -37,7 +37,7 @@ public class PlayerController : MonoBehaviour
     {
         if (context.performed)
         {
-            movements = new Vector3(context.ReadValue<Vector2>().x, 0f, context.ReadValue<Vector2>().y);
+            movements = new Vector3(context.ReadValue<Vector2>().x, context.ReadValue<Vector2>().y, 0f);
         }
         else if (context.canceled)
         {
