@@ -22,10 +22,4 @@ public class PlayerManager : MonoBehaviour
 
         Debug.Log("Player " + playerInput.playerIndex + " joined");
     }
-
-
-    void Update()
-    {
-        
-    }
 }
