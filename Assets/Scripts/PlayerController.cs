@@ -5,8 +5,14 @@ using UnityEngine.InputSystem;
 
 public class PlayerController : MonoBehaviour
 {
-    private Vector2 movements;
-
+    // Visible values (made for GD)
+    // TODO: make it more readable for others
+    [SerializeField] private float inertia; // range 1 to 10
+    [SerializeField] private float speed; // lower it is, faster it is | range 1 to 100
+    
+    // Hidden values
+    private Vector3 movements;
+    private Vector3 velocity;
 
     void Start()
     {
@@ -15,22 +21,43 @@ public class PlayerController : MonoBehaviour
 
     void Update()
     {
-        
+        DoMovements();
+
     }
 
 
-    void Move(InputAction.CallbackContext context)
+    private void DoMovements()
     {
-        movements = context.
+        Vector3 nextPosition = transform.position + movements * inertia;
+        transform.position = Vector3.SmoothDamp(transform.position, nextPosition, ref velocity, speed * Time.deltaTime);
     }
 
-    void Pass(InputAction.CallbackContext context)
+
+    public void Move(InputAction.CallbackContext context)
     {
-        Debug.Log("Pass: Do something");
+        if (context.performed)
+        {
+            movements = new Vector3(context.ReadValue<Vector2>().x, 0f, context.ReadValue<Vector2>().y);
+        }
+        else if (context.canceled)
+        {
+            movements = Vector3.zero;
+        }
     }
 
-    void Shoot(InputAction.CallbackContext context)
+    public void Pass(InputAction.CallbackContext context)
     {
-        Debug.Log("Shoot: Do something");
+        if (context.performed)
+        {
+            Debug.Log("Pass: Do something");
+        }
+    }
+
+    public void Shoot(InputAction.CallbackContext context)
+    {
+        if (context.performed)
+        {
+            Debug.Log("Shoot: Do something");
+        }
     }
 }
