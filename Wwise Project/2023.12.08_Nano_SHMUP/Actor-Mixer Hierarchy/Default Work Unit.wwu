@@ -1,0 +1,37 @@
+<?xml version="1.0" encoding="utf-8"?>
+<WwiseDocument Type="WorkUnit" ID="{90D9CD61-7190-4799-9D6B-2A3BCEA18F27}" SchemaVersion="110">
+	<AudioObjects>
+		<WorkUnit Name="Default Work Unit" ID="{90D9CD61-7190-4799-9D6B-2A3BCEA18F27}" PersistMode="Standalone">
+			<ChildrenList>
+				<Sound Name="S_LP_Amb_Grotte" ID="{684D7C4A-9449-4E66-8D03-85F93CBDF029}" ShortID="663650851">
+					<ReferenceList>
+						<Reference Name="Conversion">
+							<ObjectRef Name="Default Conversion Settings" ID="{6D1B890C-9826-4384-BF07-C15223E9FB56}" WorkUnitID="{4E5C7FFC-E9B1-46F8-BCE3-EDA1EA7828DB}"/>
+						</Reference>
+						<Reference Name="OutputBus">
+							<ObjectRef Name="Master Audio Bus" ID="{1514A4D8-1DA6-412A-A17E-75CA0C2149F3}" WorkUnitID="{22522E0C-1537-4567-8D9E-301390427DB6}"/>
+						</Reference>
+					</ReferenceList>
+					<ChildrenList>
+						<AudioFileSource Name="S_LP_Amb_Grotte" ID="{A2202C8E-3DC5-4407-9AF0-D57AD5C226EC}">
+							<PropertyList>
+								<Property Name="CrossfadeDuration" Type="Real64" Value="2501.921"/>
+								<Property Name="LoopBegin" Type="Real64" Value="5.53757581782713"/>
+								<Property Name="LoopEnd" Type="Real64" Value="28.3219526560624"/>
+								<Property Name="OverrideWavLoop" Type="bool" Value="True"/>
+							</PropertyList>
+							<Language>SFX</Language>
+							<AudioFile>S_LP_Amb_Grotte.wav</AudioFile>
+							<MediaIDList>
+								<MediaID ID="267323883"/>
+							</MediaIDList>
+						</AudioFileSource>
+					</ChildrenList>
+					<ActiveSourceList>
+						<ActiveSource Name="S_LP_Amb_Grotte" ID="{A2202C8E-3DC5-4407-9AF0-D57AD5C226EC}" Platform="Linked"/>
+					</ActiveSourceList>
+				</Sound>
+			</ChildrenList>
+		</WorkUnit>
+	</AudioObjects>
+</WwiseDocument>

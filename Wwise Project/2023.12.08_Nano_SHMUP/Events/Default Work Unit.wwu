@@ -1,0 +1,20 @@
+<?xml version="1.0" encoding="utf-8"?>
+<WwiseDocument Type="WorkUnit" ID="{405AC284-B028-466C-84CE-EC8BDA34EEE5}" SchemaVersion="110">
+	<Events>
+		<WorkUnit Name="Default Work Unit" ID="{405AC284-B028-466C-84CE-EC8BDA34EEE5}" PersistMode="Standalone">
+			<ChildrenList>
+				<Event Name="E_Play_Ambiance" ID="{6673D1BA-257F-425A-9514-FA70D48CD374}">
+					<ChildrenList>
+						<Action Name="" ID="{35428233-4CEB-477B-8604-FC11024D9EBE}" ShortID="736579428">
+							<ReferenceList>
+								<Reference Name="Target">
+									<ObjectRef Name="S_LP_Amb_Grotte" ID="{684D7C4A-9449-4E66-8D03-85F93CBDF029}" WorkUnitID="{90D9CD61-7190-4799-9D6B-2A3BCEA18F27}"/>
+								</Reference>
+							</ReferenceList>
+						</Action>
+					</ChildrenList>
+				</Event>
+			</ChildrenList>
+		</WorkUnit>
+	</Events>
+</WwiseDocument>

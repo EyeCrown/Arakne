@@ -70,56 +70,5 @@ crashlytics-build.properties
 # Temporary auto-generated Android Assets
 /[Aa]ssets/[Ss]treamingAssets/aa.meta
 /[Aa]ssets/[Ss]treamingAssets/aa/*
-Wwise Project/2023.12.08_Nano_SHMUP/Effects/Factory Mastering Suite.wwu
-Wwise Project/2023.12.08_Nano_SHMUP/Effects/Factory iZotope Singleband Distortion.wwu
-Wwise Project/2023.12.08_Nano_SHMUP/Effects/Factory iZotope Multiband Distortion.wwu
-Wwise Project/2023.12.08_Nano_SHMUP/Effects/Factory iZotope Hybrid Reverb Effects.wwu
-Wwise Project/2023.12.08_Nano_SHMUP/Effects/Factory iZotope Filters.wwu
-Wwise Project/2023.12.08_Nano_SHMUP/Effects/Factory iZotope Dynamics.wwu
-Wwise Project/2023.12.08_Nano_SHMUP/Effects/Factory iZotope Delay.wwu
-Wwise Project/2023.12.08_Nano_SHMUP/Effects/Factory iZotope Box Modeler.wwu
-Wwise Project/2023.12.08_Nano_SHMUP/Effects/Factory Effects.wwu
-Wwise Project/2023.12.08_Nano_SHMUP/Effects/Factory Auro Headphone.wwu
-Wwise Project/2023.12.08_Nano_SHMUP/Effects/Default Work Unit.wwu
-Wwise Project/2023.12.08_Nano_SHMUP/Dynamic Dialogue/Default Work Unit.wwu
-Wwise Project/2023.12.08_Nano_SHMUP/Conversion Settings/Factory Conversion Settings.wwu
-Wwise Project/2023.12.08_Nano_SHMUP/Conversion Settings/Default Work Unit.wwu
-Wwise Project/2023.12.08_Nano_SHMUP/Control Surface Sessions/Default Work Unit.wwu
-Wwise Project/2023.12.08_Nano_SHMUP/Audio Devices/Default Work Unit.wwu
-Wwise Project/2023.12.08_Nano_SHMUP/Attenuations/Default Work Unit.wwu
-Wwise Project/2023.12.08_Nano_SHMUP/Actor-Mixer Hierarchy/Default Work Unit.wwu
-Wwise Project/2023.12.08_Nano_SHMUP/2023.12.08_Nano_SHMUP.wproj
-Wwise Project/2023.12.08_Nano_SHMUP/Effects/Factory Reflect.wwu
-Wwise Project/2023.12.08_Nano_SHMUP/Events/Default Work Unit.wwu
-Wwise Project/2023.12.08_Nano_SHMUP/Game Parameters/Default Work Unit.wwu
-Wwise Project/2023.12.08_Nano_SHMUP/Interactive Music Hierarchy/Default Work Unit.wwu
-Wwise Project/2023.12.08_Nano_SHMUP/Master-Mixer Hierarchy/Default Work Unit.wwu
-Wwise Project/2023.12.08_Nano_SHMUP/Metadata/Default Work Unit.wwu
-Wwise Project/2023.12.08_Nano_SHMUP/Mixing Sessions/Default Work Unit.wwu
-Wwise Project/2023.12.08_Nano_SHMUP/Modulators/Default Work Unit.wwu
-Wwise Project/2023.12.08_Nano_SHMUP/Originals/Plugins/iZotope Hybrid Reverb/Auditorium.wav
-Wwise Project/2023.12.08_Nano_SHMUP/Originals/Plugins/iZotope Hybrid Reverb/Car Interior.wav
-Wwise Project/2023.12.08_Nano_SHMUP/Originals/Plugins/iZotope Hybrid Reverb/Cavern.wav
-Wwise Project/2023.12.08_Nano_SHMUP/Originals/Plugins/iZotope Hybrid Reverb/Church.wav
-Wwise Project/2023.12.08_Nano_SHMUP/Originals/Plugins/iZotope Hybrid Reverb/City Center.wav
-Wwise Project/2023.12.08_Nano_SHMUP/Originals/Plugins/iZotope Hybrid Reverb/City Streets.wav
-Wwise Project/2023.12.08_Nano_SHMUP/Originals/Plugins/iZotope Hybrid Reverb/Forest.wav
-Wwise Project/2023.12.08_Nano_SHMUP/Originals/Plugins/iZotope Hybrid Reverb/Medium Metal Room.wav
-Wwise Project/2023.12.08_Nano_SHMUP/Originals/Plugins/iZotope Hybrid Reverb/Medium Wood Hall.wav
-Wwise Project/2023.12.08_Nano_SHMUP/Originals/Plugins/iZotope Hybrid Reverb/Medium Wood Room.wav
-Wwise Project/2023.12.08_Nano_SHMUP/Originals/Plugins/iZotope Hybrid Reverb/Metallic Hall.wav
-Wwise Project/2023.12.08_Nano_SHMUP/Originals/Plugins/iZotope Hybrid Reverb/Rock Wall.wav
-Wwise Project/2023.12.08_Nano_SHMUP/Originals/Plugins/iZotope Hybrid Reverb/Small Metal Room.wav
-Wwise Project/2023.12.08_Nano_SHMUP/Originals/Plugins/iZotope Hybrid Reverb/Small Wood Room.wav
-Wwise Project/2023.12.08_Nano_SHMUP/Originals/SFX/S_LP_Amb_Grotte.wav
-Wwise Project/2023.12.08_Nano_SHMUP/Presets/Default Work Unit.wwu
-Wwise Project/2023.12.08_Nano_SHMUP/Presets/Factory Reflect.wwu
-Wwise Project/2023.12.08_Nano_SHMUP/Presets/Factory Spatial Audio.wwu
-Wwise Project/2023.12.08_Nano_SHMUP/Queries/Default Work Unit.wwu
-Wwise Project/2023.12.08_Nano_SHMUP/Queries/Factory Queries.wwu
-Wwise Project/2023.12.08_Nano_SHMUP/SoundBanks/Default Work Unit.wwu
-Wwise Project/2023.12.08_Nano_SHMUP/Soundcaster Sessions/Default Work Unit.wwu
-Wwise Project/2023.12.08_Nano_SHMUP/States/Default Work Unit.wwu
-Wwise Project/2023.12.08_Nano_SHMUP/Switches/Default Work Unit.wwu
-Wwise Project/2023.12.08_Nano_SHMUP/Triggers/Default Work Unit.wwu
-Wwise Project/2023.12.08_Nano_SHMUP/Virtual Acoustics/Default Work Unit.wwu
+
+Wwise Project/2023.12.08_Nano_SHMUP/Originals/SFX
