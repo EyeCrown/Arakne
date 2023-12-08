@@ -21,11 +21,12 @@ public class PlayerController : MonoBehaviour
     void Start()
     {
         isAlive = true;
+        DontDestroyOnLoad(gameObject);
     }
 
     void Update()
     {
-        if (!isAlive)
+        if (isAlive)
         {
             DoMovements();
         }
@@ -50,7 +51,7 @@ public class PlayerController : MonoBehaviour
 
     private void Die()
     {
-        Debug.Log("Player die.");
+        Debug.Log("Player die");
     }
 
 

@@ -151,7 +151,7 @@
             "id": "7826ed79-0f92-450f-bee8-3e72fb4d647d",
             "actions": [
                 {
-                    "name": "New action",
+                    "name": "Start",
                     "type": "Button",
                     "id": "9c9af9d6-2360-41c1-b06e-8af53775086b",
                     "expectedControlType": "Button",
@@ -164,11 +164,22 @@
                 {
                     "name": "",
                     "id": "d6889220-4212-4dd2-80a9-fad26f576266",
-                    "path": "",
+                    "path": "<Gamepad>/start",
                     "interactions": "",
                     "processors": "",
                     "groups": "",
-                    "action": "New action",
+                    "action": "Start",
+                    "isComposite": false,
+                    "isPartOfComposite": false
+                },
+                {
+                    "name": "",
+                    "id": "01ce7ad3-55ee-49d2-80fa-0884e55d8886",
+                    "path": "<Keyboard>/enter",
+                    "interactions": "",
+                    "processors": "",
+                    "groups": "",
+                    "action": "Start",
                     "isComposite": false,
                     "isPartOfComposite": false
                 }

@@ -2,6 +2,7 @@ using System.Collections;
 using System.Collections.Generic;
 using UnityEngine;
 using UnityEngine.InputSystem;
+using UnityEngine.SceneManagement;
 
 public class PlayerManager : MonoBehaviour
 {
@@ -12,14 +13,25 @@ public class PlayerManager : MonoBehaviour
     {
         playerInputManager = GetComponent<PlayerInputManager>();
         playerInputManager.onPlayerJoined += OnPlayerJoined;
-
+        
         playerInputManager.EnableJoining();
     }
 
-    private void OnPlayerJoined(PlayerInput playerInput)
+    public void OnPlayerJoined(PlayerInput playerInput)
     {
         if (Globals.gameState != Globals.GameState.OnMenu) return; // Re-activated player on respawn triggers OnPlayerJoined
 
         Debug.Log("Player " + playerInput.playerIndex + " joined");
+
+        if (playerInputManager.playerCount == playerInputManager.maxPlayerCount)
+            ChangeScene();
+    }
+
+    public void ChangeScene()
+    {
+        playerInputManager.DisableJoining();
+        Debug.Log("Change scene");
+        string sceneToLoad = "PlayerTestScene";
+        SceneManager.LoadScene(sceneToLoad);
     }
 }

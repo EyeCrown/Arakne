@@ -202,3 +202,4 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   inertia: 3
   speed: 15
+  hp: 3
