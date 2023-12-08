@@ -1,0 +1,6 @@
+Event	ID	Name			Wwise Object Path	Notes
+	4121993638	E_Play_Ambiance			\Default Work Unit\E_Play_Ambiance	
+
+In Memory Audio	ID	Name	Audio source file		Wwise Object Path	Notes	Data Size
+	267323883	S_LP_Amb_Grotte	C:\AAA\Cours\Master\_NANOPROJETS\BrickThemUp\Wwise Project\2023.12.08_Nano_SHMUP\.cache\Windows\SFX\S_LP_Amb_Grotte_10C4C929.wem		\Actor-Mixer Hierarchy\Default Work Unit\S_LP_Amb_Grotte		6760840
+

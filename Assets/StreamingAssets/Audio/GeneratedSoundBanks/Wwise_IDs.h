@@ -16,6 +16,11 @@ namespace AK
         static const AkUniqueID E_PLAY_AMBIANCE = 4121993638U;
     } // namespace EVENTS
 
+    namespace GAME_PARAMETERS
+    {
+        static const AkUniqueID BOUNCECOUNT = 3384376378U;
+    } // namespace GAME_PARAMETERS
+
     namespace BANKS
     {
         static const AkUniqueID INIT = 1355168291U;

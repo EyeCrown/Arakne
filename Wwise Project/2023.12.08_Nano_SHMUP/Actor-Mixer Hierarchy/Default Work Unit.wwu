@@ -31,6 +31,32 @@
 						<ActiveSource Name="S_LP_Amb_Grotte" ID="{A2202C8E-3DC5-4407-9AF0-D57AD5C226EC}" Platform="Linked"/>
 					</ActiveSourceList>
 				</Sound>
+				<Folder Name="Ball" ID="{6D1B8C24-609F-475A-8137-D983AFC1A602}" ShortID="111695626">
+					<ChildrenList>
+						<Sound Name="SFX_OS_Ball_AllyPass_v1" ID="{413AB599-57C9-4E3F-9D5D-4471271AD117}" ShortID="957915108">
+							<ReferenceList>
+								<Reference Name="Conversion">
+									<ObjectRef Name="Default Conversion Settings" ID="{6D1B890C-9826-4384-BF07-C15223E9FB56}" WorkUnitID="{4E5C7FFC-E9B1-46F8-BCE3-EDA1EA7828DB}"/>
+								</Reference>
+								<Reference Name="OutputBus">
+									<ObjectRef Name="Master Audio Bus" ID="{1514A4D8-1DA6-412A-A17E-75CA0C2149F3}" WorkUnitID="{22522E0C-1537-4567-8D9E-301390427DB6}"/>
+								</Reference>
+							</ReferenceList>
+							<ChildrenList>
+								<AudioFileSource Name="SFX_OS_Ball_AllyPass_v1" ID="{14AB2F3F-32FA-47EA-AD8A-D71F9DC64555}">
+									<Language>SFX</Language>
+									<AudioFile>SFX_OS_Ball_AllyPass_v1.wav</AudioFile>
+									<MediaIDList>
+										<MediaID ID="647956332"/>
+									</MediaIDList>
+								</AudioFileSource>
+							</ChildrenList>
+							<ActiveSourceList>
+								<ActiveSource Name="SFX_OS_Ball_AllyPass_v1" ID="{14AB2F3F-32FA-47EA-AD8A-D71F9DC64555}" Platform="Linked"/>
+							</ActiveSourceList>
+						</Sound>
+					</ChildrenList>
+				</Folder>
 			</ChildrenList>
 		</WorkUnit>
 	</AudioObjects>

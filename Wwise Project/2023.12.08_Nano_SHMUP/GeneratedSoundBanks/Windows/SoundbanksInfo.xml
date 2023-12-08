@@ -26,7 +26,7 @@
 				</Event>
 			</Events>
 		</SoundBank>
-		<SoundBank Id="1355168291" Type="User" Language="SFX" Hash="{986487A9-2683-E47A-8688-3D0FE6FDB954}">
+		<SoundBank Id="1355168291" Type="User" Language="SFX" Hash="{83378A2C-01B1-002A-0E32-0683CA942FE4}">
 			<ShortName>Init</ShortName>
 			<Path>Init.bnk</Path>
 			<Plugins>
@@ -38,7 +38,10 @@
 			<Busses>
 				<Bus Id="3803692087" Name="Master Audio Bus"/>
 			</Busses>
+			<GameParameters>
+				<GameParameter Id="3384376378" Name="BounceCount"/>
+			</GameParameters>
 		</SoundBank>
 	</SoundBanks>
-	<FileHash>{4119E9EE-830D-F1C8-7832-EEEFA789CEC6}</FileHash>
+	<FileHash>{7DAC14B0-101E-EA18-381A-B9DA6CB4487A}</FileHash>
 </SoundBanksInfo>
