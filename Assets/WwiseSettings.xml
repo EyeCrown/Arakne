@@ -1,6 +1,6 @@
 ﻿<?xml version="1.0" encoding="utf-8"?>
 <WwiseSettings xmlns:xsd="http://www.w3.org/2001/XMLSchema" xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance">
-  <CopySoundBanksAsPreBuildStep>true</CopySoundBanksAsPreBuildStep>
+  <CopySoundBanksAsPreBuildStep>false</CopySoundBanksAsPreBuildStep>
   <GenerateSoundBanksAsPreBuildStep>false</GenerateSoundBanksAsPreBuildStep>
   <SoundbankPath>Audio/GeneratedSoundBanks</SoundbankPath>
   <CreatedPicker>true</CreatedPicker>
@@ -11,7 +11,7 @@
   <ShowSpatialAudioWarningMsg>true</ShowSpatialAudioWarningMsg>
   <WwiseInstallationPathMac />
   <WwiseInstallationPathWindows>C:\Program Files (x86)\Audiokinetic\Wwise 2022.1.9.8365</WwiseInstallationPathWindows>
-  <WwiseProjectPath>../../WwiseProj/2023.12_Nanoprojet_SHMUP/2023.12_Nanoprojet_SHMUP.wproj</WwiseProjectPath>
+  <WwiseProjectPath>../Wwise Project/2023.12.08_Nano_SHMUP/2023.12.08_Nano_SHMUP.wproj</WwiseProjectPath>
   <UseWaapi>true</UseWaapi>
   <WaapiPort>8080</WaapiPort>
   <WaapiIP>127.0.0.1</WaapiIP>

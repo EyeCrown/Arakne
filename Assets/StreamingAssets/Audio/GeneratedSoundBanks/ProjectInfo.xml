@@ -1,12 +1,12 @@
 <?xml version="1.0" encoding="utf-8"?>
 <ProjectInfo>
-	<Project Name="2023.12_Nanoprojet_SHMUP" GUID="{85F17997-DF57-4C4E-818D-1940DC0E691E}" Generator="2022.1.9.8365"/>
-	<CacheRoot>../../../../../WwiseProj/2023.12_Nanoprojet_SHMUP/.cache</CacheRoot>
+	<Project Name="2023.12.08_Nano_SHMUP" GUID="{107CA662-88BD-42E1-A6EB-51A2BAD8C24A}" Generator="2022.1.9.8365"/>
+	<CacheRoot>../../../../Wwise Project/2023.12.08_Nano_SHMUP/.cache</CacheRoot>
 	<Platforms>
-		<Platform Name="Windows" GUID="{42D15D89-18B1-4BA6-AEC7-F9C1422CF2E9}" BasePlatform="Windows" BasePlatformGUID="{6E0CB257-C6C8-4C5C-8366-2740DFC441EB}" Path="../../../../../WwiseProj/2023.12_Nanoprojet_SHMUP/GeneratedSoundBanks/Windows"/>
+		<Platform Name="Windows" GUID="{801A36F7-4408-420C-A622-F340F1C463BD}" BasePlatform="Windows" BasePlatformGUID="{6E0CB257-C6C8-4C5C-8366-2740DFC441EB}" Path="../../../../Wwise Project/2023.12.08_Nano_SHMUP/GeneratedSoundBanks/Windows"/>
 	</Platforms>
 	<Languages>
-		<Language Name="English(US)" Id="684519430" GUID="{450CCD24-FE46-46D6-850C-AEF58BB1A1E6}" Default="true" UseAsStandIn="true"/>
+		<Language Name="English(US)" Id="684519430" GUID="{01847BF8-A989-42A4-B245-B8B37E77E650}" Default="true" UseAsStandIn="true"/>
 	</Languages>
-	<FileHash>{3A8F82E7-D7D7-133D-3CEF-3964109501FF}</FileHash>
+	<FileHash>{C7CC37CA-A8F9-D7DA-EA6D-5044E1EBE8D1}</FileHash>
 </ProjectInfo>

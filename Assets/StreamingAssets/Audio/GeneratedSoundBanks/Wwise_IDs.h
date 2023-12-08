@@ -13,28 +13,13 @@ namespace AK
 {
     namespace EVENTS
     {
-        static const AkUniqueID E_AMBIANCE = 2762802537U;
-        static const AkUniqueID NEW_EVENT = 3050945240U;
+        static const AkUniqueID E_PLAY_AMBIANCE = 4121993638U;
     } // namespace EVENTS
-
-    namespace GAME_PARAMETERS
-    {
-        static const AkUniqueID SS_AIR_FEAR = 1351367891U;
-        static const AkUniqueID SS_AIR_FREEFALL = 3002758120U;
-        static const AkUniqueID SS_AIR_FURY = 1029930033U;
-        static const AkUniqueID SS_AIR_MONTH = 2648548617U;
-        static const AkUniqueID SS_AIR_PRESENCE = 3847924954U;
-        static const AkUniqueID SS_AIR_RPM = 822163944U;
-        static const AkUniqueID SS_AIR_SIZE = 3074696722U;
-        static const AkUniqueID SS_AIR_STORM = 3715662592U;
-        static const AkUniqueID SS_AIR_TIMEOFDAY = 3203397129U;
-        static const AkUniqueID SS_AIR_TURBULENCE = 4160247818U;
-    } // namespace GAME_PARAMETERS
 
     namespace BANKS
     {
         static const AkUniqueID INIT = 1355168291U;
-        static const AkUniqueID TESTSB = 3331313354U;
+        static const AkUniqueID MAINSOUNDBANK = 534561221U;
     } // namespace BANKS
 
     namespace BUSSES
