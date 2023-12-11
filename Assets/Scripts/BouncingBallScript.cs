@@ -140,6 +140,7 @@ public class BouncingBallScript : MonoBehaviour
                 {
                     CollideWall();
                 }
+                BounceSound.Post(gameObject);
                 CheckCollisions(hit.distance);
                 TranslateForward(hit.distance);
                 travelDistance -= hit.distance;
@@ -236,7 +237,6 @@ public class BouncingBallScript : MonoBehaviour
 
     private void CollideWall()
     {
-        BounceSound.Post(gameObject);
         health--;
         if (health <= 0)
         {
@@ -271,6 +271,7 @@ public class BouncingBallScript : MonoBehaviour
         }
         transform.up = direction;
         mode = BallMode.bouncing;
+        ThrowSound.Post(gameObject);
     }
     private void PassHandler(GameObject newTarget)
     {
