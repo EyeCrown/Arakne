@@ -3,8 +3,7 @@ using System.Collections.Generic;
 using UnityEditor.UIElements;
 using UnityEngine;
 using UnityEngine.Events;
-using UnityEngine.InputSystem.HID;
-using UnityEngine.UIElements;
+
 
 
 
@@ -53,8 +52,8 @@ public class BouncingBallScript : MonoBehaviour
         Throw.AddListener(ThrowHandler);
         Pass.AddListener(PassHandler);
 
-        mode = BallMode.fall;
-        transform.up = Vector3.down;
+        //mode = BallMode.fall;
+        //transform.up = Vector3.down;
     }
 
     // Update is called once per frame
@@ -147,6 +146,7 @@ public class BouncingBallScript : MonoBehaviour
             else
             {
                 CheckCollisions(travelDistance);
+                TranslateForward(travelDistance);
                 travelDistance = 0;
             }
             Debug.Log("Travel Distance remaining:" + travelDistance);
@@ -236,6 +236,11 @@ public class BouncingBallScript : MonoBehaviour
     {
         BounceSound.Post(gameObject);
         health--;
+        if (health <= 0)
+        {
+            //TODO death effect
+            Destroy(gameObject);
+        }
     }
 
     #endregion
