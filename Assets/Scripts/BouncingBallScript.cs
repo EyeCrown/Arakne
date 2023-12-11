@@ -24,7 +24,6 @@ public class BouncingBallScript : MonoBehaviour
     void Update()
     {
         BallMove();
-        
     }
 
     void OnCollisionEnter(Collision collision)
@@ -92,9 +91,8 @@ public class BouncingBallScript : MonoBehaviour
                 travelDistance = 0;
             }
             Debug.Log("Travel Distance remaining:" + travelDistance);
-        }
 
-       
+        }
     }
 
     private void CollidingEnemy(GameObject enemy)

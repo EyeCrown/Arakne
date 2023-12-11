@@ -5,6 +5,7 @@ using UnityEngine.InputSystem;
 
 public class PlayerController : MonoBehaviour
 {
+    #region ATTRIBUTES
     // Visible values (made for GD)
     [SerializeField]
     [Tooltip("Player's Inertia")]
@@ -18,28 +19,50 @@ public class PlayerController : MonoBehaviour
 
     [SerializeField] private int hp = 3;
 
+    // Cooldowns
+    [SerializeField]
+    private float timeToShoot;
+
+
     // Hidden values
     private Vector3 movements;
     private Vector3 velocity;
 
     private bool isAlive;
+    public bool isTouchable { get; private set; }
+    private bool canMove;
 
+    private GameObject viewfinder;
+    private BallDetector ballDetector;
+    #endregion
+
+    #region UNITY API
     void Start()
     {
         isAlive = true;
+        isTouchable = true;
+        canMove = true;
+
         DontDestroyOnLoad(gameObject);
+
+        viewfinder = transform.Find("Pivot").gameObject;
+        viewfinder.SetActive(false);
+        ballDetector = GetComponentInChildren<BallDetector>();
     }
 
     void Update()
     {
         if (isAlive)
         {
-            DoMovements();
+            if (canMove) 
+                DoMovements();
         }
-        
 
+        viewfinder.transform.up = movements.normalized;
     }
 
+
+    #endregion
 
     private void DoMovements()
     {
@@ -61,7 +84,7 @@ public class PlayerController : MonoBehaviour
     }
 
 
-
+    #region INPUTS
     public void Move(InputAction.CallbackContext context)
     {
         if (context.performed)
@@ -78,7 +101,14 @@ public class PlayerController : MonoBehaviour
     {
         if (context.performed)
         {
-            Debug.Log("Pass: Do something");
+            Debug.Log("Pass: Action is performed");
+            if (ballDetector.ball)
+            {
+                Debug.Log("Pass: Do something with " + ballDetector.ball.name);
+                
+            }
+            else
+                Debug.Log("Pass: Ball is missing");
         }
     }
 
@@ -86,7 +116,35 @@ public class PlayerController : MonoBehaviour
     {
         if (context.performed)
         {
-            Debug.Log("Shoot: Do something");
+            Debug.Log("Shoot: Action is performed");
+            if (ballDetector.ball)
+            {
+                Debug.Log("Shoot: Do something with " + ballDetector.ball.name);
+                StartCoroutine(ShootCoroutine());
+            }
+            else
+                Debug.Log("Shoot: Ball is missing");
         }
     }
+    #endregion;
+
+    IEnumerator ShootCoroutine()
+    {
+        Debug.Log("ShootCoroutine: start");
+        isTouchable = false;
+        canMove = false;
+        viewfinder.SetActive(true);
+
+        yield return new WaitForSeconds(timeToShoot);
+
+        // ball.direction = movements (vector)
+        Debug.Log("ShootCoroutine: Ball is moving to correct direction");
+
+
+        viewfinder.SetActive(false);
+        canMove = true;
+        isTouchable = true;
+        Debug.Log("ShootCoroutine: end");
+    }
+
 }
