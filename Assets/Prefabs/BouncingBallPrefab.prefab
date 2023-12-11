@@ -52,6 +52,10 @@ MonoBehaviour:
   speed: 0
   speedMultiplier: 0
   speedLimit: 0
+  health: 2
+  dammage: 1
+  power: 0
+  pass: 0
   bouncingMode: 1
   target: {fileID: 0}
 --- !u!33 &7003621215994716148
