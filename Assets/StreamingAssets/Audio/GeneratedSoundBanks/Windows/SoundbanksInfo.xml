@@ -9,17 +9,65 @@
 	</RootPaths>
 	<DialogueEvents/>
 	<SoundBanks>
-		<SoundBank Id="534561221" Type="User" Language="SFX" Hash="{50A82D80-C4A2-7548-DBCE-B9A9DD00D06A}">
+		<SoundBank Id="534561221" Type="User" Language="SFX" Hash="{255DF844-5F92-63F2-8C23-8B4BBC6041CE}">
 			<ShortName>MainSoundBank</ShortName>
 			<Path>MainSoundBank.bnk</Path>
 			<Media>
+				<File Id="13779944" Language="SFX" Streaming="false" Location="Memory">
+					<ShortName>SFX_OS_Player_BubbleIdle_var5_v2.wav</ShortName>
+					<CachePath>SFX/SFX_OS_Player_BubbleIdle_var5_v2_10C4C929.wem</CachePath>
+				</File>
+				<File Id="105036165" Language="SFX" Streaming="false" Location="Memory">
+					<ShortName>SFX_OS_Player_Bubbled_var3_v1.wav</ShortName>
+					<CachePath>SFX/SFX_OS_Player_Bubbled_var3_v1_10C4C929.wem</CachePath>
+				</File>
+				<File Id="194210561" Language="SFX" Streaming="false" Location="Memory">
+					<ShortName>SFX_OS_Ball_Bounce_var6_v1.wav</ShortName>
+					<CachePath>SFX/SFX_OS_Ball_Bounce_var6_v1_10C4C929.wem</CachePath>
+				</File>
 				<File Id="267323883" Language="SFX" Streaming="false" Location="Memory">
 					<ShortName>S_LP_Amb_Grotte.wav</ShortName>
 					<CachePath>SFX/S_LP_Amb_Grotte_10C4C929.wem</CachePath>
 				</File>
+				<File Id="316789632" Language="SFX" Streaming="false" Location="Memory">
+					<ShortName>SFX_OS_Ball_Bounce_var2_v1.wav</ShortName>
+					<CachePath>SFX/SFX_OS_Ball_Bounce_var2_v1_10C4C929.wem</CachePath>
+				</File>
+				<File Id="350230033" Language="SFX" Streaming="false" Location="Memory">
+					<ShortName>SFX_OS_Ball_Bounce_var3_v1.wav</ShortName>
+					<CachePath>SFX/SFX_OS_Ball_Bounce_var3_v1_10C4C929.wem</CachePath>
+				</File>
+				<File Id="368209062" Language="SFX" Streaming="false" Location="Memory">
+					<ShortName>SFX_OS_Player_Bubbled_var2_v1.wav</ShortName>
+					<CachePath>SFX/SFX_OS_Player_Bubbled_var2_v1_10C4C929.wem</CachePath>
+				</File>
+				<File Id="382577284" Language="SFX" Streaming="false" Location="Memory">
+					<ShortName>SFX_OS_Ball_Bounce_var5_v1.wav</ShortName>
+					<CachePath>SFX/SFX_OS_Ball_Bounce_var5_v1_10C4C929.wem</CachePath>
+				</File>
+				<File Id="393701652" Language="SFX" Streaming="false" Location="Memory">
+					<ShortName>SFX_OS_Player_BubbleIdle_var3_v2.wav</ShortName>
+					<CachePath>SFX/SFX_OS_Player_BubbleIdle_var3_v2_10C4C929.wem</CachePath>
+				</File>
+				<File Id="441019153" Language="SFX" Streaming="false" Location="Memory">
+					<ShortName>SFX_OS_Player_BubbleIdle_var2_v2.wav</ShortName>
+					<CachePath>SFX/SFX_OS_Player_BubbleIdle_var2_v2_10C4C929.wem</CachePath>
+				</File>
+				<File Id="478861569" Language="SFX" Streaming="false" Location="Memory">
+					<ShortName>SFX_OS_Player_Bubbled_var1_v1.wav</ShortName>
+					<CachePath>SFX/SFX_OS_Player_Bubbled_var1_v1_10C4C929.wem</CachePath>
+				</File>
 				<File Id="486226605" Language="SFX" Streaming="false" Location="Memory">
 					<ShortName>SFX_Player_IsHit_v1.wav</ShortName>
 					<CachePath>SFX/SFX_Player_IsHit_v1_10C4C929.wem</CachePath>
+				</File>
+				<File Id="494930737" Language="SFX" Streaming="false" Location="Memory">
+					<ShortName>SFX_OS_Ball_Bounce_var1_v1.wav</ShortName>
+					<CachePath>SFX/SFX_OS_Ball_Bounce_var1_v1_10C4C929.wem</CachePath>
+				</File>
+				<File Id="515947237" Language="SFX" Streaming="false" Location="Memory">
+					<ShortName>SFX_OS_Player_BubbleIdle_var1_v2.wav</ShortName>
+					<CachePath>SFX/SFX_OS_Player_BubbleIdle_var1_v2_10C4C929.wem</CachePath>
 				</File>
 				<File Id="614848710" Language="SFX" Streaming="false" Location="Memory">
 					<ShortName>SFX_OS_Ball_AllyPassSweetener_v1.wav</ShortName>
@@ -29,9 +77,17 @@
 					<ShortName>SFX_OS_Ball_AllyPass_v1.wav</ShortName>
 					<CachePath>SFX/SFX_OS_Ball_AllyPass_v1_10C4C929.wem</CachePath>
 				</File>
+				<File Id="656014094" Language="SFX" Streaming="false" Location="Memory">
+					<ShortName>SFX_OS_Player_BubbleIdle_var4_v2.wav</ShortName>
+					<CachePath>SFX/SFX_OS_Player_BubbleIdle_var4_v2_10C4C929.wem</CachePath>
+				</File>
 				<File Id="773148055" Language="SFX" Streaming="false" Location="Memory">
 					<ShortName>SFX_OS_Ball_AllyShootSweetener_v1.wav</ShortName>
 					<CachePath>SFX/SFX_OS_Ball_AllyShootSweetener_v1_10C4C929.wem</CachePath>
+				</File>
+				<File Id="795329812" Language="SFX" Streaming="false" Location="Memory">
+					<ShortName>SFX_OS_Ball_Bounce_var4_v1.wav</ShortName>
+					<CachePath>SFX/SFX_OS_Ball_Bounce_var4_v1_10C4C929.wem</CachePath>
 				</File>
 				<File Id="980782775" Language="SFX" Streaming="false" Location="Memory">
 					<ShortName>SFX_OS_Ball_AllyShoot_v1.wav</ShortName>
@@ -56,6 +112,46 @@
 						<MediaRef Id="267323883"/>
 					</MediaRefs>
 				</Event>
+				<Event Id="839260169" Name="E_Play_BallBounce">
+					<MediaRefs>
+						<MediaRef Id="194210561"/>
+						<MediaRef Id="316789632"/>
+						<MediaRef Id="350230033"/>
+						<MediaRef Id="382577284"/>
+						<MediaRef Id="494930737"/>
+						<MediaRef Id="795329812"/>
+					</MediaRefs>
+				</Event>
+				<Event Id="364366560" Name="E_Play_Bubbled">
+					<MediaRefs>
+						<MediaRef Id="105036165"/>
+						<MediaRef Id="368209062"/>
+						<MediaRef Id="478861569"/>
+					</MediaRefs>
+				</Event>
+				<Event Id="1219548678" Name="E_Play_BubbledIdle">
+					<MediaRefs>
+						<MediaRef Id="13779944"/>
+						<MediaRef Id="393701652"/>
+						<MediaRef Id="441019153"/>
+						<MediaRef Id="515947237"/>
+						<MediaRef Id="656014094"/>
+					</MediaRefs>
+				</Event>
+				<Event Id="34195632" Name="E_Play_PlayerIsHit">
+					<MediaRefs>
+						<MediaRef Id="486226605"/>
+					</MediaRefs>
+				</Event>
+				<Event Id="2809597228" Name="E_Stop_BubbleIdle">
+					<MediaRefs>
+						<MediaRef Id="13779944"/>
+						<MediaRef Id="393701652"/>
+						<MediaRef Id="441019153"/>
+						<MediaRef Id="515947237"/>
+						<MediaRef Id="656014094"/>
+					</MediaRefs>
+				</Event>
 			</Events>
 			<GameParameters>
 				<GameParameter Id="2322789299" Name="PassCount"/>
@@ -78,5 +174,5 @@
 			</GameParameters>
 		</SoundBank>
 	</SoundBanks>
-	<FileHash>{89FBF8E6-B9AD-6D00-B984-95E692CCFAAF}</FileHash>
+	<FileHash>{565E143C-43A5-45CC-B1BD-1E33910D2E85}</FileHash>
 </SoundBanksInfo>

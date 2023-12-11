@@ -1,5 +1,10 @@
 Event	ID	Name			Wwise Object Path	Notes
+	34195632	E_Play_PlayerIsHit			\Default Work Unit\Player\E_Play_PlayerIsHit	
 	129291699	E_Play_AllyPass			\Default Work Unit\Ball Interactions\E_Play_AllyPass	
+	364366560	E_Play_Bubbled			\Default Work Unit\Player\E_Play_Bubbled	
+	839260169	E_Play_BallBounce			\Default Work Unit\Ball Interactions\E_Play_BallBounce	
+	1219548678	E_Play_BubbledIdle			\Default Work Unit\Player\E_Play_BubbledIdle	
+	2809597228	E_Stop_BubbleIdle			\Default Work Unit\Player\E_Stop_BubbleIdle	
 	4065114501	E_Play_AllyShoot			\Default Work Unit\Ball Interactions\E_Play_AllyShoot	
 	4121993638	E_Play_Ambiance			\Default Work Unit\E_Play_Ambiance	
 
@@ -7,10 +12,24 @@ Game Parameter	ID	Name			Wwise Object Path	Notes
 	2322789299	PassCount			\Default Work Unit\PassCount	
 
 In Memory Audio	ID	Name	Audio source file		Wwise Object Path	Notes	Data Size
+	13779944	SFX_OS_Player_BubbleIdle_var5_v2	C:\AAA\Cours\Master\_NANOPROJETS\BrickThemUp\Wwise Project\2023.12.08_Nano_SHMUP\.cache\Windows\SFX\SFX_OS_Player_BubbleIdle_var5_v2_10C4C929.wem		\Actor-Mixer Hierarchy\Default Work Unit\Player\SFX_LP_Player_BubbleIdle\SFX_OS_Player_BubbleIdle_var5_v2		280308
+	105036165	SFX_OS_Player_Bubbled_var3_v1	C:\AAA\Cours\Master\_NANOPROJETS\BrickThemUp\Wwise Project\2023.12.08_Nano_SHMUP\.cache\Windows\SFX\SFX_OS_Player_Bubbled_var3_v1_10C4C929.wem		\Actor-Mixer Hierarchy\Default Work Unit\Player\SFX_OS_Player_Bubbled\SFX_OS_Player_Bubbled_var3_v1		341168
+	194210561	SFX_OS_Ball_Bounce_var6_v1	C:\AAA\Cours\Master\_NANOPROJETS\BrickThemUp\Wwise Project\2023.12.08_Nano_SHMUP\.cache\Windows\SFX\SFX_OS_Ball_Bounce_var6_v1_10C4C929.wem		\Actor-Mixer Hierarchy\Default Work Unit\Ball\SFX_OS_Ball_Bounce\SFX_OS_Ball_Bounce_var6_v1		304144
 	267323883	S_LP_Amb_Grotte	C:\AAA\Cours\Master\_NANOPROJETS\BrickThemUp\Wwise Project\2023.12.08_Nano_SHMUP\.cache\Windows\SFX\S_LP_Amb_Grotte_10C4C929.wem		\Actor-Mixer Hierarchy\Default Work Unit\S_LP_Amb_Grotte		6760840
+	316789632	SFX_OS_Ball_Bounce_var2_v1	C:\AAA\Cours\Master\_NANOPROJETS\BrickThemUp\Wwise Project\2023.12.08_Nano_SHMUP\.cache\Windows\SFX\SFX_OS_Ball_Bounce_var2_v1_10C4C929.wem		\Actor-Mixer Hierarchy\Default Work Unit\Ball\SFX_OS_Ball_Bounce\SFX_OS_Ball_Bounce_var2_v1		304144
+	350230033	SFX_OS_Ball_Bounce_var3_v1	C:\AAA\Cours\Master\_NANOPROJETS\BrickThemUp\Wwise Project\2023.12.08_Nano_SHMUP\.cache\Windows\SFX\SFX_OS_Ball_Bounce_var3_v1_10C4C929.wem		\Actor-Mixer Hierarchy\Default Work Unit\Ball\SFX_OS_Ball_Bounce\SFX_OS_Ball_Bounce_var3_v1		304144
+	368209062	SFX_OS_Player_Bubbled_var2_v1	C:\AAA\Cours\Master\_NANOPROJETS\BrickThemUp\Wwise Project\2023.12.08_Nano_SHMUP\.cache\Windows\SFX\SFX_OS_Player_Bubbled_var2_v1_10C4C929.wem		\Actor-Mixer Hierarchy\Default Work Unit\Player\SFX_OS_Player_Bubbled\SFX_OS_Player_Bubbled_var2_v1		341164
+	382577284	SFX_OS_Ball_Bounce_var5_v1	C:\AAA\Cours\Master\_NANOPROJETS\BrickThemUp\Wwise Project\2023.12.08_Nano_SHMUP\.cache\Windows\SFX\SFX_OS_Ball_Bounce_var5_v1_10C4C929.wem		\Actor-Mixer Hierarchy\Default Work Unit\Ball\SFX_OS_Ball_Bounce\SFX_OS_Ball_Bounce_var5_v1		304144
+	393701652	SFX_OS_Player_BubbleIdle_var3_v2	C:\AAA\Cours\Master\_NANOPROJETS\BrickThemUp\Wwise Project\2023.12.08_Nano_SHMUP\.cache\Windows\SFX\SFX_OS_Player_BubbleIdle_var3_v2_10C4C929.wem		\Actor-Mixer Hierarchy\Default Work Unit\Player\SFX_LP_Player_BubbleIdle\SFX_OS_Player_BubbleIdle_var3_v2		280308
+	441019153	SFX_OS_Player_BubbleIdle_var2_v2	C:\AAA\Cours\Master\_NANOPROJETS\BrickThemUp\Wwise Project\2023.12.08_Nano_SHMUP\.cache\Windows\SFX\SFX_OS_Player_BubbleIdle_var2_v2_10C4C929.wem		\Actor-Mixer Hierarchy\Default Work Unit\Player\SFX_LP_Player_BubbleIdle\SFX_OS_Player_BubbleIdle_var2_v2		280312
+	478861569	SFX_OS_Player_Bubbled_var1_v1	C:\AAA\Cours\Master\_NANOPROJETS\BrickThemUp\Wwise Project\2023.12.08_Nano_SHMUP\.cache\Windows\SFX\SFX_OS_Player_Bubbled_var1_v1_10C4C929.wem		\Actor-Mixer Hierarchy\Default Work Unit\Player\SFX_OS_Player_Bubbled\SFX_OS_Player_Bubbled_var1_v1		341168
 	486226605	SFX_Player_IsHit_v1	C:\AAA\Cours\Master\_NANOPROJETS\BrickThemUp\Wwise Project\2023.12.08_Nano_SHMUP\.cache\Windows\SFX\SFX_Player_IsHit_v1_10C4C929.wem		\Actor-Mixer Hierarchy\Default Work Unit\Player\SFX_Player_IsHit_v1		629832
+	494930737	SFX_OS_Ball_Bounce_var1_v1	C:\AAA\Cours\Master\_NANOPROJETS\BrickThemUp\Wwise Project\2023.12.08_Nano_SHMUP\.cache\Windows\SFX\SFX_OS_Ball_Bounce_var1_v1_10C4C929.wem		\Actor-Mixer Hierarchy\Default Work Unit\Ball\SFX_OS_Ball_Bounce\SFX_OS_Ball_Bounce_var1_v1		304144
+	515947237	SFX_OS_Player_BubbleIdle_var1_v2	C:\AAA\Cours\Master\_NANOPROJETS\BrickThemUp\Wwise Project\2023.12.08_Nano_SHMUP\.cache\Windows\SFX\SFX_OS_Player_BubbleIdle_var1_v2_10C4C929.wem		\Actor-Mixer Hierarchy\Default Work Unit\Player\SFX_LP_Player_BubbleIdle\SFX_OS_Player_BubbleIdle_var1_v2		280308
 	614848710	SFX_OS_Ball_AllyPassSweetener_v1	C:\AAA\Cours\Master\_NANOPROJETS\BrickThemUp\Wwise Project\2023.12.08_Nano_SHMUP\.cache\Windows\SFX\SFX_OS_Ball_AllyPassSweetener_v1_31E98A78.wem		\Actor-Mixer Hierarchy\Default Work Unit\Ball\SFX_OS_Ball_AllyPassSweetener_v1		398020
 	647956332	SFX_OS_Ball_AllyPass_v1	C:\AAA\Cours\Master\_NANOPROJETS\BrickThemUp\Wwise Project\2023.12.08_Nano_SHMUP\.cache\Windows\SFX\SFX_OS_Ball_AllyPass_v1_10C4C929.wem		\Actor-Mixer Hierarchy\Default Work Unit\Ball\SFX_OS_Ball_AllyPass_v1		321148
+	656014094	SFX_OS_Player_BubbleIdle_var4_v2	C:\AAA\Cours\Master\_NANOPROJETS\BrickThemUp\Wwise Project\2023.12.08_Nano_SHMUP\.cache\Windows\SFX\SFX_OS_Player_BubbleIdle_var4_v2_10C4C929.wem		\Actor-Mixer Hierarchy\Default Work Unit\Player\SFX_LP_Player_BubbleIdle\SFX_OS_Player_BubbleIdle_var4_v2		280308
 	773148055	SFX_OS_Ball_AllyShootSweetener_v1	C:\AAA\Cours\Master\_NANOPROJETS\BrickThemUp\Wwise Project\2023.12.08_Nano_SHMUP\.cache\Windows\SFX\SFX_OS_Ball_AllyShootSweetener_v1_10C4C929.wem		\Actor-Mixer Hierarchy\Default Work Unit\Ball\SFX_OS_Ball_AllyShootSweetener_v1		522196
+	795329812	SFX_OS_Ball_Bounce_var4_v1	C:\AAA\Cours\Master\_NANOPROJETS\BrickThemUp\Wwise Project\2023.12.08_Nano_SHMUP\.cache\Windows\SFX\SFX_OS_Ball_Bounce_var4_v1_10C4C929.wem		\Actor-Mixer Hierarchy\Default Work Unit\Ball\SFX_OS_Ball_Bounce\SFX_OS_Ball_Bounce_var4_v1		304144
 	980782775	SFX_OS_Ball_AllyShoot_v1	C:\AAA\Cours\Master\_NANOPROJETS\BrickThemUp\Wwise Project\2023.12.08_Nano_SHMUP\.cache\Windows\SFX\SFX_OS_Ball_AllyShoot_v1_10C4C929.wem		\Actor-Mixer Hierarchy\Default Work Unit\Ball\SFX_OS_Ball_AllyShoot_v1		522196
 
