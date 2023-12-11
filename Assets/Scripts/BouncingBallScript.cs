@@ -131,7 +131,7 @@ public class BouncingBallScript : MonoBehaviour
         while (travelDistance > 0 && bounces < maxbounces)
         {
             if (Physics.SphereCast(transform.position, transform.localScale.y / 2, transform.up, out hit, travelDistance, layerMask)
-                && hit.collider.gameObject.CompareTag("Wall") || (hit.collider.gameObject.CompareTag("Enemy") && bouncingMode))
+                && (hit.collider.gameObject.CompareTag("Wall") || (hit.collider.gameObject.CompareTag("Enemy") && bouncingMode)))
             {
                 Debug.Log("ShpereCast hit");
                 Vector3 reflectVec = Vector3.Reflect(transform.up, hit.normal);
