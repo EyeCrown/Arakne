@@ -52,6 +52,68 @@
 								</Action>
 							</ChildrenList>
 						</Event>
+						<Event Name="E_Play_BallBounce" ID="{05051B89-4063-4112-9A46-2F1D7BB161EB}">
+							<ChildrenList>
+								<Action Name="" ID="{0D9F464B-5029-4376-8419-8A17114295A9}" ShortID="603255532">
+									<ReferenceList>
+										<Reference Name="Target">
+											<ObjectRef Name="SFX_OS_Ball_Bounce" ID="{BFB9F2F7-AC2F-4EB6-8E6F-CA81B6DF4675}" WorkUnitID="{90D9CD61-7190-4799-9D6B-2A3BCEA18F27}"/>
+										</Reference>
+									</ReferenceList>
+								</Action>
+							</ChildrenList>
+						</Event>
+					</ChildrenList>
+				</Folder>
+				<Folder Name="Player" ID="{F42A281D-A38E-4FB8-A3CA-DE6563176CEA}" ShortID="995642833">
+					<ChildrenList>
+						<Event Name="E_Play_Bubbled" ID="{0901EE67-94F9-4240-9A8E-16B450223566}">
+							<ChildrenList>
+								<Action Name="" ID="{470EACD9-395C-4EDF-9923-B30BEA6879B9}" ShortID="563301016">
+									<ReferenceList>
+										<Reference Name="Target">
+											<ObjectRef Name="SFX_OS_Player_Bubbled" ID="{61257148-7D80-42BE-A2B0-311CE373B7DD}" WorkUnitID="{90D9CD61-7190-4799-9D6B-2A3BCEA18F27}"/>
+										</Reference>
+									</ReferenceList>
+								</Action>
+							</ChildrenList>
+						</Event>
+						<Event Name="E_Play_PlayerIsHit" ID="{90E3D062-211B-4133-8FDE-21940EDF135F}">
+							<ChildrenList>
+								<Action Name="" ID="{3D353FC7-880B-46B1-8447-A326BD503660}" ShortID="986754137">
+									<ReferenceList>
+										<Reference Name="Target">
+											<ObjectRef Name="SFX_Player_IsHit_v1" ID="{AD39C5D5-20FA-4500-A2FC-CBBDCEAB170F}" WorkUnitID="{90D9CD61-7190-4799-9D6B-2A3BCEA18F27}"/>
+										</Reference>
+									</ReferenceList>
+								</Action>
+							</ChildrenList>
+						</Event>
+						<Event Name="E_Play_BubbledIdle" ID="{6889D4C2-6802-4D6F-BE09-1D236B476CDA}">
+							<ChildrenList>
+								<Action Name="" ID="{80D32873-E45F-4A82-8E67-4D5C6AB5613A}" ShortID="642921276">
+									<ReferenceList>
+										<Reference Name="Target">
+											<ObjectRef Name="SFX_LP_Player_BubbleIdle" ID="{18444472-726B-475F-8270-49C07E43E61D}" WorkUnitID="{90D9CD61-7190-4799-9D6B-2A3BCEA18F27}"/>
+										</Reference>
+									</ReferenceList>
+								</Action>
+							</ChildrenList>
+						</Event>
+						<Event Name="E_Stop_BubbleIdle" ID="{726413F0-1E56-4790-A3FF-C46F8EC89658}">
+							<ChildrenList>
+								<Action Name="" ID="{B3E2AA4A-E662-4376-B04F-C24DFE95C5F3}" ShortID="857796699">
+									<PropertyList>
+										<Property Name="ActionType" Type="int16" Value="2"/>
+									</PropertyList>
+									<ReferenceList>
+										<Reference Name="Target">
+											<ObjectRef Name="SFX_LP_Player_BubbleIdle" ID="{18444472-726B-475F-8270-49C07E43E61D}" WorkUnitID="{90D9CD61-7190-4799-9D6B-2A3BCEA18F27}"/>
+										</Reference>
+									</ReferenceList>
+								</Action>
+							</ChildrenList>
+						</Event>
 					</ChildrenList>
 				</Folder>
 			</ChildrenList>
