@@ -6,9 +6,15 @@ using UnityEngine.InputSystem;
 public class PlayerController : MonoBehaviour
 {
     // Visible values (made for GD)
-    // TODO: make it more readable for others
-    [SerializeField] private float inertia; // range 1 to 10
-    [SerializeField] private float speed; // lower it is, faster it is | range 1 to 100
+    [SerializeField]
+    [Tooltip("Player's Inertia")]
+    [Range(1f, 10f)]
+    private float inertia; // range 1 to 10
+
+    [SerializeField]
+    [Tooltip("Player's actual speed, lower it is, faster it is")]
+    [Range(1f, 100f)]
+    private float speed; // lower it is, faster it is | range 1 to 100
 
     [SerializeField] private int hp = 3;
 
