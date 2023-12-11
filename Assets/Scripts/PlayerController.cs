@@ -21,7 +21,7 @@ public class PlayerController : MonoBehaviour
 
     // Cooldowns
     //[SerializeField]
-    private float passCooldown;
+    private float timeToShoot;
 
 
     // Hidden values
@@ -29,7 +29,10 @@ public class PlayerController : MonoBehaviour
     private Vector3 velocity;
 
     private bool isAlive;
+    public bool isTouchable { get; private set; }
+    private bool canMove;
 
+    private GameObject viewfinder;
     private BallDetector ballDetector;
     #endregion
 
@@ -37,8 +40,13 @@ public class PlayerController : MonoBehaviour
     void Start()
     {
         isAlive = true;
+        isTouchable = true;
+        canMove = true;
+
         DontDestroyOnLoad(gameObject);
 
+        viewfinder = transform.Find("Pivot").gameObject;
+        viewfinder.SetActive(false);
         ballDetector = GetComponentInChildren<BallDetector>();
     }
 
@@ -46,10 +54,11 @@ public class PlayerController : MonoBehaviour
     {
         if (isAlive)
         {
-            DoMovements();
+            if (canMove) 
+                DoMovements();
         }
-        
 
+        viewfinder.transform.up = movements.normalized;
     }
 
 
@@ -96,6 +105,7 @@ public class PlayerController : MonoBehaviour
             if (ballDetector.ball)
             {
                 Debug.Log("Pass: Do something with " + ballDetector.ball.name);
+                
             }
             else
                 Debug.Log("Pass: Ball is missing");
@@ -110,10 +120,28 @@ public class PlayerController : MonoBehaviour
             if (ballDetector.ball)
             {
                 Debug.Log("Shoot: Do something with " + ballDetector.ball.name);
+                StartCoroutine(ShootCoroutine());
             }
             else
                 Debug.Log("Shoot: Ball is missing");
         }
     }
-    #endregion
+    #endregion;
+
+    IEnumerator ShootCoroutine()
+    {
+        isTouchable = false;
+        canMove = false;
+        viewfinder.SetActive(true);
+
+        yield return new WaitForSeconds(timeToShoot);
+
+        // ball.direction = movements (vector)
+
+        viewfinder.SetActive(true);
+        canMove = true;
+        isTouchable = true;
+
+    }
+
 }

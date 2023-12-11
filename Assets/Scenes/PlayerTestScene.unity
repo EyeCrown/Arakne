@@ -183,6 +183,10 @@ PrefabInstance:
       propertyPath: m_Name
       value: BouncingBallPrefab
       objectReference: {fileID: 0}
+    - target: {fileID: 9065021497008916572, guid: 56ce1e017bd9c9c469876831da611f87, type: 3}
+      propertyPath: m_IsActive
+      value: 0
+      objectReference: {fileID: 0}
     m_RemovedComponents: []
     m_RemovedGameObjects: []
     m_AddedGameObjects: []
@@ -294,13 +298,9 @@ PrefabInstance:
       propertyPath: m_Name
       value: Player
       objectReference: {fileID: 0}
-    - target: {fileID: 28994589155886330, guid: 30305a7c3944b6048ad9f7477e59079b, type: 3}
-      propertyPath: m_TagString
-      value: Wall
-      objectReference: {fileID: 0}
-    - target: {fileID: 2445248379148531757, guid: 30305a7c3944b6048ad9f7477e59079b, type: 3}
-      propertyPath: m_TagString
-      value: Wall
+    - target: {fileID: 5690033159466497125, guid: 30305a7c3944b6048ad9f7477e59079b, type: 3}
+      propertyPath: m_LocalScale.y
+      value: 0.4
       objectReference: {fileID: 0}
     - target: {fileID: 8175719144490016002, guid: 30305a7c3944b6048ad9f7477e59079b, type: 3}
       propertyPath: m_LocalPosition.x
