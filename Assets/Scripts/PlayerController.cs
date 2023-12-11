@@ -21,7 +21,7 @@ public class PlayerController : MonoBehaviour
 
     void Move(InputAction.CallbackContext context)
     {
-        movements = context.
+        
     }
 
     void Pass(InputAction.CallbackContext context)
