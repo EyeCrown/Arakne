@@ -5,6 +5,7 @@ using UnityEngine.InputSystem;
 
 public class PlayerController : MonoBehaviour
 {
+    #region ATTRIBUTES
     // Visible values (made for GD)
     [SerializeField]
     [Tooltip("Player's Inertia")]
@@ -18,16 +19,27 @@ public class PlayerController : MonoBehaviour
 
     [SerializeField] private int hp = 3;
 
+    // Cooldowns
+    //[SerializeField]
+    private float passCooldown;
+
+
     // Hidden values
     private Vector3 movements;
     private Vector3 velocity;
 
     private bool isAlive;
 
+    private BallDetector ballDetector;
+    #endregion
+
+    #region UNITY API
     void Start()
     {
         isAlive = true;
         DontDestroyOnLoad(gameObject);
+
+        ballDetector = GetComponentInChildren<BallDetector>();
     }
 
     void Update()
@@ -40,6 +52,8 @@ public class PlayerController : MonoBehaviour
 
     }
 
+
+    #endregion
 
     private void DoMovements()
     {
@@ -61,7 +75,7 @@ public class PlayerController : MonoBehaviour
     }
 
 
-
+    #region INPUTS
     public void Move(InputAction.CallbackContext context)
     {
         if (context.performed)
@@ -78,7 +92,13 @@ public class PlayerController : MonoBehaviour
     {
         if (context.performed)
         {
-            Debug.Log("Pass: Do something");
+            Debug.Log("Pass: Action is performed");
+            if (ballDetector.ball)
+            {
+                Debug.Log("Pass: Do something with " + ballDetector.ball.name);
+            }
+            else
+                Debug.Log("Pass: Ball is missing");
         }
     }
 
@@ -86,7 +106,14 @@ public class PlayerController : MonoBehaviour
     {
         if (context.performed)
         {
-            Debug.Log("Shoot: Do something");
+            Debug.Log("Shoot: Action is performed");
+            if (ballDetector.ball)
+            {
+                Debug.Log("Shoot: Do something with " + ballDetector.ball.name);
+            }
+            else
+                Debug.Log("Shoot: Ball is missing");
         }
     }
+    #endregion
 }
