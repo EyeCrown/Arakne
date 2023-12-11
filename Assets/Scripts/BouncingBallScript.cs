@@ -86,6 +86,7 @@ public class BouncingBallScript : MonoBehaviour
     #region METHODS
     private void BallMove()
     {
+        
         switch (mode)
         {
             case BallMode.bouncing:
@@ -102,6 +103,7 @@ public class BouncingBallScript : MonoBehaviour
                 }
                 break;
             case BallMode.grabbed:
+                Debug.Log("Mes boules sont grabbed");
                 break;
             case BallMode.fall:
                 Fall();
@@ -127,7 +129,7 @@ public class BouncingBallScript : MonoBehaviour
             if (Physics.SphereCast(transform.position, transform.localScale.y / 2, transform.up, out hit, travelDistance, layerMask)
                 && (hit.collider.gameObject.CompareTag("Wall") || (hit.collider.gameObject.CompareTag("Enemy") && mode == BallMode.bouncing)))
             {
-                Debug.Log("ShpereCast hit");
+                //Debug.Log("ShpereCast hit");
                 Vector3 reflectVec = Vector3.Reflect(transform.up, hit.normal);
                 reflectVec.z = 0;
                 transform.up = reflectVec.normalized;
@@ -149,7 +151,7 @@ public class BouncingBallScript : MonoBehaviour
                 TranslateForward(travelDistance);
                 travelDistance = 0;
             }
-            Debug.Log("Travel Distance remaining:" + travelDistance);
+            //Debug.Log("Travel Distance remaining:" + travelDistance);
         }
     }
 
@@ -250,15 +252,20 @@ public class BouncingBallScript : MonoBehaviour
 
     private void GrabHandler()
     {
-        if (mode != BallMode.fall || mode != BallMode.homing)
+        Debug.Log("Ball: GrabHandler before: " + mode);
+        /*if ((int)mode != (int)BallMode.fall || (int)mode != (int)BallMode.homing)
         {
             return;
-        }
-        mode = BallMode.grabbed;
+        }*/
+        if (mode == BallMode.fall || mode == BallMode.homing)
+            mode = BallMode.grabbed;
+
+        Debug.Log("Ball: GrabHandler after: " + mode);
     }
     private void ThrowHandler(Vector3 direction)
     {
-        if(mode != BallMode.grabbed)
+        Debug.Log("Ball: ThrowHandler");
+        if ((int)mode != (int)BallMode.grabbed)
         {
             return;
         }
@@ -267,7 +274,7 @@ public class BouncingBallScript : MonoBehaviour
     }
     private void PassHandler(GameObject newTarget)
     {
-        if(mode != BallMode.fall)
+        if((int)mode != (int)BallMode.fall)
         {
             return;
         }

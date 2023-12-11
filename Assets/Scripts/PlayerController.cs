@@ -135,10 +135,14 @@ public class PlayerController : MonoBehaviour
         canMove = false;
         viewfinder.SetActive(true);
 
+        ballDetector.ball.GetComponent<BouncingBallScript>().Grab.Invoke();
+
         yield return new WaitForSeconds(timeToShoot);
 
         // ball.direction = movements (vector)
+
         Debug.Log("ShootCoroutine: Ball is moving to correct direction");
+        ballDetector.ball.GetComponent<BouncingBallScript>().Throw.Invoke(movements);
 
 
         viewfinder.SetActive(false);

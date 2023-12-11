@@ -24,7 +24,7 @@ MonoBehaviour:
     ParentPath: Virtual Acoustics\Default Work Unit
     guid: 036e06e9c360a5499f76caab519488da
     GuidInternal: 
-    m_lastTime: -8584995733695394278
+    m_lastTime: -8584993085135183367
     List: []
   AuxBusWwu:
   - PhysicalPath: Master-Mixer Hierarchy\Default Work Unit.wwu
@@ -38,7 +38,7 @@ MonoBehaviour:
     ParentPath: Master-Mixer Hierarchy\Default Work Unit
     guid: 0c2e5222371567458d9e301390427db6
     GuidInternal: 
-    m_lastTime: -8584995733695333198
+    m_lastTime: -8584993085137956681
     List:
     - name: Master Audio Bus
       guid: d8a41415a61d2a41a17e75ca0c2149f3
@@ -66,7 +66,7 @@ MonoBehaviour:
     ParentPath: SoundBanks\Default Work Unit
     guid: 11b32f2e3ee29e42aac88e4f8237d053
     GuidInternal: 
-    m_lastTime: -8584993057315065064
+    m_lastTime: -8584992996348648686
     List:
     - name: MainSoundBank
       guid: 755b33d932df0641a63ccf55283656eb
@@ -94,7 +94,7 @@ MonoBehaviour:
     ParentPath: Events\Default Work Unit
     guid: 84c25a4028b06c4684ceec8bda34eee5
     GuidInternal: 
-    m_lastTime: -8584993058155730783
+    m_lastTime: -8584992996348678465
     List:
     - name: Ball Interactions
       guid: 4f8c85a12dede241a535578d4344b995
@@ -170,6 +170,123 @@ MonoBehaviour:
       maxAttenuation: 0
       maxDuration: -1
       minDuration: -1
+    - name: E_Play_BallBounce
+      guid: 891b0505634012419a462f1d7bb161eb
+      id: 839260169
+      PathAndIcons:
+      - ElementName: Events
+        ObjectType: 5
+        guid: 00000000000000000000000000000000
+      - ElementName: Default Work Unit
+        ObjectType: 12
+        guid: 84c25a4028b06c4684ceec8bda34eee5
+      - ElementName: Ball Interactions
+        ObjectType: 4
+        guid: 4f8c85a12dede241a535578d4344b995
+      - ElementName: E_Play_BallBounce
+        ObjectType: 3
+        guid: 891b0505634012419a462f1d7bb161eb
+      Path: Events\Default Work Unit\Ball Interactions\E_Play_BallBounce
+      maxAttenuation: 0
+      maxDuration: -1
+      minDuration: -1
+    - name: E_Play_Bubbled
+      guid: 67ee0109f99440429a8e16b450223566
+      id: 364366560
+      PathAndIcons:
+      - ElementName: Events
+        ObjectType: 5
+        guid: 00000000000000000000000000000000
+      - ElementName: Default Work Unit
+        ObjectType: 12
+        guid: 84c25a4028b06c4684ceec8bda34eee5
+      - ElementName: Player
+        ObjectType: 4
+        guid: 1d282af48ea3b84fa3cade6563176cea
+      - ElementName: E_Play_Bubbled
+        ObjectType: 3
+        guid: 67ee0109f99440429a8e16b450223566
+      Path: Events\Default Work Unit\Player\E_Play_Bubbled
+      maxAttenuation: 0
+      maxDuration: -1
+      minDuration: -1
+    - name: E_Play_BubbledIdle
+      guid: c2d4896802686f4dbe091d236b476cda
+      id: 1219548678
+      PathAndIcons:
+      - ElementName: Events
+        ObjectType: 5
+        guid: 00000000000000000000000000000000
+      - ElementName: Default Work Unit
+        ObjectType: 12
+        guid: 84c25a4028b06c4684ceec8bda34eee5
+      - ElementName: Player
+        ObjectType: 4
+        guid: 1d282af48ea3b84fa3cade6563176cea
+      - ElementName: E_Play_BubbledIdle
+        ObjectType: 3
+        guid: c2d4896802686f4dbe091d236b476cda
+      Path: Events\Default Work Unit\Player\E_Play_BubbledIdle
+      maxAttenuation: 0
+      maxDuration: -1
+      minDuration: -1
+    - name: E_Play_PlayerIsHit
+      guid: 62d0e3901b2133418fde21940edf135f
+      id: 34195632
+      PathAndIcons:
+      - ElementName: Events
+        ObjectType: 5
+        guid: 00000000000000000000000000000000
+      - ElementName: Default Work Unit
+        ObjectType: 12
+        guid: 84c25a4028b06c4684ceec8bda34eee5
+      - ElementName: Player
+        ObjectType: 4
+        guid: 1d282af48ea3b84fa3cade6563176cea
+      - ElementName: E_Play_PlayerIsHit
+        ObjectType: 3
+        guid: 62d0e3901b2133418fde21940edf135f
+      Path: Events\Default Work Unit\Player\E_Play_PlayerIsHit
+      maxAttenuation: 0
+      maxDuration: -1
+      minDuration: -1
+    - name: E_Stop_BubbleIdle
+      guid: f0136472561e9047a3ffc46f8ec89658
+      id: 2809597228
+      PathAndIcons:
+      - ElementName: Events
+        ObjectType: 5
+        guid: 00000000000000000000000000000000
+      - ElementName: Default Work Unit
+        ObjectType: 12
+        guid: 84c25a4028b06c4684ceec8bda34eee5
+      - ElementName: Player
+        ObjectType: 4
+        guid: 1d282af48ea3b84fa3cade6563176cea
+      - ElementName: E_Stop_BubbleIdle
+        ObjectType: 3
+        guid: f0136472561e9047a3ffc46f8ec89658
+      Path: Events\Default Work Unit\Player\E_Stop_BubbleIdle
+      maxAttenuation: 0
+      maxDuration: -1
+      minDuration: -1
+    - name: Player
+      guid: 1d282af48ea3b84fa3cade6563176cea
+      id: 1069431850
+      PathAndIcons:
+      - ElementName: Events
+        ObjectType: 5
+        guid: 00000000000000000000000000000000
+      - ElementName: Default Work Unit
+        ObjectType: 12
+        guid: 84c25a4028b06c4684ceec8bda34eee5
+      - ElementName: Player
+        ObjectType: 4
+        guid: 1d282af48ea3b84fa3cade6563176cea
+      Path: Events\Default Work Unit\Player
+      maxAttenuation: 0
+      maxDuration: -1
+      minDuration: -1
   RtpcWwu:
   - PhysicalPath: Game Parameters\Default Work Unit.wwu
     PathAndIcons:
@@ -182,7 +299,7 @@ MonoBehaviour:
     ParentPath: Game Parameters\Default Work Unit
     guid: 433d40d7c32d3143a01b38ad82eb5fae
     GuidInternal: 
-    m_lastTime: -8584993058155720791
+    m_lastTime: -8584992996348658509
     List:
     - name: PassCount
       guid: d970069c9e43984183ca96130b768521
@@ -210,7 +327,7 @@ MonoBehaviour:
     ParentPath: States\Default Work Unit
     guid: 57415d4bc615e347b404e847c6479240
     GuidInternal: 
-    m_lastTime: -8584995733694763721
+    m_lastTime: -8584993085135383088
     List: []
   SwitchWwu:
   - PhysicalPath: Switches\Default Work Unit.wwu
@@ -224,7 +341,7 @@ MonoBehaviour:
     ParentPath: Switches\Default Work Unit
     guid: 7cc6170ca94e094eb7cbbf0bbad0d4b3
     GuidInternal: 
-    m_lastTime: -8584995733695733177
+    m_lastTime: -8584993085135313315
     List: []
   TriggerWwu:
   - PhysicalPath: Triggers\Default Work Unit.wwu
@@ -238,11 +355,11 @@ MonoBehaviour:
     ParentPath: Triggers\Default Work Unit
     guid: 8acb584fe7e353439698e234b016df45
     GuidInternal: 
-    m_lastTime: -8584995733695908937
+    m_lastTime: -8584993085135251442
     List: []
-  ExpandedFileSystemItemIds: 
-  ExpandedWaapiItemIds: 050000000600000007000000
+  ExpandedFileSystemItemIds: 020000000300000004000000090000001200000013000000
+  ExpandedWaapiItemIds: 02000000030000000400000009000000
   AutoSyncSelection: 0
   autoPopulateEnabled: 1
-  currentDataSource: 0
+  currentDataSource: 1
   CurrentPluginConfig: 
