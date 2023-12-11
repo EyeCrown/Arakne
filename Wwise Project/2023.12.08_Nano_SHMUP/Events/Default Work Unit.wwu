@@ -14,6 +14,46 @@
 						</Action>
 					</ChildrenList>
 				</Event>
+				<Folder Name="Ball Interactions" ID="{A1858C4F-ED2D-41E2-A535-578D4344B995}" ShortID="478493416">
+					<ChildrenList>
+						<Event Name="E_Play_AllyPass" ID="{DCE5FEBC-33D1-438A-BA7C-0C5E475632A9}">
+							<ChildrenList>
+								<Action Name="" ID="{637451E4-FD09-4782-9A30-7A43AA763F09}" ShortID="1049346851">
+									<ReferenceList>
+										<Reference Name="Target">
+											<ObjectRef Name="SFX_OS_Ball_AllyPass_v1" ID="{413AB599-57C9-4E3F-9D5D-4471271AD117}" WorkUnitID="{90D9CD61-7190-4799-9D6B-2A3BCEA18F27}"/>
+										</Reference>
+									</ReferenceList>
+								</Action>
+								<Action Name="" ID="{85C26CFB-A850-44AC-B4A0-5E368E27618D}" ShortID="637627214">
+									<ReferenceList>
+										<Reference Name="Target">
+											<ObjectRef Name="SFX_OS_Ball_AllyPassSweetener_v1" ID="{4CC34C8E-08DE-4A07-A40D-80103FA3B314}" WorkUnitID="{90D9CD61-7190-4799-9D6B-2A3BCEA18F27}"/>
+										</Reference>
+									</ReferenceList>
+								</Action>
+							</ChildrenList>
+						</Event>
+						<Event Name="E_Play_AllyShoot" ID="{52E1ADDC-271B-4A15-BF2A-2973F6A72603}">
+							<ChildrenList>
+								<Action Name="" ID="{34488F5A-A04A-494C-B965-3D88C768A882}" ShortID="563141233">
+									<ReferenceList>
+										<Reference Name="Target">
+											<ObjectRef Name="SFX_OS_Ball_AllyShoot_v1" ID="{FDB6F9F1-1586-4EF3-8B2A-AEDE4C796678}" WorkUnitID="{90D9CD61-7190-4799-9D6B-2A3BCEA18F27}"/>
+										</Reference>
+									</ReferenceList>
+								</Action>
+								<Action Name="" ID="{595AE444-D916-4EED-A815-F882CE0BCA65}" ShortID="379235114">
+									<ReferenceList>
+										<Reference Name="Target">
+											<ObjectRef Name="SFX_OS_Ball_AllyShootSweetener_v1" ID="{F943F3A4-C447-4CC5-BAC9-EBFECBB8F875}" WorkUnitID="{90D9CD61-7190-4799-9D6B-2A3BCEA18F27}"/>
+										</Reference>
+									</ReferenceList>
+								</Action>
+							</ChildrenList>
+						</Event>
+					</ChildrenList>
+				</Folder>
 			</ChildrenList>
 		</WorkUnit>
 	</Events>

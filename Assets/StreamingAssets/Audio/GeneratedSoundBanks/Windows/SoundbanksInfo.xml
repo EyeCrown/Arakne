@@ -9,7 +9,7 @@
 	</RootPaths>
 	<DialogueEvents/>
 	<SoundBanks>
-		<SoundBank Id="534561221" Type="User" Language="SFX" Hash="{F66EDCBF-4317-FB42-D227-A79BB1DED9DE}">
+		<SoundBank Id="534561221" Type="User" Language="SFX" Hash="{50A82D80-C4A2-7548-DBCE-B9A9DD00D06A}">
 			<ShortName>MainSoundBank</ShortName>
 			<Path>MainSoundBank.bnk</Path>
 			<Media>
@@ -17,16 +17,51 @@
 					<ShortName>S_LP_Amb_Grotte.wav</ShortName>
 					<CachePath>SFX/S_LP_Amb_Grotte_10C4C929.wem</CachePath>
 				</File>
+				<File Id="486226605" Language="SFX" Streaming="false" Location="Memory">
+					<ShortName>SFX_Player_IsHit_v1.wav</ShortName>
+					<CachePath>SFX/SFX_Player_IsHit_v1_10C4C929.wem</CachePath>
+				</File>
+				<File Id="614848710" Language="SFX" Streaming="false" Location="Memory">
+					<ShortName>SFX_OS_Ball_AllyPassSweetener_v1.wav</ShortName>
+					<CachePath>SFX/SFX_OS_Ball_AllyPassSweetener_v1_31E98A78.wem</CachePath>
+				</File>
+				<File Id="647956332" Language="SFX" Streaming="false" Location="Memory">
+					<ShortName>SFX_OS_Ball_AllyPass_v1.wav</ShortName>
+					<CachePath>SFX/SFX_OS_Ball_AllyPass_v1_10C4C929.wem</CachePath>
+				</File>
+				<File Id="773148055" Language="SFX" Streaming="false" Location="Memory">
+					<ShortName>SFX_OS_Ball_AllyShootSweetener_v1.wav</ShortName>
+					<CachePath>SFX/SFX_OS_Ball_AllyShootSweetener_v1_10C4C929.wem</CachePath>
+				</File>
+				<File Id="980782775" Language="SFX" Streaming="false" Location="Memory">
+					<ShortName>SFX_OS_Ball_AllyShoot_v1.wav</ShortName>
+					<CachePath>SFX/SFX_OS_Ball_AllyShoot_v1_10C4C929.wem</CachePath>
+				</File>
 			</Media>
 			<Events>
+				<Event Id="129291699" Name="E_Play_AllyPass">
+					<MediaRefs>
+						<MediaRef Id="614848710"/>
+						<MediaRef Id="647956332"/>
+					</MediaRefs>
+				</Event>
+				<Event Id="4065114501" Name="E_Play_AllyShoot">
+					<MediaRefs>
+						<MediaRef Id="773148055"/>
+						<MediaRef Id="980782775"/>
+					</MediaRefs>
+				</Event>
 				<Event Id="4121993638" Name="E_Play_Ambiance">
 					<MediaRefs>
 						<MediaRef Id="267323883"/>
 					</MediaRefs>
 				</Event>
 			</Events>
+			<GameParameters>
+				<GameParameter Id="2322789299" Name="PassCount"/>
+			</GameParameters>
 		</SoundBank>
-		<SoundBank Id="1355168291" Type="User" Language="SFX" Hash="{83378A2C-01B1-002A-0E32-0683CA942FE4}">
+		<SoundBank Id="1355168291" Type="User" Language="SFX" Hash="{6DE1A169-011F-530D-FB99-C7FE4B95EA89}">
 			<ShortName>Init</ShortName>
 			<Path>Init.bnk</Path>
 			<Plugins>
@@ -39,9 +74,9 @@
 				<Bus Id="3803692087" Name="Master Audio Bus"/>
 			</Busses>
 			<GameParameters>
-				<GameParameter Id="3384376378" Name="BounceCount"/>
+				<GameParameter Id="2322789299" Name="PassCount"/>
 			</GameParameters>
 		</SoundBank>
 	</SoundBanks>
-	<FileHash>{5DE9AD0A-928D-F6AD-DC0A-31204DCCD1E0}</FileHash>
+	<FileHash>{89FBF8E6-B9AD-6D00-B984-95E692CCFAAF}</FileHash>
 </SoundBanksInfo>

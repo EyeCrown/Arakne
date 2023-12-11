@@ -13,12 +13,14 @@ namespace AK
 {
     namespace EVENTS
     {
+        static const AkUniqueID E_PLAY_ALLYPASS = 129291699U;
+        static const AkUniqueID E_PLAY_ALLYSHOOT = 4065114501U;
         static const AkUniqueID E_PLAY_AMBIANCE = 4121993638U;
     } // namespace EVENTS
 
     namespace GAME_PARAMETERS
     {
-        static const AkUniqueID BOUNCECOUNT = 3384376378U;
+        static const AkUniqueID PASSCOUNT = 2322789299U;
     } // namespace GAME_PARAMETERS
 
     namespace BANKS
