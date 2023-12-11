@@ -20,7 +20,7 @@ public class PlayerController : MonoBehaviour
     [SerializeField] private int hp = 3;
 
     // Cooldowns
-    //[SerializeField]
+    [SerializeField]
     private float timeToShoot;
 
 
@@ -130,6 +130,7 @@ public class PlayerController : MonoBehaviour
 
     IEnumerator ShootCoroutine()
     {
+        Debug.Log("ShootCoroutine: start");
         isTouchable = false;
         canMove = false;
         viewfinder.SetActive(true);
@@ -137,11 +138,13 @@ public class PlayerController : MonoBehaviour
         yield return new WaitForSeconds(timeToShoot);
 
         // ball.direction = movements (vector)
+        Debug.Log("ShootCoroutine: Ball is moving to correct direction");
 
-        viewfinder.SetActive(true);
+
+        viewfinder.SetActive(false);
         canMove = true;
         isTouchable = true;
-
+        Debug.Log("ShootCoroutine: end");
     }
 
 }

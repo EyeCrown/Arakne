@@ -23,9 +23,7 @@ public class BouncingBallScript : MonoBehaviour
     // Update is called once per frame
     void Update()
     {
-        Debug.Log("Ball: Update");
         BallMove();
-        
     }
 
     void OnCollisionEnter(Collision collision)
@@ -66,7 +64,6 @@ public class BouncingBallScript : MonoBehaviour
         //Predicting all bounces that can happens during the frame. 
         while (travelDistance > 0)
         {
-            Debug.Log("BallMove: Entering while loop");
             if (Physics.SphereCast(transform.position + transform.up * 0.02f, transform.localScale.y / 2, transform.up, out hit, travelDistance, layerMask))
             {
                 Debug.Log("ShpereCast hit");
@@ -94,10 +91,8 @@ public class BouncingBallScript : MonoBehaviour
                 travelDistance = 0;
             }
             Debug.Log("Travel Distance remaining:" + travelDistance);
-            Debug.Log("BallMove: reach end while loop");
 
         }
-        Debug.Log("BallMove: leaving while loop");
     }
 
     private void CollidingEnemy(GameObject enemy)
