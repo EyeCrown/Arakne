@@ -39,31 +39,6 @@ public class BouncingBallScript : MonoBehaviour
     #endregion
 
 
-    [SerializeField] private int power = 0;
-    [SerializeField] private int maxPower = 1;
-    [SerializeField] private int pass = 0;
-    [SerializeField] private int health;
-
-    [Header("Sound")]
-    public AK.Wwise.Event ThrowSound;
-    public AK.Wwise.Event PassSound;
-    public AK.Wwise.Event BounceSound;
-
-    public enum BallMode
-    {
-        bouncing,
-        homing,
-        grabbed,
-        fall
-    }
-    #endregion
-
-
-    #region EVENTS
-    public UnityEvent Grab;
-    public UnityEvent<Vector3> Throw;
-    public UnityEvent<GameObject> Pass;
-    #endregion
     #region EVENTS
     public UnityEvent Grab;
     public UnityEvent<Vector3> Throw;
@@ -172,6 +147,7 @@ public class BouncingBallScript : MonoBehaviour
             else
             {
                 CheckCollisions(travelDistance);
+                TranslateForward(travelDistance);
                 travelDistance = 0;
             }
             Debug.Log("Travel Distance remaining:" + travelDistance);
@@ -261,9 +237,11 @@ public class BouncingBallScript : MonoBehaviour
     {
         BounceSound.Post(gameObject);
         health--;
-    }
-
-    #endregion
+        if (health <= 0)
+        {
+            //TODO death effect
+            Destroy(gameObject);
+        }
     }
     #endregion
 
