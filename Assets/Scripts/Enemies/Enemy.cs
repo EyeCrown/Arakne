@@ -8,12 +8,12 @@ public class Enemy : MonoBehaviour
 {
     #region ATTRIBUTES
     [Header("Gameplay Attributes")]
-    [SerializeField] protected float fallSpeed;
+    [SerializeField] protected float fallSpeed = 7;
     [SerializeField] protected float idleSpeed;
     [SerializeField] protected float idleRange;
     [SerializeField] protected float wiggleSpeed;
     [SerializeField] protected float wiggleRange;
-    [SerializeField] protected int health;
+    [SerializeField] protected int health = 10;
     [SerializeField] protected int scorePerHealthPoint;
     protected float idleDistance;
     #endregion

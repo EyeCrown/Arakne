@@ -18,10 +18,6 @@ public class Spider : Enemy
         Random.Range(minHangingDistance, maxHangingDistance);
     }
 
-    // Update is called once per frame
-    void Update()
-    {
-    }
 
 
     #region MOVEMENT
