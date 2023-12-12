@@ -10,6 +10,7 @@ public class GameManager : MonoBehaviour
 {
     public int score { get; private set; }
     public int maxHealth = 3;
+    public int multiplier = 1;
 
     [SerializeField] private List<Transform> spawnPositions;
 

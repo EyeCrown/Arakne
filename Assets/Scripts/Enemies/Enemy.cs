@@ -46,7 +46,10 @@ public class Enemy : MonoBehaviour
     {
         if(collision.gameObject.CompareTag("Player"))
         {
-            //TODO player hit
+            collision.gameObject.GetComponent<PlayerController>().Hit.Invoke();
+        } else if (collision.gameObject.CompareTag("MapEnd"))
+        {
+            Destroy(gameObject);
         }
     }
 
@@ -55,11 +58,11 @@ public class Enemy : MonoBehaviour
     #region EVENT HANDLERS
     void HitHandler(int damage)
     {
-        if (health < dammage) {
-            dammage = health; 
+        if (health < damage) {
+            damage = health; 
         }
-        //TODO notify the game manager here score = dammage * scorePerHealthPoint
-        health -= dammage;
+        GameManager.Instance.ScoreChange.Invoke(damage * scorePerHealthPoint);
+        health -= damage;
         if (health <= 0)
         {
             //TODO Die here.
@@ -78,12 +81,12 @@ public class Enemy : MonoBehaviour
     protected virtual void Idle() { }
     protected virtual void Wiggle()
     {
-        Vector2 randomdirection = Random.insideUnitSphere;
-        transform.localPosition = transform.position + new Vector3(randomdirection.x, randomdirection.y);
-        if(transform.localPosition.magnitude > wiggleRange)
-        {
-            transform.localPosition = transform.localPosition.normalized * wiggleRange;
-        }
+        //Vector2 randomdirection = Random.insideUnitSphere;
+        //transform.localPosition = transform.position + new Vector3(randomdirection.x, randomdirection.y);
+        //if(transform.localPosition.magnitude > wiggleRange)
+        //{
+        //    transform.localPosition = transform.localPosition.normalized * wiggleRange;
+        //}
         
     }
     #endregion
