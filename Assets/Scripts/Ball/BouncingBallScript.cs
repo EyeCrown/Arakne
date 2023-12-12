@@ -38,7 +38,6 @@ public class BouncingBallScript : MonoBehaviour
     }
     #endregion
 
-
     #region EVENTS
     public UnityEvent Grab;
     public UnityEvent<Vector3> Throw;
@@ -222,15 +221,16 @@ public class BouncingBallScript : MonoBehaviour
         }
     }
 
-    private void CollidePlayer(GameObject enemy)
+    private void CollidePlayer(GameObject player)
     {
         if(!canHitPlayer)
         { return; }
         //TODO Event collide player
+        player.GetComponent<PlayerController>().Hit.Invoke();
         Destroy(gameObject);
     }
 
-    private void CollideBoss(GameObject enemy)
+    private void CollideBoss(GameObject boss)
     {
         //TODO Event Collide Boss
         Destroy(gameObject);

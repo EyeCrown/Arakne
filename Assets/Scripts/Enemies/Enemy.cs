@@ -35,10 +35,10 @@ public class Enemy : MonoBehaviour
     #endregion
 
     #region EVENT HANDLERS
-    void HitHandler(int dammage)
+    void HitHandler(int damage)
     {
         //TODO notify the game manager here
-        health -= dammage;
+        health -= damage;
         if (health <= 0) {
 
         }

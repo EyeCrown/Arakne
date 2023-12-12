@@ -1,7 +1,9 @@
 using System.Collections;
 using System.Collections.Generic;
 using UnityEngine;
+using UnityEngine.Events;
 using UnityEngine.InputSystem;
+
 
 public class PlayerController : MonoBehaviour
 {
@@ -17,12 +19,15 @@ public class PlayerController : MonoBehaviour
     [Range(1f, 100f)]
     private float speed; // lower it is, faster it is | range 1 to 100
 
-    [SerializeField] private int hp = 3;
+    [SerializeField] private int health = 3;
 
     // Cooldowns
     [SerializeField]
+    [Tooltip("Recovery time before shoot again")]
     private float timeToShoot;
-
+    [SerializeField]
+    [Tooltip("Invulnerabiltiy time after taking damage")]
+    private float invincibilityTime;
 
     // Hidden values
     private Vector3 movements;
@@ -38,12 +43,18 @@ public class PlayerController : MonoBehaviour
     public int ID { get; private set; }
     #endregion
 
+    #region EVENTS
+    public UnityEvent Hit;
+    #endregion
+
     #region UNITY API
     void Start()
     {
         isAlive = true;
         isHittable = true;
         canMove = true;
+
+        Hit.AddListener(HitHandler);
 
         DontDestroyOnLoad(gameObject);
 
@@ -61,12 +72,6 @@ public class PlayerController : MonoBehaviour
         }
 
         viewfinder.transform.up = movements.normalized;
-    }
-
-
-    private void OnCollisionEnter(Collision collision)
-    {
-       
     }
 
     #endregion
@@ -98,16 +103,23 @@ public class PlayerController : MonoBehaviour
     }
 
 
-    public void TakeDamage()
+    public void HitHandler()
     {
-        hp--;
-        if (hp < 0)
-            Die();
+        if (isAlive && isHittable)
+        {
+            StartCoroutine(InvicibilityCoroutine());
+            health--;
+
+            if (health <= 0)
+                Die();
+        }
+
     }
 
     private void Die()
     {
         Debug.Log("Player die");
+        //TODO: make die method
     }
     #endregion
 
@@ -167,6 +179,12 @@ public class PlayerController : MonoBehaviour
         viewfinder.SetActive(false);
         canMove = true;
         isHittable = true;
-        
+    }
+
+    IEnumerator InvicibilityCoroutine()
+    {
+        isHittable = false;
+        yield return new WaitForSeconds(invincibilityTime);
+        isHittable = true;
     }
 }
