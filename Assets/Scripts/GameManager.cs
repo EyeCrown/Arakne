@@ -15,6 +15,7 @@ public class GameManager : MonoBehaviour
 
     #region EVENTS
     public UnityEvent<int> ScoreChange;
+    public UnityEvent<int> PlayerDie;
     #endregion
 
     public GameObject[] players { get; private set; }
@@ -78,12 +79,27 @@ public class GameManager : MonoBehaviour
         return myId == 0 ? 1 : 0;
     }
 
+    private void GameOver()
+    {
+        Debug.Log("___GAME OVER___");
+        //TODO: Make game over
+    }
+
 
 
     #region EVENT HANDLERS
     private void ScoreChangeHandler(int points)
     {
         score += points;
+    }
+
+    private void PlayerDieHandler(int idPlayer)
+    {
+        if (!players[idPlayer].GetComponent<PlayerController>().isAlive 
+            && !players[GetOtherPlayerId(idPlayer)].GetComponent<PlayerController>().isAlive)
+        {
+            GameOver();
+        }
     }
     #endregion
 }
