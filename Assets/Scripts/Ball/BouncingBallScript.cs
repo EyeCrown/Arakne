@@ -277,6 +277,7 @@ public class BouncingBallScript : MonoBehaviour
         {
             return;
         }
+        //Ak.SoundEngine.SetRTPCValue("PassCount", power);
         ApplySpeedMultiplier();
         target = newTarget;
         mode = BallMode.homing;
