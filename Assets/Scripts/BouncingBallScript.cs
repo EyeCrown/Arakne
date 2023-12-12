@@ -70,7 +70,7 @@ public class BouncingBallScript : MonoBehaviour
         Vector3 direction = transform.up;
         RaycastHit hit;
 
-        for (int i = 0; i < 4; i++)
+        for (int i = 0; i < health; i++)
         {
             if (Physics.SphereCast(start, 0.5f, direction, out hit, Mathf.Infinity, 1))
             {
@@ -86,7 +86,6 @@ public class BouncingBallScript : MonoBehaviour
     #region METHODS
     private void BallMove()
     {
-        
         switch (mode)
         {
             case BallMode.bouncing:
@@ -103,7 +102,6 @@ public class BouncingBallScript : MonoBehaviour
                 }
                 break;
             case BallMode.grabbed:
-                Debug.Log("Mes boules sont grabbed");
                 break;
             case BallMode.fall:
                 Fall();
@@ -258,7 +256,7 @@ public class BouncingBallScript : MonoBehaviour
             return;
         }*/
         if (mode == BallMode.fall || mode == BallMode.homing)
-            mode = BallMode.grabbed;
+        mode = BallMode.grabbed;
 
         Debug.Log("Ball: GrabHandler after: " + mode);
     }
