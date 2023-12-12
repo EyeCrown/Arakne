@@ -52,12 +52,32 @@ MonoBehaviour:
   speed: 0
   speedMultiplier: 0
   speedLimit: 0
-  health: 2
-  dammage: 1
+  mode: 0
   power: 0
+  maxPower: 1
   pass: 0
-  bouncingMode: 1
-  target: {fileID: 0}
+  health: 2
+  ThrowSound:
+    idInternal: 0
+    valueGuidInternal: 
+    WwiseObjectReference: {fileID: 11400000, guid: 1a70223759c82924889e36084fb3fa5b, type: 2}
+  PassSound:
+    idInternal: 0
+    valueGuidInternal: 
+    WwiseObjectReference: {fileID: 11400000, guid: 7ebaadb824a928f4280e1c5eb3e544c0, type: 2}
+  BounceSound:
+    idInternal: 0
+    valueGuidInternal: 
+    WwiseObjectReference: {fileID: 11400000, guid: c5f5a48ef213495419ce5f5ace5f361a, type: 2}
+  Grab:
+    m_PersistentCalls:
+      m_Calls: []
+  Throw:
+    m_PersistentCalls:
+      m_Calls: []
+  Pass:
+    m_PersistentCalls:
+      m_Calls: []
 --- !u!33 &7003621215994716148
 MeshFilter:
   m_ObjectHideFlags: 0
