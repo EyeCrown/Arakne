@@ -9,7 +9,7 @@ using UnityEngine.Events;
 public class GameManager : MonoBehaviour
 {
     public int score { get; private set; }
-
+    public int maxHealth = 3;
 
     [SerializeField] private List<Transform> spawnPositions;
 
