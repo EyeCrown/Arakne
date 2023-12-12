@@ -53,7 +53,7 @@ public class Enemy : MonoBehaviour
     #endregion
 
     #region EVENT HANDLERS
-    void HitHandler(int dammage)
+    void HitHandler(int damage)
     {
         if (health < dammage) {
             dammage = health; 

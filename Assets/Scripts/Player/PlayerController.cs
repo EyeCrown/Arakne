@@ -1,7 +1,9 @@
 using System.Collections;
 using System.Collections.Generic;
 using UnityEngine;
+using UnityEngine.Events;
 using UnityEngine.InputSystem;
+
 
 public class PlayerController : MonoBehaviour
 {
@@ -17,12 +19,15 @@ public class PlayerController : MonoBehaviour
     [Range(1f, 100f)]
     private float speed; // lower it is, faster it is | range 1 to 100
 
-    [SerializeField] private int hp = 3;
+    [SerializeField] private int health = 3;
 
     // Cooldowns
     [SerializeField]
+    [Tooltip("Recovery time before shoot again")]
     private float timeToShoot;
-
+    [SerializeField]
+    [Tooltip("Invulnerabiltiy time after taking damage")]
+    private float invincibilityTime;
 
     // Hidden values
     private Vector3 movements;
@@ -38,12 +43,18 @@ public class PlayerController : MonoBehaviour
     public int ID { get; private set; }
     #endregion
 
+    #region EVENTS
+    public UnityEvent Hit;
+    #endregion
+
     #region UNITY API
     void Start()
     {
         isAlive = true;
         isHittable = true;
         canMove = true;
+
+        Hit.AddListener(HitHandler);
 
         DontDestroyOnLoad(gameObject);
 
@@ -62,6 +73,7 @@ public class PlayerController : MonoBehaviour
 
         viewfinder.transform.up = movements.normalized;
     }
+
     #endregion
 
     #region METHODS
@@ -76,16 +88,38 @@ public class PlayerController : MonoBehaviour
         transform.position = Vector3.SmoothDamp(transform.position, nextPosition, ref velocity, speed * Time.deltaTime);
     }
 
-    public void TakeDamage()
+    private void DoPass()
     {
-        hp--;
-        if (hp < 0)
-            Die();
+        GameObject otherPlayer = GameManager.Instance.GetOtherPlayer(ID);
+        if (otherPlayer != null)
+            ballDetector.ball.GetComponent<BouncingBallScript>().Pass.Invoke(otherPlayer);
+        else
+            DoShoot();
+    }
+
+    private void DoShoot()
+    {
+        StartCoroutine(ShootCoroutine());
+    }
+
+
+    public void HitHandler()
+    {
+        if (isAlive && isHittable)
+        {
+            StartCoroutine(InvicibilityCoroutine());
+            health--;
+
+            if (health <= 0)
+                Die();
+        }
+
     }
 
     private void Die()
     {
         Debug.Log("Player die");
+        //TODO: make die method
     }
     #endregion
 
@@ -108,8 +142,7 @@ public class PlayerController : MonoBehaviour
         {
             if (ballDetector.ball)
             {
-                Debug.Log("Pass: Do something with " + ballDetector.ball.name);
-                ballDetector.ball.GetComponent<BouncingBallScript>().Pass.Invoke(GameManager.Instance.GetOtherPlayer(ID));
+                DoPass();
             }
             else
                 Debug.Log("Pass: Ball is missing");
@@ -122,8 +155,7 @@ public class PlayerController : MonoBehaviour
         {
             if (ballDetector.ball)
             {
-                //Debug.Log("Shoot: Do something with " + ballDetector.ball.name);
-                StartCoroutine(ShootCoroutine());
+                DoShoot();
             }
             else
                 Debug.Log("Shoot: Ball is missing");
@@ -147,7 +179,12 @@ public class PlayerController : MonoBehaviour
         viewfinder.SetActive(false);
         canMove = true;
         isHittable = true;
-        
     }
 
+    IEnumerator InvicibilityCoroutine()
+    {
+        isHittable = false;
+        yield return new WaitForSeconds(invincibilityTime);
+        isHittable = true;
+    }
 }

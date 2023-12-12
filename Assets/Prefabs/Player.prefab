@@ -245,7 +245,7 @@ GameObject:
   - component: {fileID: 4417201914804669088}
   - component: {fileID: 1161388985399951838}
   - component: {fileID: 5616180038454361705}
-  m_Layer: 0
+  m_Layer: 2
   m_Name: BallDetector
   m_TagString: Wall
   m_Icon: {fileID: 0}

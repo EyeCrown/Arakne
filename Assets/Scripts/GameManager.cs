@@ -8,6 +8,8 @@ using UnityEngine.Events;
 
 public class GameManager : MonoBehaviour
 {
+    public int score { get; private set; }
+
 
     [SerializeField] private List<Transform> spawnPositions;
 
@@ -35,9 +37,6 @@ public class GameManager : MonoBehaviour
 
         players = new GameObject[2];
     }
-
-    
-
 
     void Start()
     {
@@ -70,9 +69,10 @@ public class GameManager : MonoBehaviour
 
     public GameObject GetOtherPlayer(int playerId)
     {
-        int other = GetOtherPlayerId(playerId);
-
-        return players[other];
+        if (players.Length <= 1)
+            return null;
+        else
+            return players[GetOtherPlayerId(playerId)];
     }
 
     private int GetOtherPlayerId(int myId)
