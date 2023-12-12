@@ -22,6 +22,7 @@ public class BouncingBallScript : MonoBehaviour
     [SerializeField] private int maxPower = 1;
     [SerializeField] private int pass = 0;
     [SerializeField] private int health;
+    private bool canHitPlayer = true;
 
     [Header("Sound")]
     public AK.Wwise.Event ThrowSound;
@@ -225,6 +226,8 @@ public class BouncingBallScript : MonoBehaviour
 
     private void CollidePlayer(GameObject enemy)
     {
+        if(!canHitPlayer)
+        { return; }
         //TODO Event collide player
         Destroy(gameObject);
     }
@@ -252,7 +255,7 @@ public class BouncingBallScript : MonoBehaviour
 
     private void GrabHandler()
     {
-        Debug.Log("Ball: GrabHandler before: " + mode);
+       // Debug.Log("Ball: GrabHandler before: " + mode);
         /*if ((int)mode != (int)BallMode.fall || (int)mode != (int)BallMode.homing)
         {
             return;
@@ -260,7 +263,7 @@ public class BouncingBallScript : MonoBehaviour
         if (mode == BallMode.fall || mode == BallMode.homing)
             mode = BallMode.grabbed;
 
-        Debug.Log("Ball: GrabHandler after: " + mode);
+        //Debug.Log("Ball: GrabHandler after: " + mode);
     }
     private void ThrowHandler(Vector3 direction)
     {
@@ -269,13 +272,14 @@ public class BouncingBallScript : MonoBehaviour
         {
             return;
         }
+        StartCoroutine(ThrowCoroutine());
         transform.up = direction;
         mode = BallMode.bouncing;
         ThrowSound.Post(gameObject);
     }
     private void PassHandler(GameObject newTarget)
     {
-        if((int)mode != (int)BallMode.fall)
+        if((int)mode != (int)BallMode.fall && (int)mode != (int)BallMode.homing)
         {
             return;
         }
@@ -284,6 +288,14 @@ public class BouncingBallScript : MonoBehaviour
         mode = BallMode.homing;
     }
     #endregion
+
+    IEnumerator ThrowCoroutine()
+    {
+        canHitPlayer = false;
+
+        yield return new WaitForSeconds(0.5f);
+        canHitPlayer = true;
+    }
 }
 
 

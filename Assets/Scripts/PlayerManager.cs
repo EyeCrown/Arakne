@@ -31,7 +31,7 @@ public class PlayerManager : MonoBehaviour
     {
         playerInputManager.DisableJoining();
         Debug.Log("Change scene");
-        string sceneToLoad = "PlayerTestScene";
-        SceneManager.LoadScene(sceneToLoad);
+        string gameScene = "PlayerTestScene";
+        SceneManager.LoadScene(gameScene);
     }
 }
