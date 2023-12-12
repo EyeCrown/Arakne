@@ -29,18 +29,20 @@ public class PlayerController : MonoBehaviour
     private Vector3 velocity;
 
     private bool isAlive;
-    public bool isTouchable { get; private set; }
+    public bool isHittable { get; private set; }
     private bool canMove;
 
     private GameObject viewfinder;
     private BallDetector ballDetector;
+
+    public int ID { get; private set; }
     #endregion
 
     #region UNITY API
     void Start()
     {
         isAlive = true;
-        isTouchable = true;
+        isHittable = true;
         canMove = true;
 
         DontDestroyOnLoad(gameObject);
@@ -60,9 +62,13 @@ public class PlayerController : MonoBehaviour
 
         viewfinder.transform.up = movements.normalized;
     }
-
-
     #endregion
+
+    #region METHODS
+    public void Initialize(int id)
+    {
+        ID = id;
+    }
 
     private void DoMovements()
     {
@@ -77,12 +83,11 @@ public class PlayerController : MonoBehaviour
             Die();
     }
 
-
     private void Die()
     {
         Debug.Log("Player die");
     }
-
+    #endregion
 
     #region INPUTS
     public void Move(InputAction.CallbackContext context)
@@ -101,11 +106,10 @@ public class PlayerController : MonoBehaviour
     {
         if (context.performed)
         {
-            Debug.Log("Pass: Action is performed");
             if (ballDetector.ball)
             {
                 Debug.Log("Pass: Do something with " + ballDetector.ball.name);
-                
+                ballDetector.ball.GetComponent<BouncingBallScript>().Pass.Invoke(GameManager.Instance.GetOtherPlayer(ID));
             }
             else
                 Debug.Log("Pass: Ball is missing");
@@ -116,10 +120,9 @@ public class PlayerController : MonoBehaviour
     {
         if (context.performed)
         {
-            Debug.Log("Shoot: Action is performed");
             if (ballDetector.ball)
             {
-                Debug.Log("Shoot: Do something with " + ballDetector.ball.name);
+                //Debug.Log("Shoot: Do something with " + ballDetector.ball.name);
                 StartCoroutine(ShootCoroutine());
             }
             else
@@ -130,8 +133,8 @@ public class PlayerController : MonoBehaviour
 
     IEnumerator ShootCoroutine()
     {
-        Debug.Log("ShootCoroutine: start");
-        isTouchable = false;
+        
+        isHittable = false;
         canMove = false;
         viewfinder.SetActive(true);
 
@@ -139,16 +142,12 @@ public class PlayerController : MonoBehaviour
 
         yield return new WaitForSeconds(timeToShoot);
 
-        // ball.direction = movements (vector)
-
-        Debug.Log("ShootCoroutine: Ball is moving to correct direction");
         ballDetector.ball.GetComponent<BouncingBallScript>().Throw.Invoke(movements);
-
 
         viewfinder.SetActive(false);
         canMove = true;
-        isTouchable = true;
-        Debug.Log("ShootCoroutine: end");
+        isHittable = true;
+        
     }
 
 }

@@ -6,11 +6,25 @@ using UnityEngine.InputSystem;
 
 public class GameManager : MonoBehaviour
 {
+    [SerializeField] private List<Transform> spawnPositions;
+
+    public GameObject[] players { get; private set; }
+
     private PlayerInputManager playerInputManager;
+
+    private string gameScene = "PlayerTestScene";
+
+    public static GameManager Instance;
 
     void Awake()
     {
-        DontDestroyOnLoad(gameObject);
+        if (Instance == null)
+        {
+            DontDestroyOnLoad(gameObject);
+            Instance = this;
+        }
+
+        players = new GameObject[2];
     }
 
     
@@ -28,16 +42,32 @@ public class GameManager : MonoBehaviour
         if (Globals.gameState != Globals.GameState.OnMenu) return; // Re-activated player on respawn triggers OnPlayerJoined
 
         Debug.Log("Player " + playerInput.playerIndex + " joined");
+        players[playerInput.playerIndex] = playerInput.gameObject;
+        players[playerInput.playerIndex].transform.position = spawnPositions[playerInput.playerIndex].position;
+        players[playerInput.playerIndex].GetComponent<PlayerController>().Initialize(playerInput.playerIndex);
 
-        if (playerInputManager.playerCount == playerInputManager.maxPlayerCount)
-            ChangeScene();
+        /*if (playerInputManager.playerCount == playerInputManager.maxPlayerCount)
+            ChangeScene();*/
     }
 
     public void ChangeScene()
     {
         playerInputManager.DisableJoining();
         Debug.Log("Change scene");
-        string sceneToLoad = "PlayerTestScene";
-        SceneManager.LoadScene(sceneToLoad);
+
+        SceneManager.LoadScene(gameScene);
+    }
+
+
+    public GameObject GetOtherPlayer(int playerId)
+    {
+        int other = GetOtherPlayerId(playerId);
+
+        return players[other];
+    }
+
+    private int GetOtherPlayerId(int myId)
+    {
+        return myId == 0 ? 1 : 0;
     }
 }
