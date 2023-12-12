@@ -33,7 +33,7 @@ public class PlayerController : MonoBehaviour
     private Vector3 movements;
     private Vector3 velocity;
 
-    private bool isAlive;
+    public bool isAlive { get; private set; }
     public bool isHittable { get; private set; }
     private bool canMove;
 
