@@ -38,7 +38,6 @@ public class BouncingBallScript : MonoBehaviour
     }
     #endregion
 
-
     #region EVENTS
     public UnityEvent Grab;
     public UnityEvent<Vector3> Throw;
@@ -181,15 +180,21 @@ public class BouncingBallScript : MonoBehaviour
         hits = Physics.SphereCastAll(transform.position, transform.localScale.y / 2, transform.up, length, layerMask);
         foreach(RaycastHit hit in hits)
         {
-            if(hit.transform.gameObject.CompareTag("Enemy"))
+            if (hit.transform.gameObject.CompareTag("Enemy"))
             {
                 CollideEnemy(hit.transform.gameObject);
-            } else if(hit.transform.gameObject.CompareTag("Boss"))
+            }
+            else if (hit.transform.gameObject.CompareTag("Boss"))
             {
                 CollideBoss(hit.transform.gameObject);
-            } else if(hit.transform.gameObject.CompareTag("Player"))
+            }
+            else if (hit.transform.gameObject.CompareTag("Player"))
             {
                 CollidePlayer(hit.transform.gameObject);
+            }
+            else if (hit.transform.gameObject.CompareTag("MapEnd"))
+            {
+                Destroy(gameObject);
             }
         }
     }
@@ -203,6 +208,16 @@ public class BouncingBallScript : MonoBehaviour
         }
     }
 
+    private void TakeDamage()
+    {
+        health--;
+        if (health <= 0)
+        {
+            //TODO death effect
+            Destroy(gameObject);
+        }
+    }
+
     #endregion
 
 
@@ -213,37 +228,38 @@ public class BouncingBallScript : MonoBehaviour
         {
             return;
         }
-        health--;
-        //TODO Event collide enemy
-        if(health <= 0)
+        if(mode != BallMode.homing)
         {
-            //TODO death effect
-            Destroy(gameObject);
+
+            TakeDamage();
+        }
+        Enemy enemyHit = enemy.GetComponent<Enemy>();
+        if (enemyHit)
+        {
+            enemyHit.Hit.Invoke(power);
         }
     }
 
-    private void CollidePlayer(GameObject enemy)
+    private void CollidePlayer(GameObject player)
     {
         if(!canHitPlayer)
         { return; }
-        //TODO Event collide player
+        player.GetComponent<PlayerController>().Hit.Invoke();
         Destroy(gameObject);
     }
 
-    private void CollideBoss(GameObject enemy)
+    private void CollideBoss(GameObject boss)
     {
-        //TODO Event Collide Boss
-        Destroy(gameObject);
+        if(mode  != BallMode.bouncing)
+        {
+            boss.GetComponent<Enemy>().Hit.Invoke(power * GameManager.Instance.multiplier);
+            Destroy(gameObject);
+        }
     }
 
     private void CollideWall()
     {
-        health--;
-        if (health <= 0)
-        {
-            //TODO death effect
-            Destroy(gameObject);
-        }
+        TakeDamage();
     }
 
     #endregion
@@ -281,7 +297,9 @@ public class BouncingBallScript : MonoBehaviour
         {
             return;
         }
-        //Ak.SoundEngine.SetRTPCValue("PassCount", power);
+        AkSoundEngine.SetRTPCValue("PassCount", power);
+        if (power < 6)
+            power++;
         ApplySpeedMultiplier();
         target = newTarget;
         mode = BallMode.homing;

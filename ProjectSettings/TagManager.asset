@@ -8,6 +8,7 @@ TagManager:
   - Enemy
   - Ball
   - Boss
+  - MapEnd
   layers:
   - Default
   - TransparentFX

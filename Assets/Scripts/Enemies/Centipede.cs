@@ -10,9 +10,4 @@ public class Centipede : Enemy
         
     }
 
-    // Update is called once per frame
-    void Update()
-    {
-        
-    }
 }
