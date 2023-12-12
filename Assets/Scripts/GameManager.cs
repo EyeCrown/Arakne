@@ -13,8 +13,6 @@ public class GameManager : MonoBehaviour
 
     [SerializeField] private List<Transform> spawnPositions;
 
-
-
     #region EVENTS
     public UnityEvent<int> ScoreChange;
     #endregion
