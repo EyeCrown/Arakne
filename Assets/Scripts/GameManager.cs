@@ -80,9 +80,17 @@ public class GameManager : MonoBehaviour
         return myId == 0 ? 1 : 0;
     }
 
+    
+    private void StartGame()
+    {
+        Debug.Log("___GAME START___");
+        score = 0;
+    }
+
     private void GameOver()
     {
         Debug.Log("___GAME OVER___");
+        Debug.Log("Score: " + score);
         //TODO: Make game over
     }
 
