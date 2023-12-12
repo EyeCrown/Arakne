@@ -14,7 +14,6 @@ public class Mosquito : Enemy
     #region MOVEMENTS
     protected override void Idle()
     {
-        Debug.Log("Je suis un moustique");
         if(idleSpeed == 0 || idleDistance == 0)
         {
             return;
