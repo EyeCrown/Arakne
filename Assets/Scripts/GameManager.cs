@@ -3,10 +3,21 @@ using System.Collections.Generic;
 using UnityEngine;
 using UnityEngine.SceneManagement;
 using UnityEngine.InputSystem;
+using UnityEngine.Events;
+
 
 public class GameManager : MonoBehaviour
 {
+    public int score { get; private set; }
+    public int maxHealth = 3;
+    public int multiplier = 1;
+
     [SerializeField] private List<Transform> spawnPositions;
+
+    #region EVENTS
+    public UnityEvent<int> ScoreChange;
+    public UnityEvent<int> PlayerDie;
+    #endregion
 
     public GameObject[] players { get; private set; }
 
@@ -26,9 +37,6 @@ public class GameManager : MonoBehaviour
 
         players = new GameObject[2];
     }
-
-    
-
 
     void Start()
     {
@@ -61,13 +69,46 @@ public class GameManager : MonoBehaviour
 
     public GameObject GetOtherPlayer(int playerId)
     {
-        int other = GetOtherPlayerId(playerId);
-
-        return players[other];
+        if (players.Length <= 1)
+            return null;
+        else
+            return players[GetOtherPlayerId(playerId)];
     }
 
     private int GetOtherPlayerId(int myId)
     {
         return myId == 0 ? 1 : 0;
     }
+
+    
+    private void StartGame()
+    {
+        Debug.Log("___GAME START___");
+        score = 0;
+    }
+
+    private void GameOver()
+    {
+        Debug.Log("___GAME OVER___");
+        Debug.Log("Score: " + score);
+        //TODO: Make game over
+    }
+
+
+
+    #region EVENT HANDLERS
+    private void ScoreChangeHandler(int points)
+    {
+        score += points;
+    }
+
+    private void PlayerDieHandler(int idPlayer)
+    {
+        if (!players[idPlayer].GetComponent<PlayerController>().isAlive 
+            && !players[GetOtherPlayerId(idPlayer)].GetComponent<PlayerController>().isAlive)
+        {
+            GameOver();
+        }
+    }
+    #endregion
 }
