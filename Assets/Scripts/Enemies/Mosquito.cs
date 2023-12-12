@@ -14,13 +14,19 @@ public class Mosquito : Enemy
     #region MOVEMENTS
     protected override void Idle()
     {
-        //if(Mathf.Abs(idleDistance) > idleRange)
-        //{
-        //    float distance = idleSpeed * Time.deltaTime;
-        //    idleDistance += distance;
-        //    idleSpeed = -idleSpeed;
-        //    transform.parent.position = new Vector3(transform.parent.position.x + distance, transform.parent.position.y);
-        //}
+        Debug.Log("Je suis un moustique");
+        if(idleSpeed == 0 || idleDistance == 0)
+        {
+            return;
+        }
+        if(Mathf.Abs(idleDistance) > idleRange)
+        {
+            idleSpeed = -idleSpeed;
+            
+        }
+        float distance = idleSpeed * Time.deltaTime;
+        idleDistance += distance;
+        transform.position = new Vector3(transform.position.x + distance, transform.position.y);
     }
     #endregion
 }
