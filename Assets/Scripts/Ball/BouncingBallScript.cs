@@ -214,7 +214,11 @@ public class BouncingBallScript : MonoBehaviour
             return;
         }
         health--;
-        //TODO Event collide enemy
+        Enemy enemyHit = enemy.GetComponent<Enemy>();
+        if (enemyHit)
+        {
+            enemyHit.Hit.Invoke(power);
+        }
         if(health <= 0)
         {
             //TODO death effect
@@ -281,7 +285,7 @@ public class BouncingBallScript : MonoBehaviour
         {
             return;
         }
-        //Ak.SoundEngine.SetRTPCValue("PassCount", power);
+        //AK.SoundEngine.SetRTPCValue("PassCount", power);
         ApplySpeedMultiplier();
         target = newTarget;
         mode = BallMode.homing;

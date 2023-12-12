@@ -10,9 +10,17 @@ public class Mosquito : Enemy
         
     }
 
-    // Update is called once per frame
-    void Update()
+
+    #region MOVEMENTS
+    protected override void Idle()
     {
-        
+        if(Mathf.Abs(idleDistance) > idleRange)
+        {
+            float distance = idleSpeed * Time.deltaTime;
+            idleDistance += distance;
+            idleSpeed = -idleSpeed;
+            transform.parent.position = new Vector3(transform.parent.position.x + distance, transform.parent.position.y);
+        }
     }
+    #endregion
 }

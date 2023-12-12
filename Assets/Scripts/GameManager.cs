@@ -3,10 +3,19 @@ using System.Collections.Generic;
 using UnityEngine;
 using UnityEngine.SceneManagement;
 using UnityEngine.InputSystem;
+using UnityEngine.Events;
+
 
 public class GameManager : MonoBehaviour
 {
+
     [SerializeField] private List<Transform> spawnPositions;
+
+
+
+    #region EVENTS
+    public UnityEvent<int> ScoreChange;
+    #endregion
 
     public GameObject[] players { get; private set; }
 
@@ -70,4 +79,13 @@ public class GameManager : MonoBehaviour
     {
         return myId == 0 ? 1 : 0;
     }
+
+
+
+    #region EVENT HANDLERS
+    private void ScoreChangeHandler(int points)
+    {
+        score += points;
+    }
+    #endregion
 }
