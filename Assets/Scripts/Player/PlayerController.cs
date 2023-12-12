@@ -50,8 +50,7 @@ public class PlayerController : MonoBehaviour
     #region UNITY API
     void Start()
     {
-        isAlive = true;
-        isHittable = true;
+        Revive();
         canMove = true;
 
         Hit.AddListener(HitHandler);
@@ -65,11 +64,8 @@ public class PlayerController : MonoBehaviour
 
     void Update()
     {
-        if (isAlive)
-        {
-            if (canMove) 
-                DoMovements();
-        }
+        if (canMove) 
+            DoMovements();
 
         viewfinder.transform.up = movements.normalized;
     }
@@ -80,6 +76,7 @@ public class PlayerController : MonoBehaviour
     public void Initialize(int id)
     {
         ID = id;
+        Revive();
     }
 
     private void DoMovements()
@@ -105,7 +102,15 @@ public class PlayerController : MonoBehaviour
 
     public void HitHandler()
     {
-        if (isAlive && isHittable)
+        if (isAlive)
+            TakeDamage();
+        else
+            Revive();
+    }
+
+    private void TakeDamage()
+    {
+        if (isHittable)
         {
             StartCoroutine(InvicibilityCoroutine());
             health--;
@@ -113,13 +118,24 @@ public class PlayerController : MonoBehaviour
             if (health <= 0)
                 Die();
         }
+    }
 
+    private void Revive()
+    {
+        StartCoroutine(InvicibilityCoroutine());
+
+        isAlive = true;
+        health = GameManager.Instance.maxHealth;
     }
 
     private void Die()
     {
         Debug.Log("Player die");
-        //TODO: make die method
+        isAlive = false;
+        isHittable = false;
+        GameManager.Instance.PlayerDie.Invoke(ID);
+        //TODO: put anim dead here
+
     }
     #endregion
 
@@ -140,7 +156,7 @@ public class PlayerController : MonoBehaviour
     {
         if (context.performed)
         {
-            if (ballDetector.ball)
+            if (isAlive && ballDetector.ball)
             {
                 DoPass();
             }
@@ -153,7 +169,7 @@ public class PlayerController : MonoBehaviour
     {
         if (context.performed)
         {
-            if (ballDetector.ball)
+            if (isAlive && ballDetector.ball)
             {
                 DoShoot();
             }
@@ -163,6 +179,7 @@ public class PlayerController : MonoBehaviour
     }
     #endregion;
 
+    #region COROUTINES
     IEnumerator ShootCoroutine()
     {
         
@@ -187,4 +204,5 @@ public class PlayerController : MonoBehaviour
         yield return new WaitForSeconds(invincibilityTime);
         isHittable = true;
     }
+    #endregion
 }
