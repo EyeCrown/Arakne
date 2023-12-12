@@ -23,7 +23,7 @@ public class PlayerController : MonoBehaviour
 
     // Cooldowns
     [SerializeField]
-    [Tooltip("Recovery time before shoot again")]
+    [Tooltip("Time to aim before shooting")]
     private float timeToShoot;
     [SerializeField]
     [Tooltip("Invulnerabiltiy time after taking damage")]
@@ -176,6 +176,9 @@ public class PlayerController : MonoBehaviour
             else
                 Debug.Log("Shoot: Ball is missing");
         }
+
+        if (context.canceled && !canMove)
+            canMove = true;
     }
     #endregion;
 
@@ -187,14 +190,15 @@ public class PlayerController : MonoBehaviour
         canMove = false;
         viewfinder.SetActive(true);
 
-        ballDetector.ball.GetComponent<BouncingBallScript>().Grab.Invoke();
+        if (ballDetector.ball != null) 
+            ballDetector.ball.GetComponent<BouncingBallScript>().Grab.Invoke();
 
         yield return new WaitForSeconds(timeToShoot);
 
-        ballDetector.ball.GetComponent<BouncingBallScript>().Throw.Invoke(movements);
+        if (ballDetector.ball != null)
+            ballDetector.ball.GetComponent<BouncingBallScript>().Throw.Invoke(movements);
 
         viewfinder.SetActive(false);
-        canMove = true;
         isHittable = true;
     }
 
