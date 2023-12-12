@@ -62,6 +62,13 @@ public class PlayerController : MonoBehaviour
 
         viewfinder.transform.up = movements.normalized;
     }
+
+
+    private void OnCollisionEnter(Collision collision)
+    {
+       
+    }
+
     #endregion
 
     #region METHODS
@@ -75,6 +82,21 @@ public class PlayerController : MonoBehaviour
         Vector3 nextPosition = transform.position + movements * inertia;
         transform.position = Vector3.SmoothDamp(transform.position, nextPosition, ref velocity, speed * Time.deltaTime);
     }
+
+    private void DoPass()
+    {
+        GameObject otherPlayer = GameManager.Instance.GetOtherPlayer(ID);
+        if (otherPlayer != null)
+            ballDetector.ball.GetComponent<BouncingBallScript>().Pass.Invoke(otherPlayer);
+        else
+            DoShoot();
+    }
+
+    private void DoShoot()
+    {
+        StartCoroutine(ShootCoroutine());
+    }
+
 
     public void TakeDamage()
     {
@@ -108,8 +130,7 @@ public class PlayerController : MonoBehaviour
         {
             if (ballDetector.ball)
             {
-                Debug.Log("Pass: Do something with " + ballDetector.ball.name);
-                ballDetector.ball.GetComponent<BouncingBallScript>().Pass.Invoke(GameManager.Instance.GetOtherPlayer(ID));
+                DoPass();
             }
             else
                 Debug.Log("Pass: Ball is missing");
@@ -122,8 +143,7 @@ public class PlayerController : MonoBehaviour
         {
             if (ballDetector.ball)
             {
-                //Debug.Log("Shoot: Do something with " + ballDetector.ball.name);
-                StartCoroutine(ShootCoroutine());
+                DoShoot();
             }
             else
                 Debug.Log("Shoot: Ball is missing");
@@ -149,5 +169,4 @@ public class PlayerController : MonoBehaviour
         isHittable = true;
         
     }
-
 }
