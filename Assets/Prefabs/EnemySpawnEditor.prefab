@@ -1,0 +1,66 @@
+%YAML 1.1
+%TAG !u! tag:unity3d.com,2011:
+--- !u!1 &5161515056353931123
+GameObject:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  serializedVersion: 6
+  m_Component:
+  - component: {fileID: 4655942964052580713}
+  - component: {fileID: 7974830444051305816}
+  - component: {fileID: -2181932241925747710}
+  m_Layer: 0
+  m_Name: EnemySpawnEditor
+  m_TagString: Untagged
+  m_Icon: {fileID: 0}
+  m_NavMeshLayer: 0
+  m_StaticEditorFlags: 0
+  m_IsActive: 1
+--- !u!4 &4655942964052580713
+Transform:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 5161515056353931123}
+  serializedVersion: 2
+  m_LocalRotation: {x: 0, y: 0, z: 0, w: 1}
+  m_LocalPosition: {x: -0.026497051, y: 5.48, z: -0.4869213}
+  m_LocalScale: {x: 1, y: 1, z: 1}
+  m_ConstrainProportionsScale: 0
+  m_Children: []
+  m_Father: {fileID: 0}
+  m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
+--- !u!114 &7974830444051305816
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 5161515056353931123}
+  m_Enabled: 0
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: bfe4cf9f39ff4b1428b742d6cf2b0642, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  enemy: {fileID: 8905452087507301880, guid: c053ce967912e8440b814ffac785ed61, type: 3}
+--- !u!114 &-2181932241925747710
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 5161515056353931123}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 2868936c2283f974384b3d6d0cedcd4b, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  spider: {fileID: 8905452087507301880, guid: c053ce967912e8440b814ffac785ed61, type: 3}
+  mosquito: {fileID: 0}
+  MaxValue: 3
+  data: 111111200110001100011000110001100011000110001100011000110001100011000110001100011000110001100011000110001100011000110001100011000110001100011000110001100011000110001100011000110001100011000110001100011000110001100011000110001100011000110001100011000110001100011000110001100011000110001100011000110001100011000110001100011000110001100011000110001100011000110001100011000110001100011000110001100011000110001100011000110001100011000110001100011000110001100011000110001100011000110001100011000110001100011000110001100011000110001100011000110001100011000110001100011000110001100011000110001100011000110001100011000110001100011000110001100011000110001100011000110001100011000110001100011000110001100011000110001100011000110001100011000110001100011000110001100011000110001100011000110001100011000110001100011000110001100011000110001100011000110001100011000110001100011000110001100011000110001100011000111111
+  across: 5
+  down: 180
