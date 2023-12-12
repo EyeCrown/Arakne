@@ -133,8 +133,8 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   fallSpeed: 1
-  idleSpeed: 0
-  idleRange: 0
+  idleSpeed: 1
+  idleRange: 2
   wiggleSpeed: 0
   wiggleRange: 0
   health: 2

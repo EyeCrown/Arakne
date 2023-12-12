@@ -14,7 +14,7 @@ public class Mosquito : Enemy
     #region MOVEMENTS
     protected override void Idle()
     {
-        if(idleSpeed == 0 || idleDistance == 0)
+        if(idleSpeed == 0 || idleRange == 0)
         {
             return;
         }
