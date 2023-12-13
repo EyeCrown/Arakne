@@ -9,6 +9,7 @@ TagManager:
   - Ball
   - Boss
   - MapEnd
+  - ScreenShake
   layers:
   - Default
   - TransparentFX
