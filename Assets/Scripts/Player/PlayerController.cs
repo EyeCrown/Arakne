@@ -27,7 +27,11 @@ public class PlayerController : MonoBehaviour
     private float timeToShoot;
     [SerializeField]
     [Tooltip("Invulnerabiltiy time after taking damage")]
-    private float invincibilityTime;
+    private float hittableReloadTime;
+    [SerializeField]
+    [Tooltip("Time before player can perform action (Shoot/Pass)")]
+    private float doActionReloadTime;
+
 
     // Hidden values
     private Vector3 movements;
@@ -35,7 +39,11 @@ public class PlayerController : MonoBehaviour
 
     public bool isAlive { get; private set; }
     public bool isHittable { get; private set; }
+
     private bool canMove;
+    private bool canDoAction;
+
+    private bool isShooting;
 
     private GameObject viewfinder;
     private BallDetector ballDetector;
@@ -110,23 +118,24 @@ public class PlayerController : MonoBehaviour
         transform.position = Vector3.SmoothDamp(transform.position, nextPosition, ref velocity, speed * Time.deltaTime);
     }
 
-    private void DoPass()
+    private void DoPass(GameObject ball)
     {
         GameObject otherPlayer = GameManager.Instance.GetOtherPlayer(ID);
         if (otherPlayer != null)
-            ballDetector.ball.GetComponent<BouncingBallScript>().Pass.Invoke(otherPlayer);
+            ball.GetComponent<BouncingBallScript>().Pass.Invoke(otherPlayer);
         else
-            DoShoot();
+            DoShoot(ball);
     }
 
-    private void DoShoot()
+    private void DoShoot(GameObject ball)
     {
+        isShooting = true;
         isHittable = false;
         canMove = false;
         viewfinder.SetActive(true);
 
-        if (ballDetector.ball != null)
-            ballDetector.ball.GetComponent<BouncingBallScript>().Grab.Invoke();
+        if (ball != null)
+            ball.GetComponent<BouncingBallScript>().Grab.Invoke();
 
         StartCoroutine(ShootCoroutine());
     }
@@ -135,7 +144,7 @@ public class PlayerController : MonoBehaviour
     {
         if (isHittable)
         {
-            StartCoroutine(InvicibilityCoroutine());
+            StartCoroutine(booleanCoroutine(isHittable, hittableReloadTime));
             health--;
 
             if (health <= 0)
@@ -145,10 +154,11 @@ public class PlayerController : MonoBehaviour
 
     private void Revive()
     {
-        StartCoroutine(InvicibilityCoroutine());
-
+        StartCoroutine(booleanCoroutine(isHittable, hittableReloadTime));
         isAlive = true;
         health = GameManager.Instance.maxHealth;
+        canDoAction = true;
+        isShooting = false;
     }
 
     private void Die()
@@ -177,30 +187,28 @@ public class PlayerController : MonoBehaviour
 
     public void Pass(InputAction.CallbackContext context)
     {
-        if (context.performed)
+        if (isAlive && canDoAction && context.performed)
         {
-            if (isAlive && ballDetector.ball)
-            {
-                DoPass();
-            }
-            else
-                Debug.Log("Pass: Ball is missing");
+            StartCoroutine(booleanCoroutine(canDoAction, doActionReloadTime));
+            
+            if (ballDetector.ball)
+                DoPass(ballDetector.ball);
         }
+        
     }
 
     public void Shoot(InputAction.CallbackContext context)
     {
-        if (context.performed)
+        if (isAlive && canDoAction && context.performed && canMove)
         {
-            if (isAlive && ballDetector.ball)
-            {
-                DoShoot();
-            }
-            else
-                Debug.Log("Shoot: Ball is missing");
+            StartCoroutine(booleanCoroutine(canDoAction, doActionReloadTime));
+            
+            if (ballDetector.ball)
+                DoShoot(ballDetector.ball);
         }
 
-        if (context.canceled && !canMove)
+        //TODO: tu peux canMove = true en spammant le bouton
+        if (context.canceled && !isShooting)
             canMove = true;
     }
     #endregion;
@@ -224,7 +232,9 @@ public class PlayerController : MonoBehaviour
         yield return new WaitForSeconds(timeToShoot);
         //After we have waited 5 seconds print the time again.
         Debug.Log("Finished Coroutine at timestamp : " + Time.time);
-        
+        if (!canMove && isShooting)
+            canMove = true;
+
         if (ballDetector.ball != null)
         {
             Vector3 direction;
@@ -238,13 +248,17 @@ public class PlayerController : MonoBehaviour
 
         viewfinder.SetActive(false);
         isHittable = true;
+        isShooting = false;
+        
     }
 
-    IEnumerator InvicibilityCoroutine()
+
+    IEnumerator booleanCoroutine(bool boolean, float timeToWait)
     {
-        isHittable = false;
-        yield return new WaitForSeconds(invincibilityTime);
-        isHittable = true;
+        boolean = false;
+        yield return new WaitForSeconds(timeToWait);
+        boolean = true;
     }
+
     #endregion
 }

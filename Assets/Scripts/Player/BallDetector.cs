@@ -16,13 +16,7 @@ public class BallDetector : MonoBehaviour
     private void OnTriggerEnter(Collider other)
     {
         if (other.tag == "Ball")
-        {
             ball = other.gameObject;
-        }
-        else
-        {
-            Debug.Log(other.name + " doesn't have a tag 'Ball'");
-        }
     }
 
     private void OnTriggerExit(Collider other)
