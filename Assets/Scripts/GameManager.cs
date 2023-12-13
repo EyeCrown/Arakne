@@ -4,6 +4,7 @@ using UnityEngine;
 using UnityEngine.SceneManagement;
 using UnityEngine.InputSystem;
 using UnityEngine.Events;
+using TMPro;
 
 
 public class GameManager : MonoBehaviour
@@ -11,6 +12,8 @@ public class GameManager : MonoBehaviour
     public int score { get; private set; }
     public int maxHealth = 3;
     public int multiplier = 1;
+
+    private TextMeshProUGUI scoreText;
 
     [SerializeField] private List<Transform> spawnPositions;
 
@@ -35,11 +38,16 @@ public class GameManager : MonoBehaviour
             Instance = this;
         }
 
+        ScoreChange.AddListener(ScoreChangeHandler);
+        PlayerDie.AddListener(PlayerDieHandler);
         players = new GameObject[2];
     }
 
     void Start()
     {
+        scoreText = GameObject.Find("UI_ScoreText").GetComponent<TextMeshProUGUI>();
+        StartGame();
+
         playerInputManager = GetComponent<PlayerInputManager>();
         playerInputManager.onPlayerJoined += OnPlayerJoined;
         playerInputManager.EnableJoining();
@@ -85,6 +93,7 @@ public class GameManager : MonoBehaviour
     {
         Debug.Log("___GAME START___");
         score = 0;
+        scoreText.text = score.ToString();
     }
 
     private void GameOver()
@@ -99,7 +108,9 @@ public class GameManager : MonoBehaviour
     #region EVENT HANDLERS
     private void ScoreChangeHandler(int points)
     {
+        Debug.Log("GameManager: Score += " + points);
         score += points;
+        scoreText.text = score.ToString();
     }
 
     private void PlayerDieHandler(int idPlayer)

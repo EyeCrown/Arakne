@@ -40,6 +40,9 @@ public class PlayerController : MonoBehaviour
     private GameObject viewfinder;
     private BallDetector ballDetector;
 
+    private Transform bottomLeftBorder;
+    private Transform topRightBorder;
+
     public int ID { get; private set; }
     #endregion
 
@@ -60,6 +63,9 @@ public class PlayerController : MonoBehaviour
         viewfinder = transform.Find("Pivot").gameObject;
         viewfinder.SetActive(false);
         ballDetector = GetComponentInChildren<BallDetector>();
+
+        bottomLeftBorder = GameObject.Find("BottomLeftBorder").transform;
+        topRightBorder = GameObject.Find("TopRightBorder").transform;
     }
 
     void Update()
@@ -68,6 +74,12 @@ public class PlayerController : MonoBehaviour
             DoMovements();
 
         viewfinder.transform.up = movements.normalized;
+    }
+
+
+    private void OnCollisionEnter(Collision collision)
+    {
+        movements = Vector3.zero;
     }
 
     #endregion
@@ -82,6 +94,19 @@ public class PlayerController : MonoBehaviour
     private void DoMovements()
     {
         Vector3 nextPosition = transform.position + movements * inertia;
+
+        if (nextPosition.x < bottomLeftBorder.position.x)
+            nextPosition.x = bottomLeftBorder.position.x;
+
+        if (nextPosition.x > topRightBorder.position.x)
+            nextPosition.x = topRightBorder.position.x;
+
+        if (nextPosition.y < bottomLeftBorder.position.y)
+            nextPosition.y = bottomLeftBorder.position.y;
+
+        if (nextPosition.y > topRightBorder.position.y)
+            nextPosition.y = topRightBorder.position.y;
+
         transform.position = Vector3.SmoothDamp(transform.position, nextPosition, ref velocity, speed * Time.deltaTime);
     }
 
@@ -96,16 +121,14 @@ public class PlayerController : MonoBehaviour
 
     private void DoShoot()
     {
+        isHittable = false;
+        canMove = false;
+        viewfinder.SetActive(true);
+
+        if (ballDetector.ball != null)
+            ballDetector.ball.GetComponent<BouncingBallScript>().Grab.Invoke();
+
         StartCoroutine(ShootCoroutine());
-    }
-
-
-    public void HitHandler()
-    {
-        if (isAlive)
-            TakeDamage();
-        else
-            Revive();
     }
 
     private void TakeDamage()
@@ -182,21 +205,36 @@ public class PlayerController : MonoBehaviour
     }
     #endregion;
 
+    #region EVENT HANDLERS
+    public void HitHandler()
+    {
+        if (isAlive)
+            TakeDamage();
+        else
+            Revive();
+    }
+    #endregion
+
     #region COROUTINES
     IEnumerator ShootCoroutine()
     {
-        
-        isHittable = false;
-        canMove = false;
-        viewfinder.SetActive(true);
-
-        if (ballDetector.ball != null) 
-            ballDetector.ball.GetComponent<BouncingBallScript>().Grab.Invoke();
+        //Print the time of when the function is first called.
+        Debug.Log("Started Coroutine at timestamp : " + Time.time);
 
         yield return new WaitForSeconds(timeToShoot);
-
+        //After we have waited 5 seconds print the time again.
+        Debug.Log("Finished Coroutine at timestamp : " + Time.time);
+        
         if (ballDetector.ball != null)
-            ballDetector.ball.GetComponent<BouncingBallScript>().Throw.Invoke(movements);
+        {
+            Vector3 direction;
+            if (movements != Vector3.zero)
+                direction = movements;
+            else
+                direction = Vector3.up;
+            ballDetector.ball.GetComponent<BouncingBallScript>().Throw.Invoke(direction);
+
+        }
 
         viewfinder.SetActive(false);
         isHittable = true;

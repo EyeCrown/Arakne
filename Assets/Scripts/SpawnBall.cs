@@ -21,7 +21,7 @@ public class SpawnBall : MonoBehaviour
         Instantiate(ball, position, transform.rotation);
         Vector3 enemyPos = new Vector3(Random.Range(transform.position.x, limit.position.x), transform.position.y, 0f);
         Instantiate(enemy, enemyPos, transform.rotation);
-        yield return new WaitForSeconds(3f);
+        yield return new WaitForSeconds(8f);
 
         StartCoroutine(spawn());
     }
