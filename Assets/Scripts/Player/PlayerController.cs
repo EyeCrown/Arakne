@@ -27,14 +27,13 @@ public class PlayerController : MonoBehaviour
     private float timeToShoot;
     [SerializeField]
     [Tooltip("Invulnerabiltiy time after taking damage")]
-    private float hittableReloadTime;
-    [SerializeField]
-    [Tooltip("Time before player can perform action (Shoot/Pass)")]
-    private float doActionReloadTime;
+    private float invincibilityTime;
 
-
-
+    [Header("Animation and FX")]
     [SerializeField] private Animator animator;
+    [SerializeField] private ParticleSystem particle;
+    [SerializeField] private Color throwColor;
+    [SerializeField] private Color passColor;
 
     // Hidden values
     private Vector3 movements;
@@ -42,17 +41,14 @@ public class PlayerController : MonoBehaviour
 
     public bool isAlive { get; private set; }
     public bool isHittable { get; private set; }
-
     private bool canMove;
-    private bool canDoAction;
-
-    private bool isShooting;
 
     private GameObject viewfinder;
     private BallDetector ballDetector;
 
     private Transform bottomLeftBorder;
     private Transform topRightBorder;
+
 
     public int ID { get; private set; }
     #endregion
@@ -121,55 +117,36 @@ public class PlayerController : MonoBehaviour
         transform.position = Vector3.SmoothDamp(transform.position, nextPosition, ref velocity, speed * Time.deltaTime);
     }
 
-    private void DoPass(GameObject ball)
+    private void DoPass()
     {
-        Debug.Log("Enter pass " + ball.GetComponent<BouncingBallScript>().mode);
-        if (ball.GetComponent<BouncingBallScript>().mode == BouncingBallScript.BallMode.bouncing &&
-            ball.GetComponent<BouncingBallScript>().mode == BouncingBallScript.BallMode.grabbed)
-        {
-            Debug.Log("Alors dégage !!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!");
-            return;
-        }
-        Debug.Log("Do pass");
         GameObject otherPlayer = GameManager.Instance.GetOtherPlayer(ID);
-        Debug.Log(otherPlayer.name);
         if (otherPlayer != null)
         {
-            ball.GetComponent<BouncingBallScript>().Pass.Invoke(otherPlayer);
-            Debug.Log("Do pass vrai");
+            ballDetector.ball.GetComponent<BouncingBallScript>().Pass.Invoke(otherPlayer);
+            particle.startColor = passColor;
+            particle.Play();
         }
         else
-        {
-            DoShoot(ball);
-            Debug.Log("Shoot du coup");
-        }
+            DoShoot();
     }
 
-    private void DoShoot(GameObject ball)
+    private void DoShoot()
     {
-        if ((int)ball.GetComponent<BouncingBallScript>().mode == (int)BouncingBallScript.BallMode.homing
-            || (int)ball.GetComponent<BouncingBallScript>().mode == (int)BouncingBallScript.BallMode.fall)
-        {
-            Debug.Log("Shoot");
-            isShooting = true;
-            isHittable = false;
-            canMove = false;
-            viewfinder.SetActive(true);
+        isHittable = false;
+        canMove = false;
+        viewfinder.SetActive(true);
 
-            if (ball != null)
-                ball.GetComponent<BouncingBallScript>().Grab.Invoke();
+        if (ballDetector.ball != null)
+            ballDetector.ball.GetComponent<BouncingBallScript>().Grab.Invoke();
 
-            StartCoroutine(ShootCoroutine());
-        }
-
-        
+        StartCoroutine(ShootCoroutine());
     }
 
     private void TakeDamage()
     {
         if (isHittable)
         {
-            StartCoroutine(HittableCoroutine());
+            StartCoroutine(InvicibilityCoroutine());
             health--;
 
             if (health <= 0)
@@ -179,11 +156,10 @@ public class PlayerController : MonoBehaviour
 
     private void Revive()
     {
-        StartCoroutine(HittableCoroutine());
+        StartCoroutine(InvicibilityCoroutine());
+
         isAlive = true;
         health = GameManager.Instance.maxHealth;
-        canDoAction = true;
-        isShooting = false;
     }
 
     private void Die()
@@ -212,34 +188,30 @@ public class PlayerController : MonoBehaviour
 
     public void Pass(InputAction.CallbackContext context)
     {
-        if (isAlive && canDoAction && context.performed)
+        if (context.performed)
         {
-            Debug.Log("try pass");
-
-            StartCoroutine(DoActionCoroutine());
-            
-            if (ballDetector.ball)
+            if (isAlive && ballDetector.ball)
             {
-                Debug.Log("CONNARD");
-                DoPass(ballDetector.ball);
-
-
+                DoPass();
             }
+            else
+                Debug.Log("Pass: Ball is missing");
         }
     }
 
     public void Shoot(InputAction.CallbackContext context)
     {
-        if (isAlive && canDoAction && context.performed && canMove)
+        if (context.performed)
         {
-            StartCoroutine(DoActionCoroutine());
-            Debug.Log("try shoot");
-            if (ballDetector.ball)
-                DoShoot(ballDetector.ball);
+            if (isAlive && ballDetector.ball)
+            {
+                DoShoot();
+            }
+            else
+                Debug.Log("Shoot: Ball is missing");
         }
 
-        //TODO: tu peux canMove = true en spammant le bouton
-        if (context.canceled && !isShooting)
+        if (context.canceled && !canMove)
             canMove = true;
     }
     #endregion;
@@ -264,9 +236,7 @@ public class PlayerController : MonoBehaviour
         yield return new WaitForSeconds(timeToShoot);
         //After we have waited 5 seconds print the time again.
         Debug.Log("Finished Coroutine at timestamp : " + Time.time);
-        if (!canMove && isShooting)
-            canMove = true;
-
+        
         if (ballDetector.ball != null)
         {
             Vector3 direction;
@@ -275,28 +245,20 @@ public class PlayerController : MonoBehaviour
             else
                 direction = Vector3.up;
             ballDetector.ball.GetComponent<BouncingBallScript>().Throw.Invoke(direction);
+            particle.startColor = throwColor;
+            particle.Play();
 
         }
 
         viewfinder.SetActive(false);
         isHittable = true;
-        isShooting = false;
-        
     }
 
-    IEnumerator HittableCoroutine()
+    IEnumerator InvicibilityCoroutine()
     {
         isHittable = false;
-        yield return new WaitForSeconds(hittableReloadTime);
+        yield return new WaitForSeconds(invincibilityTime);
         isHittable = true;
     }
-
-    IEnumerator DoActionCoroutine()
-    {
-        canDoAction = false;
-        yield return new WaitForSeconds(doActionReloadTime);
-        canDoAction = true;
-    }
-
     #endregion
 }

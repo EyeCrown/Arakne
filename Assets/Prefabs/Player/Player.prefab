@@ -38,6 +38,7 @@ Transform:
   - {fileID: 4417201914804669088}
   - {fileID: 8800158818890118992}
   - {fileID: 126120897887039561}
+  - {fileID: 3729893037404522127}
   m_Father: {fileID: 0}
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
 --- !u!33 &467280186146514107
@@ -219,6 +220,9 @@ MonoBehaviour:
   timeToShoot: 5
   invincibilityTime: 1
   animator: {fileID: 8642660935710507774}
+  particle: {fileID: 576464719347597883}
+  throwColor: {r: 0, g: 0.8502755, b: 1, a: 1}
+  passColor: {r: 0.8930817, g: 0, b: 0, a: 1}
   Hit:
     m_PersistentCalls:
       m_Calls: []
@@ -536,3 +540,70 @@ Transform:
   - {fileID: 5690033159466497125}
   m_Father: {fileID: 8175719144490016002}
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
+--- !u!1001 &4412392307691698954
+PrefabInstance:
+  m_ObjectHideFlags: 0
+  serializedVersion: 2
+  m_Modification:
+    serializedVersion: 3
+    m_TransformParent: {fileID: 8175719144490016002}
+    m_Modifications:
+    - target: {fileID: 1078834872003476869, guid: 98f8d7b3353fa0e409cdd0660a84a5cd, type: 3}
+      propertyPath: m_LocalPosition.x
+      value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 1078834872003476869, guid: 98f8d7b3353fa0e409cdd0660a84a5cd, type: 3}
+      propertyPath: m_LocalPosition.y
+      value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 1078834872003476869, guid: 98f8d7b3353fa0e409cdd0660a84a5cd, type: 3}
+      propertyPath: m_LocalPosition.z
+      value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 1078834872003476869, guid: 98f8d7b3353fa0e409cdd0660a84a5cd, type: 3}
+      propertyPath: m_LocalRotation.w
+      value: 0.7071068
+      objectReference: {fileID: 0}
+    - target: {fileID: 1078834872003476869, guid: 98f8d7b3353fa0e409cdd0660a84a5cd, type: 3}
+      propertyPath: m_LocalRotation.x
+      value: -0.7071068
+      objectReference: {fileID: 0}
+    - target: {fileID: 1078834872003476869, guid: 98f8d7b3353fa0e409cdd0660a84a5cd, type: 3}
+      propertyPath: m_LocalRotation.y
+      value: -0
+      objectReference: {fileID: 0}
+    - target: {fileID: 1078834872003476869, guid: 98f8d7b3353fa0e409cdd0660a84a5cd, type: 3}
+      propertyPath: m_LocalRotation.z
+      value: -0
+      objectReference: {fileID: 0}
+    - target: {fileID: 1078834872003476869, guid: 98f8d7b3353fa0e409cdd0660a84a5cd, type: 3}
+      propertyPath: m_LocalEulerAnglesHint.x
+      value: -90
+      objectReference: {fileID: 0}
+    - target: {fileID: 1078834872003476869, guid: 98f8d7b3353fa0e409cdd0660a84a5cd, type: 3}
+      propertyPath: m_LocalEulerAnglesHint.y
+      value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 1078834872003476869, guid: 98f8d7b3353fa0e409cdd0660a84a5cd, type: 3}
+      propertyPath: m_LocalEulerAnglesHint.z
+      value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 8564945672391599533, guid: 98f8d7b3353fa0e409cdd0660a84a5cd, type: 3}
+      propertyPath: m_Name
+      value: Luciole_passThrow
+      objectReference: {fileID: 0}
+    m_RemovedComponents: []
+    m_RemovedGameObjects: []
+    m_AddedGameObjects: []
+    m_AddedComponents: []
+  m_SourcePrefab: {fileID: 100100000, guid: 98f8d7b3353fa0e409cdd0660a84a5cd, type: 3}
+--- !u!198 &576464719347597883 stripped
+ParticleSystem:
+  m_CorrespondingSourceObject: {fileID: 3835928847919053105, guid: 98f8d7b3353fa0e409cdd0660a84a5cd, type: 3}
+  m_PrefabInstance: {fileID: 4412392307691698954}
+  m_PrefabAsset: {fileID: 0}
+--- !u!4 &3729893037404522127 stripped
+Transform:
+  m_CorrespondingSourceObject: {fileID: 1078834872003476869, guid: 98f8d7b3353fa0e409cdd0660a84a5cd, type: 3}
+  m_PrefabInstance: {fileID: 4412392307691698954}
+  m_PrefabAsset: {fileID: 0}
