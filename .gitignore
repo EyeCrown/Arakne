@@ -72,3 +72,4 @@ crashlytics-build.properties
 /[Aa]ssets/[Ss]treamingAssets/aa/*
 
 Wwise Project/2023.12.08_Nano_SHMUP/Originals/SFX
+Assets/Wwise/Editor/ProjectData/AkWwiseProjectData.asset

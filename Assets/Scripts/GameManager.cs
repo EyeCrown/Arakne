@@ -14,9 +14,12 @@ public class GameManager : MonoBehaviour
     public int multiplier = 1;
     public int ballCount = 0;
 
-    private TextMeshProUGUI scoreText;
 
     [SerializeField] private List<Transform> spawnPositions;
+
+    [SerializeField] private GameObject winScreen;
+    [SerializeField] private GameObject looseScreen;
+    [SerializeField] private TextMeshProUGUI scoreText;
 
     #region EVENTS
     public UnityEvent<int> ScoreChange;
@@ -46,20 +49,15 @@ public class GameManager : MonoBehaviour
 
     void Start()
     {
-        scoreText = GameObject.Find("UI_ScoreText")?.GetComponent<TextMeshProUGUI>();
-        //StartGame();
+
     }
 
     public void ChangeScene()
     {
-        
         Debug.Log("Change scene");
 
         SceneManager.LoadScene(gameScene);
-
-
     }
-
 
     public GameObject GetOtherPlayer(int playerId)
     {
@@ -74,28 +72,44 @@ public class GameManager : MonoBehaviour
         return myId == 0 ? 1 : 0;
     }
 
-    
     public void StartGame()
     {
         SceneManager.LoadScene(gameScene);
 
+        winScreen = GameObject.Find("/Canvas/WinScreenEndGame");
+        winScreen.SetActive(false);
+        looseScreen = GameObject.Find("/Canvas/LooseScreenEndGame");
+        looseScreen.SetActive(false);
+
+        scoreText = GameObject.Find("/Canvas/UI_ScoreText").GetComponent<TextMeshProUGUI>();
+        Debug.Log(scoreText.text);
+
+        spawnPositions[0] = GameObject.Find("SpawnPosJ1").transform;
         players[0].transform.position = spawnPositions[0].position;
+
+        spawnPositions[1] = GameObject.Find("SpawnPosJ2").transform;
         players[1].transform.position = spawnPositions[1].position;
 
-        players[0].GetComponent<PlayerController>().Initialize(0);
-        players[1].GetComponent<PlayerController>().Initialize(1);
 
         Debug.Log("___GAME START___");
 
         score = 0;
-       // scoreText.text = score.ToString();
+        scoreText.text = score.ToString();
     }
 
-    private void GameOver()
+    public void GameOver()
     {
         Debug.Log("___GAME OVER___");
         Debug.Log("Score: " + score);
+        looseScreen.SetActive(true);
         //TODO: Make game over
+    }
+
+    public void GameWin()
+    {
+        Debug.Log("___GAME WIN___");
+        Debug.Log("Score: " + score);
+        winScreen.SetActive(true);
     }
 
     #region EVENT HANDLERS
@@ -103,7 +117,7 @@ public class GameManager : MonoBehaviour
     {
         Debug.Log("GameManager: Score += " + points);
         score += points;
-        //scoreText.text = score.ToString();
+        scoreText.text = score.ToString();
     }
 
     private void PlayerDieHandler(int idPlayer)

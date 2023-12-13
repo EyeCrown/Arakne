@@ -24,12 +24,21 @@ public class Boss : Enemy
         
     }
 
+    private void Die()
+    {
+        GameManager.Instance.GameWin();
+    }
+
     #region EVENT HANDLER
     protected override void HitHandler(int damage)
     {
         Debug.Log("Boss got hit");
         animator.SetInteger("Progress", animator.GetInteger("Progress")+1);
 
+        if (health > 0)
+        {
+            Die();
+        }
     }
     #endregion
 
@@ -52,6 +61,4 @@ public class Boss : Enemy
 
         StartCoroutine(BallSpawnCoroutine());
     }
-
-
 }
