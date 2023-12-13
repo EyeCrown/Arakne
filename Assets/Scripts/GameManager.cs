@@ -39,7 +39,7 @@ public class GameManager : MonoBehaviour
         }
 
         ScoreChange.AddListener(ScoreChangeHandler);
-        PlayerDie.AddListener(ScoreChangeHandler);
+        PlayerDie.AddListener(PlayerDieHandler);
         players = new GameObject[2];
     }
 
