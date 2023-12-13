@@ -12,6 +12,7 @@ public class GameManager : MonoBehaviour
     public int score { get; private set; }
     public int maxHealth = 3;
     public int multiplier = 1;
+    public int ballCount = 0;
 
     private TextMeshProUGUI scoreText;
 
@@ -45,7 +46,7 @@ public class GameManager : MonoBehaviour
 
     void Start()
     {
-        scoreText = GameObject.Find("UI_ScoreText").GetComponent<TextMeshProUGUI>();
+        scoreText = GameObject.Find("UI_ScoreText")?.GetComponent<TextMeshProUGUI>();
         StartGame();
 
         playerInputManager = GetComponent<PlayerInputManager>();
