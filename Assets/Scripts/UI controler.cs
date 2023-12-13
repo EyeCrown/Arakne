@@ -8,7 +8,7 @@ using UnityEngine.EventSystems;
 
 public class UIcontroler : MonoBehaviour
 {
-
+    
     [SerializeField] GameObject controlsPanel;
     [SerializeField] GameObject creditsPanel;
     [SerializeField] GameObject playPanel;
@@ -18,21 +18,24 @@ public class UIcontroler : MonoBehaviour
     [SerializeField] GameObject backButton;
     [SerializeField] GameObject playButton;
 
-    [SerializeField] GameObject GameManager;
+    //[SerializeField] GameObject GameManager;
 
     //[SerializeField] AudioSource audioSource;
-    
+
+    private PlayerInputManager playerInputManager;
 
     private void Start()
     {
         //controls = GetComponent<GameObject>();
         controlsPanel.SetActive(false);  
         creditsPanel.SetActive(false);
-        GameManager.SetActive(false);
+        //GameManager.SetActive(false);
         playPanel.SetActive(false);
 
         //audioSource.Play();
-
+        playerInputManager = GetComponent<PlayerInputManager>();
+        playerInputManager.onPlayerJoined += OnPlayerJoined;
+        
     }
 
 
@@ -51,25 +54,26 @@ public class UIcontroler : MonoBehaviour
 
     public void ClosePanel()
     {
-        controlsPanel.SetActive(false );
+        controlsPanel.SetActive(false);
         creditsPanel.SetActive(false);
         playPanel.SetActive(false);
         eventsystem.SetSelectedGameObject(playButton);
-       
+
+        playerInputManager.DisableJoining();
     }
 
 
     public void OpenPlayPanel()
     {
         playPanel.SetActive(true);
-        GameManager.SetActive(true);
+        playerInputManager.EnableJoining();
 
-        if (GameManager == true)
+        if (true)
         {
-            Debug.Log("Game Manager is activated");
+            Debug.Log("Players can join");
         }
         //SceneManager.LoadSceneAsync(2);
-        //eventsystem.SetSelectedGameObject(backButton);
+        eventsystem.SetSelectedGameObject(backButton);
 
     }
 
@@ -78,4 +82,18 @@ public class UIcontroler : MonoBehaviour
       Application.Quit();
       UnityEditor.EditorApplication.isPlaying = false;
    }
+
+    public void OnPlayerJoined(PlayerInput playerInput)
+    {
+        if (Globals.gameState != Globals.GameState.OnMenu) return; // Re-activated player on respawn triggers OnPlayerJoined
+        
+        Debug.Log("Player " + playerInput.playerIndex + " joined");
+
+        if (playerInputManager.playerCount == playerInputManager.maxPlayerCount)
+        {
+            playerInputManager.DisableJoining();
+            GameManager.Instance.StartGame();
+        }
+            
+    }
 }

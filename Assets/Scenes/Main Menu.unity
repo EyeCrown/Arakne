@@ -213,6 +213,7 @@ GameObject:
   - component: {fileID: 24138275}
   - component: {fileID: 24138276}
   - component: {fileID: 24138277}
+  - component: {fileID: 24138278}
   m_Layer: 0
   m_Name: Menu controler
   m_TagString: Untagged
@@ -253,7 +254,6 @@ MonoBehaviour:
   eventsystem: {fileID: 112105389}
   backButton: {fileID: 454469382}
   playButton: {fileID: 993554521}
-  GameManager: {fileID: 241189144}
 --- !u!82 &24138277
 AudioSource:
   m_ObjectHideFlags: 0
@@ -350,6 +350,66 @@ AudioSource:
     m_PreInfinity: 2
     m_PostInfinity: 2
     m_RotationOrder: 4
+--- !u!114 &24138278
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 24138274}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 621567455fd1c4ceb811cc8a00b6a1a5, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  m_NotificationBehavior: 0
+  m_MaxPlayerCount: 2
+  m_AllowJoining: 0
+  m_JoinBehavior: 1
+  m_PlayerJoinedEvent:
+    m_PersistentCalls:
+      m_Calls: []
+  m_PlayerLeftEvent:
+    m_PersistentCalls:
+      m_Calls: []
+  m_JoinAction:
+    m_UseReference: 0
+    m_Action:
+      m_Name: Join
+      m_Type: 0
+      m_ExpectedControlType: 
+      m_Id: 8fa33fa4-4063-42f5-9d89-c35e9ea1f254
+      m_Processors: 
+      m_Interactions: 
+      m_SingletonActionBindings:
+      - m_Name: 
+        m_Id: 8015eb92-8182-4581-b29a-0d24d4c79ecb
+        m_Path: <Gamepad>/buttonSouth
+        m_Interactions: 
+        m_Processors: 
+        m_Groups: 
+        m_Action: Join
+        m_Flags: 0
+      - m_Name: 
+        m_Id: 54c16b27-4cc9-4283-b7fc-252d25d26f25
+        m_Path: <Keyboard>/space
+        m_Interactions: 
+        m_Processors: 
+        m_Groups: 
+        m_Action: Join
+        m_Flags: 0
+      m_Flags: 0
+    m_Reference: {fileID: 0}
+  m_PlayerPrefab: {fileID: 28994589155886330, guid: 30305a7c3944b6048ad9f7477e59079b, type: 3}
+  m_SplitScreen: 0
+  m_MaintainAspectRatioInSplitScreen: 0
+  m_FixedNumberOfSplitScreens: -1
+  m_SplitScreenRect:
+    serializedVersion: 2
+    x: 0
+    y: 0
+    width: 1
+    height: 1
 --- !u!1 &24308286
 GameObject:
   m_ObjectHideFlags: 0
@@ -962,11 +1022,6 @@ CanvasRenderer:
   m_PrefabAsset: {fileID: 0}
   m_GameObject: {fileID: 210403665}
   m_CullTransparentMesh: 1
---- !u!1 &241189144 stripped
-GameObject:
-  m_CorrespondingSourceObject: {fileID: 7327827026982310977, guid: 5b8d0edda89d4ec47bae717e5956dc73, type: 3}
-  m_PrefabInstance: {fileID: 1270756699}
-  m_PrefabAsset: {fileID: 0}
 --- !u!1 &250236786
 GameObject:
   m_ObjectHideFlags: 0
@@ -3138,7 +3193,8 @@ PrefabInstance:
       propertyPath: m_IsActive
       value: 1
       objectReference: {fileID: 0}
-    m_RemovedComponents: []
+    m_RemovedComponents:
+    - {fileID: 9072720798339753462, guid: 5b8d0edda89d4ec47bae717e5956dc73, type: 3}
     m_RemovedGameObjects: []
     m_AddedGameObjects: []
     m_AddedComponents: []

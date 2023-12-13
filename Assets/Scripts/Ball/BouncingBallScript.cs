@@ -4,9 +4,6 @@ using UnityEditor.UIElements;
 using UnityEngine;
 using UnityEngine.Events;
 
-
-
-
 public class BouncingBallScript : MonoBehaviour
 {
     #region ATTRIBUTES
