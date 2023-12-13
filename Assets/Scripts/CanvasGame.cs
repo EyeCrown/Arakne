@@ -1,18 +1,41 @@
 using System.Collections;
 using System.Collections.Generic;
+using TMPro;
 using UnityEngine;
 
 public class CanvasGame : MonoBehaviour
 {
-    // Start is called before the first frame update
-    void Start()
+    [SerializeField] private GameObject winScreen;
+    [SerializeField] private GameObject looseScreen;
+    [SerializeField] private TextMeshProUGUI scoreText;
+
+    private void Start()
     {
-        
+        Debug.Log("Canvas start");
+        GameManager.Instance.canvas = this;
+        UpdateScore(GameManager.Instance.score);
+        winScreen.SetActive(false);
+        looseScreen.SetActive(false);
+        scoreText.text = "0";
     }
 
-    // Update is called once per frame
-    void Update()
+    public void UpdateScore(int score)
     {
-        
+        scoreText.text = score.ToString();
     }
+
+    public void DisplayWinScreen()
+    {
+        winScreen.SetActive(true);
+        winScreen.GetComponent<score_display>().SetScoreToText();
+        scoreText.enabled = false;
+    }
+
+    public void DisplayLooseScreen()
+    {
+        looseScreen.SetActive(true);
+        looseScreen.GetComponent<score_display>().SetScoreToText();
+        scoreText.enabled = false;
+    }
+
 }

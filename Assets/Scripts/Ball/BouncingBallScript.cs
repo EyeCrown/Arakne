@@ -181,7 +181,7 @@ public class BouncingBallScript : MonoBehaviour
         hits = Physics.SphereCastAll(transform.position, transform.localScale.y / 2, transform.up, length, layerMask);
         foreach(RaycastHit hit in hits)
         {
-            Debug.Log("Ball collision");
+            //Debug.Log("Ball collision");
             if (hit.transform.gameObject.CompareTag("Enemy"))
             {
                 CollideEnemy(hit.transform.gameObject);
@@ -248,7 +248,12 @@ public class BouncingBallScript : MonoBehaviour
     {
         if(!canHitPlayer)
         { return; }
-        player.GetComponent<PlayerController>().Hit.Invoke();
+
+        if(mode==BallMode.bouncing)
+            player.GetComponent<PlayerController>().Hit.Invoke(true);
+        else 
+            player.GetComponent<PlayerController>().Hit.Invoke(false);
+
         if (mode == BallMode.homing)
         {
             GameManager.Instance.ballCount--;

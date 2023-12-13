@@ -46,7 +46,7 @@ public class Enemy : MonoBehaviour
     {
         if(collision.gameObject.CompareTag("Player"))
         {
-            collision.gameObject.GetComponent<PlayerController>().Hit.Invoke();
+            collision.gameObject.GetComponent<PlayerController>().Hit.Invoke(false);
         } else if (collision.gameObject.CompareTag("MapEnd"))
         {
             Destroy(gameObject);

@@ -62,7 +62,7 @@ public class PlayerController : MonoBehaviour
     #endregion
 
     #region EVENTS
-    public UnityEvent Hit;
+    public UnityEvent<bool> Hit;
     #endregion
 
     #region UNITY API
@@ -131,7 +131,7 @@ public class PlayerController : MonoBehaviour
         if (ball.GetComponent<BouncingBallScript>().mode == BouncingBallScript.BallMode.bouncing &&
             ball.GetComponent<BouncingBallScript>().mode == BouncingBallScript.BallMode.grabbed)
         {
-            Debug.Log("Alors d�gage !!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!");
+            //Debug.Log("Alors d�gage !!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!");
             return;
         }
         Debug.Log("Do pass");
@@ -176,14 +176,14 @@ public class PlayerController : MonoBehaviour
         {
             StartCoroutine(HittableCoroutine());
             health--;
-
-            if (health <= 0)
-                Die();
         }
+        if (health <= 0)
+            Die();
     }
 
     private void Revive()
     {
+        //Debug.Log("Player revive");
         StartCoroutine(HittableCoroutine());
         isAlive = true;
         health = GameManager.Instance.maxHealth;
@@ -250,12 +250,14 @@ public class PlayerController : MonoBehaviour
     #endregion;
 
     #region EVENT HANDLERS
-    public void HitHandler()
+    public void HitHandler(bool fromBouncingBall)
     {
+        Debug.Log("Player take damage");
         if (isAlive)
             TakeDamage();
-        else
+        else if (fromBouncingBall)
             Revive();
+        
         animator.SetInteger("HealthPoint", health);
     }
     #endregion

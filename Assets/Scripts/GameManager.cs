@@ -14,12 +14,7 @@ public class GameManager : MonoBehaviour
     public int multiplier = 1;
     public int ballCount = 0;
 
-
-    [SerializeField] private List<Transform> spawnPositions;
-
-    [SerializeField] private GameObject winScreen;
-    [SerializeField] private GameObject looseScreen;
-    [SerializeField] private TextMeshProUGUI scoreText;
+    public CanvasGame canvas;
 
     #region EVENTS
     public UnityEvent<int> ScoreChange;
@@ -76,32 +71,22 @@ public class GameManager : MonoBehaviour
     {
         SceneManager.LoadScene(gameScene);
 
-        winScreen = GameObject.Find("/Canvas/WinScreenEndGame");
-        winScreen.SetActive(false);
-        looseScreen = GameObject.Find("/Canvas/LooseScreenEndGame");
-        looseScreen.SetActive(false);
+        Vector3 spawnPosJ0 = new Vector3(-5, -10, 0);
+        players[0].transform.position = spawnPosJ0;
 
-        scoreText = GameObject.Find("/Canvas/UI_ScoreText").GetComponent<TextMeshProUGUI>();
-        Debug.Log(scoreText.text);
-
-        spawnPositions[0] = GameObject.Find("SpawnPosJ1").transform;
-        players[0].transform.position = spawnPositions[0].position;
-
-        spawnPositions[1] = GameObject.Find("SpawnPosJ2").transform;
-        players[1].transform.position = spawnPositions[1].position;
+        Vector3 spawnPosJ1 = new Vector3(5, -10, 0);
+        players[1].transform.position = spawnPosJ1;
 
 
         Debug.Log("___GAME START___");
-
         score = 0;
-        scoreText.text = score.ToString();
     }
 
     public void GameOver()
     {
         Debug.Log("___GAME OVER___");
         Debug.Log("Score: " + score);
-        looseScreen.SetActive(true);
+        canvas.DisplayLooseScreen();
         //TODO: Make game over
     }
 
@@ -109,7 +94,8 @@ public class GameManager : MonoBehaviour
     {
         Debug.Log("___GAME WIN___");
         Debug.Log("Score: " + score);
-        winScreen.SetActive(true);
+        canvas.DisplayWinScreen();
+
     }
 
     #region EVENT HANDLERS
@@ -117,7 +103,7 @@ public class GameManager : MonoBehaviour
     {
         Debug.Log("GameManager: Score += " + points);
         score += points;
-        scoreText.text = score.ToString();
+        canvas.UpdateScore(score);
     }
 
     private void PlayerDieHandler(int idPlayer)

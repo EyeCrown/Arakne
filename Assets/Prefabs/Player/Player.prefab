@@ -215,10 +215,11 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   inertia: 2
-  speed: 10
+  speed: 20
   health: 3
-  timeToShoot: 5
-  invincibilityTime: 1
+  timeToShoot: 1
+  hittableReloadTime: 1
+  doActionReloadTime: 0.2
   animator: {fileID: 8642660935710507774}
   particle: {fileID: 576464719347597883}
   throwColor: {r: 0, g: 0.8502755, b: 1, a: 1}
