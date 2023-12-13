@@ -15,7 +15,8 @@ public class UIcontroler : MonoBehaviour
 
     [SerializeField] EventSystem eventsystem;
     
-    [SerializeField] GameObject backButton;
+    [SerializeField] GameObject backButtonFromCredits;
+    [SerializeField] GameObject backButtonFromControls;
     [SerializeField] GameObject playButton;
 
     //[SerializeField] GameObject GameManager;
@@ -42,17 +43,17 @@ public class UIcontroler : MonoBehaviour
     public void OpenControlsPanel()
     {
         controlsPanel.SetActive(true);
-        eventsystem.SetSelectedGameObject(backButton);
+        eventsystem.SetSelectedGameObject(backButtonFromControls);
     }
 
     public void OpencreditsPanel()
     {
         creditsPanel.SetActive(true);
-        eventsystem.SetSelectedGameObject(backButton);
+        eventsystem.SetSelectedGameObject(backButtonFromCredits);
 
     }
 
-    public void ClosePanel()
+    public void ClosePanelFromCredits()
     {
         controlsPanel.SetActive(false);
         creditsPanel.SetActive(false);
@@ -62,6 +63,15 @@ public class UIcontroler : MonoBehaviour
         playerInputManager.DisableJoining();
     }
 
+    public void ClosePanelFromControls()
+    {
+        controlsPanel.SetActive(false);
+        creditsPanel.SetActive(false);
+        playPanel.SetActive(false);
+        eventsystem.SetSelectedGameObject(playButton);
+
+        playerInputManager.DisableJoining();
+    }
 
     public void OpenPlayPanel()
     {
@@ -73,9 +83,12 @@ public class UIcontroler : MonoBehaviour
             Debug.Log("Players can join");
         }
         //SceneManager.LoadSceneAsync(2);
-        eventsystem.SetSelectedGameObject(backButton);
+        //eventsystem.SetSelectedGameObject(backButton);
 
     }
+
+
+
 
     public void QuitGame()
    {
