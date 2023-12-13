@@ -4,6 +4,7 @@ using UnityEngine;
 using UnityEngine.SceneManagement;
 using UnityEngine.InputSystem;
 using UnityEngine.Events;
+using TMPro;
 
 
 public class GameManager : MonoBehaviour
@@ -11,6 +12,8 @@ public class GameManager : MonoBehaviour
     public int score { get; private set; }
     public int maxHealth = 3;
     public int multiplier = 1;
+
+    private TextMeshPro scoreText;
 
     [SerializeField] private List<Transform> spawnPositions;
 
@@ -40,6 +43,10 @@ public class GameManager : MonoBehaviour
 
     void Start()
     {
+        scoreText = GameObject.Find("UI_Score").GetComponent<TextMeshPro>();
+        score = 0;
+        scoreText.text = score.ToString();
+
         playerInputManager = GetComponent<PlayerInputManager>();
         playerInputManager.onPlayerJoined += OnPlayerJoined;
         playerInputManager.EnableJoining();
@@ -100,6 +107,7 @@ public class GameManager : MonoBehaviour
     private void ScoreChangeHandler(int points)
     {
         score += points;
+        scoreText.text = score.ToString();
     }
 
     private void PlayerDieHandler(int idPlayer)
