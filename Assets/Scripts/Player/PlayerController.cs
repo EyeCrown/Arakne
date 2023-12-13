@@ -222,7 +222,12 @@ public class PlayerController : MonoBehaviour
         yield return new WaitForSeconds(timeToShoot);
 
         if (ballDetector.ball != null)
-            ballDetector.ball.GetComponent<BouncingBallScript>().Throw.Invoke(movements);
+        {
+            if (movements != Vector3.zero)
+                ballDetector.ball.GetComponent<BouncingBallScript>().Throw.Invoke(Vector3.up);
+            else
+                ballDetector.ball.GetComponent<BouncingBallScript>().Throw.Invoke(movements);
+        }
 
         viewfinder.SetActive(false);
         isHittable = true;
