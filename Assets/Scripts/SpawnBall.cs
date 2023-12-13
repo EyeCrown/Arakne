@@ -20,7 +20,7 @@ public class SpawnBall : MonoBehaviour
         Vector3 position = new Vector3(Random.Range(transform.position.x, limit.position.x), transform.position.y, 0f);
         Instantiate(ball, position, transform.rotation);
         Vector3 enemyPos = new Vector3(Random.Range(transform.position.x, limit.position.x), transform.position.y, 0f);
-        Instantiate(enemy, enemyPos, transform.rotation);
+        //Instantiate(enemy, enemyPos, transform.rotation);
         yield return new WaitForSeconds(8f);
 
         StartCoroutine(spawn());
