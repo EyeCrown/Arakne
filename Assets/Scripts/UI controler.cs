@@ -20,6 +20,9 @@ public class UIcontroler : MonoBehaviour
 
     [SerializeField] GameObject GameManager;
 
+    //[SerializeField] AudioSource audioSource;
+    
+
     private void Start()
     {
         //controls = GetComponent<GameObject>();
@@ -28,6 +31,7 @@ public class UIcontroler : MonoBehaviour
         GameManager.SetActive(false);
         playPanel.SetActive(false);
 
+        //audioSource.Play();
 
     }
 
@@ -51,6 +55,7 @@ public class UIcontroler : MonoBehaviour
         creditsPanel.SetActive(false);
         playPanel.SetActive(false);
         eventsystem.SetSelectedGameObject(playButton);
+       
     }
 
 
