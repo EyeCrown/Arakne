@@ -108,7 +108,7 @@ SphereCollider:
   m_ProvidesContacts: 0
   m_Enabled: 1
   serializedVersion: 3
-  m_Radius: 0.5
+  m_Radius: 0.25
   m_Center: {x: 0, y: 0, z: 0}
 --- !u!114 &5588938542510937667
 MonoBehaviour:
@@ -204,9 +204,9 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   inertia: 2
-  speed: 20
+  speed: 10
   health: 3
-  timeToShoot: 1
+  timeToShoot: 5
   invincibilityTime: 1
   Hit:
     m_PersistentCalls:
@@ -290,7 +290,7 @@ SphereCollider:
   m_ProvidesContacts: 0
   m_Enabled: 1
   serializedVersion: 3
-  m_Radius: 1.5
+  m_Radius: 2
   m_Center: {x: 0, y: 0, z: 0}
 --- !u!114 &5616180038454361705
 MonoBehaviour:
