@@ -23,11 +23,11 @@ public class GameManager : MonoBehaviour
     public UnityEvent<int> PlayerDie;
     #endregion
 
-    public GameObject[] players { get; private set; }
+    public GameObject[] players { get; set; }
 
-    private PlayerInputManager playerInputManager;
+    //private PlayerInputManager playerInputManager;
 
-    private string gameScene = "PlayerTestScene";
+    private string gameScene = "GameTestScene";
 
     public static GameManager Instance;
 
@@ -47,32 +47,17 @@ public class GameManager : MonoBehaviour
     void Start()
     {
         scoreText = GameObject.Find("UI_ScoreText")?.GetComponent<TextMeshProUGUI>();
-        StartGame();
-
-        playerInputManager = GetComponent<PlayerInputManager>();
-        playerInputManager.onPlayerJoined += OnPlayerJoined;
-        playerInputManager.EnableJoining();
-    }
-
-    public void OnPlayerJoined(PlayerInput playerInput)
-    {
-        if (Globals.gameState != Globals.GameState.OnMenu) return; // Re-activated player on respawn triggers OnPlayerJoined
-
-        Debug.Log("Player " + playerInput.playerIndex + " joined");
-        players[playerInput.playerIndex] = playerInput.gameObject;
-        players[playerInput.playerIndex].transform.position = spawnPositions[playerInput.playerIndex].position;
-        players[playerInput.playerIndex].GetComponent<PlayerController>().Initialize(playerInput.playerIndex);
-
-        if (playerInputManager.playerCount == playerInputManager.maxPlayerCount)
-            ChangeScene();
+        //StartGame();
     }
 
     public void ChangeScene()
     {
-        playerInputManager.DisableJoining();
+        
         Debug.Log("Change scene");
 
         SceneManager.LoadScene(gameScene);
+
+
     }
 
 
@@ -90,11 +75,20 @@ public class GameManager : MonoBehaviour
     }
 
     
-    private void StartGame()
+    public void StartGame()
     {
+        SceneManager.LoadScene(gameScene);
+
+        players[0].transform.position = spawnPositions[0].position;
+        players[1].transform.position = spawnPositions[1].position;
+
+        players[0].GetComponent<PlayerController>().Initialize(0);
+        players[1].GetComponent<PlayerController>().Initialize(1);
+
         Debug.Log("___GAME START___");
+
         score = 0;
-        scoreText.text = score.ToString();
+       // scoreText.text = score.ToString();
     }
 
     private void GameOver()
@@ -104,14 +98,12 @@ public class GameManager : MonoBehaviour
         //TODO: Make game over
     }
 
-
-
     #region EVENT HANDLERS
     private void ScoreChangeHandler(int points)
     {
         Debug.Log("GameManager: Score += " + points);
         score += points;
-        scoreText.text = score.ToString();
+        //scoreText.text = score.ToString();
     }
 
     private void PlayerDieHandler(int idPlayer)

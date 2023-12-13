@@ -4,9 +4,6 @@ using UnityEditor.UIElements;
 using UnityEngine;
 using UnityEngine.Events;
 
-
-
-
 public class BouncingBallScript : MonoBehaviour
 {
     #region ATTRIBUTES
@@ -15,7 +12,7 @@ public class BouncingBallScript : MonoBehaviour
     [SerializeField] private float speedMultiplier;
     [SerializeField] private float speedLimit;
     private GameObject target;
-    [SerializeField] private BallMode mode = BallMode.bouncing;
+    [SerializeField] public BallMode mode { get; private set;}
 
     [Header("Ball Gameplay")]
     [SerializeField] private int power = 0;
@@ -48,6 +45,8 @@ public class BouncingBallScript : MonoBehaviour
     // Start is called before the first frame update
     void Start()
     {
+        mode = BallMode.fall;
+
         Grab.AddListener(GrabHandler);
         Throw.AddListener(ThrowHandler);
         Pass.AddListener(PassHandler);
