@@ -26,5 +26,4 @@ public class Spider : Enemy
     }
     #endregion
 
-
 }

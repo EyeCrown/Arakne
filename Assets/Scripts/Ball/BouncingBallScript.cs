@@ -51,6 +51,7 @@ public class BouncingBallScript : MonoBehaviour
         Grab.AddListener(GrabHandler);
         Throw.AddListener(ThrowHandler);
         Pass.AddListener(PassHandler);
+        GameManager.Instance.ballCount++;
 
         //mode = BallMode.fall;
         //transform.up = Vector3.down;
@@ -194,6 +195,7 @@ public class BouncingBallScript : MonoBehaviour
             }
             else if (hit.transform.gameObject.CompareTag("MapEnd"))
             {
+                GameManager.Instance.ballCount--;
                 Destroy(gameObject);
             }
         }
@@ -214,6 +216,7 @@ public class BouncingBallScript : MonoBehaviour
         if (health <= 0)
         {
             //TODO death effect
+            GameManager.Instance.ballCount--;
             Destroy(gameObject);
         }
     }
@@ -245,7 +248,13 @@ public class BouncingBallScript : MonoBehaviour
         if(!canHitPlayer)
         { return; }
         player.GetComponent<PlayerController>().Hit.Invoke();
-        Destroy(gameObject);
+        if (mode == BallMode.homing)
+        {
+            GameManager.Instance.ballCount--;
+            Destroy(gameObject);
+            return;
+        }
+        TakeDamage();
     }
 
     private void CollideBoss(GameObject boss)
@@ -253,6 +262,7 @@ public class BouncingBallScript : MonoBehaviour
         if(mode  != BallMode.bouncing)
         {
             boss.GetComponent<Enemy>().Hit.Invoke(power * GameManager.Instance.multiplier);
+            GameManager.Instance.ballCount--;
             Destroy(gameObject);
         }
     }
