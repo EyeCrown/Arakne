@@ -23,7 +23,7 @@ public class GameManager : MonoBehaviour
     public UnityEvent<int> PlayerDie;
     #endregion
 
-    public GameObject[] players { get; private set; }
+    public GameObject[] players { get; set; }
 
     //private PlayerInputManager playerInputManager;
 
@@ -88,7 +88,7 @@ public class GameManager : MonoBehaviour
         Debug.Log("___GAME START___");
 
         score = 0;
-        scoreText.text = score.ToString();
+       // scoreText.text = score.ToString();
     }
 
     private void GameOver()
@@ -103,7 +103,7 @@ public class GameManager : MonoBehaviour
     {
         Debug.Log("GameManager: Score += " + points);
         score += points;
-        scoreText.text = score.ToString();
+        //scoreText.text = score.ToString();
     }
 
     private void PlayerDieHandler(int idPlayer)

@@ -120,31 +120,53 @@ public class PlayerController : MonoBehaviour
 
     private void DoPass(GameObject ball)
     {
+        Debug.Log("Enter pass " + ball.GetComponent<BouncingBallScript>().mode);
+        if (ball.GetComponent<BouncingBallScript>().mode == BouncingBallScript.BallMode.bouncing &&
+            ball.GetComponent<BouncingBallScript>().mode == BouncingBallScript.BallMode.grabbed)
+        {
+            Debug.Log("Alors dégage !!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!");
+            return;
+        }
+        Debug.Log("Do pass");
         GameObject otherPlayer = GameManager.Instance.GetOtherPlayer(ID);
+        Debug.Log(otherPlayer.name);
         if (otherPlayer != null)
+        {
             ball.GetComponent<BouncingBallScript>().Pass.Invoke(otherPlayer);
+            Debug.Log("Do pass vrai");
+        }
         else
+        {
             DoShoot(ball);
+            Debug.Log("Shoot du coup");
+        }
     }
 
     private void DoShoot(GameObject ball)
     {
-        isShooting = true;
-        isHittable = false;
-        canMove = false;
-        viewfinder.SetActive(true);
+        if ((int)ball.GetComponent<BouncingBallScript>().mode == (int)BouncingBallScript.BallMode.homing
+            || (int)ball.GetComponent<BouncingBallScript>().mode == (int)BouncingBallScript.BallMode.fall)
+        {
+            Debug.Log("Shoot");
+            isShooting = true;
+            isHittable = false;
+            canMove = false;
+            viewfinder.SetActive(true);
 
-        if (ball != null)
-            ball.GetComponent<BouncingBallScript>().Grab.Invoke();
+            if (ball != null)
+                ball.GetComponent<BouncingBallScript>().Grab.Invoke();
 
-        StartCoroutine(ShootCoroutine());
+            StartCoroutine(ShootCoroutine());
+        }
+
+        
     }
 
     private void TakeDamage()
     {
         if (isHittable)
         {
-            StartCoroutine(booleanCoroutine(isHittable, hittableReloadTime));
+            StartCoroutine(HittableCoroutine());
             health--;
 
             if (health <= 0)
@@ -154,7 +176,7 @@ public class PlayerController : MonoBehaviour
 
     private void Revive()
     {
-        StartCoroutine(booleanCoroutine(isHittable, hittableReloadTime));
+        StartCoroutine(HittableCoroutine());
         isAlive = true;
         health = GameManager.Instance.maxHealth;
         canDoAction = true;
@@ -189,20 +211,26 @@ public class PlayerController : MonoBehaviour
     {
         if (isAlive && canDoAction && context.performed)
         {
-            StartCoroutine(booleanCoroutine(canDoAction, doActionReloadTime));
+            Debug.Log("try pass");
+
+            StartCoroutine(DoActionCoroutine());
             
             if (ballDetector.ball)
+            {
+                Debug.Log("CONNARD");
                 DoPass(ballDetector.ball);
+
+
+            }
         }
-        
     }
 
     public void Shoot(InputAction.CallbackContext context)
     {
         if (isAlive && canDoAction && context.performed && canMove)
         {
-            StartCoroutine(booleanCoroutine(canDoAction, doActionReloadTime));
-            
+            StartCoroutine(DoActionCoroutine());
+            Debug.Log("try shoot");
             if (ballDetector.ball)
                 DoShoot(ballDetector.ball);
         }
@@ -252,12 +280,18 @@ public class PlayerController : MonoBehaviour
         
     }
 
-
-    IEnumerator booleanCoroutine(bool boolean, float timeToWait)
+    IEnumerator HittableCoroutine()
     {
-        boolean = false;
-        yield return new WaitForSeconds(timeToWait);
-        boolean = true;
+        isHittable = false;
+        yield return new WaitForSeconds(hittableReloadTime);
+        isHittable = true;
+    }
+
+    IEnumerator DoActionCoroutine()
+    {
+        canDoAction = false;
+        yield return new WaitForSeconds(doActionReloadTime);
+        canDoAction = true;
     }
 
     #endregion

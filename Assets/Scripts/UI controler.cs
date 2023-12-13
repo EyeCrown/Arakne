@@ -101,6 +101,9 @@ public class UIcontroler : MonoBehaviour
         if (Globals.gameState != Globals.GameState.OnMenu) return; // Re-activated player on respawn triggers OnPlayerJoined
         
         Debug.Log("Player " + playerInput.playerIndex + " joined");
+        GameManager.Instance.players[playerInput.playerIndex] = playerInput.gameObject;
+        GameManager.Instance.players[playerInput.playerIndex].GetComponent<PlayerController>().Initialize(playerInput.playerIndex);
+
 
         if (playerInputManager.playerCount == playerInputManager.maxPlayerCount)
         {
