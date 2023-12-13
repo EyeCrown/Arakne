@@ -45,6 +45,15 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 77121e8888a5ea042b63bd1451b35c9c, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
+  maxHealth: 2147483647
+  multiplier: 1
+  spawnPositions: []
+  ScoreChange:
+    m_PersistentCalls:
+      m_Calls: []
+  PlayerDie:
+    m_PersistentCalls:
+      m_Calls: []
 --- !u!114 &9072720798339753462
 MonoBehaviour:
   m_ObjectHideFlags: 0

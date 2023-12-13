@@ -1,7 +1,9 @@
 using System.Collections;
 using System.Collections.Generic;
 using UnityEngine;
+using UnityEngine.Events;
 using UnityEngine.InputSystem;
+
 
 public class PlayerController : MonoBehaviour
 {
@@ -17,18 +19,21 @@ public class PlayerController : MonoBehaviour
     [Range(1f, 100f)]
     private float speed; // lower it is, faster it is | range 1 to 100
 
-    [SerializeField] private int hp = 3;
+    [SerializeField] private int health = 3;
 
     // Cooldowns
     [SerializeField]
+    [Tooltip("Time to aim before shooting")]
     private float timeToShoot;
-
+    [SerializeField]
+    [Tooltip("Invulnerabiltiy time after taking damage")]
+    private float invincibilityTime;
 
     // Hidden values
     private Vector3 movements;
     private Vector3 velocity;
 
-    private bool isAlive;
+    public bool isAlive { get; private set; }
     public bool isHittable { get; private set; }
     private bool canMove;
 
@@ -38,12 +43,17 @@ public class PlayerController : MonoBehaviour
     public int ID { get; private set; }
     #endregion
 
+    #region EVENTS
+    public UnityEvent Hit;
+    #endregion
+
     #region UNITY API
     void Start()
     {
-        isAlive = true;
-        isHittable = true;
+        Revive();
         canMove = true;
+
+        Hit.AddListener(HitHandler);
 
         DontDestroyOnLoad(gameObject);
 
@@ -54,19 +64,10 @@ public class PlayerController : MonoBehaviour
 
     void Update()
     {
-        if (isAlive)
-        {
-            if (canMove) 
-                DoMovements();
-        }
+        if (canMove) 
+            DoMovements();
 
         viewfinder.transform.up = movements.normalized;
-    }
-
-
-    private void OnCollisionEnter(Collision collision)
-    {
-       
     }
 
     #endregion
@@ -75,6 +76,7 @@ public class PlayerController : MonoBehaviour
     public void Initialize(int id)
     {
         ID = id;
+        Revive();
     }
 
     private void DoMovements()
@@ -98,16 +100,42 @@ public class PlayerController : MonoBehaviour
     }
 
 
-    public void TakeDamage()
+    public void HitHandler()
     {
-        hp--;
-        if (hp < 0)
-            Die();
+        if (isAlive)
+            TakeDamage();
+        else
+            Revive();
+    }
+
+    private void TakeDamage()
+    {
+        if (isHittable)
+        {
+            StartCoroutine(InvicibilityCoroutine());
+            health--;
+
+            if (health <= 0)
+                Die();
+        }
+    }
+
+    private void Revive()
+    {
+        StartCoroutine(InvicibilityCoroutine());
+
+        isAlive = true;
+        health = GameManager.Instance.maxHealth;
     }
 
     private void Die()
     {
         Debug.Log("Player die");
+        isAlive = false;
+        isHittable = false;
+        GameManager.Instance.PlayerDie.Invoke(ID);
+        //TODO: put anim dead here
+
     }
     #endregion
 
@@ -128,7 +156,7 @@ public class PlayerController : MonoBehaviour
     {
         if (context.performed)
         {
-            if (ballDetector.ball)
+            if (isAlive && ballDetector.ball)
             {
                 DoPass();
             }
@@ -141,16 +169,20 @@ public class PlayerController : MonoBehaviour
     {
         if (context.performed)
         {
-            if (ballDetector.ball)
+            if (isAlive && ballDetector.ball)
             {
                 DoShoot();
             }
             else
                 Debug.Log("Shoot: Ball is missing");
         }
+
+        if (context.canceled && !canMove)
+            canMove = true;
     }
     #endregion;
 
+    #region COROUTINES
     IEnumerator ShootCoroutine()
     {
         
@@ -158,15 +190,23 @@ public class PlayerController : MonoBehaviour
         canMove = false;
         viewfinder.SetActive(true);
 
-        ballDetector.ball.GetComponent<BouncingBallScript>().Grab.Invoke();
+        if (ballDetector.ball != null) 
+            ballDetector.ball.GetComponent<BouncingBallScript>().Grab.Invoke();
 
         yield return new WaitForSeconds(timeToShoot);
 
-        ballDetector.ball.GetComponent<BouncingBallScript>().Throw.Invoke(movements);
+        if (ballDetector.ball != null)
+            ballDetector.ball.GetComponent<BouncingBallScript>().Throw.Invoke(movements);
 
         viewfinder.SetActive(false);
-        canMove = true;
         isHittable = true;
-        
     }
+
+    IEnumerator InvicibilityCoroutine()
+    {
+        isHittable = false;
+        yield return new WaitForSeconds(invincibilityTime);
+        isHittable = true;
+    }
+    #endregion
 }
