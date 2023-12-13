@@ -34817,6 +34817,7 @@ GameObject:
   m_Component:
   - component: {fileID: 805045250}
   - component: {fileID: 805045251}
+  - component: {fileID: 805045252}
   m_Layer: 0
   m_Name: ball
   m_TagString: Untagged
@@ -34868,6 +34869,27 @@ MonoBehaviour:
   color_4: {r: 1, g: 0.9225849, b: 0, a: 1}
   color_5: {r: 1, g: 0.7011118, b: 0.023584902, a: 1}
   color_6: {r: 1, g: 0.456793, b: 0, a: 1}
+--- !u!95 &805045252
+Animator:
+  serializedVersion: 5
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 805045249}
+  m_Enabled: 1
+  m_Avatar: {fileID: 0}
+  m_Controller: {fileID: 9100000, guid: 5c5053f2bb205f64d8cca77de0c97231, type: 2}
+  m_CullingMode: 0
+  m_UpdateMode: 0
+  m_ApplyRootMotion: 0
+  m_LinearVelocityBlending: 0
+  m_StabilizeFeet: 0
+  m_WarningMessage: 
+  m_HasTransformHierarchy: 1
+  m_AllowConstantClipSamplingOptimization: 1
+  m_KeepAnimatorStateOnDisable: 0
+  m_WriteDefaultValuesOnDisable: 0
 --- !u!1 &844456389
 GameObject:
   m_ObjectHideFlags: 0
