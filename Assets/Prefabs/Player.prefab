@@ -215,7 +215,7 @@ MonoBehaviour:
   inertia: 2
   speed: 10
   health: 3
-  timeToShoot: 5
+  timeToShoot: 2
   invincibilityTime: 1
   Hit:
     m_PersistentCalls:
