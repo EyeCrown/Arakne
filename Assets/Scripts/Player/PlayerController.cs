@@ -29,6 +29,9 @@ public class PlayerController : MonoBehaviour
     [Tooltip("Invulnerabiltiy time after taking damage")]
     private float invincibilityTime;
 
+
+    [SerializeField] private Animator animator;
+
     // Hidden values
     private Vector3 movements;
     private Vector3 velocity;
@@ -212,6 +215,7 @@ public class PlayerController : MonoBehaviour
             TakeDamage();
         else
             Revive();
+        animator.SetInteger("HealthPoint", health);
     }
     #endregion
 

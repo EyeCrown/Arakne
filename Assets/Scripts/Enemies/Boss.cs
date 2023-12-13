@@ -6,10 +6,16 @@ public class Boss : Enemy
 {
     [SerializeField] private Animator animator;
     [SerializeField] private Transform ballSpawnPoint;
+    [SerializeField] private GameObject ballPrefab;
+    [SerializeField] protected float ballSpawnTime = 5;
+    [SerializeField] protected float ballAnimationTime = 1;
+
     // Start is called before the first frame update
     void Start()
     {
-        
+        ballSpawnPoint.transform.position = new Vector3(ballSpawnPoint.transform.position.x, ballSpawnPoint.transform.position.y);
+        ballSpawnPoint.up = Vector3.down;
+        StartCoroutine(BallSpawnCoroutine());
     }
 
     // Update is called once per frame
@@ -26,4 +32,26 @@ public class Boss : Enemy
 
     }
     #endregion
+
+
+    IEnumerator AnimateSpawnBallCoroutine()
+    {
+        animator.SetTrigger("ThrowBall");
+        yield return new WaitForSeconds(ballAnimationTime);
+        Instantiate(ballPrefab, ballSpawnPoint.position,ballSpawnPoint.rotation);
+    }
+
+    IEnumerator BallSpawnCoroutine()
+    {
+        if (GameManager.Instance.ballCount <= 0)
+        {
+            StartCoroutine(AnimateSpawnBallCoroutine());
+        }
+        //StartCoroutine(AnimateSpawnBallCoroutine());
+        yield return new WaitForSeconds(ballSpawnTime);
+
+        StartCoroutine(BallSpawnCoroutine());
+    }
+
+
 }
