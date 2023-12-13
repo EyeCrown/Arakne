@@ -25,7 +25,7 @@ public class score_display : MonoBehaviour
 
     public void BackToMenu()
     {
-        SceneManager.LoadSceneAsync(3);
+        SceneManager.LoadSceneAsync(0);
     }
 
     public void SetFirstButtonSelection()

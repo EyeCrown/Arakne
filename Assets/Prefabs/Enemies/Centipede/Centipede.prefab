@@ -53,8 +53,8 @@ MonoBehaviour:
   idleRange: 0
   wiggleSpeed: 0
   wiggleRange: 0
-  health: 0
-  scorePerHealthPoint: 25
+  health: 25
+  scorePerHealthPoint: 300
   Hit:
     m_PersistentCalls:
       m_Calls: []

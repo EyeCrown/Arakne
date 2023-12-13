@@ -3360,7 +3360,7 @@ PrefabInstance:
     m_Modifications:
     - target: {fileID: 2595437164961807108, guid: 5b8d0edda89d4ec47bae717e5956dc73, type: 3}
       propertyPath: maxHealth
-      value: 3
+      value: 5
       objectReference: {fileID: 0}
     - target: {fileID: 4783446780547390817, guid: 5b8d0edda89d4ec47bae717e5956dc73, type: 3}
       propertyPath: m_LocalPosition.x

@@ -1,6 +1,4 @@
 using System.Collections;
-using System.Collections.Generic;
-using UnityEditor.UIElements;
 using UnityEngine;
 using UnityEngine.Events;
 
@@ -232,11 +230,12 @@ public class BouncingBallScript : MonoBehaviour
         {
             return;
         }
+
         if(mode != BallMode.homing)
         {
-
             TakeDamage();
         }
+
         Enemy enemyHit = enemy.GetComponent<Enemy>();
         if (enemyHit)
         {

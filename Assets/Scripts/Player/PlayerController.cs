@@ -158,13 +158,13 @@ public class PlayerController : MonoBehaviour
             Debug.Log("Shoot");
             isShooting = true;
             isHittable = false;
-            canMove = false;
+            
             viewfinder.SetActive(true);
 
             if (ball != null)
                 ball.GetComponent<BouncingBallScript>().Grab.Invoke();
 
-            StartCoroutine(ShootCoroutine());
+            StartCoroutine(ShootCoroutine(ball));
         }
 
         
@@ -176,6 +176,7 @@ public class PlayerController : MonoBehaviour
         {
             StartCoroutine(HittableCoroutine());
             health--;
+            Debug.Log("Player take damage");
         }
         if (health <= 0)
             Die();
@@ -183,7 +184,6 @@ public class PlayerController : MonoBehaviour
 
     private void Revive()
     {
-        //Debug.Log("Player revive");
         StartCoroutine(HittableCoroutine());
         isAlive = true;
         health = GameManager.Instance.maxHealth;
@@ -219,13 +219,10 @@ public class PlayerController : MonoBehaviour
     {
         if (isAlive && canDoAction && context.performed)
         {
-            Debug.Log("try pass");
-
             StartCoroutine(DoActionCoroutine());
             
             if (ballDetector.ball)
             {
-                Debug.Log("CONNARD");
                 DoPass(ballDetector.ball);
 
 
@@ -235,15 +232,16 @@ public class PlayerController : MonoBehaviour
 
     public void Shoot(InputAction.CallbackContext context)
     {
-        if (isAlive && canDoAction && context.performed && canMove)
+        if (isAlive && canDoAction && context.performed)
         {
+            if (canMove)
+                canMove = false;
             StartCoroutine(DoActionCoroutine());
-            Debug.Log("try shoot");
+
             if (ballDetector.ball)
                 DoShoot(ballDetector.ball);
         }
 
-        //TODO: tu peux canMove = true en spammant le bouton
         if (context.canceled && !isShooting)
             canMove = true;
     }
@@ -252,36 +250,30 @@ public class PlayerController : MonoBehaviour
     #region EVENT HANDLERS
     public void HitHandler(bool fromBouncingBall)
     {
-        Debug.Log("Player take damage");
         if (isAlive)
             TakeDamage();
         else if (fromBouncingBall)
             Revive();
-        
         animator.SetInteger("HealthPoint", health);
     }
     #endregion
 
     #region COROUTINES
-    IEnumerator ShootCoroutine()
+    IEnumerator ShootCoroutine(GameObject ball)
     {
-        //Print the time of when the function is first called.
-        Debug.Log("Started Coroutine at timestamp : " + Time.time);
-
         yield return new WaitForSeconds(timeToShoot);
-        //After we have waited 5 seconds print the time again.
-        Debug.Log("Finished Coroutine at timestamp : " + Time.time);
+        
         if (!canMove && isShooting)
             canMove = true;
 
-        if (ballDetector.ball != null)
+        if (ball != null)
         {
             Vector3 direction;
             if (movements != Vector3.zero)
                 direction = movements;
             else
                 direction = Vector3.up;
-            ballDetector.ball.GetComponent<BouncingBallScript>().Throw.Invoke(direction);
+            ball.GetComponent<BouncingBallScript>().Throw.Invoke(direction);
             particle.startColor = throwColor;
             particle.Play();
 
