@@ -108,7 +108,7 @@ SphereCollider:
   m_ProvidesContacts: 0
   m_Enabled: 1
   serializedVersion: 3
-  m_Radius: 0.5
+  m_Radius: 0.25
   m_Center: {x: 0, y: 0, z: 0}
 --- !u!114 &5588938542510937667
 MonoBehaviour:
@@ -124,6 +124,7 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   m_Actions: {fileID: -944628639613478452, guid: 490ac66a3b8fedb4f88020902c130b17, type: 3}
   m_NotificationBehavior: 2
+  m_UIInputModule: {fileID: 0}
   m_DeviceLostEvent:
     m_PersistentCalls:
       m_Calls: []
@@ -186,6 +187,14 @@ MonoBehaviour:
       m_Calls: []
     m_ActionId: 9c9af9d6-2360-41c1-b06e-8af53775086b
     m_ActionName: Menu/New action
+  - m_PersistentCalls:
+      m_Calls: []
+    m_ActionId: 7f44f1d0-31d9-462d-a79c-8d406dc7331a
+    m_ActionName: Menu/Move[/Keyboard/w,/Keyboard/s,/Keyboard/a,/Keyboard/d,/XInputControllerWindows/leftStick]
+  - m_PersistentCalls:
+      m_Calls: []
+    m_ActionId: b04f1998-caf4-4f6a-947c-4c5c8f07f559
+    m_ActionName: Menu/Back[/Keyboard/delete]
   m_NeverAutoSwitchControlSchemes: 0
   m_DefaultControlScheme: 
   m_DefaultActionMap: Player
@@ -204,9 +213,9 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   inertia: 2
-  speed: 20
+  speed: 10
   health: 3
-  timeToShoot: 1
+  timeToShoot: 5
   invincibilityTime: 1
   Hit:
     m_PersistentCalls:
@@ -290,7 +299,7 @@ SphereCollider:
   m_ProvidesContacts: 0
   m_Enabled: 1
   serializedVersion: 3
-  m_Radius: 1.5
+  m_Radius: 2
   m_Center: {x: 0, y: 0, z: 0}
 --- !u!114 &5616180038454361705
 MonoBehaviour:
