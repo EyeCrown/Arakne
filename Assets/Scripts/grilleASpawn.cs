@@ -181,12 +181,12 @@ public class CheesyGrid : MonoBehaviour
             {
                 if (GetCell(j, i) == "1")
                 {
-                    Instantiate(spider, new Vector3(j - 2, 5, 0), Quaternion.identity);
+                    Instantiate(spider, new Vector3((j - 2) * 3, 13, 0), Quaternion.identity);
                 }
 
                 if (GetCell(j, i) == "2")
                 {
-                    Instantiate(mosquito, new Vector3(j - 2, 5, 0), Quaternion.identity);
+                    Instantiate(mosquito, new Vector3((j - 2) * 3, 13, 0), Quaternion.identity);
                 }
             }
             

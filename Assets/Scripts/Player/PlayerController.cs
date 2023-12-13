@@ -121,6 +121,13 @@ public class PlayerController : MonoBehaviour
 
     private void DoShoot()
     {
+        isHittable = false;
+        canMove = false;
+        viewfinder.SetActive(true);
+
+        if (ballDetector.ball != null)
+            ballDetector.ball.GetComponent<BouncingBallScript>().Grab.Invoke();
+
         StartCoroutine(ShootCoroutine());
     }
 
@@ -211,22 +218,22 @@ public class PlayerController : MonoBehaviour
     #region COROUTINES
     IEnumerator ShootCoroutine()
     {
-        
-        isHittable = false;
-        canMove = false;
-        viewfinder.SetActive(true);
-
-        if (ballDetector.ball != null) 
-            ballDetector.ball.GetComponent<BouncingBallScript>().Grab.Invoke();
+        //Print the time of when the function is first called.
+        Debug.Log("Started Coroutine at timestamp : " + Time.time);
 
         yield return new WaitForSeconds(timeToShoot);
-
+        //After we have waited 5 seconds print the time again.
+        Debug.Log("Finished Coroutine at timestamp : " + Time.time);
+        
         if (ballDetector.ball != null)
         {
+            Vector3 direction;
             if (movements != Vector3.zero)
-                ballDetector.ball.GetComponent<BouncingBallScript>().Throw.Invoke(Vector3.up);
+                direction = movements;
             else
-                ballDetector.ball.GetComponent<BouncingBallScript>().Throw.Invoke(movements);
+                direction = Vector3.up;
+            ballDetector.ball.GetComponent<BouncingBallScript>().Throw.Invoke(direction);
+
         }
 
         viewfinder.SetActive(false);
