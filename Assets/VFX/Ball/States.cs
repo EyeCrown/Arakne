@@ -72,6 +72,7 @@ public class States : MonoBehaviour
     }
     void ChangeColor(Color color)
     {
+        render_1.material.EnableKeyword("_EMISSION");
         render_1.material.SetColor("_EmisColor", color);
         render_2.material.SetColor("_EmisColor", color);
         trail.startColor = color;
