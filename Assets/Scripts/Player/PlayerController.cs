@@ -29,8 +29,11 @@ public class PlayerController : MonoBehaviour
     [Tooltip("Invulnerabiltiy time after taking damage")]
     private float invincibilityTime;
 
-
+    [Header("Animation and FX")]
     [SerializeField] private Animator animator;
+    [SerializeField] private ParticleSystem particle;
+    [SerializeField] private Color throwColor;
+    [SerializeField] private Color passColor;
 
     // Hidden values
     private Vector3 movements;
@@ -45,6 +48,7 @@ public class PlayerController : MonoBehaviour
 
     private Transform bottomLeftBorder;
     private Transform topRightBorder;
+
 
     public int ID { get; private set; }
     #endregion
@@ -117,7 +121,11 @@ public class PlayerController : MonoBehaviour
     {
         GameObject otherPlayer = GameManager.Instance.GetOtherPlayer(ID);
         if (otherPlayer != null)
+        {
             ballDetector.ball.GetComponent<BouncingBallScript>().Pass.Invoke(otherPlayer);
+            particle.startColor = passColor;
+            particle.Play();
+        }
         else
             DoShoot();
     }
@@ -237,6 +245,8 @@ public class PlayerController : MonoBehaviour
             else
                 direction = Vector3.up;
             ballDetector.ball.GetComponent<BouncingBallScript>().Throw.Invoke(direction);
+            particle.startColor = throwColor;
+            particle.Play();
 
         }
 
