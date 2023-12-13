@@ -54,8 +54,8 @@ public class GameManager : MonoBehaviour
         players[playerInput.playerIndex].transform.position = spawnPositions[playerInput.playerIndex].position;
         players[playerInput.playerIndex].GetComponent<PlayerController>().Initialize(playerInput.playerIndex);
 
-        /*if (playerInputManager.playerCount == playerInputManager.maxPlayerCount)
-            ChangeScene();*/
+        if (playerInputManager.playerCount == playerInputManager.maxPlayerCount)
+            ChangeScene();
     }
 
     public void ChangeScene()

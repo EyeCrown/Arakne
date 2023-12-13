@@ -22,7 +22,9 @@ public class BackgroundParallax : MonoBehaviour
     {
         foreach(LayerAndSpeed layer in layers)
         {
-            layer.gameObject.GetComponent<SpriteRenderer>().material.mainTextureOffset += new  Vector2(layer.gameObject.GetComponent<SpriteRenderer>().material.mainTextureOffset.x + layer.speed * Time.deltaTime,0);
+            //TODO Find a way to make it work without translation the solution under doesn't work
+            layer.gameObject.GetComponent<SpriteRenderer>().material.mainTextureOffset += new  Vector2(0,layer.gameObject.GetComponent<SpriteRenderer>().material.mainTextureOffset.x + layer.speed/200f * Time.deltaTime);
+            //layer.gameObject.transform.position += layer.gameObject.transform.up * layer.speed * Time.deltaTime;
         }
     }
 }
