@@ -165,6 +165,7 @@ public class BouncingBallScript : MonoBehaviour
 
     private void Fall()
     {
+        CheckCollisions(speed * Time.deltaTime);
         TranslateForward(speed * Time.deltaTime);
     }
 
@@ -180,6 +181,7 @@ public class BouncingBallScript : MonoBehaviour
         hits = Physics.SphereCastAll(transform.position, transform.localScale.y / 2, transform.up, length, layerMask);
         foreach(RaycastHit hit in hits)
         {
+            Debug.Log("Ball collision");
             if (hit.transform.gameObject.CompareTag("Enemy"))
             {
                 CollideEnemy(hit.transform.gameObject);

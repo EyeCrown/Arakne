@@ -80,6 +80,9 @@ MonoBehaviour:
       m_Calls: []
   animator: {fileID: 8303841079704595908}
   ballSpawnPoint: {fileID: 2539646445303800974}
+  ballPrefab: {fileID: 9065021497008916572, guid: 56ce1e017bd9c9c469876831da611f87, type: 3}
+  ballSpawnTime: 5
+  ballAnimationTime: 1
 --- !u!1 &7674183126647811157
 GameObject:
   m_ObjectHideFlags: 0
@@ -211,7 +214,7 @@ Transform:
   m_GameObject: {fileID: 8769375975222351983}
   serializedVersion: 2
   m_LocalRotation: {x: 0, y: 0, z: 0, w: 1}
-  m_LocalPosition: {x: -0.43, y: -1.6, z: 0}
+  m_LocalPosition: {x: -0.47, y: -1.88, z: 0}
   m_LocalScale: {x: 1, y: 1, z: 1}
   m_ConstrainProportionsScale: 0
   m_Children: []

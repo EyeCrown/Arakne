@@ -33,6 +33,9 @@ public class PlayerController : MonoBehaviour
     private float doActionReloadTime;
 
 
+
+    [SerializeField] private Animator animator;
+
     // Hidden values
     private Vector3 movements;
     private Vector3 velocity;
@@ -248,6 +251,7 @@ public class PlayerController : MonoBehaviour
             TakeDamage();
         else
             Revive();
+        animator.SetInteger("HealthPoint", health);
     }
     #endregion
 
