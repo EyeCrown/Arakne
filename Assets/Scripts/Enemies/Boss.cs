@@ -9,6 +9,8 @@ public class Boss : Enemy
     [SerializeField] private GameObject ballPrefab;
     [SerializeField] protected float ballSpawnTime = 5;
     [SerializeField] protected float ballAnimationTime = 1;
+    public AK.Wwise.Event BossHit;
+    public AK.Wwise.Event BossLastHit;
 
     // Start is called before the first frame update
     void Start()
@@ -36,9 +38,11 @@ public class Boss : Enemy
         Debug.Log("Boss got hit");
         animator.SetInteger("Progress", 8 - (health*8)/maxHealth);
         GameManager.Instance.ScoreChange.Invoke(damage * scorePerHealthPoint);
+        BossHit.Post(gameObject);
         if (health <= 0)
-        {
+        {   
             Die();
+            BossLastHit.Post(gameObject);
         }
     }
     #endregion
