@@ -228,7 +228,7 @@ public class BouncingBallScript : MonoBehaviour
 
     private void Die()
     {
-        GameManager.Instance.multiplier = 0;
+        GameManager.Instance.multiplier = 1;
         GameManager.Instance.ballCount--;
         Destroy(gameObject);
     }
@@ -246,7 +246,6 @@ public class BouncingBallScript : MonoBehaviour
 
         if(mode != BallMode.homing)
         {
-            Instantiate(enemyHitParticle, enemy.transform.position, Quaternion.identity);
             TakeDamage();
         }
 
