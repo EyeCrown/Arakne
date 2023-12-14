@@ -7,6 +7,7 @@ public class CanvasGame : MonoBehaviour
 {
     [SerializeField] private GameObject winScreen;
     [SerializeField] private GameObject looseScreen;
+    [SerializeField] private GameObject panelScoreScreen;
     [SerializeField] private TextMeshProUGUI scoreText;
 
     private void Start()
@@ -29,6 +30,7 @@ public class CanvasGame : MonoBehaviour
         winScreen.SetActive(true);
         winScreen.GetComponent<score_display>().SetScoreToText();
         scoreText.enabled = false;
+        panelScoreScreen.SetActive(false);
     }
 
     public void DisplayLooseScreen()
@@ -36,6 +38,7 @@ public class CanvasGame : MonoBehaviour
         looseScreen.SetActive(true);
         looseScreen.GetComponent<score_display>().SetScoreToText();
         scoreText.enabled = false;
+        panelScoreScreen.SetActive(false);
     }
 
 }
