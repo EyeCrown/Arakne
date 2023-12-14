@@ -5,7 +5,7 @@ using UnityEngine.SceneManagement;
 using UnityEngine.InputSystem;
 using UnityEngine.Events;
 using TMPro;
-
+using UnityEditor.Animations;
 
 public class GameManager : MonoBehaviour
 {
@@ -22,7 +22,7 @@ public class GameManager : MonoBehaviour
     #endregion
 
     public GameObject[] players { get; set; }
-
+    [SerializeField] private AnimatorController[] animators;
     //private PlayerInputManager playerInputManager;
 
     private string gameScene = "GameTestScene";
@@ -65,6 +65,11 @@ public class GameManager : MonoBehaviour
     private int GetOtherPlayerId(int myId)
     {
         return myId == 0 ? 1 : 0;
+    }
+
+    public void SetAnimator(int idPlayer)
+    {
+        players[idPlayer].GetComponent<PlayerController>().SetAnimatorController(animators[idPlayer]);
     }
 
     public void StartGame()

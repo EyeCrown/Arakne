@@ -1,5 +1,6 @@
 using System.Collections;
 using System.Collections.Generic;
+using UnityEditor.Animations;
 using UnityEngine;
 using UnityEngine.Events;
 using UnityEngine.InputSystem;
@@ -207,6 +208,12 @@ public class PlayerController : MonoBehaviour
         //TODO: put anim dead here
 
     }
+
+    public void SetAnimatorController(AnimatorController controller)
+    {
+        animator.runtimeAnimatorController = controller;
+    }
+
     #endregion
 
     #region INPUTS

@@ -109,6 +109,7 @@ public class UIcontroler : MonoBehaviour
         
         GameManager.Instance.players[playerInput.playerIndex] = playerInput.gameObject;
         GameManager.Instance.players[playerInput.playerIndex].GetComponent<PlayerController>().Initialize(playerInput.playerIndex);
+        GameManager.Instance.SetAnimator(playerInput.playerIndex);
 
         if (playerInputManager.playerCount == playerInputManager.maxPlayerCount)
         {
