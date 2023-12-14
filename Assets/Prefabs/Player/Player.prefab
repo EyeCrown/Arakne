@@ -171,8 +171,8 @@ MonoBehaviour:
   doActionReloadTime: 0.2
   animator: {fileID: 8642660935710507774}
   particle: {fileID: 576464719347597883}
-  throwColor: {r: 0.41823888, g: 0.9133061, b: 1, a: 1}
-  passColor: {r: 1, g: 0.42452818, b: 0.42452818, a: 1}
+  throwColor: {r: 1, g: 0.41960788, b: 0.6069195, a: 1}
+  passColor: {r: 0.54379684, g: 1, b: 0.4235294, a: 1}
   Hit:
     m_PersistentCalls:
       m_Calls: []
