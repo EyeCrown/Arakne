@@ -2,6 +2,7 @@ using System.Collections;
 using System.Collections.Generic;
 using TMPro;
 using UnityEngine;
+using UnityEngine.UI;
 
 public class CanvasGame : MonoBehaviour
 {
@@ -9,6 +10,12 @@ public class CanvasGame : MonoBehaviour
     [SerializeField] private GameObject looseScreen;
     [SerializeField] private GameObject panelScoreScreen;
     [SerializeField] private TextMeshProUGUI scoreText;
+
+    [SerializeField] private GameObject boss;
+    [SerializeField] private Slider bossHealthBar;
+    //[SerializeField] private Slider player1Bar;
+    //[SerializeField] private Slider player2hBar;
+
 
     private void Start()
     {
@@ -18,6 +25,9 @@ public class CanvasGame : MonoBehaviour
         winScreen.SetActive(false);
         looseScreen.SetActive(false);
         scoreText.text = "0";
+
+        bossHealthBar.maxValue = boss.GetComponent<Boss>().GetHealth();
+        bossHealthBar.minValue = 0;
     }
 
     public void UpdateScore(int score)
@@ -39,6 +49,12 @@ public class CanvasGame : MonoBehaviour
         looseScreen.GetComponent<score_display>().SetScoreToText();
         scoreText.enabled = false;
         panelScoreScreen.SetActive(false);
+    }
+
+
+    public void UpdateBossHealth()
+    {
+        bossHealthBar.value = boss.GetComponent<Boss>().GetHealth();
     }
 
 }
