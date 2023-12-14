@@ -75,6 +75,12 @@ public class GameManager : MonoBehaviour
     public void UpdateBossHealth()
     {
         canvas.GetComponent<CanvasGame>().UpdateBossHealth();
+        
+    }
+
+    public void UpdatePlayerHealth(int idPlayer)
+    {
+        canvas.UpdatePlayerHealth(idPlayer, players[idPlayer].GetComponent<PlayerController>().GetHealth());
     }
 
     public void StartGame()

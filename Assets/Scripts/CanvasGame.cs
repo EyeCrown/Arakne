@@ -13,8 +13,8 @@ public class CanvasGame : MonoBehaviour
 
     [SerializeField] private GameObject boss;
     [SerializeField] private Slider bossHealthBar;
-    //[SerializeField] private Slider player1Bar;
-    //[SerializeField] private Slider player2hBar;
+
+    [SerializeField] private Slider[] playersBar;
 
 
     private void Start()
@@ -28,6 +28,12 @@ public class CanvasGame : MonoBehaviour
 
         bossHealthBar.maxValue = boss.GetComponent<Boss>().GetHealth();
         bossHealthBar.minValue = 0;
+
+        foreach (Slider slider in playersBar)
+        {
+            slider.minValue = 0;
+            slider.maxValue = GameManager.Instance.maxHealth;
+        }
     }
 
     public void UpdateScore(int score)
@@ -56,5 +62,27 @@ public class CanvasGame : MonoBehaviour
     {
         bossHealthBar.value = boss.GetComponent<Boss>().GetHealth();
     }
+
+    public void UpdatePlayerHealth(int id, int hp)
+    {
+        switch (hp)
+        {
+            case 0:
+                playersBar[id].value = 0;
+                break;
+            case 1:
+                playersBar[id].value = 33;
+                break;
+            case 2:
+                playersBar[id].value = 66;
+                break;
+            case 3:
+                playersBar[id].value = 100;
+                break;
+            default:
+                break;
+        }
+    }
+
 
 }

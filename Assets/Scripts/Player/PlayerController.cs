@@ -209,6 +209,11 @@ public class PlayerController : MonoBehaviour
 
     }
 
+    public int GetHealth()
+    {
+        return health;
+    }
+
     public void SetAnimatorController(AnimatorController controller)
     {
         animator.runtimeAnimatorController = controller;
@@ -269,6 +274,7 @@ public class PlayerController : MonoBehaviour
         else if (fromBouncingBall)
             Revive();
         animator.SetInteger("HealthPoint", health);
+        GameManager.Instance.UpdatePlayerHealth(ID);
     }
     #endregion
 
