@@ -69,14 +69,13 @@ public class GameManager : MonoBehaviour
 
     public void StartGame()
     {
-        SceneManager.LoadScene(gameScene);
+        SceneManager.LoadSceneAsync(1);
 
         Vector3 spawnPosJ0 = new Vector3(-5, -10, 0);
         players[0].transform.position = spawnPosJ0;
 
         Vector3 spawnPosJ1 = new Vector3(5, -10, 0);
         players[1].transform.position = spawnPosJ1;
-
 
         Debug.Log("___GAME START___");
         score = 0;

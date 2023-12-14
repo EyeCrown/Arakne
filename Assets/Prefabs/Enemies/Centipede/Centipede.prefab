@@ -48,14 +48,14 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 90e6c6e059998e947b19c4de35972172, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  fallSpeed: 1
+  fallSpeed: 3
   idleSpeed: 0
   idleRange: 0
   wiggleSpeed: 0
   wiggleRange: 0
   maxHealth: 10
-  health: 0
-  scorePerHealthPoint: 25
+  health: 25
+  scorePerHealthPoint: 300
   Hit:
     m_PersistentCalls:
       m_Calls: []

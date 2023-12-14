@@ -60,7 +60,7 @@ public class Enemy : MonoBehaviour
     #region EVENT HANDLERS
     protected virtual void HitHandler(int damage)
     {
-        Debug.Log("Enemy: hit");
+        Debug.Log("Enemy: hit " + damage);
         if (health < damage) {
             damage = health; 
         }

@@ -238,11 +238,12 @@ public class BouncingBallScript : MonoBehaviour
         {
             return;
         }
+
         if(mode != BallMode.homing)
         {
-
             TakeDamage();
         }
+
         Enemy enemyHit = enemy.GetComponent<Enemy>();
         if (enemyHit)
         {

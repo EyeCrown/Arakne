@@ -20,6 +20,7 @@ public class CheesyGrid : MonoBehaviour
 {
     [SerializeField] private GameObject spider;
     [SerializeField] private GameObject mosquito;
+    [SerializeField] private GameObject centipede;
 
 
     [Header("Cell values cycle from 0 to this-1")]
@@ -181,15 +182,33 @@ public class CheesyGrid : MonoBehaviour
             {
                 if (GetCell(j, i) == "1")
                 {
-                    Instantiate(spider, new Vector3((j - 2) * 3, 13, 0), Quaternion.identity);
+                    Instantiate(spider, new Vector3((j - 2) * 3, 15, 0), Quaternion.identity);
                 }
 
                 if (GetCell(j, i) == "2")
                 {
-                    Instantiate(mosquito, new Vector3((j - 2) * 3, 13, 0), Quaternion.identity);
+                    Instantiate(mosquito, new Vector3((j - 2) * 3, 15, 0), Quaternion.identity);
                 }
             }
-            
+
+            if(i == 60)
+            {
+                GameObject precentipede;
+                precentipede = Instantiate(centipede, new Vector3(4, 15, 4), Quaternion.identity);
+                precentipede.GetComponentInChildren<SpriteRenderer>().material.color = new Color(1f,1f,1f,0.6f);
+                precentipede.transform.localScale = precentipede.transform.localScale * 0.6f;
+            }
+
+            if(i == 100)
+            {
+                Instantiate(centipede, new Vector3(0, 15, 0), Quaternion.identity);
+            }
+
+            if (i == 142)
+            {
+                Instantiate(centipede, new Vector3(0, 15, 0), Quaternion.identity);
+            }
+
             yield return new WaitForSeconds(1f);
         }
     }

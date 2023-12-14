@@ -35,6 +35,7 @@ public class Boss : Enemy
         health -= damage;
         Debug.Log("Boss got hit");
         animator.SetInteger("Progress", 8 - (health*8)/maxHealth);
+        GameManager.Instance.ScoreChange.Invoke(damage * scorePerHealthPoint);
         if (health <= 0)
         {
             Die();

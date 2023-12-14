@@ -19,7 +19,7 @@ public class UIcontroler : MonoBehaviour
     [SerializeField] GameObject backButtonFromControls;
     [SerializeField] GameObject playButton;
 
-    //[SerializeField] GameObject GameManager;
+    [SerializeField] GameObject[] buttonObjectList;
 
     //[SerializeField] AudioSource audioSource;
 
@@ -27,10 +27,8 @@ public class UIcontroler : MonoBehaviour
 
     private void Start()
     {
-        //controls = GetComponent<GameObject>();
         controlsPanel.SetActive(false);  
         creditsPanel.SetActive(false);
-        //GameManager.SetActive(false);
         playPanel.SetActive(false);
 
         //audioSource.Play();
@@ -39,18 +37,25 @@ public class UIcontroler : MonoBehaviour
         
     }
 
+    public void OpenPlayPanel()
+    {
+        playPanel.SetActive(true);
+        playerInputManager.EnableJoining();
+        DesactivateHomeButtons();
+    }
 
     public void OpenControlsPanel()
     {
         controlsPanel.SetActive(true);
         eventsystem.SetSelectedGameObject(backButtonFromControls);
+        DesactivateHomeButtons();
     }
 
     public void OpencreditsPanel()
     {
         creditsPanel.SetActive(true);
         eventsystem.SetSelectedGameObject(backButtonFromCredits);
-
+        DesactivateHomeButtons();
     }
 
     public void ClosePanelFromCredits()
@@ -61,6 +66,7 @@ public class UIcontroler : MonoBehaviour
         eventsystem.SetSelectedGameObject(playButton);
 
         playerInputManager.DisableJoining();
+        ActivateHomeButtons();
     }
 
     public void ClosePanelFromControls()
@@ -71,22 +77,31 @@ public class UIcontroler : MonoBehaviour
         eventsystem.SetSelectedGameObject(playButton);
 
         playerInputManager.DisableJoining();
+        ActivateHomeButtons();
     }
-
-    public void OpenPlayPanel()
-    {
-        playPanel.SetActive(true);
-        playerInputManager.EnableJoining();
-    }
-
-
-
 
     public void QuitGame()
-   {
+    {
       Application.Quit();
-      UnityEditor.EditorApplication.isPlaying = false;
-   }
+      //UnityEditor.EditorApplication.isPlaying = false;
+    }
+
+    private void ActivateHomeButtons()
+    {
+        foreach (GameObject button in buttonObjectList)
+        {
+            button.SetActive(true);
+        }
+    }
+    private void DesactivateHomeButtons()
+    {
+        foreach (GameObject button in buttonObjectList)
+        {
+            button.SetActive(false);
+        }
+    }
+
+
 
     public void OnPlayerJoined(PlayerInput playerInput)
     {
@@ -100,6 +115,5 @@ public class UIcontroler : MonoBehaviour
             playerInputManager.DisableJoining();
             GameManager.Instance.StartGame();
         }
-            
     }
 }
