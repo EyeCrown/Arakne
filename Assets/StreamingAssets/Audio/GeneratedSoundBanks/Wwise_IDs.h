@@ -13,13 +13,18 @@ namespace AK
 {
     namespace EVENTS
     {
+        static const AkUniqueID E_CATERPILLARMOVING = 896192876U;
+        static const AkUniqueID E_HITONBOSS = 2273985692U;
+        static const AkUniqueID E_LASTHITONBOSS = 3066051804U;
         static const AkUniqueID E_PLAY_ALLYPASS = 129291699U;
         static const AkUniqueID E_PLAY_ALLYSHOOT = 4065114501U;
         static const AkUniqueID E_PLAY_AMBIANCE = 4121993638U;
         static const AkUniqueID E_PLAY_BALLBOUNCE = 839260169U;
+        static const AkUniqueID E_PLAY_BGM = 468595000U;
         static const AkUniqueID E_PLAY_BUBBLED = 364366560U;
         static const AkUniqueID E_PLAY_BUBBLEDIDLE = 1219548678U;
         static const AkUniqueID E_PLAY_PLAYERISHIT = 34195632U;
+        static const AkUniqueID E_SPAWNSPIDER = 3091887893U;
         static const AkUniqueID E_STOP_BUBBLEIDLE = 2809597228U;
     } // namespace EVENTS
 

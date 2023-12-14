@@ -1,0 +1,46 @@
+<?xml version="1.0" encoding="utf-8"?>
+<WwiseDocument Type="WorkUnit" ID="{613C8CB2-91F1-419C-888B-4CDD7DA41F1D}" SchemaVersion="110">
+	<AudioObjects>
+		<WorkUnit Name="MusicWorkUnit" ID="{613C8CB2-91F1-419C-888B-4CDD7DA41F1D}" PersistMode="Standalone">
+			<ChildrenList>
+				<Sound Name="GameMusic01" ID="{5899BACD-B98C-4EE1-81D6-A7D17479DCEB}" ShortID="946330127">
+					<PropertyList>
+						<Property Name="IsLoopingEnabled" Type="bool" Value="True"/>
+						<Property Name="Volume" Type="Real64">
+							<ValueList>
+								<Value>-11</Value>
+							</ValueList>
+						</Property>
+					</PropertyList>
+					<ReferenceList>
+						<Reference Name="Conversion">
+							<ObjectRef Name="Default Conversion Settings" ID="{6D1B890C-9826-4384-BF07-C15223E9FB56}" WorkUnitID="{4E5C7FFC-E9B1-46F8-BCE3-EDA1EA7828DB}"/>
+						</Reference>
+						<Reference Name="OutputBus">
+							<ObjectRef Name="Master Audio Bus" ID="{1514A4D8-1DA6-412A-A17E-75CA0C2149F3}" WorkUnitID="{22522E0C-1537-4567-8D9E-301390427DB6}"/>
+						</Reference>
+					</ReferenceList>
+					<ChildrenList>
+						<AudioFileSource Name="Unfolding Secrets BGM" ID="{56743F93-1554-43B2-BE87-9A80C1ABAE20}">
+							<PropertyList>
+								<Property Name="FadeInDuration" Type="Real64" Value="1.25581237738541"/>
+								<Property Name="FadeOutDuration" Type="Real64" Value="1.48414190054639"/>
+								<Property Name="OverrideWavLoop" Type="bool" Value="True"/>
+								<Property Name="TrimBegin" Type="Real64" Value="5.5940733174441"/>
+								<Property Name="TrimEnd" Type="Real64" Value="107.999864455145"/>
+							</PropertyList>
+							<Language>SFX</Language>
+							<AudioFile>Unfolding Secrets BGM.wav</AudioFile>
+							<MediaIDList>
+								<MediaID ID="113494807"/>
+							</MediaIDList>
+						</AudioFileSource>
+					</ChildrenList>
+					<ActiveSourceList>
+						<ActiveSource Name="Unfolding Secrets BGM" ID="{56743F93-1554-43B2-BE87-9A80C1ABAE20}" Platform="Linked"/>
+					</ActiveSourceList>
+				</Sound>
+			</ChildrenList>
+		</WorkUnit>
+	</AudioObjects>
+</WwiseDocument>

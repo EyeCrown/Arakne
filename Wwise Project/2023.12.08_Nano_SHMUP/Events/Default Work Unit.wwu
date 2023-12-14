@@ -116,6 +116,29 @@
 						</Event>
 					</ChildrenList>
 				</Folder>
+				<Folder Name="Pnj" ID="{3ADC1C52-F114-4A04-9E5C-D08D849CAD3F}" ShortID="965458810">
+					<ChildrenList>
+						<Event Name="E_CaterpillarMoving" ID="{19DA1C80-67EE-4A5F-BE81-2BD09ECFE4DC}"/>
+						<Event Name="E_SpawnSpider" ID="{E225CFCC-AEAC-4F84-8FB5-1F370E53A2BD}"/>
+						<Event Name="E_HitOnBoss" ID="{B86F49E1-2EA5-444B-8910-EE92344F9D60}"/>
+						<Event Name="E_LastHitOnBoss" ID="{B195CFF7-B125-4080-BD16-7341DFA5D18D}"/>
+					</ChildrenList>
+				</Folder>
+				<Folder Name="Music" ID="{C9D1C601-1B6B-471B-B7BF-68A152F16B49}" ShortID="1061366759">
+					<ChildrenList>
+						<Event Name="E_Play_BGM" ID="{8E7BF892-00BD-4A53-AEDE-E4E9E1B8E370}">
+							<ChildrenList>
+								<Action Name="" ID="{324C6ED0-A190-4EA0-AC72-9C9590C9FB66}" ShortID="494303104">
+									<ReferenceList>
+										<Reference Name="Target">
+											<ObjectRef Name="GameMusic01" ID="{5899BACD-B98C-4EE1-81D6-A7D17479DCEB}" WorkUnitID="{613C8CB2-91F1-419C-888B-4CDD7DA41F1D}"/>
+										</Reference>
+									</ReferenceList>
+								</Action>
+							</ChildrenList>
+						</Event>
+					</ChildrenList>
+				</Folder>
 			</ChildrenList>
 		</WorkUnit>
 	</Events>

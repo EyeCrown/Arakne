@@ -7,8 +7,10 @@
 					<ObjectInclusionList>
 						<ObjectRef Name="SFX_Player_IsHit_v1" ID="{AD39C5D5-20FA-4500-A2FC-CBBDCEAB170F}" WorkUnitID="{90D9CD61-7190-4799-9D6B-2A3BCEA18F27}" Origin="Manual" Filter="7"/>
 						<ObjectRef Name="Player" ID="{FF675802-BFDA-4551-AA24-B96282E7C7C4}" WorkUnitID="{90D9CD61-7190-4799-9D6B-2A3BCEA18F27}" Origin="Manual" Filter="7"/>
+						<ObjectRef Name="Music" ID="{C9D1C601-1B6B-471B-B7BF-68A152F16B49}" WorkUnitID="{405AC284-B028-466C-84CE-EC8BDA34EEE5}" Origin="Manual" Filter="7"/>
 						<ObjectRef Name="Ball" ID="{6D1B8C24-609F-475A-8137-D983AFC1A602}" WorkUnitID="{90D9CD61-7190-4799-9D6B-2A3BCEA18F27}" Origin="Manual" Filter="7"/>
 						<ObjectRef Name="Default Work Unit" ID="{90D9CD61-7190-4799-9D6B-2A3BCEA18F27}" WorkUnitID="{90D9CD61-7190-4799-9D6B-2A3BCEA18F27}" Origin="Manual" Filter="7"/>
+						<ObjectRef Name="Pnj" ID="{3ADC1C52-F114-4A04-9E5C-D08D849CAD3F}" WorkUnitID="{405AC284-B028-466C-84CE-EC8BDA34EEE5}" Origin="Manual" Filter="7"/>
 						<ObjectRef Name="SFX_OS_Ball_AllyPassSweetener_v1" ID="{4CC34C8E-08DE-4A07-A40D-80103FA3B314}" WorkUnitID="{90D9CD61-7190-4799-9D6B-2A3BCEA18F27}" Origin="Manual" Filter="7"/>
 						<ObjectRef Name="SFX_OS_Ball_AllyShootSweetener_v1" ID="{F943F3A4-C447-4CC5-BAC9-EBFECBB8F875}" WorkUnitID="{90D9CD61-7190-4799-9D6B-2A3BCEA18F27}" Origin="Manual" Filter="7"/>
 						<ObjectRef Name="SFX_OS_Ball_AllyPass_v1" ID="{413AB599-57C9-4E3F-9D5D-4471271AD117}" WorkUnitID="{90D9CD61-7190-4799-9D6B-2A3BCEA18F27}" Origin="Manual" Filter="7"/>
