@@ -148,8 +148,6 @@ public class PlayerController : MonoBehaviour
         if (otherPlayer != null)
         {
             ballDetector.ball.GetComponent<BouncingBallScript>().Pass.Invoke(otherPlayer);
-            particle.startColor = passColor;
-            particle.Play();
         }
         else
         {
@@ -209,9 +207,10 @@ public class PlayerController : MonoBehaviour
 
     }
 
-    public int GetHealth()
+    private void EmitParticle(Color color)
     {
-        return health;
+        particle.startColor = color;
+        particle.Play();
     }
 
     public void SetAnimatorController(AnimatorController controller)
@@ -238,6 +237,7 @@ public class PlayerController : MonoBehaviour
     {
         if (isAlive && canDoAction && context.performed)
         {
+            EmitParticle(passColor);
             StartCoroutine(DoActionCoroutine());
             
             if (ballDetector.ball)
@@ -253,6 +253,7 @@ public class PlayerController : MonoBehaviour
     {
         if (isAlive && canDoAction && context.performed)
         {
+            EmitParticle(throwColor);
             if (canMove)
                 canMove = false;
             StartCoroutine(DoActionCoroutine());
@@ -274,7 +275,6 @@ public class PlayerController : MonoBehaviour
         else if (fromBouncingBall)
             Revive();
         animator.SetInteger("HealthPoint", health);
-        GameManager.Instance.UpdatePlayerHealth(ID);
     }
     #endregion
 
@@ -294,8 +294,6 @@ public class PlayerController : MonoBehaviour
             else
                 direction = Vector3.up;
             ball.GetComponent<BouncingBallScript>().Throw.Invoke(direction);
-            particle.startColor = throwColor;
-            particle.Play();
 
         }
 
