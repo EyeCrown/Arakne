@@ -66,9 +66,9 @@ MonoBehaviour:
     idInternal: 0
     valueGuidInternal: 
     WwiseObjectReference: {fileID: 11400000, guid: c5f5a48ef213495419ce5f5ace5f361a, type: 2}
-  playerHit: {fileID: 4570977514873200059, guid: d2041883945d5864489b7b1f45f683d3, type: 3}
-  enemyHit: {fileID: 7558476159001105912, guid: 863f1702618edcc478d1f1771d018800, type: 3}
-  bossHit: {fileID: 821007861271662803, guid: 48fd8cb3ee0bea544af78ffdee61a3f7, type: 3}
+  playerHitParticle: {fileID: 4570977514873200059, guid: d2041883945d5864489b7b1f45f683d3, type: 3}
+  enemyHitParticle: {fileID: 7558476159001105912, guid: 863f1702618edcc478d1f1771d018800, type: 3}
+  bossHitParticle: {fileID: 821007861271662803, guid: 48fd8cb3ee0bea544af78ffdee61a3f7, type: 3}
   Grab:
     m_PersistentCalls:
       m_Calls: []

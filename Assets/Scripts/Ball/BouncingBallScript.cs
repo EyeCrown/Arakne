@@ -28,9 +28,9 @@ public class BouncingBallScript : MonoBehaviour
     public AK.Wwise.Event BounceSound;
 
     [Header("VFX")]
-    [SerializeField] private GameObject playerHit;
-    [SerializeField] private GameObject enemyHit;
-    [SerializeField] private GameObject bossHit;
+    [SerializeField] private GameObject playerHitParticle;
+    [SerializeField] private GameObject enemyHitParticle;
+    [SerializeField] private GameObject bossHitParticle;
 
     public enum BallMode
     {
@@ -247,7 +247,7 @@ public class BouncingBallScript : MonoBehaviour
         Enemy enemyHit = enemy.GetComponent<Enemy>();
         if (enemyHit)
         {
-            Instantiate(enemyHit, enemy.transform.position, Quaternion.identity);
+            Instantiate(enemyHitParticle, enemy.transform.position, Quaternion.identity);
             enemyHit.Hit.Invoke(power);
         }
     }
@@ -261,7 +261,7 @@ public class BouncingBallScript : MonoBehaviour
             player.GetComponent<PlayerController>().Hit.Invoke(true);
         else 
             player.GetComponent<PlayerController>().Hit.Invoke(false);
-        Instantiate(playerHit, player.transform.position, Quaternion.identity);
+        Instantiate(playerHitParticle, player.transform.position, Quaternion.identity);
 
         if (mode == BallMode.homing)
         {
@@ -276,7 +276,7 @@ public class BouncingBallScript : MonoBehaviour
     {
         if(mode  == BallMode.bouncing)
         {
-            Instantiate(bossHit,point,Quaternion.identity);
+            Instantiate(bossHitParticle, point,Quaternion.identity);
             boss.GetComponent<Enemy>().Hit.Invoke(power * GameManager.Instance.multiplier);
             GameManager.Instance.ballCount--;
             Destroy(gameObject);
