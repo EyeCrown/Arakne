@@ -202,8 +202,7 @@ public class BouncingBallScript : MonoBehaviour
             }
             else if (hit.transform.gameObject.CompareTag("MapEnd"))
             {
-                GameManager.Instance.ballCount--;
-                Destroy(gameObject);
+                Die();
             }
         }
     }
@@ -223,9 +222,15 @@ public class BouncingBallScript : MonoBehaviour
         if (health <= 0)
         {
             //TODO death effect
-            GameManager.Instance.ballCount--;
-            Destroy(gameObject);
+            Die();
         }
+    }
+
+    private void Die()
+    {
+        GameManager.Instance.multiplier = 0;
+        GameManager.Instance.ballCount--;
+        Destroy(gameObject);
     }
 
     #endregion
@@ -241,6 +246,7 @@ public class BouncingBallScript : MonoBehaviour
 
         if(mode != BallMode.homing)
         {
+            Instantiate(enemyHitParticle, enemy.transform.position, Quaternion.identity);
             TakeDamage();
         }
 
@@ -248,7 +254,7 @@ public class BouncingBallScript : MonoBehaviour
         if (enemyHit)
         {
             Instantiate(enemyHitParticle, enemy.transform.position, Quaternion.identity);
-            enemyHit.Hit.Invoke(power);
+            enemyHit.Hit.Invoke(power * GameManager.Instance.multiplier);
         }
     }
 
@@ -265,8 +271,7 @@ public class BouncingBallScript : MonoBehaviour
 
         if (mode == BallMode.homing)
         {
-            GameManager.Instance.ballCount--;
-            Destroy(gameObject);
+            Die();
             return;
         }
         TakeDamage();
@@ -278,8 +283,7 @@ public class BouncingBallScript : MonoBehaviour
         {
             Instantiate(bossHitParticle, point,Quaternion.identity);
             boss.GetComponent<Enemy>().Hit.Invoke(power * GameManager.Instance.multiplier);
-            GameManager.Instance.ballCount--;
-            Destroy(gameObject);
+            Die();
         }
     }
 
