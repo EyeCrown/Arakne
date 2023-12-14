@@ -50,7 +50,7 @@ MonoBehaviour:
   speed: 5
   speedMultiplier: 0.2
   speedLimit: 20
-  power: 0
+  power: 1
   maxPower: 6
   pass: 0
   health: 25
