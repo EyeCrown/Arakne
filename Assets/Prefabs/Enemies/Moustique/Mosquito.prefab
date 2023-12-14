@@ -159,6 +159,7 @@ MonoBehaviour:
   idleRange: 10
   wiggleSpeed: 0
   wiggleRange: 0
+  maxHealth: 10
   health: 2
   scorePerHealthPoint: 150
   Hit:

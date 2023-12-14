@@ -92,9 +92,16 @@ public class PlayerController : MonoBehaviour
     }
 
 
-    private void OnCollisionEnter(Collision collision)
+    private void OnTriggerEnter(Collider other)
     {
-        movements = Vector3.zero;
+        if (other.gameObject.CompareTag("Enemy"))
+        {
+            Debug.Log("Player was hit by an enemy");
+            Hit.Invoke(false);
+        } else
+        {
+            movements = Vector3.zero;
+        }
     }
 
     #endregion

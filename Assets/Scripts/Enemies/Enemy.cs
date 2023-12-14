@@ -13,6 +13,7 @@ public class Enemy : MonoBehaviour
     [SerializeField] protected float idleRange;
     [SerializeField] protected float wiggleSpeed;
     [SerializeField] protected float wiggleRange;
+    [SerializeField] protected int maxHealth = 10;
     [SerializeField] protected int health = 10;
     [SerializeField] protected int scorePerHealthPoint;
     protected float idleDistance;
@@ -46,6 +47,7 @@ public class Enemy : MonoBehaviour
     {
         if(collision.gameObject.CompareTag("Player"))
         {
+            Debug.Log("Player was hit by an enemy");
             collision.gameObject.GetComponent<PlayerController>().Hit.Invoke(false);
         } else if (collision.gameObject.CompareTag("MapEnd"))
         {

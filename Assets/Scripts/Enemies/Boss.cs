@@ -32,10 +32,10 @@ public class Boss : Enemy
     #region EVENT HANDLER
     protected override void HitHandler(int damage)
     {
+        health -= damage;
         Debug.Log("Boss got hit");
-        animator.SetInteger("Progress", animator.GetInteger("Progress")+1);
-
-        if (health > 0)
+        animator.SetInteger("Progress", 8 - (health*8)/maxHealth);
+        if (health <= 0)
         {
             Die();
         }

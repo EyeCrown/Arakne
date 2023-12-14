@@ -1,5 +1,6 @@
 using System.Collections;
 using System.Collections.Generic;
+using System.Drawing;
 using UnityEditor.UIElements;
 using UnityEngine;
 using UnityEngine.Events;
@@ -21,10 +22,15 @@ public class BouncingBallScript : MonoBehaviour
     [SerializeField] private int health;
     private bool canHitPlayer = true;
 
-    [Header("Sound")]
+    [Header("SFX")]
     public AK.Wwise.Event ThrowSound;
     public AK.Wwise.Event PassSound;
     public AK.Wwise.Event BounceSound;
+
+    [Header("VFX")]
+    [SerializeField] private GameObject playerHit;
+    [SerializeField] private GameObject enemyHit;
+    [SerializeField] private GameObject bossHit;
 
     public enum BallMode
     {
@@ -65,7 +71,7 @@ public class BouncingBallScript : MonoBehaviour
 
     void OnDrawGizmos()
     {
-        Gizmos.color = Color.green;
+        Gizmos.color = UnityEngine.Color.green;
         Vector3 start = transform.position;
         Vector3 direction = transform.up;
         RaycastHit hit;
@@ -188,7 +194,7 @@ public class BouncingBallScript : MonoBehaviour
             }
             else if (hit.transform.gameObject.CompareTag("Boss"))
             {
-                CollideBoss(hit.transform.gameObject);
+                CollideBoss(hit.transform.gameObject,hit.point);
             }
             else if (hit.transform.gameObject.CompareTag("Player"))
             {
@@ -240,6 +246,7 @@ public class BouncingBallScript : MonoBehaviour
         Enemy enemyHit = enemy.GetComponent<Enemy>();
         if (enemyHit)
         {
+            Instantiate(enemyHit, enemy.transform.position, Quaternion.identity);
             enemyHit.Hit.Invoke(power);
         }
     }
@@ -253,6 +260,7 @@ public class BouncingBallScript : MonoBehaviour
             player.GetComponent<PlayerController>().Hit.Invoke(true);
         else 
             player.GetComponent<PlayerController>().Hit.Invoke(false);
+        Instantiate(playerHit, player.transform.position, Quaternion.identity);
 
         if (mode == BallMode.homing)
         {
@@ -263,10 +271,11 @@ public class BouncingBallScript : MonoBehaviour
         TakeDamage();
     }
 
-    private void CollideBoss(GameObject boss)
+    private void CollideBoss(GameObject boss,Vector3 point)
     {
-        if(mode  != BallMode.bouncing)
+        if(mode  == BallMode.bouncing)
         {
+            Instantiate(bossHit,point,Quaternion.identity);
             boss.GetComponent<Enemy>().Hit.Invoke(power * GameManager.Instance.multiplier);
             GameManager.Instance.ballCount--;
             Destroy(gameObject);
