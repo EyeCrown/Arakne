@@ -72,6 +72,17 @@ public class GameManager : MonoBehaviour
         players[idPlayer].GetComponent<PlayerController>().SetAnimatorController(animators[idPlayer]);
     }
 
+    public void UpdateBossHealth()
+    {
+        canvas.GetComponent<CanvasGame>().UpdateBossHealth();
+        
+    }
+
+    public void UpdatePlayerHealth(int idPlayer)
+    {
+        canvas.UpdatePlayerHealth(idPlayer, players[idPlayer].GetComponent<PlayerController>().GetHealth());
+    }
+
     public void StartGame()
     {
         SceneManager.LoadScene(1);

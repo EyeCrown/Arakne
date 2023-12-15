@@ -29,6 +29,11 @@ public class Boss : Enemy
         GameManager.Instance.GameWin();
     }
 
+    public int GetHealth()
+    {
+        return health;
+    }
+
     #region EVENT HANDLER
     protected override void HitHandler(int damage)
     {
@@ -36,6 +41,7 @@ public class Boss : Enemy
         Debug.Log("Boss got hit");
         animator.SetInteger("Progress", 8 - (health*8)/maxHealth);
         GameManager.Instance.ScoreChange.Invoke(damage * scorePerHealthPoint);
+        GameManager.Instance.UpdateBossHealth();
         if (health <= 0)
         {
             Die();
