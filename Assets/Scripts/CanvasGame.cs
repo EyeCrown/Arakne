@@ -16,6 +16,9 @@ public class CanvasGame : MonoBehaviour
 
     [SerializeField] private Slider[] playersBar;
 
+    [SerializeField] private GameObject[] heartP1;
+    [SerializeField] private GameObject[] heartP2;
+
 
     private void Start()
     {
@@ -65,21 +68,61 @@ public class CanvasGame : MonoBehaviour
 
     public void UpdatePlayerHealth(int id, int hp)
     {
+        Debug.Log("Switch : " + hp);
         switch (hp)
         {
             case 0:
-                playersBar[id].value = 0;
+                if (id == 0)
+                {
+                    heartP1[0].SetActive(false);
+                    heartP1[1].SetActive(false);
+                    heartP1[2].SetActive(false);
+                }
+                else
+                {
+                    heartP2[0].SetActive(false);
+                    heartP2[1].SetActive(false);
+                    heartP2[2].SetActive(false);
+                }
                 break;
             case 1:
-                playersBar[id].value = 33;
+                if (id == 0)
+                {
+                    heartP1[1].SetActive(false);
+                    heartP1[2].SetActive(false);
+                }
+                else
+                {
+                    heartP2[1].SetActive(false);
+                    heartP2[2].SetActive(false);
+                }
                 break;
             case 2:
-                playersBar[id].value = 66;
+                if (id == 0)
+                {
+                    heartP1[2].SetActive(false);
+                }
+                else
+                {
+                    heartP2[2].SetActive(false);
+                }
                 break;
             case 3:
-                playersBar[id].value = 100;
+                if (id == 0)
+                {
+                    heartP1[0].SetActive(true);
+                    heartP1[1].SetActive(true);
+                    heartP1[2].SetActive(true);
+                }
+                else
+                {
+                    heartP2[0].SetActive(true);
+                    heartP2[1].SetActive(true);
+                    heartP2[2].SetActive(true);
+                }
                 break;
             default:
+                Debug.LogError("UpdatePlayerHealth: Error invalid health > " + hp);
                 break;
         }
     }

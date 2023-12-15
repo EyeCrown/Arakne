@@ -20,7 +20,7 @@ public class PlayerController : MonoBehaviour
     [Range(1f, 100f)]
     private float speed; // lower it is, faster it is | range 1 to 100
 
-    [SerializeField] private int health = 3;
+    [SerializeField] public int health = 3;
 
     // Cooldowns
     [SerializeField]
@@ -275,6 +275,7 @@ public class PlayerController : MonoBehaviour
         else if (fromBouncingBall)
             Revive();
         animator.SetInteger("HealthPoint", health);
+        GameManager.Instance.UpdatePlayerHealth(ID);
     }
     #endregion
 

@@ -80,7 +80,7 @@ public class GameManager : MonoBehaviour
 
     public void UpdatePlayerHealth(int idPlayer)
     {
-        canvas.UpdatePlayerHealth(idPlayer, players[idPlayer].GetComponent<PlayerController>().GetHealth());
+        canvas.UpdatePlayerHealth(idPlayer, players[idPlayer].GetComponent<PlayerController>().health);
     }
 
     public void StartGame()

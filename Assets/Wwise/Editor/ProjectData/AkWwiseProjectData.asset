@@ -24,7 +24,7 @@ MonoBehaviour:
     ParentPath: Virtual Acoustics\Default Work Unit
     guid: 036e06e9c360a5499f76caab519488da
     GuidInternal: 
-    m_lastTime: -8584993033001959750
+    m_lastTime: -8584993085135183367
     List: []
   AuxBusWwu:
   - PhysicalPath: Master-Mixer Hierarchy\Default Work Unit.wwu
@@ -38,7 +38,7 @@ MonoBehaviour:
     ParentPath: Master-Mixer Hierarchy\Default Work Unit
     guid: 0c2e5222371567458d9e301390427db6
     GuidInternal: 
-    m_lastTime: -8584993033003425074
+    m_lastTime: -8584993085137956681
     List:
     - name: Master Audio Bus
       guid: d8a41415a61d2a41a17e75ca0c2149f3
@@ -66,7 +66,7 @@ MonoBehaviour:
     ParentPath: SoundBanks\Default Work Unit
     guid: 11b32f2e3ee29e42aac88e4f8237d053
     GuidInternal: 
-    m_lastTime: -8584993033002049770
+    m_lastTime: -8584989773931269698
     List:
     - name: MainSoundBank
       guid: 755b33d932df0641a63ccf55283656eb
@@ -94,7 +94,7 @@ MonoBehaviour:
     ParentPath: Events\Default Work Unit
     guid: 84c25a4028b06c4684ceec8bda34eee5
     GuidInternal: 
-    m_lastTime: -8584992354445280590
+    m_lastTime: -8584989773931357298
     List:
     - name: Ball Interactions
       guid: 4f8c85a12dede241a535578d4344b995
@@ -110,6 +110,66 @@ MonoBehaviour:
         ObjectType: 4
         guid: 4f8c85a12dede241a535578d4344b995
       Path: Events\Default Work Unit\Ball Interactions
+      maxAttenuation: 0
+      maxDuration: -1
+      minDuration: -1
+    - name: E_CaterpillarMoving
+      guid: 801cda19ee675f4abe812bd09ecfe4dc
+      id: 896192876
+      PathAndIcons:
+      - ElementName: Events
+        ObjectType: 5
+        guid: 00000000000000000000000000000000
+      - ElementName: Default Work Unit
+        ObjectType: 12
+        guid: 84c25a4028b06c4684ceec8bda34eee5
+      - ElementName: Pnj
+        ObjectType: 4
+        guid: 521cdc3a14f1044a9e5cd08d849cad3f
+      - ElementName: E_CaterpillarMoving
+        ObjectType: 3
+        guid: 801cda19ee675f4abe812bd09ecfe4dc
+      Path: Events\Default Work Unit\Pnj\E_CaterpillarMoving
+      maxAttenuation: 0
+      maxDuration: -1
+      minDuration: -1
+    - name: E_HitOnBoss
+      guid: e1496fb8a52e4b448910ee92344f9d60
+      id: 2273985692
+      PathAndIcons:
+      - ElementName: Events
+        ObjectType: 5
+        guid: 00000000000000000000000000000000
+      - ElementName: Default Work Unit
+        ObjectType: 12
+        guid: 84c25a4028b06c4684ceec8bda34eee5
+      - ElementName: Pnj
+        ObjectType: 4
+        guid: 521cdc3a14f1044a9e5cd08d849cad3f
+      - ElementName: E_HitOnBoss
+        ObjectType: 3
+        guid: e1496fb8a52e4b448910ee92344f9d60
+      Path: Events\Default Work Unit\Pnj\E_HitOnBoss
+      maxAttenuation: 0
+      maxDuration: -1
+      minDuration: -1
+    - name: E_LastHitOnBoss
+      guid: f7cf95b125b18040bd167341dfa5d18d
+      id: 3066051804
+      PathAndIcons:
+      - ElementName: Events
+        ObjectType: 5
+        guid: 00000000000000000000000000000000
+      - ElementName: Default Work Unit
+        ObjectType: 12
+        guid: 84c25a4028b06c4684ceec8bda34eee5
+      - ElementName: Pnj
+        ObjectType: 4
+        guid: 521cdc3a14f1044a9e5cd08d849cad3f
+      - ElementName: E_LastHitOnBoss
+        ObjectType: 3
+        guid: f7cf95b125b18040bd167341dfa5d18d
+      Path: Events\Default Work Unit\Pnj\E_LastHitOnBoss
       maxAttenuation: 0
       maxDuration: -1
       minDuration: -1
@@ -190,6 +250,26 @@ MonoBehaviour:
       maxAttenuation: 0
       maxDuration: -1
       minDuration: -1
+    - name: E_Play_BGM
+      guid: 92f87b8ebd00534aaedee4e9e1b8e370
+      id: 468595000
+      PathAndIcons:
+      - ElementName: Events
+        ObjectType: 5
+        guid: 00000000000000000000000000000000
+      - ElementName: Default Work Unit
+        ObjectType: 12
+        guid: 84c25a4028b06c4684ceec8bda34eee5
+      - ElementName: Music
+        ObjectType: 4
+        guid: 01c6d1c96b1b1b47b7bf68a152f16b49
+      - ElementName: E_Play_BGM
+        ObjectType: 3
+        guid: 92f87b8ebd00534aaedee4e9e1b8e370
+      Path: Events\Default Work Unit\Music\E_Play_BGM
+      maxAttenuation: 0
+      maxDuration: -1
+      minDuration: -1
     - name: E_Play_Bubbled
       guid: 67ee0109f99440429a8e16b450223566
       id: 364366560
@@ -250,6 +330,26 @@ MonoBehaviour:
       maxAttenuation: 0
       maxDuration: -1
       minDuration: -1
+    - name: E_SpawnSpider
+      guid: cccf25e2acae844f8fb51f370e53a2bd
+      id: 3091887893
+      PathAndIcons:
+      - ElementName: Events
+        ObjectType: 5
+        guid: 00000000000000000000000000000000
+      - ElementName: Default Work Unit
+        ObjectType: 12
+        guid: 84c25a4028b06c4684ceec8bda34eee5
+      - ElementName: Pnj
+        ObjectType: 4
+        guid: 521cdc3a14f1044a9e5cd08d849cad3f
+      - ElementName: E_SpawnSpider
+        ObjectType: 3
+        guid: cccf25e2acae844f8fb51f370e53a2bd
+      Path: Events\Default Work Unit\Pnj\E_SpawnSpider
+      maxAttenuation: 0
+      maxDuration: -1
+      minDuration: -1
     - name: E_Stop_BubbleIdle
       guid: f0136472561e9047a3ffc46f8ec89658
       id: 2809597228
@@ -270,6 +370,23 @@ MonoBehaviour:
       maxAttenuation: 0
       maxDuration: -1
       minDuration: -1
+    - name: Music
+      guid: 01c6d1c96b1b1b47b7bf68a152f16b49
+      id: 3991942870
+      PathAndIcons:
+      - ElementName: Events
+        ObjectType: 5
+        guid: 00000000000000000000000000000000
+      - ElementName: Default Work Unit
+        ObjectType: 12
+        guid: 84c25a4028b06c4684ceec8bda34eee5
+      - ElementName: Music
+        ObjectType: 4
+        guid: 01c6d1c96b1b1b47b7bf68a152f16b49
+      Path: Events\Default Work Unit\Music
+      maxAttenuation: 0
+      maxDuration: -1
+      minDuration: -1
     - name: Player
       guid: 1d282af48ea3b84fa3cade6563176cea
       id: 1069431850
@@ -287,6 +404,23 @@ MonoBehaviour:
       maxAttenuation: 0
       maxDuration: -1
       minDuration: -1
+    - name: Pnj
+      guid: 521cdc3a14f1044a9e5cd08d849cad3f
+      id: 1098341187
+      PathAndIcons:
+      - ElementName: Events
+        ObjectType: 5
+        guid: 00000000000000000000000000000000
+      - ElementName: Default Work Unit
+        ObjectType: 12
+        guid: 84c25a4028b06c4684ceec8bda34eee5
+      - ElementName: Pnj
+        ObjectType: 4
+        guid: 521cdc3a14f1044a9e5cd08d849cad3f
+      Path: Events\Default Work Unit\Pnj
+      maxAttenuation: 0
+      maxDuration: -1
+      minDuration: -1
   RtpcWwu:
   - PhysicalPath: Game Parameters\Default Work Unit.wwu
     PathAndIcons:
@@ -299,7 +433,7 @@ MonoBehaviour:
     ParentPath: Game Parameters\Default Work Unit
     guid: 433d40d7c32d3143a01b38ad82eb5fae
     GuidInternal: 
-    m_lastTime: -8584993033004820386
+    m_lastTime: -8584991498578619610
     List:
     - name: PassCount
       guid: d970069c9e43984183ca96130b768521
@@ -327,7 +461,7 @@ MonoBehaviour:
     ParentPath: States\Default Work Unit
     guid: 57415d4bc615e347b404e847c6479240
     GuidInternal: 
-    m_lastTime: -8584993033002019754
+    m_lastTime: -8584993085135383088
     List: []
   SwitchWwu:
   - PhysicalPath: Switches\Default Work Unit.wwu
@@ -341,7 +475,7 @@ MonoBehaviour:
     ParentPath: Switches\Default Work Unit
     guid: 7cc6170ca94e094eb7cbbf0bbad0d4b3
     GuidInternal: 
-    m_lastTime: -8584993033001999744
+    m_lastTime: -8584993085135313315
     List: []
   TriggerWwu:
   - PhysicalPath: Triggers\Default Work Unit.wwu
@@ -355,11 +489,11 @@ MonoBehaviour:
     ParentPath: Triggers\Default Work Unit
     guid: 8acb584fe7e353439698e234b016df45
     GuidInternal: 
-    m_lastTime: -8584993033001979014
+    m_lastTime: -8584993085135251442
     List: []
   ExpandedFileSystemItemIds: 
   ExpandedWaapiItemIds: 
   AutoSyncSelection: 0
   autoPopulateEnabled: 1
-  currentDataSource: 0
+  currentDataSource: 1
   CurrentPluginConfig: 
