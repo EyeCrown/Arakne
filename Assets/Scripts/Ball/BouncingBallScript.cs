@@ -254,8 +254,11 @@ public class BouncingBallScript : MonoBehaviour
         {
             Instantiate(enemyHitParticle, enemy.transform.position, Quaternion.identity);
             enemyHit.Hit.Invoke(power * GameManager.Instance.multiplier);
-            GameManager.Instance.MultiplicatorChange.Invoke(GameManager.Instance.multiplier + 1);
-            Instantiate(multiplierText, point - direction * 3f, Quaternion.identity);
+            if(mode == BallMode.bouncing)
+            {
+                GameManager.Instance.MultiplicatorChange.Invoke(GameManager.Instance.multiplier + 1);
+                Instantiate(multiplierText, point - direction * 3f, Quaternion.identity);
+            }
 
         }
     }
@@ -319,10 +322,11 @@ public class BouncingBallScript : MonoBehaviour
             return;
         }
         fxState.UpdateColor.Invoke();
-        StartCoroutine(ThrowCoroutine());
         transform.up = direction;
         mode = BallMode.bouncing;
+        health = power / 2 + 1;
         ThrowSound.Post(gameObject);
+        StartCoroutine(ThrowCoroutine());
     }
     private void PassHandler(GameObject newTarget)
     {

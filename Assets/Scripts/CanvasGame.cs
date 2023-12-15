@@ -69,12 +69,12 @@ public class CanvasGame : MonoBehaviour
 
     void SetActiveGameplayUI(bool state)
     {
-        scoreText.enabled = false;
+        scoreText.enabled = state;
         timer.SetActive(state);
         player1.SetActive(state);
         player2.SetActive(state);
         healthBar.SetActive(state);
-        panelScoreScreen.SetActive(false);
+        panelScoreScreen.SetActive(state);
     }
     public void UpdateBossHealth()
     {
@@ -151,7 +151,7 @@ public class CanvasGame : MonoBehaviour
     {
         float minutes = value / 60f;
         float seconds = value % 60f;
-        timerTMP.text = minutes.ToString("00") + ":" + seconds.ToString("00");
+        timerTMP.text = Mathf.FloorToInt(minutes) + ":" + Mathf.FloorToInt(seconds);
     }
 
 
