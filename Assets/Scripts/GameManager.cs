@@ -13,9 +13,8 @@ public class GameManager : MonoBehaviour
     public int maxHealth = 3;
     public int multiplier = 1;
     public int ballCount = 0;
-
+    public AK.Wwise.Event ContainerMusic;
     public CanvasGame canvas;
-
     #region EVENTS
     public UnityEvent<int> ScoreChange;
     public UnityEvent<int> PlayerDie;
@@ -35,8 +34,9 @@ public class GameManager : MonoBehaviour
         {
             DontDestroyOnLoad(gameObject);
             Instance = this;
+            
         }
-
+        ContainerMusic.Post(gameObject);
         ScoreChange.AddListener(ScoreChangeHandler);
         PlayerDie.AddListener(PlayerDieHandler);
         players = new GameObject[2];
@@ -52,6 +52,7 @@ public class GameManager : MonoBehaviour
         Debug.Log("Change scene");
 
         SceneManager.LoadScene(gameScene);
+
     }
 
     public GameObject GetOtherPlayer(int playerId)
@@ -86,7 +87,7 @@ public class GameManager : MonoBehaviour
     public void StartGame()
     {
         SceneManager.LoadScene(1);
-
+        
         Vector3 spawnPosJ0 = new Vector3(-5, -10, 0);
         players[0].transform.position = spawnPosJ0;
 

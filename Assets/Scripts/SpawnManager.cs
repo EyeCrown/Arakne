@@ -10,7 +10,8 @@ public class SpawnManager : MonoBehaviour
     private float timerWitness = 0;
     private int timer = 0;
     private bool timerOn = false;
-    
+    public AK.Wwise.Event SpawnSpider;
+
 
     // Start is called before the first frame update
     void Start()
@@ -59,5 +60,6 @@ public class SpawnManager : MonoBehaviour
     void SpawnEnemy(int xPos)
     {
         Instantiate(enemy, new Vector3(xPos, 3, 0), Quaternion.identity);
+        SpawnSpider.Post(gameObject);
     }
 }

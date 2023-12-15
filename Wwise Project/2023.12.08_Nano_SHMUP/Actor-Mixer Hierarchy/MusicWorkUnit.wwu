@@ -3,9 +3,19 @@
 	<AudioObjects>
 		<WorkUnit Name="MusicWorkUnit" ID="{613C8CB2-91F1-419C-888B-4CDD7DA41F1D}" PersistMode="Standalone">
 			<ChildrenList>
-				<Sound Name="GameMusic01" ID="{5899BACD-B98C-4EE1-81D6-A7D17479DCEB}" ShortID="946330127">
+				<Sound Name="Unfolding Secrets BGM" ID="{5899BACD-B98C-4EE1-81D6-A7D17479DCEB}" ShortID="946330127">
 					<PropertyList>
 						<Property Name="IsLoopingEnabled" Type="bool" Value="True"/>
+						<Property Name="MaxSoundPerInstance" Type="int16">
+							<ValueList>
+								<Value>1</Value>
+							</ValueList>
+						</Property>
+						<Property Name="UseMaxSoundPerInstance" Type="bool">
+							<ValueList>
+								<Value>True</Value>
+							</ValueList>
+						</Property>
 						<Property Name="Volume" Type="Real64">
 							<ValueList>
 								<Value>-11</Value>

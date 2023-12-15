@@ -9,7 +9,7 @@
 	</RootPaths>
 	<DialogueEvents/>
 	<SoundBanks>
-		<SoundBank Id="534561221" Type="User" Language="SFX" Hash="{18141E88-0259-F84C-B39C-E79AC820E667}">
+		<SoundBank Id="534561221" Type="User" Language="SFX" Hash="{E7208898-1209-D0E9-081E-CC4F70832EAE}">
 			<ShortName>MainSoundBank</ShortName>
 			<Path>MainSoundBank.bnk</Path>
 			<Media>
@@ -23,7 +23,7 @@
 				</File>
 				<File Id="113494807" Language="SFX" Streaming="false" Location="Memory">
 					<ShortName>Unfolding Secrets BGM.wav</ShortName>
-					<CachePath>SFX/Unfolding Secrets BGM_F2EAB608.wem</CachePath>
+					<CachePath>SFX/Unfolding Secrets BGM_FB742EC8.wem</CachePath>
 				</File>
 				<File Id="194210561" Language="SFX" Streaming="false" Location="Memory">
 					<ShortName>SFX_OS_Ball_Bounce_var6_v1.wav</ShortName>
@@ -67,7 +67,7 @@
 				</File>
 				<File Id="486226605" Language="SFX" Streaming="false" Location="Memory">
 					<ShortName>SFX_Player_IsHit_v1.wav</ShortName>
-					<CachePath>SFX/SFX_Player_IsHit_v1_A3C2B887.wem</CachePath>
+					<CachePath>SFX/SFX_Player_IsHit_v1_542D897C.wem</CachePath>
 				</File>
 				<File Id="494930737" Language="SFX" Streaming="false" Location="Memory">
 					<ShortName>SFX_OS_Ball_Bounce_var1_v1.wav</ShortName>
@@ -111,13 +111,25 @@
 				</File>
 				<File Id="1066249834" Language="SFX" Streaming="false" Location="Memory">
 					<ShortName>SFX_OS_PNJ_SpawnSpiders01.wav</ShortName>
-					<CachePath>SFX/SFX_OS_PNJ_SpawnSpiders01_A088601D.wem</CachePath>
+					<CachePath>SFX/SFX_OS_PNJ_SpawnSpiders01_0CF63DB1.wem</CachePath>
 				</File>
 			</Media>
 			<Events>
-				<Event Id="896192876" Name="E_CaterpillarMoving"/>
-				<Event Id="2273985692" Name="E_HitOnBoss"/>
-				<Event Id="3066051804" Name="E_LastHitOnBoss"/>
+				<Event Id="896192876" Name="E_CaterpillarMoving">
+					<MediaRefs>
+						<MediaRef Id="317200093"/>
+					</MediaRefs>
+				</Event>
+				<Event Id="2273985692" Name="E_HitOnBoss">
+					<MediaRefs>
+						<MediaRef Id="503659095"/>
+					</MediaRefs>
+				</Event>
+				<Event Id="3066051804" Name="E_LastHitOnBoss">
+					<MediaRefs>
+						<MediaRef Id="356871656"/>
+					</MediaRefs>
+				</Event>
 				<Event Id="129291699" Name="E_Play_AllyPass">
 					<MediaRefs>
 						<MediaRef Id="614848710"/>
@@ -166,7 +178,11 @@
 						<MediaRef Id="486226605"/>
 					</MediaRefs>
 				</Event>
-				<Event Id="3091887893" Name="E_SpawnSpider"/>
+				<Event Id="3091887893" Name="E_SpawnSpider">
+					<MediaRefs>
+						<MediaRef Id="1066249834"/>
+					</MediaRefs>
+				</Event>
 				<Event Id="2809597228" Name="E_Stop_BubbleIdle">
 					<MediaRefs>
 						<MediaRef Id="13779944"/>
@@ -198,5 +214,5 @@
 			</GameParameters>
 		</SoundBank>
 	</SoundBanks>
-	<FileHash>{A30BCA1C-A16F-B11D-F137-AE9F9F365F2E}</FileHash>
+	<FileHash>{B8761588-2FD0-A6A4-F63E-6ACC115DEF67}</FileHash>
 </SoundBanksInfo>
