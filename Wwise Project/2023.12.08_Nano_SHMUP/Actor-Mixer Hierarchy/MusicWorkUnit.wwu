@@ -18,7 +18,7 @@
 						</Property>
 						<Property Name="Volume" Type="Real64">
 							<ValueList>
-								<Value>-11</Value>
+								<Value>-12</Value>
 							</ValueList>
 						</Property>
 					</PropertyList>
@@ -38,6 +38,11 @@
 								<Property Name="OverrideWavLoop" Type="bool" Value="True"/>
 								<Property Name="TrimBegin" Type="Real64" Value="5.5940733174441"/>
 								<Property Name="TrimEnd" Type="Real64" Value="107.999864455145"/>
+								<Property Name="VolumeOffset" Type="Real64">
+									<ValueList>
+										<Value>-3.3</Value>
+									</ValueList>
+								</Property>
 							</PropertyList>
 							<Language>SFX</Language>
 							<AudioFile>Unfolding Secrets BGM.wav</AudioFile>

@@ -178,6 +178,18 @@ MonoBehaviour:
     idInternal: 0
     valueGuidInternal: 
     WwiseObjectReference: {fileID: 11400000, guid: b124f249911112942b9c23c2768820d1, type: 2}
+  PlayerInBubble:
+    idInternal: 0
+    valueGuidInternal: 
+    WwiseObjectReference: {fileID: 11400000, guid: 588a67f45e56e094d9cc884dc531dca8, type: 2}
+  PlayerLeaveBubble:
+    idInternal: 0
+    valueGuidInternal: 
+    WwiseObjectReference: {fileID: 11400000, guid: 53feffa25b3ec6f46bc27b2b15f7110d, type: 2}
+  PlayerEnterBubble:
+    idInternal: 0
+    valueGuidInternal: 
+    WwiseObjectReference: {fileID: 11400000, guid: 32863e3a10e7525459eb7a165b9c255b, type: 2}
   Hit:
     m_PersistentCalls:
       m_Calls: []

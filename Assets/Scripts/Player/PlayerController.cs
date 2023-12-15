@@ -57,7 +57,9 @@ public class PlayerController : MonoBehaviour
     private Transform bottomLeftBorder;
     private Transform topRightBorder;
     public AK.Wwise.Event PlayerGetHit;
-
+    public AK.Wwise.Event PlayerInBubble;
+    public AK.Wwise.Event PlayerLeaveBubble;
+    public AK.Wwise.Event PlayerEnterBubble;
     public int ID { get; private set; }
     #endregion
 
@@ -190,6 +192,7 @@ public class PlayerController : MonoBehaviour
 
     private void Revive()
     {
+        PlayerLeaveBubble.Post(gameObject);
         StartCoroutine(HittableCoroutine());
         isAlive = true;
         health = GameManager.Instance.maxHealth;
@@ -198,7 +201,9 @@ public class PlayerController : MonoBehaviour
     }
 
     private void Die()
-    {
+    {   
+        PlayerEnterBubble.Post(gameObject);
+        PlayerInBubble.Post(gameObject);
         Debug.Log("Player die");
         isAlive = false;
         isHittable = false;

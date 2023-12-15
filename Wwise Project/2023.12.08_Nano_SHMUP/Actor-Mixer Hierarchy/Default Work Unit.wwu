@@ -658,6 +658,13 @@
 				<Folder Name="Player" ID="{FF675802-BFDA-4551-AA24-B96282E7C7C4}" ShortID="941321725">
 					<ChildrenList>
 						<Sound Name="SFX_Player_IsHit_v1" ID="{AD39C5D5-20FA-4500-A2FC-CBBDCEAB170F}" ShortID="533313703">
+							<PropertyList>
+								<Property Name="Volume" Type="Real64">
+									<ValueList>
+										<Value>-8</Value>
+									</ValueList>
+								</Property>
+							</PropertyList>
 							<ReferenceList>
 								<Reference Name="Conversion">
 									<ObjectRef Name="Default Conversion Settings" ID="{6D1B890C-9826-4384-BF07-C15223E9FB56}" WorkUnitID="{4E5C7FFC-E9B1-46F8-BCE3-EDA1EA7828DB}"/>
@@ -685,6 +692,13 @@
 							</ActiveSourceList>
 						</Sound>
 						<RandomSequenceContainer Name="SFX_OS_Player_Bubbled" ID="{61257148-7D80-42BE-A2B0-311CE373B7DD}" ShortID="215023725">
+							<PropertyList>
+								<Property Name="Volume" Type="Real64">
+									<ValueList>
+										<Value>2</Value>
+									</ValueList>
+								</Property>
+							</PropertyList>
 							<ReferenceList>
 								<Reference Name="Conversion">
 									<ObjectRef Name="Default Conversion Settings" ID="{6D1B890C-9826-4384-BF07-C15223E9FB56}" WorkUnitID="{4E5C7FFC-E9B1-46F8-BCE3-EDA1EA7828DB}"/>
@@ -766,6 +780,11 @@
 							<PropertyList>
 								<Property Name="PlayMechanismLoop" Type="bool" Value="True"/>
 								<Property Name="PlayMechanismStepOrContinuous" Type="int16" Value="0"/>
+								<Property Name="Volume" Type="Real64">
+									<ValueList>
+										<Value>3</Value>
+									</ValueList>
+								</Property>
 							</PropertyList>
 							<ReferenceList>
 								<Reference Name="Conversion">
@@ -912,7 +931,7 @@
 								</Property>
 								<Property Name="Volume" Type="Real64">
 									<ValueList>
-										<Value>5</Value>
+										<Value>3</Value>
 									</ValueList>
 								</Property>
 							</PropertyList>
@@ -927,10 +946,11 @@
 							<ChildrenList>
 								<AudioFileSource Name="SFX_OS_PNJ_SpawnSpiders01" ID="{FE9EDBBC-775F-435A-91CC-21611B70EFFC}">
 									<PropertyList>
+										<Property Name="FadeInDuration" Type="Real64" Value="0.155260460526316"/>
 										<Property Name="FadeOutDuration" Type="Real64" Value="0.129138278855976"/>
 										<Property Name="OverrideWavLoop" Type="bool" Value="True"/>
-										<Property Name="TrimBegin" Type="Real64" Value="0.423286580694586"/>
-										<Property Name="TrimEnd" Type="Real64" Value="5.92601212972421"/>
+										<Property Name="TrimBegin" Type="Real64" Value="0.497220133326165"/>
+										<Property Name="TrimEnd" Type="Real64" Value="1.60089930077684"/>
 										<Property Name="VolumeOffset" Type="Real64">
 											<ValueList>
 												<Value>1.9</Value>
@@ -1070,7 +1090,7 @@
 								</Property>
 								<Property Name="Volume" Type="Real64">
 									<ValueList>
-										<Value>4</Value>
+										<Value>-3</Value>
 									</ValueList>
 								</Property>
 							</PropertyList>
@@ -1257,6 +1277,11 @@
 								<Property Name="UseMaxSoundPerInstance" Type="bool">
 									<ValueList>
 										<Value>True</Value>
+									</ValueList>
+								</Property>
+								<Property Name="Volume" Type="Real64">
+									<ValueList>
+										<Value>2</Value>
 									</ValueList>
 								</Property>
 							</PropertyList>
@@ -1474,7 +1499,7 @@
 							<PropertyList>
 								<Property Name="Volume" Type="Real64">
 									<ValueList>
-										<Value>-4</Value>
+										<Value>-6</Value>
 									</ValueList>
 								</Property>
 							</PropertyList>
@@ -1556,6 +1581,13 @@
 							</ChildrenList>
 						</RandomSequenceContainer>
 						<RandomSequenceContainer Name="hitWingsMosquito" ID="{C88C51FA-9FC4-41E1-861A-70D83332C21E}" ShortID="160919855">
+							<PropertyList>
+								<Property Name="Volume" Type="Real64">
+									<ValueList>
+										<Value>2</Value>
+									</ValueList>
+								</Property>
+							</PropertyList>
 							<ReferenceList>
 								<Reference Name="Conversion">
 									<ObjectRef Name="Default Conversion Settings" ID="{6D1B890C-9826-4384-BF07-C15223E9FB56}" WorkUnitID="{4E5C7FFC-E9B1-46F8-BCE3-EDA1EA7828DB}"/>
@@ -1648,7 +1680,7 @@
 								</Property>
 								<Property Name="Volume" Type="Real64">
 									<ValueList>
-										<Value>-4</Value>
+										<Value>-2</Value>
 									</ValueList>
 								</Property>
 							</PropertyList>
@@ -1791,7 +1823,7 @@
 							<PropertyList>
 								<Property Name="Volume" Type="Real64">
 									<ValueList>
-										<Value>-6</Value>
+										<Value>-5</Value>
 									</ValueList>
 								</Property>
 							</PropertyList>

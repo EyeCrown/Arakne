@@ -9,7 +9,7 @@
 	</RootPaths>
 	<DialogueEvents/>
 	<SoundBanks>
-		<SoundBank Id="534561221" Type="User" Language="SFX" Hash="{ACA69331-3FE8-70DA-1829-BA0625B207E2}">
+		<SoundBank Id="534561221" Type="User" Language="SFX" Hash="{13534027-65FE-C560-578F-0050D1279DF4}">
 			<ShortName>MainSoundBank</ShortName>
 			<Path>MainSoundBank.bnk</Path>
 			<Media>
@@ -179,7 +179,7 @@
 				</File>
 				<File Id="1066249834" Language="SFX" Streaming="false" Location="Memory">
 					<ShortName>SFX_OS_PNJ_SpawnSpiders01.wav</ShortName>
-					<CachePath>SFX/SFX_OS_PNJ_SpawnSpiders01_0CF63DB1.wem</CachePath>
+					<CachePath>SFX/SFX_OS_PNJ_SpawnSpiders01_381031F6.wem</CachePath>
 				</File>
 			</Media>
 			<Events>
@@ -312,5 +312,5 @@
 			</GameParameters>
 		</SoundBank>
 	</SoundBanks>
-	<FileHash>{27CD8C99-7FA3-4445-FF26-47010F2D0ABD}</FileHash>
+	<FileHash>{F9CB5169-3FAA-897F-6C2D-4C9DB517B209}</FileHash>
 </SoundBanksInfo>
