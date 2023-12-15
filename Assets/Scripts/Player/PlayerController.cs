@@ -1,5 +1,6 @@
 using System.Collections;
 using System.Collections.Generic;
+using UnityEditor.Animations;
 using UnityEngine;
 using UnityEngine.Events;
 using UnityEngine.InputSystem;
@@ -19,7 +20,7 @@ public class PlayerController : MonoBehaviour
     [Range(1f, 100f)]
     private float speed; // lower it is, faster it is | range 1 to 100
 
-    [SerializeField] private int health = 3;
+    [SerializeField] public int health = 3;
 
     // Cooldowns
     [SerializeField]
@@ -147,8 +148,6 @@ public class PlayerController : MonoBehaviour
         if (otherPlayer != null)
         {
             ballDetector.ball.GetComponent<BouncingBallScript>().Pass.Invoke(otherPlayer);
-            particle.startColor = passColor;
-            particle.Play();
         }
         else
         {
@@ -207,6 +206,18 @@ public class PlayerController : MonoBehaviour
         //TODO: put anim dead here
 
     }
+
+    private void EmitParticle(Color color)
+    {
+        particle.startColor = color;
+        particle.Play();
+    }
+
+    public void SetAnimatorController(AnimatorController controller)
+    {
+        animator.runtimeAnimatorController = controller;
+    }
+
     #endregion
 
     #region INPUTS
@@ -226,6 +237,7 @@ public class PlayerController : MonoBehaviour
     {
         if (isAlive && canDoAction && context.performed)
         {
+            EmitParticle(passColor);
             StartCoroutine(DoActionCoroutine());
             
             if (ballDetector.ball)
@@ -241,6 +253,7 @@ public class PlayerController : MonoBehaviour
     {
         if (isAlive && canDoAction && context.performed)
         {
+            EmitParticle(throwColor);
             if (canMove)
                 canMove = false;
             StartCoroutine(DoActionCoroutine());
@@ -262,6 +275,7 @@ public class PlayerController : MonoBehaviour
         else if (fromBouncingBall)
             Revive();
         animator.SetInteger("HealthPoint", health);
+        GameManager.Instance.UpdatePlayerHealth(ID);
     }
     #endregion
 
@@ -281,8 +295,6 @@ public class PlayerController : MonoBehaviour
             else
                 direction = Vector3.up;
             ball.GetComponent<BouncingBallScript>().Throw.Invoke(direction);
-            particle.startColor = throwColor;
-            particle.Play();
 
         }
 

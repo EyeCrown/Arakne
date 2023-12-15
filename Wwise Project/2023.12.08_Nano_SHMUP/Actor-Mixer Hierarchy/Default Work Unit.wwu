@@ -4,6 +4,13 @@
 		<WorkUnit Name="Default Work Unit" ID="{90D9CD61-7190-4799-9D6B-2A3BCEA18F27}" PersistMode="Standalone">
 			<ChildrenList>
 				<Sound Name="S_LP_Amb_Grotte" ID="{684D7C4A-9449-4E66-8D03-85F93CBDF029}" ShortID="663650851">
+					<PropertyList>
+						<Property Name="Inclusion" Type="bool">
+							<ValueList>
+								<Value>False</Value>
+							</ValueList>
+						</Property>
+					</PropertyList>
 					<ReferenceList>
 						<Reference Name="Conversion">
 							<ObjectRef Name="Default Conversion Settings" ID="{6D1B890C-9826-4384-BF07-C15223E9FB56}" WorkUnitID="{4E5C7FFC-E9B1-46F8-BCE3-EDA1EA7828DB}"/>
@@ -661,6 +668,11 @@
 							</ReferenceList>
 							<ChildrenList>
 								<AudioFileSource Name="SFX_Player_IsHit_v1" ID="{A2DF7D77-4F8B-4AC7-9B6C-89D00FB154AC}">
+									<PropertyList>
+										<Property Name="FadeOutDuration" Type="Real64" Value="0.418778728294178"/>
+										<Property Name="OverrideWavLoop" Type="bool" Value="True"/>
+										<Property Name="TrimEnd" Type="Real64" Value="2.26140513278856"/>
+									</PropertyList>
 									<Language>SFX</Language>
 									<AudioFile>SFX_Player_IsHit_v1.wav</AudioFile>
 									<MediaIDList>
@@ -872,6 +884,571 @@
 									</ChildrenList>
 									<ActiveSourceList>
 										<ActiveSource Name="SFX_OS_Player_BubbleIdle_var5_v2" ID="{CEB2F8AF-AEC4-47C3-8F9F-051EC9DC32CF}" Platform="Linked"/>
+									</ActiveSourceList>
+								</Sound>
+							</ChildrenList>
+						</RandomSequenceContainer>
+					</ChildrenList>
+				</Folder>
+				<Folder Name="PNJ" ID="{C665E72A-4B3F-431E-9ECE-CA1124949342}" ShortID="261635746">
+					<ChildrenList>
+						<Sound Name="onSpawnSpider" ID="{C00CC697-554A-463A-B255-803A3B8D3A14}" ShortID="576285148">
+							<PropertyList>
+								<Property Name="3DSpatialization" Type="int16" Value="1"/>
+								<Property Name="MaxSoundPerInstance" Type="int16">
+									<ValueList>
+										<Value>1</Value>
+									</ValueList>
+								</Property>
+								<Property Name="Pitch" Type="int32">
+									<ValueList>
+										<Value>310</Value>
+									</ValueList>
+								</Property>
+								<Property Name="UseMaxSoundPerInstance" Type="bool">
+									<ValueList>
+										<Value>True</Value>
+									</ValueList>
+								</Property>
+								<Property Name="Volume" Type="Real64">
+									<ValueList>
+										<Value>5</Value>
+									</ValueList>
+								</Property>
+							</PropertyList>
+							<ReferenceList>
+								<Reference Name="Conversion">
+									<ObjectRef Name="Default Conversion Settings" ID="{6D1B890C-9826-4384-BF07-C15223E9FB56}" WorkUnitID="{4E5C7FFC-E9B1-46F8-BCE3-EDA1EA7828DB}"/>
+								</Reference>
+								<Reference Name="OutputBus">
+									<ObjectRef Name="Master Audio Bus" ID="{1514A4D8-1DA6-412A-A17E-75CA0C2149F3}" WorkUnitID="{22522E0C-1537-4567-8D9E-301390427DB6}"/>
+								</Reference>
+							</ReferenceList>
+							<ChildrenList>
+								<AudioFileSource Name="SFX_OS_PNJ_SpawnSpiders01" ID="{FE9EDBBC-775F-435A-91CC-21611B70EFFC}">
+									<PropertyList>
+										<Property Name="FadeOutDuration" Type="Real64" Value="0.129138278855976"/>
+										<Property Name="OverrideWavLoop" Type="bool" Value="True"/>
+										<Property Name="TrimBegin" Type="Real64" Value="0.423286580694586"/>
+										<Property Name="TrimEnd" Type="Real64" Value="5.92601212972421"/>
+										<Property Name="VolumeOffset" Type="Real64">
+											<ValueList>
+												<Value>1.9</Value>
+											</ValueList>
+										</Property>
+									</PropertyList>
+									<Language>SFX</Language>
+									<AudioFile>SFX_OS_PNJ_SpawnSpiders01.wav</AudioFile>
+									<MediaIDList>
+										<MediaID ID="1066249834"/>
+									</MediaIDList>
+								</AudioFileSource>
+							</ChildrenList>
+							<ActiveSourceList>
+								<ActiveSource Name="SFX_OS_PNJ_SpawnSpiders01" ID="{FE9EDBBC-775F-435A-91CC-21611B70EFFC}" Platform="Linked"/>
+							</ActiveSourceList>
+						</Sound>
+						<Sound Name="onMoveCaterpillar" ID="{A2465747-1EA2-48D1-B67F-864D5634F691}" ShortID="972515703">
+							<PropertyList>
+								<Property Name="3DSpatialization" Type="int16" Value="2"/>
+								<Property Name="MaxSoundPerInstance" Type="int16">
+									<ValueList>
+										<Value>2</Value>
+									</ValueList>
+								</Property>
+								<Property Name="UseMaxSoundPerInstance" Type="bool">
+									<ValueList>
+										<Value>True</Value>
+									</ValueList>
+								</Property>
+								<Property Name="Volume" Type="Real64">
+									<ValueList>
+										<Value>4</Value>
+									</ValueList>
+								</Property>
+							</PropertyList>
+							<ReferenceList>
+								<Reference Name="Conversion">
+									<ObjectRef Name="Default Conversion Settings" ID="{6D1B890C-9826-4384-BF07-C15223E9FB56}" WorkUnitID="{4E5C7FFC-E9B1-46F8-BCE3-EDA1EA7828DB}"/>
+								</Reference>
+								<Reference Name="OutputBus">
+									<ObjectRef Name="Master Audio Bus" ID="{1514A4D8-1DA6-412A-A17E-75CA0C2149F3}" WorkUnitID="{22522E0C-1537-4567-8D9E-301390427DB6}"/>
+								</Reference>
+							</ReferenceList>
+							<ChildrenList>
+								<AudioFileSource Name="SFX_OS_PNJ_WiggleCaterpillar" ID="{CCDEA368-6B42-474F-8124-4DF40B04A757}">
+									<Language>SFX</Language>
+									<AudioFile>SFX_OS_PNJ_WiggleCaterpillar.wav</AudioFile>
+									<MediaIDList>
+										<MediaID ID="317200093"/>
+									</MediaIDList>
+								</AudioFileSource>
+							</ChildrenList>
+							<ActiveSourceList>
+								<ActiveSource Name="SFX_OS_PNJ_WiggleCaterpillar" ID="{CCDEA368-6B42-474F-8124-4DF40B04A757}" Platform="Linked"/>
+							</ActiveSourceList>
+						</Sound>
+						<Sound Name="onLastHitBoss" ID="{DE41571F-F6D8-45AC-974B-3C913C5CBBB9}" ShortID="220242769">
+							<PropertyList>
+								<Property Name="3DSpatialization" Type="int16" Value="2"/>
+								<Property Name="Highpass" Type="int16">
+									<ValueList>
+										<Value>7</Value>
+									</ValueList>
+								</Property>
+								<Property Name="Lowpass" Type="int16">
+									<ValueList>
+										<Value>10</Value>
+									</ValueList>
+								</Property>
+								<Property Name="MaxSoundPerInstance" Type="int16">
+									<ValueList>
+										<Value>1</Value>
+									</ValueList>
+								</Property>
+								<Property Name="Pitch" Type="int32">
+									<ValueList>
+										<Value>-30</Value>
+									</ValueList>
+								</Property>
+								<Property Name="UseMaxSoundPerInstance" Type="bool">
+									<ValueList>
+										<Value>True</Value>
+									</ValueList>
+								</Property>
+								<Property Name="Volume" Type="Real64">
+									<ValueList>
+										<Value>7</Value>
+									</ValueList>
+								</Property>
+							</PropertyList>
+							<ReferenceList>
+								<Reference Name="Conversion">
+									<ObjectRef Name="Default Conversion Settings" ID="{6D1B890C-9826-4384-BF07-C15223E9FB56}" WorkUnitID="{4E5C7FFC-E9B1-46F8-BCE3-EDA1EA7828DB}"/>
+								</Reference>
+								<Reference Name="OutputBus">
+									<ObjectRef Name="Master Audio Bus" ID="{1514A4D8-1DA6-412A-A17E-75CA0C2149F3}" WorkUnitID="{22522E0C-1537-4567-8D9E-301390427DB6}"/>
+								</Reference>
+							</ReferenceList>
+							<ChildrenList>
+								<AudioFileSource Name="SFX_OS_PNJ_GrumpBossLastHit" ID="{30F60E26-1DA6-467C-912B-8B93C286EA0C}">
+									<Language>SFX</Language>
+									<AudioFile>SFX_OS_PNJ_GrumpBossLastHit.wav</AudioFile>
+									<MediaIDList>
+										<MediaID ID="356871656"/>
+									</MediaIDList>
+								</AudioFileSource>
+							</ChildrenList>
+							<ActiveSourceList>
+								<ActiveSource Name="SFX_OS_PNJ_GrumpBossLastHit" ID="{30F60E26-1DA6-467C-912B-8B93C286EA0C}" Platform="Linked"/>
+							</ActiveSourceList>
+						</Sound>
+						<RandomSequenceContainer Name="hitBoss" ID="{89528A1D-8B9D-4195-B119-C51D8DC9976E}" ShortID="811984682">
+							<PropertyList>
+								<Property Name="3DSpatialization" Type="int16" Value="1"/>
+								<Property Name="MaxSoundPerInstance" Type="int16">
+									<ValueList>
+										<Value>1</Value>
+									</ValueList>
+								</Property>
+								<Property Name="UseMaxSoundPerInstance" Type="bool">
+									<ValueList>
+										<Value>True</Value>
+									</ValueList>
+								</Property>
+							</PropertyList>
+							<ReferenceList>
+								<Reference Name="Conversion">
+									<ObjectRef Name="Default Conversion Settings" ID="{6D1B890C-9826-4384-BF07-C15223E9FB56}" WorkUnitID="{4E5C7FFC-E9B1-46F8-BCE3-EDA1EA7828DB}"/>
+								</Reference>
+								<Reference Name="OutputBus">
+									<ObjectRef Name="Master Audio Bus" ID="{1514A4D8-1DA6-412A-A17E-75CA0C2149F3}" WorkUnitID="{22522E0C-1537-4567-8D9E-301390427DB6}"/>
+								</Reference>
+							</ReferenceList>
+							<ChildrenList>
+								<Sound Name="onHitBoss" ID="{A54F841D-0293-49CE-A9FE-7F0DA47245E5}" ShortID="56412369">
+									<PropertyList>
+										<Property Name="Highpass" Type="int16">
+											<ValueList>
+												<Value>25</Value>
+											</ValueList>
+										</Property>
+										<Property Name="Pitch" Type="int32">
+											<ValueList>
+												<Value>-20</Value>
+											</ValueList>
+										</Property>
+										<Property Name="Volume" Type="Real64">
+											<ValueList>
+												<Value>5</Value>
+											</ValueList>
+										</Property>
+									</PropertyList>
+									<ReferenceList>
+										<Reference Name="Conversion">
+											<ObjectRef Name="Default Conversion Settings" ID="{6D1B890C-9826-4384-BF07-C15223E9FB56}" WorkUnitID="{4E5C7FFC-E9B1-46F8-BCE3-EDA1EA7828DB}"/>
+										</Reference>
+										<Reference Name="OutputBus">
+											<ObjectRef Name="Master Audio Bus" ID="{1514A4D8-1DA6-412A-A17E-75CA0C2149F3}" WorkUnitID="{22522E0C-1537-4567-8D9E-301390427DB6}"/>
+										</Reference>
+									</ReferenceList>
+									<ChildrenList>
+										<AudioFileSource Name="SFX_OS_PNJ_GrumpBossHit" ID="{306DE470-C7C5-4C9F-8ABA-37C29FDAEE3E}">
+											<Language>SFX</Language>
+											<AudioFile>SFX_OS_PNJ_GrumpBossHit.wav</AudioFile>
+											<MediaIDList>
+												<MediaID ID="503659095"/>
+											</MediaIDList>
+										</AudioFileSource>
+									</ChildrenList>
+									<ActiveSourceList>
+										<ActiveSource Name="SFX_OS_PNJ_GrumpBossHit" ID="{306DE470-C7C5-4C9F-8ABA-37C29FDAEE3E}" Platform="Linked"/>
+									</ActiveSourceList>
+								</Sound>
+								<Sound Name="onHitBoss_01" ID="{80C27249-67B6-4028-BF38-B48E3A98C2DF}" ShortID="486326999">
+									<PropertyList>
+										<Property Name="Lowpass" Type="int16">
+											<ValueList>
+												<Value>6</Value>
+											</ValueList>
+										</Property>
+										<Property Name="Pitch" Type="int32">
+											<ValueList>
+												<Value>30</Value>
+											</ValueList>
+										</Property>
+										<Property Name="Volume" Type="Real64">
+											<ValueList>
+												<Value>4</Value>
+											</ValueList>
+										</Property>
+									</PropertyList>
+									<ReferenceList>
+										<Reference Name="Conversion">
+											<ObjectRef Name="Default Conversion Settings" ID="{6D1B890C-9826-4384-BF07-C15223E9FB56}" WorkUnitID="{4E5C7FFC-E9B1-46F8-BCE3-EDA1EA7828DB}"/>
+										</Reference>
+										<Reference Name="OutputBus">
+											<ObjectRef Name="Master Audio Bus" ID="{1514A4D8-1DA6-412A-A17E-75CA0C2149F3}" WorkUnitID="{22522E0C-1537-4567-8D9E-301390427DB6}"/>
+										</Reference>
+									</ReferenceList>
+									<ChildrenList>
+										<AudioFileSource Name="SFX_OS_PNJ_GrumpBossHit" ID="{1BECA340-12CE-457C-8F82-1A5A0AE3E58E}">
+											<Language>SFX</Language>
+											<AudioFile>SFX_OS_PNJ_GrumpBossHit.wav</AudioFile>
+											<MediaIDList>
+												<MediaID ID="503659095"/>
+											</MediaIDList>
+										</AudioFileSource>
+									</ChildrenList>
+									<ActiveSourceList>
+										<ActiveSource Name="SFX_OS_PNJ_GrumpBossHit" ID="{1BECA340-12CE-457C-8F82-1A5A0AE3E58E}" Platform="Linked"/>
+									</ActiveSourceList>
+								</Sound>
+								<Sound Name="onHitBoss_02" ID="{C6ABA46D-DB50-4057-93D3-675BEE7437FA}" ShortID="893233116">
+									<PropertyList>
+										<Property Name="Lowpass" Type="int16">
+											<ValueList>
+												<Value>23</Value>
+											</ValueList>
+										</Property>
+										<Property Name="Pitch" Type="int32">
+											<ValueList>
+												<Value>30</Value>
+											</ValueList>
+										</Property>
+										<Property Name="Volume" Type="Real64">
+											<ValueList>
+												<Value>4</Value>
+											</ValueList>
+										</Property>
+									</PropertyList>
+									<ReferenceList>
+										<Reference Name="Conversion">
+											<ObjectRef Name="Default Conversion Settings" ID="{6D1B890C-9826-4384-BF07-C15223E9FB56}" WorkUnitID="{4E5C7FFC-E9B1-46F8-BCE3-EDA1EA7828DB}"/>
+										</Reference>
+										<Reference Name="OutputBus">
+											<ObjectRef Name="Master Audio Bus" ID="{1514A4D8-1DA6-412A-A17E-75CA0C2149F3}" WorkUnitID="{22522E0C-1537-4567-8D9E-301390427DB6}"/>
+										</Reference>
+									</ReferenceList>
+									<ChildrenList>
+										<AudioFileSource Name="SFX_OS_PNJ_GrumpBossHit" ID="{76F1216C-B0A6-46E1-A2E9-94200E1AC4B1}">
+											<Language>SFX</Language>
+											<AudioFile>SFX_OS_PNJ_GrumpBossHit.wav</AudioFile>
+											<MediaIDList>
+												<MediaID ID="503659095"/>
+											</MediaIDList>
+										</AudioFileSource>
+									</ChildrenList>
+									<ActiveSourceList>
+										<ActiveSource Name="SFX_OS_PNJ_GrumpBossHit" ID="{76F1216C-B0A6-46E1-A2E9-94200E1AC4B1}" Platform="Linked"/>
+									</ActiveSourceList>
+								</Sound>
+								<Sound Name="onHitBoss_03" ID="{3B4C056F-D0AC-4646-BEA3-FCC64C5DDA5E}" ShortID="162749331">
+									<PropertyList>
+										<Property Name="Highpass" Type="int16">
+											<ValueList>
+												<Value>7</Value>
+											</ValueList>
+										</Property>
+										<Property Name="Lowpass" Type="int16">
+											<ValueList>
+												<Value>23</Value>
+											</ValueList>
+										</Property>
+										<Property Name="Pitch" Type="int32">
+											<ValueList>
+												<Value>-20</Value>
+											</ValueList>
+										</Property>
+										<Property Name="Volume" Type="Real64">
+											<ValueList>
+												<Value>6</Value>
+											</ValueList>
+										</Property>
+									</PropertyList>
+									<ReferenceList>
+										<Reference Name="Conversion">
+											<ObjectRef Name="Default Conversion Settings" ID="{6D1B890C-9826-4384-BF07-C15223E9FB56}" WorkUnitID="{4E5C7FFC-E9B1-46F8-BCE3-EDA1EA7828DB}"/>
+										</Reference>
+										<Reference Name="OutputBus">
+											<ObjectRef Name="Master Audio Bus" ID="{1514A4D8-1DA6-412A-A17E-75CA0C2149F3}" WorkUnitID="{22522E0C-1537-4567-8D9E-301390427DB6}"/>
+										</Reference>
+									</ReferenceList>
+									<ChildrenList>
+										<AudioFileSource Name="SFX_OS_PNJ_GrumpBossHit" ID="{95B7B4CC-20A7-40E7-8F5C-E077ACAB357F}">
+											<Language>SFX</Language>
+											<AudioFile>SFX_OS_PNJ_GrumpBossHit.wav</AudioFile>
+											<MediaIDList>
+												<MediaID ID="503659095"/>
+											</MediaIDList>
+										</AudioFileSource>
+									</ChildrenList>
+									<ActiveSourceList>
+										<ActiveSource Name="SFX_OS_PNJ_GrumpBossHit" ID="{95B7B4CC-20A7-40E7-8F5C-E077ACAB357F}" Platform="Linked"/>
+									</ActiveSourceList>
+								</Sound>
+							</ChildrenList>
+						</RandomSequenceContainer>
+						<RandomSequenceContainer Name="onKilledSpider" ID="{370C92BA-59D9-484C-8A64-918DB5EBD883}" ShortID="965886075">
+							<PropertyList>
+								<Property Name="3DSpatialization" Type="int16" Value="1"/>
+								<Property Name="MaxSoundPerInstance" Type="int16">
+									<ValueList>
+										<Value>4</Value>
+									</ValueList>
+								</Property>
+								<Property Name="UseMaxSoundPerInstance" Type="bool">
+									<ValueList>
+										<Value>True</Value>
+									</ValueList>
+								</Property>
+							</PropertyList>
+							<ReferenceList>
+								<Reference Name="Conversion">
+									<ObjectRef Name="Default Conversion Settings" ID="{6D1B890C-9826-4384-BF07-C15223E9FB56}" WorkUnitID="{4E5C7FFC-E9B1-46F8-BCE3-EDA1EA7828DB}"/>
+								</Reference>
+								<Reference Name="OutputBus">
+									<ObjectRef Name="Master Audio Bus" ID="{1514A4D8-1DA6-412A-A17E-75CA0C2149F3}" WorkUnitID="{22522E0C-1537-4567-8D9E-301390427DB6}"/>
+								</Reference>
+							</ReferenceList>
+							<ChildrenList>
+								<Sound Name="onKilledSpider" ID="{129C1400-6AF0-4E8F-86B6-0FACA07E6D8D}" ShortID="310305157">
+									<PropertyList>
+										<Property Name="MaxSoundPerInstance" Type="int16">
+											<ValueList>
+												<Value>2</Value>
+											</ValueList>
+										</Property>
+										<Property Name="UseMaxSoundPerInstance" Type="bool">
+											<ValueList>
+												<Value>True</Value>
+											</ValueList>
+										</Property>
+									</PropertyList>
+									<ReferenceList>
+										<Reference Name="Conversion">
+											<ObjectRef Name="Default Conversion Settings" ID="{6D1B890C-9826-4384-BF07-C15223E9FB56}" WorkUnitID="{4E5C7FFC-E9B1-46F8-BCE3-EDA1EA7828DB}"/>
+										</Reference>
+										<Reference Name="OutputBus">
+											<ObjectRef Name="Master Audio Bus" ID="{1514A4D8-1DA6-412A-A17E-75CA0C2149F3}" WorkUnitID="{22522E0C-1537-4567-8D9E-301390427DB6}"/>
+										</Reference>
+									</ReferenceList>
+									<ChildrenList>
+										<AudioFileSource Name="SFX_OS_PNJ_SpiderIsKilled" ID="{CD635742-D18D-4B7E-8F83-BC431D8E0492}">
+											<PropertyList>
+												<Property Name="LoopBegin" Type="Real64" Value="0.0729854556201566"/>
+												<Property Name="OverrideWavLoop" Type="bool" Value="True"/>
+												<Property Name="TrimBegin" Type="Real64" Value="0.0517133127760908"/>
+											</PropertyList>
+											<Language>SFX</Language>
+											<AudioFile>SFX_OS_PNJ_SpiderIsKilled.wav</AudioFile>
+											<MediaIDList>
+												<MediaID ID="346070256"/>
+											</MediaIDList>
+										</AudioFileSource>
+									</ChildrenList>
+									<ActiveSourceList>
+										<ActiveSource Name="SFX_OS_PNJ_SpiderIsKilled" ID="{CD635742-D18D-4B7E-8F83-BC431D8E0492}" Platform="Linked"/>
+									</ActiveSourceList>
+								</Sound>
+								<Sound Name="onKilledSpider_01" ID="{9BBE8A3E-DE15-4DAB-87A9-A651097CCB24}" ShortID="221598245">
+									<PropertyList>
+										<Property Name="MaxSoundPerInstance" Type="int16">
+											<ValueList>
+												<Value>2</Value>
+											</ValueList>
+										</Property>
+										<Property Name="Pitch" Type="int32">
+											<ValueList>
+												<Value>150</Value>
+											</ValueList>
+										</Property>
+										<Property Name="UseMaxSoundPerInstance" Type="bool">
+											<ValueList>
+												<Value>True</Value>
+											</ValueList>
+										</Property>
+										<Property Name="Volume" Type="Real64">
+											<ValueList>
+												<Value>-4</Value>
+											</ValueList>
+										</Property>
+									</PropertyList>
+									<ReferenceList>
+										<Reference Name="Conversion">
+											<ObjectRef Name="Default Conversion Settings" ID="{6D1B890C-9826-4384-BF07-C15223E9FB56}" WorkUnitID="{4E5C7FFC-E9B1-46F8-BCE3-EDA1EA7828DB}"/>
+										</Reference>
+										<Reference Name="OutputBus">
+											<ObjectRef Name="Master Audio Bus" ID="{1514A4D8-1DA6-412A-A17E-75CA0C2149F3}" WorkUnitID="{22522E0C-1537-4567-8D9E-301390427DB6}"/>
+										</Reference>
+									</ReferenceList>
+									<ChildrenList>
+										<AudioFileSource Name="SFX_OS_PNJ_SpiderIsKilled" ID="{0355AE73-0678-4009-937C-38C0AE84A9F8}">
+											<PropertyList>
+												<Property Name="OverrideWavLoop" Type="bool" Value="True"/>
+												<Property Name="TrimBegin" Type="Real64" Value="0.0615128713992097"/>
+												<Property Name="VolumeOffset" Type="Real64">
+													<ValueList>
+														<Value>-0.4</Value>
+													</ValueList>
+												</Property>
+											</PropertyList>
+											<Language>SFX</Language>
+											<AudioFile>SFX_OS_PNJ_SpiderIsKilled.wav</AudioFile>
+											<MediaIDList>
+												<MediaID ID="148419861"/>
+											</MediaIDList>
+										</AudioFileSource>
+									</ChildrenList>
+									<ActiveSourceList>
+										<ActiveSource Name="SFX_OS_PNJ_SpiderIsKilled" ID="{0355AE73-0678-4009-937C-38C0AE84A9F8}" Platform="Linked"/>
+									</ActiveSourceList>
+								</Sound>
+								<Sound Name="onKilledSpider_02" ID="{9B08A3A9-71F6-4259-9C75-ADD6FC38B556}" ShortID="545250837">
+									<PropertyList>
+										<Property Name="Lowpass" Type="int16">
+											<ValueList>
+												<Value>29</Value>
+											</ValueList>
+										</Property>
+										<Property Name="MaxSoundPerInstance" Type="int16">
+											<ValueList>
+												<Value>2</Value>
+											</ValueList>
+										</Property>
+										<Property Name="Pitch" Type="int32">
+											<ValueList>
+												<Value>30</Value>
+											</ValueList>
+										</Property>
+										<Property Name="UseMaxSoundPerInstance" Type="bool">
+											<ValueList>
+												<Value>True</Value>
+											</ValueList>
+										</Property>
+										<Property Name="Volume" Type="Real64">
+											<ValueList>
+												<Value>-2</Value>
+											</ValueList>
+										</Property>
+									</PropertyList>
+									<ReferenceList>
+										<Reference Name="Conversion">
+											<ObjectRef Name="Default Conversion Settings" ID="{6D1B890C-9826-4384-BF07-C15223E9FB56}" WorkUnitID="{4E5C7FFC-E9B1-46F8-BCE3-EDA1EA7828DB}"/>
+										</Reference>
+										<Reference Name="OutputBus">
+											<ObjectRef Name="Master Audio Bus" ID="{1514A4D8-1DA6-412A-A17E-75CA0C2149F3}" WorkUnitID="{22522E0C-1537-4567-8D9E-301390427DB6}"/>
+										</Reference>
+									</ReferenceList>
+									<ChildrenList>
+										<AudioFileSource Name="SFX_OS_PNJ_SpiderIsKilled" ID="{56A5CA77-5381-4164-AA0E-65BC31502BB1}">
+											<PropertyList>
+												<Property Name="LoopBegin" Type="Real64" Value="0.0630010860298357"/>
+												<Property Name="OverrideWavLoop" Type="bool" Value="True"/>
+												<Property Name="TrimBegin" Type="Real64" Value="0.0550639413331635"/>
+											</PropertyList>
+											<Language>SFX</Language>
+											<AudioFile>SFX_OS_PNJ_SpiderIsKilled.wav</AudioFile>
+											<MediaIDList>
+												<MediaID ID="896462248"/>
+											</MediaIDList>
+										</AudioFileSource>
+									</ChildrenList>
+									<ActiveSourceList>
+										<ActiveSource Name="SFX_OS_PNJ_SpiderIsKilled" ID="{56A5CA77-5381-4164-AA0E-65BC31502BB1}" Platform="Linked"/>
+									</ActiveSourceList>
+								</Sound>
+								<Sound Name="onKilledSpider_03" ID="{EBE40F52-9BCF-4E8F-A86F-894393717255}" ShortID="930390619">
+									<PropertyList>
+										<Property Name="Highpass" Type="int16">
+											<ValueList>
+												<Value>39</Value>
+											</ValueList>
+										</Property>
+										<Property Name="MaxSoundPerInstance" Type="int16">
+											<ValueList>
+												<Value>2</Value>
+											</ValueList>
+										</Property>
+										<Property Name="Pitch" Type="int32">
+											<ValueList>
+												<Value>-50</Value>
+											</ValueList>
+										</Property>
+										<Property Name="UseMaxSoundPerInstance" Type="bool">
+											<ValueList>
+												<Value>True</Value>
+											</ValueList>
+										</Property>
+										<Property Name="Volume" Type="Real64">
+											<ValueList>
+												<Value>3</Value>
+											</ValueList>
+										</Property>
+									</PropertyList>
+									<ReferenceList>
+										<Reference Name="Conversion">
+											<ObjectRef Name="Default Conversion Settings" ID="{6D1B890C-9826-4384-BF07-C15223E9FB56}" WorkUnitID="{4E5C7FFC-E9B1-46F8-BCE3-EDA1EA7828DB}"/>
+										</Reference>
+										<Reference Name="OutputBus">
+											<ObjectRef Name="Master Audio Bus" ID="{1514A4D8-1DA6-412A-A17E-75CA0C2149F3}" WorkUnitID="{22522E0C-1537-4567-8D9E-301390427DB6}"/>
+										</Reference>
+									</ReferenceList>
+									<ChildrenList>
+										<AudioFileSource Name="SFX_OS_PNJ_SpiderIsKilled" ID="{812C4853-744F-45EB-99BF-DBF8858CD80F}">
+											<PropertyList>
+												<Property Name="OverrideWavLoop" Type="bool" Value="True"/>
+												<Property Name="TrimBegin" Type="Real64" Value="0.0689539445523399"/>
+											</PropertyList>
+											<Language>SFX</Language>
+											<AudioFile>SFX_OS_PNJ_SpiderIsKilled.wav</AudioFile>
+											<MediaIDList>
+												<MediaID ID="526021085"/>
+											</MediaIDList>
+										</AudioFileSource>
+									</ChildrenList>
+									<ActiveSourceList>
+										<ActiveSource Name="SFX_OS_PNJ_SpiderIsKilled" ID="{812C4853-744F-45EB-99BF-DBF8858CD80F}" Platform="Linked"/>
 									</ActiveSourceList>
 								</Sound>
 							</ChildrenList>

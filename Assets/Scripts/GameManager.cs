@@ -5,7 +5,7 @@ using UnityEngine.SceneManagement;
 using UnityEngine.InputSystem;
 using UnityEngine.Events;
 using TMPro;
-
+using UnityEditor.Animations;
 
 public class GameManager : MonoBehaviour
 {
@@ -13,16 +13,15 @@ public class GameManager : MonoBehaviour
     public int maxHealth = 3;
     public int multiplier = 1;
     public int ballCount = 0;
-
+    public AK.Wwise.Event ContainerMusic;
     public CanvasGame canvas;
-
     #region EVENTS
     public UnityEvent<int> ScoreChange;
     public UnityEvent<int> PlayerDie;
     #endregion
 
     public GameObject[] players { get; set; }
-
+    [SerializeField] private AnimatorController[] animators;
     //private PlayerInputManager playerInputManager;
 
     private string gameScene = "GameTestScene";
@@ -35,8 +34,9 @@ public class GameManager : MonoBehaviour
         {
             DontDestroyOnLoad(gameObject);
             Instance = this;
+            
         }
-
+        ContainerMusic.Post(gameObject);
         ScoreChange.AddListener(ScoreChangeHandler);
         PlayerDie.AddListener(PlayerDieHandler);
         players = new GameObject[2];
@@ -52,6 +52,7 @@ public class GameManager : MonoBehaviour
         Debug.Log("Change scene");
 
         SceneManager.LoadScene(gameScene);
+
     }
 
     public GameObject GetOtherPlayer(int playerId)
@@ -67,10 +68,26 @@ public class GameManager : MonoBehaviour
         return myId == 0 ? 1 : 0;
     }
 
+    public void SetAnimator(int idPlayer)
+    {
+        players[idPlayer].GetComponent<PlayerController>().SetAnimatorController(animators[idPlayer]);
+    }
+
+    public void UpdateBossHealth()
+    {
+        canvas.GetComponent<CanvasGame>().UpdateBossHealth();
+        
+    }
+
+    public void UpdatePlayerHealth(int idPlayer)
+    {
+        canvas.UpdatePlayerHealth(idPlayer, players[idPlayer].GetComponent<PlayerController>().health);
+    }
+
     public void StartGame()
     {
-        SceneManager.LoadSceneAsync(1);
-
+        SceneManager.LoadScene(1);
+        
         Vector3 spawnPosJ0 = new Vector3(-5, -10, 0);
         players[0].transform.position = spawnPosJ0;
 

@@ -1,7 +1,4 @@
 using System.Collections;
-using System.Collections.Generic;
-using System.Drawing;
-using UnityEditor.UIElements;
 using UnityEngine;
 using UnityEngine.Events;
 
@@ -16,8 +13,8 @@ public class BouncingBallScript : MonoBehaviour
     [SerializeField] public BallMode mode { get; private set;}
 
     [Header("Ball Gameplay")]
-    [SerializeField] private int power = 0;
-    [SerializeField] private int maxPower = 1;
+    [SerializeField] public int power = 1;
+    [SerializeField] public int maxPower = 1;
     [SerializeField] private int pass = 0;
     [SerializeField] private int health;
     private bool canHitPlayer = true;
@@ -31,6 +28,7 @@ public class BouncingBallScript : MonoBehaviour
     [SerializeField] private GameObject playerHitParticle;
     [SerializeField] private GameObject enemyHitParticle;
     [SerializeField] private GameObject bossHitParticle;
+    [SerializeField] private States fxState;
 
     public enum BallMode
     {
@@ -131,7 +129,7 @@ public class BouncingBallScript : MonoBehaviour
         while (travelDistance > 0 && bounces < maxbounces)
         {
             if (Physics.SphereCast(transform.position, transform.localScale.y / 2, transform.up, out hit, travelDistance, layerMask)
-                && (hit.collider.gameObject.CompareTag("Wall") || (hit.collider.gameObject.CompareTag("Enemy") && mode == BallMode.bouncing)))
+                && (hit.collider.gameObject.CompareTag("Wall") || (hit.collider.gameObject.CompareTag("Enemy") && mode == BallMode.bouncing) || hit.collider.gameObject.CompareTag("Player") && mode == BallMode.bouncing))
             {
                 //Debug.Log("ShpereCast hit");
                 Vector3 reflectVec = Vector3.Reflect(transform.up, hit.normal);
@@ -228,7 +226,7 @@ public class BouncingBallScript : MonoBehaviour
 
     private void Die()
     {
-        GameManager.Instance.multiplier = 0;
+        GameManager.Instance.multiplier = 1;
         GameManager.Instance.ballCount--;
         Destroy(gameObject);
     }
@@ -246,7 +244,6 @@ public class BouncingBallScript : MonoBehaviour
 
         if(mode != BallMode.homing)
         {
-            Instantiate(enemyHitParticle, enemy.transform.position, Quaternion.identity);
             TakeDamage();
         }
 
@@ -316,6 +313,7 @@ public class BouncingBallScript : MonoBehaviour
         {
             return;
         }
+        fxState.UpdateColor.Invoke();
         StartCoroutine(ThrowCoroutine());
         transform.up = direction;
         mode = BallMode.bouncing;
@@ -327,9 +325,11 @@ public class BouncingBallScript : MonoBehaviour
         {
             return;
         }
+
         AkSoundEngine.SetRTPCValue("PassCount", power);
         if (power < 6)
             power++;
+        fxState.UpdateColor.Invoke();
         ApplySpeedMultiplier();
         target = newTarget;
         mode = BallMode.homing;

@@ -48,7 +48,7 @@ BoxCollider:
     m_Bits: 0
   m_ExcludeLayers:
     serializedVersion: 2
-    m_Bits: 0
+    m_Bits: 4
   m_LayerOverridePriority: 0
   m_IsTrigger: 0
   m_ProvidesContacts: 0
@@ -73,7 +73,7 @@ MonoBehaviour:
   idleRange: 0
   wiggleSpeed: 0
   wiggleRange: 0
-  maxHealth: 100
+  maxHealth: 50
   health: 50
   scorePerHealthPoint: 500
   Hit:
@@ -84,6 +84,10 @@ MonoBehaviour:
   ballPrefab: {fileID: 9065021497008916572, guid: 56ce1e017bd9c9c469876831da611f87, type: 3}
   ballSpawnTime: 5
   ballAnimationTime: 1
+  BossHit:
+    idInternal: 0
+    valueGuidInternal: 
+    WwiseObjectReference: {fileID: 11400000, guid: abad3f5090daff546a55a17702989e04, type: 2}
 --- !u!1 &7674183126647811157
 GameObject:
   m_ObjectHideFlags: 0

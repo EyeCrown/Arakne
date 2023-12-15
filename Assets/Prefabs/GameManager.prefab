@@ -111,15 +111,21 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   maxHealth: 2147483647
   multiplier: 1
-  spawnPositions:
-  - {fileID: 0}
-  - {fileID: 0}
+  ballCount: 0
+  ContainerMusic:
+    idInternal: 0
+    valueGuidInternal: 
+    WwiseObjectReference: {fileID: 11400000, guid: a3a2692740836bd468703b7592cb3763, type: 2}
+  canvas: {fileID: 0}
   ScoreChange:
     m_PersistentCalls:
       m_Calls: []
   PlayerDie:
     m_PersistentCalls:
       m_Calls: []
+  animators:
+  - {fileID: 9100000, guid: 2f997f7d109198c42a1dd87be6078945, type: 2}
+  - {fileID: 9100000, guid: 498819afe1141f744ba32c356e9e967b, type: 2}
 --- !u!114 &9072720798339753462
 MonoBehaviour:
   m_ObjectHideFlags: 0

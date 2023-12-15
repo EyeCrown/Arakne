@@ -1,4 +1,5 @@
 using UnityEngine;
+using UnityEngine.Events;
 
 public class States : MonoBehaviour
 {
@@ -8,64 +9,25 @@ public class States : MonoBehaviour
     [SerializeField] TrailRenderer trail;
     [SerializeField] ParticleSystem particle;
 
-    [SerializeField] Color color_1;
-    [SerializeField] Color color_2;
-    [SerializeField] Color color_3;
-    [SerializeField] Color color_4;
-    [SerializeField] Color color_5;
-    [SerializeField] Color color_6;
- 
+    [SerializeField] Gradient throwGradient;
+    [SerializeField] Gradient passGradient;
+    [SerializeField] Gradient fallGradient;
+
+    [SerializeField] BouncingBallScript ball;
+    public UnityEvent UpdateColor;
+
 
     // Start is called before the first frame update
     void Start()
     {
-    
+        UpdateColor.AddListener(UpdateColorHandler);
 
     }
 
     // Update is called once per frame
     void Update()
     {
-        //switch (etat)
-        //{
-        //    case 0:
-        //        render_1;
-        //        break;
-        //    default:
-        //        break;
-        //}
-        if (etat == 0)
-        {
-            ChangeColor(color_1);
-         
-        }
 
-        else if (etat == 1)
-        {
-
-            ChangeColor(color_2);
-        }
-        else if (etat == 2)
-        {
-
-            ChangeColor(color_3);
-        }
-        else if (etat == 3)
-        {
-
-            ChangeColor(color_4);
-        }
-        else if (etat == 4)
-        {
-
-            ChangeColor(color_5);
-        }
-        else if (etat == 5)
-        {
-
-            ChangeColor(color_6);
-        }
-       
     }
     void ChangeColor(Color color)
     {
@@ -74,5 +36,28 @@ public class States : MonoBehaviour
         render_2.material.SetColor("_EmisColor", color);
         trail.startColor = color;
         particle.startColor = color;
+    }
+
+    void UpdateColorHandler()
+    {
+        Color color;
+        switch(ball.mode) {
+            case BouncingBallScript.BallMode.bouncing:
+                ChangeColor(GetColor(throwGradient));
+                break;
+            case BouncingBallScript.BallMode.homing:
+                ChangeColor(GetColor(passGradient));
+                break;
+            case BouncingBallScript.BallMode.fall:
+                ChangeColor(GetColor(fallGradient));
+                break;
+            default:
+                break;
+        }
+    }
+
+    private Color GetColor(Gradient gradient)
+    {
+        return gradient.Evaluate((float)ball.power/(float)ball.maxPower);
     }
 }

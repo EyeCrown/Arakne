@@ -2,12 +2,23 @@ using System.Collections;
 using System.Collections.Generic;
 using TMPro;
 using UnityEngine;
+using UnityEngine.UI;
 
 public class CanvasGame : MonoBehaviour
 {
     [SerializeField] private GameObject winScreen;
     [SerializeField] private GameObject looseScreen;
+    [SerializeField] private GameObject panelScoreScreen;
     [SerializeField] private TextMeshProUGUI scoreText;
+
+    [SerializeField] private GameObject boss;
+    [SerializeField] private Slider bossHealthBar;
+
+    [SerializeField] private Slider[] playersBar;
+
+    [SerializeField] private GameObject[] heartP1;
+    [SerializeField] private GameObject[] heartP2;
+
 
     private void Start()
     {
@@ -17,6 +28,15 @@ public class CanvasGame : MonoBehaviour
         winScreen.SetActive(false);
         looseScreen.SetActive(false);
         scoreText.text = "0";
+
+        bossHealthBar.maxValue = boss.GetComponent<Boss>().GetHealth();
+        bossHealthBar.minValue = 0;
+
+        foreach (Slider slider in playersBar)
+        {
+            slider.minValue = 0;
+            slider.maxValue = GameManager.Instance.maxHealth;
+        }
     }
 
     public void UpdateScore(int score)
@@ -29,6 +49,7 @@ public class CanvasGame : MonoBehaviour
         winScreen.SetActive(true);
         winScreen.GetComponent<score_display>().SetScoreToText();
         scoreText.enabled = false;
+        panelScoreScreen.SetActive(false);
     }
 
     public void DisplayLooseScreen()
@@ -36,6 +57,75 @@ public class CanvasGame : MonoBehaviour
         looseScreen.SetActive(true);
         looseScreen.GetComponent<score_display>().SetScoreToText();
         scoreText.enabled = false;
+        panelScoreScreen.SetActive(false);
     }
+
+
+    public void UpdateBossHealth()
+    {
+        bossHealthBar.value = boss.GetComponent<Boss>().GetHealth();
+    }
+
+    public void UpdatePlayerHealth(int id, int hp)
+    {
+        Debug.Log("Switch : " + hp);
+        switch (hp)
+        {
+            case 0:
+                if (id == 0)
+                {
+                    heartP1[0].SetActive(false);
+                    heartP1[1].SetActive(false);
+                    heartP1[2].SetActive(false);
+                }
+                else
+                {
+                    heartP2[0].SetActive(false);
+                    heartP2[1].SetActive(false);
+                    heartP2[2].SetActive(false);
+                }
+                break;
+            case 1:
+                if (id == 0)
+                {
+                    heartP1[1].SetActive(false);
+                    heartP1[2].SetActive(false);
+                }
+                else
+                {
+                    heartP2[1].SetActive(false);
+                    heartP2[2].SetActive(false);
+                }
+                break;
+            case 2:
+                if (id == 0)
+                {
+                    heartP1[2].SetActive(false);
+                }
+                else
+                {
+                    heartP2[2].SetActive(false);
+                }
+                break;
+            case 3:
+                if (id == 0)
+                {
+                    heartP1[0].SetActive(true);
+                    heartP1[1].SetActive(true);
+                    heartP1[2].SetActive(true);
+                }
+                else
+                {
+                    heartP2[0].SetActive(true);
+                    heartP2[1].SetActive(true);
+                    heartP2[2].SetActive(true);
+                }
+                break;
+            default:
+                Debug.LogError("UpdatePlayerHealth: Error invalid health > " + hp);
+                break;
+        }
+    }
+
 
 }
