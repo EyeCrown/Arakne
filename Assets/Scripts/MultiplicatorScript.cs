@@ -3,7 +3,7 @@ using System.Collections.Generic;
 using TMPro;
 using UnityEngine;
 
-public class MutliplicatorScript : MonoBehaviour
+public class MultiplicatorScript : MonoBehaviour
 {
     [SerializeField] private int value;
     [SerializeField] private TextMeshPro tmp;
@@ -12,7 +12,7 @@ public class MutliplicatorScript : MonoBehaviour
     void Start()
     {
         StartCoroutine(DerstroyTimer());
-        SetValue(GameManager.Instance.multiplier);
+        //SetValue(GameManager.Instance.multiplier);
     }
 
     // Update is called once per frame

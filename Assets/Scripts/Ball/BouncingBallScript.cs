@@ -256,8 +256,9 @@ public class BouncingBallScript : MonoBehaviour
             enemyHit.Hit.Invoke(power * GameManager.Instance.multiplier);
             if(mode == BallMode.bouncing)
             {
+                GameObject multiplier = Instantiate(multiplierText, point - direction * 3f, Quaternion.identity);
+                multiplier.GetComponent<MultiplicatorScript>()?.SetValue(GameManager.Instance.multiplier);
                 GameManager.Instance.MultiplicatorChange.Invoke(GameManager.Instance.multiplier + 1);
-                Instantiate(multiplierText, point - direction * 3f, Quaternion.identity);
             }
 
         }
