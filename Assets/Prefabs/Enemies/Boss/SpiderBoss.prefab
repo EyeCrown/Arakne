@@ -82,7 +82,7 @@ MonoBehaviour:
   animator: {fileID: 8303841079704595908}
   ballSpawnPoint: {fileID: 2539646445303800974}
   ballPrefab: {fileID: 9065021497008916572, guid: 56ce1e017bd9c9c469876831da611f87, type: 3}
-  ballSpawnTime: 5
+  ballSpawnTime: 2
   ballAnimationTime: 1
   BossHit:
     idInternal: 0

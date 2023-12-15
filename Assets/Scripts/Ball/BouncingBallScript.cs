@@ -325,7 +325,7 @@ public class BouncingBallScript : MonoBehaviour
         fxState.UpdateColor.Invoke();
         transform.up = direction;
         mode = BallMode.bouncing;
-        health = power / 2 + 1;
+        health = power + 1;
         ThrowSound.Post(gameObject);
         StartCoroutine(ThrowCoroutine());
     }
