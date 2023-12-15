@@ -69,6 +69,7 @@ MonoBehaviour:
   playerHitParticle: {fileID: 4570977514873200059, guid: d2041883945d5864489b7b1f45f683d3, type: 3}
   enemyHitParticle: {fileID: 7558476159001105912, guid: 863f1702618edcc478d1f1771d018800, type: 3}
   bossHitParticle: {fileID: 821007861271662803, guid: 48fd8cb3ee0bea544af78ffdee61a3f7, type: 3}
+  multiplierText: {fileID: 6684637423511843370, guid: 28e58fdae9460634aacc0f825e1fd998, type: 3}
   fxState: {fileID: 4359345413153657482}
   Grab:
     m_PersistentCalls:

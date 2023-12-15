@@ -13,11 +13,17 @@ public class GameManager : MonoBehaviour
     public int maxHealth = 3;
     public int multiplier = 1;
     public int ballCount = 0;
+
+    public float timer = 180f;
+
     public AK.Wwise.Event ContainerMusic;
     public CanvasGame canvas;
+
+
     #region EVENTS
     public UnityEvent<int> ScoreChange;
     public UnityEvent<int> PlayerDie;
+    public UnityEvent<int> MultiplicatorChange;
     #endregion
 
     public GameObject[] players { get; set; }
@@ -39,6 +45,7 @@ public class GameManager : MonoBehaviour
         ContainerMusic.Post(gameObject);
         ScoreChange.AddListener(ScoreChangeHandler);
         PlayerDie.AddListener(PlayerDieHandler);
+        MultiplicatorChange.AddListener(MultiplicatorChangeHandler);
         players = new GameObject[2];
     }
 
@@ -87,6 +94,7 @@ public class GameManager : MonoBehaviour
     public void StartGame()
     {
         SceneManager.LoadScene(1);
+        StartCoroutine(Timer());
         
         Vector3 spawnPosJ0 = new Vector3(-5, -10, 0);
         players[0].transform.position = spawnPosJ0;
@@ -130,5 +138,28 @@ public class GameManager : MonoBehaviour
             GameOver();
         }
     }
+
+    private void MultiplicatorChangeHandler(int value)
+    {
+        multiplier = value;
+        canvas.UpdateMultiplier(multiplier);
+    }
     #endregion
+
+    IEnumerator Timer()
+    {
+        if(timer>0)
+        {
+            yield return new WaitForSeconds(1f);
+            timer -= 1f;
+            canvas.UpdateTimer(timer);
+            StartCoroutine(Timer());
+        }
+        else
+        {
+            GameOver();
+        }
+        yield return null;
+
+    }
 }
