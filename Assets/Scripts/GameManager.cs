@@ -5,7 +5,6 @@ using UnityEngine.SceneManagement;
 using UnityEngine.InputSystem;
 using UnityEngine.Events;
 using TMPro;
-using UnityEditor.Animations;
 
 public class GameManager : MonoBehaviour
 {
@@ -27,7 +26,7 @@ public class GameManager : MonoBehaviour
     #endregion
 
     public GameObject[] players { get; set; }
-    [SerializeField] private AnimatorController[] animators;
+    [SerializeField] private RuntimeAnimatorController[] animators;
     //private PlayerInputManager playerInputManager;
 
     private string gameScene = "GameTestScene";

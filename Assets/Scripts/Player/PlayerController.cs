@@ -1,5 +1,4 @@
 using System.Collections;
-using UnityEditor.Animations;
 using UnityEngine;
 using UnityEngine.Events;
 using UnityEngine.InputSystem;
@@ -34,7 +33,7 @@ public class PlayerController : MonoBehaviour
 
 
     [Header("Animation and FX")]
-    [SerializeField] private Animator animator;
+    [SerializeField] public Animator animator;
     [SerializeField] private ParticleSystem particle;
     [SerializeField] private Color throwColor;
     [SerializeField] private Color passColor;
@@ -218,7 +217,7 @@ public class PlayerController : MonoBehaviour
         particle.Play();
     }
 
-    public void SetAnimatorController(AnimatorController controller)
+    public void SetAnimatorController(RuntimeAnimatorController controller)
     {
         animator.runtimeAnimatorController = controller;
     }

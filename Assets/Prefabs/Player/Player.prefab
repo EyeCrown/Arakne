@@ -165,7 +165,7 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   inertia: 2
-  speed: 20
+  speed: 13
   health: 3
   timeToShoot: 1
   hittableReloadTime: 1
