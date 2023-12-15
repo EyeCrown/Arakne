@@ -9,7 +9,7 @@
 	</RootPaths>
 	<DialogueEvents/>
 	<SoundBanks>
-		<SoundBank Id="534561221" Type="User" Language="SFX" Hash="{E7208898-1209-D0E9-081E-CC4F70832EAE}">
+		<SoundBank Id="534561221" Type="User" Language="SFX" Hash="{7E1334DC-6216-67E9-9FCA-2B3A7FCEFD4F}">
 			<ShortName>MainSoundBank</ShortName>
 			<Path>MainSoundBank.bnk</Path>
 			<Media>
@@ -25,6 +25,10 @@
 					<ShortName>Unfolding Secrets BGM.wav</ShortName>
 					<CachePath>SFX/Unfolding Secrets BGM_FB742EC8.wem</CachePath>
 				</File>
+				<File Id="148419861" Language="SFX" Streaming="false" Location="Memory">
+					<ShortName>SFX_OS_PNJ_SpiderIsKilled.wav</ShortName>
+					<CachePath>SFX/SFX_OS_PNJ_SpiderIsKilled_2EA7E840.wem</CachePath>
+				</File>
 				<File Id="194210561" Language="SFX" Streaming="false" Location="Memory">
 					<ShortName>SFX_OS_Ball_Bounce_var6_v1.wav</ShortName>
 					<CachePath>SFX/SFX_OS_Ball_Bounce_var6_v1_10C4C929.wem</CachePath>
@@ -36,6 +40,10 @@
 				<File Id="317200093" Language="SFX" Streaming="false" Location="Memory">
 					<ShortName>SFX_OS_PNJ_WiggleCaterpillar.wav</ShortName>
 					<CachePath>SFX/SFX_OS_PNJ_WiggleCaterpillar_10C4C929.wem</CachePath>
+				</File>
+				<File Id="346070256" Language="SFX" Streaming="false" Location="Memory">
+					<ShortName>SFX_OS_PNJ_SpiderIsKilled.wav</ShortName>
+					<CachePath>SFX/SFX_OS_PNJ_SpiderIsKilled_71657186.wem</CachePath>
 				</File>
 				<File Id="350230033" Language="SFX" Streaming="false" Location="Memory">
 					<ShortName>SFX_OS_Ball_Bounce_var3_v1.wav</ShortName>
@@ -83,7 +91,7 @@
 				</File>
 				<File Id="526021085" Language="SFX" Streaming="false" Location="Memory">
 					<ShortName>SFX_OS_PNJ_SpiderIsKilled.wav</ShortName>
-					<CachePath>SFX/SFX_OS_PNJ_SpiderIsKilled_10C4C929.wem</CachePath>
+					<CachePath>SFX/SFX_OS_PNJ_SpiderIsKilled_DD121B7A.wem</CachePath>
 				</File>
 				<File Id="614848710" Language="SFX" Streaming="false" Location="Memory">
 					<ShortName>SFX_OS_Ball_AllyPassSweetener_v1.wav</ShortName>
@@ -105,6 +113,10 @@
 					<ShortName>SFX_OS_Ball_Bounce_var4_v1.wav</ShortName>
 					<CachePath>SFX/SFX_OS_Ball_Bounce_var4_v1_10C4C929.wem</CachePath>
 				</File>
+				<File Id="896462248" Language="SFX" Streaming="false" Location="Memory">
+					<ShortName>SFX_OS_PNJ_SpiderIsKilled.wav</ShortName>
+					<CachePath>SFX/SFX_OS_PNJ_SpiderIsKilled_FB5FF2AE.wem</CachePath>
+				</File>
 				<File Id="980782775" Language="SFX" Streaming="false" Location="Memory">
 					<ShortName>SFX_OS_Ball_AllyShoot_v1.wav</ShortName>
 					<CachePath>SFX/SFX_OS_Ball_AllyShoot_v1_10C4C929.wem</CachePath>
@@ -123,6 +135,14 @@
 				<Event Id="2273985692" Name="E_HitOnBoss">
 					<MediaRefs>
 						<MediaRef Id="503659095"/>
+					</MediaRefs>
+				</Event>
+				<Event Id="360748340" Name="E_KilledMob">
+					<MediaRefs>
+						<MediaRef Id="148419861"/>
+						<MediaRef Id="346070256"/>
+						<MediaRef Id="526021085"/>
+						<MediaRef Id="896462248"/>
 					</MediaRefs>
 				</Event>
 				<Event Id="3066051804" Name="E_LastHitOnBoss">
@@ -214,5 +234,5 @@
 			</GameParameters>
 		</SoundBank>
 	</SoundBanks>
-	<FileHash>{B8761588-2FD0-A6A4-F63E-6ACC115DEF67}</FileHash>
+	<FileHash>{58024DB4-2F28-49E7-083C-96AB2844F999}</FileHash>
 </SoundBanksInfo>

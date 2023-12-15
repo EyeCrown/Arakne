@@ -42,17 +42,20 @@ public class SpawnManager : MonoBehaviour
             SpawnEnemy(-2);
             SpawnEnemy(0);
             SpawnEnemy(2);
+            SpawnSpider.Post(gameObject);
         }
 
         if (timer == 5)
         {
             SpawnEnemy(0);
+            SpawnSpider.Post(gameObject);
         }
 
         if (timer == 7)
         {
             SpawnEnemy(-2);
             SpawnEnemy(2);
+            SpawnSpider.Post(gameObject);
         }
     }
 
@@ -60,6 +63,5 @@ public class SpawnManager : MonoBehaviour
     void SpawnEnemy(int xPos)
     {
         Instantiate(enemy, new Vector3(xPos, 3, 0), Quaternion.identity);
-        SpawnSpider.Post(gameObject);
     }
 }

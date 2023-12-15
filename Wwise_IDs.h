@@ -15,6 +15,7 @@ namespace AK
     {
         static const AkUniqueID E_CATERPILLARMOVING = 896192876U;
         static const AkUniqueID E_HITONBOSS = 2273985692U;
+        static const AkUniqueID E_KILLEDMOB = 360748340U;
         static const AkUniqueID E_LASTHITONBOSS = 3066051804U;
         static const AkUniqueID E_PLAY_ALLYPASS = 129291699U;
         static const AkUniqueID E_PLAY_ALLYSHOOT = 4065114501U;
