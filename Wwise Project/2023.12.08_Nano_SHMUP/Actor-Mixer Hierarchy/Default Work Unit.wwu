@@ -1229,7 +1229,7 @@
 								</Sound>
 							</ChildrenList>
 						</RandomSequenceContainer>
-						<RandomSequenceContainer Name="killedSpider" ID="{370C92BA-59D9-484C-8A64-918DB5EBD883}" ShortID="965886075">
+						<RandomSequenceContainer Name="onKilledSpider" ID="{370C92BA-59D9-484C-8A64-918DB5EBD883}" ShortID="965886075">
 							<PropertyList>
 								<Property Name="3DSpatialization" Type="int16" Value="1"/>
 								<Property Name="MaxSoundPerInstance" Type="int16">

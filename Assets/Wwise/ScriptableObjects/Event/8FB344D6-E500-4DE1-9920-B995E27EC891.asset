@@ -12,6 +12,6 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: ba74870b14ab03e4c85af89c162875ed, type: 3}
   m_Name: 8FB344D6-E500-4DE1-9920-B995E27EC891
   m_EditorClassIdentifier: 
-  objectName: E_KilledMob
-  id: 360748340
+  objectName: E_onKilledSpider
+  id: 3936685706
   guid: 8FB344D6-E500-4DE1-9920-B995E27EC891

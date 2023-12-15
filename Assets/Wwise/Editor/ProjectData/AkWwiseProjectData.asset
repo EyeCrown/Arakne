@@ -94,7 +94,7 @@ MonoBehaviour:
     ParentPath: Events\Default Work Unit
     guid: 84c25a4028b06c4684ceec8bda34eee5
     GuidInternal: 
-    m_lastTime: -8584989759135370690
+    m_lastTime: -8584989736540240397
     List:
     - name: Ball Interactions
       guid: 4f8c85a12dede241a535578d4344b995
@@ -153,26 +153,6 @@ MonoBehaviour:
       maxAttenuation: 0
       maxDuration: -1
       minDuration: -1
-    - name: E_KilledMob
-      guid: d644b38f00e5e14d9920b995e27ec891
-      id: 360748340
-      PathAndIcons:
-      - ElementName: Events
-        ObjectType: 5
-        guid: 00000000000000000000000000000000
-      - ElementName: Default Work Unit
-        ObjectType: 12
-        guid: 84c25a4028b06c4684ceec8bda34eee5
-      - ElementName: Pnj
-        ObjectType: 4
-        guid: 521cdc3a14f1044a9e5cd08d849cad3f
-      - ElementName: E_KilledMob
-        ObjectType: 3
-        guid: d644b38f00e5e14d9920b995e27ec891
-      Path: Events\Default Work Unit\Pnj\E_KilledMob
-      maxAttenuation: 0
-      maxDuration: -1
-      minDuration: -1
     - name: E_LastHitOnBoss
       guid: f7cf95b125b18040bd167341dfa5d18d
       id: 3066051804
@@ -190,6 +170,26 @@ MonoBehaviour:
         ObjectType: 3
         guid: f7cf95b125b18040bd167341dfa5d18d
       Path: Events\Default Work Unit\Pnj\E_LastHitOnBoss
+      maxAttenuation: 0
+      maxDuration: -1
+      minDuration: -1
+    - name: E_onKilledSpider
+      guid: d644b38f00e5e14d9920b995e27ec891
+      id: 3936685706
+      PathAndIcons:
+      - ElementName: Events
+        ObjectType: 5
+        guid: 00000000000000000000000000000000
+      - ElementName: Default Work Unit
+        ObjectType: 12
+        guid: 84c25a4028b06c4684ceec8bda34eee5
+      - ElementName: Pnj
+        ObjectType: 4
+        guid: 521cdc3a14f1044a9e5cd08d849cad3f
+      - ElementName: E_onKilledSpider
+        ObjectType: 3
+        guid: d644b38f00e5e14d9920b995e27ec891
+      Path: Events\Default Work Unit\Pnj\E_onKilledSpider
       maxAttenuation: 0
       maxDuration: -1
       minDuration: -1
@@ -512,7 +512,7 @@ MonoBehaviour:
     m_lastTime: -8584990447000087962
     List: []
   ExpandedFileSystemItemIds: 
-  ExpandedWaapiItemIds: 0500000006000000070000000c000000
+  ExpandedWaapiItemIds: 0100000005000000060000000b0000000c00000010000000110000001200000014000000150000001600000054000000550000005a000000ac000000ad000000b20000001401000015010000
   AutoSyncSelection: 0
   autoPopulateEnabled: 1
   currentDataSource: 0

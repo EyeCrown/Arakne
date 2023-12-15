@@ -1,7 +1,6 @@
 Event	ID	Name			Wwise Object Path	Notes
 	34195632	E_Play_PlayerIsHit			\Default Work Unit\Player\E_Play_PlayerIsHit	
 	129291699	E_Play_AllyPass			\Default Work Unit\Ball Interactions\E_Play_AllyPass	
-	360748340	E_KilledMob			\Default Work Unit\Pnj\E_KilledMob	
 	364366560	E_Play_Bubbled			\Default Work Unit\Player\E_Play_Bubbled	
 	468595000	E_Play_BGM			\Default Work Unit\Music\E_Play_BGM	
 	839260169	E_Play_BallBounce			\Default Work Unit\Ball Interactions\E_Play_BallBounce	
@@ -11,6 +10,7 @@ Event	ID	Name			Wwise Object Path	Notes
 	2809597228	E_Stop_BubbleIdle			\Default Work Unit\Player\E_Stop_BubbleIdle	
 	3066051804	E_LastHitOnBoss			\Default Work Unit\Pnj\E_LastHitOnBoss	
 	3091887893	E_SpawnSpider			\Default Work Unit\Pnj\E_SpawnSpider	
+	3936685706	E_onKilledSpider			\Default Work Unit\Pnj\E_onKilledSpider	
 	4065114501	E_Play_AllyShoot			\Default Work Unit\Ball Interactions\E_Play_AllyShoot	
 
 Game Parameter	ID	Name			Wwise Object Path	Notes
@@ -20,11 +20,11 @@ In Memory Audio	ID	Name	Audio source file		Wwise Object Path	Notes	Data Size
 	13779944	SFX_OS_Player_BubbleIdle_var5_v2	C:\Users\ELE64f86f87a6b18\Documents\GitHub\BrickThemUp\Wwise Project\2023.12.08_Nano_SHMUP\.cache\Windows\SFX\SFX_OS_Player_BubbleIdle_var5_v2_10C4C929.wem		\Actor-Mixer Hierarchy\Default Work Unit\Player\SFX_LP_Player_BubbleIdle\SFX_OS_Player_BubbleIdle_var5_v2		280308
 	105036165	SFX_OS_Player_Bubbled_var3_v1	C:\Users\ELE64f86f87a6b18\Documents\GitHub\BrickThemUp\Wwise Project\2023.12.08_Nano_SHMUP\.cache\Windows\SFX\SFX_OS_Player_Bubbled_var3_v1_10C4C929.wem		\Actor-Mixer Hierarchy\Default Work Unit\Player\SFX_OS_Player_Bubbled\SFX_OS_Player_Bubbled_var3_v1		341168
 	113494807	Unfolding Secrets BGM	C:\Users\ELE64f86f87a6b18\Documents\GitHub\BrickThemUp\Wwise Project\2023.12.08_Nano_SHMUP\.cache\Windows\SFX\Unfolding Secrets BGM_FB742EC8.wem		\Actor-Mixer Hierarchy\MusicWorkUnit\Unfolding Secrets BGM		18064476
-	148419861	onKilledSpider_01	C:\Users\ELE64f86f87a6b18\Documents\GitHub\BrickThemUp\Wwise Project\2023.12.08_Nano_SHMUP\.cache\Windows\SFX\SFX_OS_PNJ_SpiderIsKilled_BF6D5BBC.wem		\Actor-Mixer Hierarchy\Default Work Unit\PNJ\killedSpider\onKilledSpider_01		45336
+	148419861	onKilledSpider_01	C:\Users\ELE64f86f87a6b18\Documents\GitHub\BrickThemUp\Wwise Project\2023.12.08_Nano_SHMUP\.cache\Windows\SFX\SFX_OS_PNJ_SpiderIsKilled_BF6D5BBC.wem		\Actor-Mixer Hierarchy\Default Work Unit\PNJ\KilledMob\onKilledSpider_01		45336
 	194210561	SFX_OS_Ball_Bounce_var6_v1	C:\Users\ELE64f86f87a6b18\Documents\GitHub\BrickThemUp\Wwise Project\2023.12.08_Nano_SHMUP\.cache\Windows\SFX\SFX_OS_Ball_Bounce_var6_v1_10C4C929.wem		\Actor-Mixer Hierarchy\Default Work Unit\Ball\SFX_OS_Ball_Bounce\SFX_OS_Ball_Bounce_var6_v1		304144
 	316789632	SFX_OS_Ball_Bounce_var2_v1	C:\Users\ELE64f86f87a6b18\Documents\GitHub\BrickThemUp\Wwise Project\2023.12.08_Nano_SHMUP\.cache\Windows\SFX\SFX_OS_Ball_Bounce_var2_v1_10C4C929.wem		\Actor-Mixer Hierarchy\Default Work Unit\Ball\SFX_OS_Ball_Bounce\SFX_OS_Ball_Bounce_var2_v1		304144
 	317200093	onMoveCaterpillar	C:\Users\ELE64f86f87a6b18\Documents\GitHub\BrickThemUp\Wwise Project\2023.12.08_Nano_SHMUP\.cache\Windows\SFX\SFX_OS_PNJ_WiggleCaterpillar_10C4C929.wem		\Actor-Mixer Hierarchy\Default Work Unit\PNJ\onMoveCaterpillar		397200
-	346070256	onKilledSpider	C:\Users\ELE64f86f87a6b18\Documents\GitHub\BrickThemUp\Wwise Project\2023.12.08_Nano_SHMUP\.cache\Windows\SFX\SFX_OS_PNJ_SpiderIsKilled_71D71904.wem		\Actor-Mixer Hierarchy\Default Work Unit\PNJ\killedSpider\onKilledSpider		47064
+	346070256	onKilledSpider	C:\Users\ELE64f86f87a6b18\Documents\GitHub\BrickThemUp\Wwise Project\2023.12.08_Nano_SHMUP\.cache\Windows\SFX\SFX_OS_PNJ_SpiderIsKilled_71D71904.wem		\Actor-Mixer Hierarchy\Default Work Unit\PNJ\KilledMob\onKilledSpider		47064
 	350230033	SFX_OS_Ball_Bounce_var3_v1	C:\Users\ELE64f86f87a6b18\Documents\GitHub\BrickThemUp\Wwise Project\2023.12.08_Nano_SHMUP\.cache\Windows\SFX\SFX_OS_Ball_Bounce_var3_v1_10C4C929.wem		\Actor-Mixer Hierarchy\Default Work Unit\Ball\SFX_OS_Ball_Bounce\SFX_OS_Ball_Bounce_var3_v1		304144
 	356871656	onLastHitBoss	C:\Users\ELE64f86f87a6b18\Documents\GitHub\BrickThemUp\Wwise Project\2023.12.08_Nano_SHMUP\.cache\Windows\SFX\SFX_OS_PNJ_GrumpBossLastHit_10C4C929.wem		\Actor-Mixer Hierarchy\Default Work Unit\PNJ\onLastHitBoss		266532
 	368209062	SFX_OS_Player_Bubbled_var2_v1	C:\Users\ELE64f86f87a6b18\Documents\GitHub\BrickThemUp\Wwise Project\2023.12.08_Nano_SHMUP\.cache\Windows\SFX\SFX_OS_Player_Bubbled_var2_v1_10C4C929.wem		\Actor-Mixer Hierarchy\Default Work Unit\Player\SFX_OS_Player_Bubbled\SFX_OS_Player_Bubbled_var2_v1		341164
@@ -36,13 +36,13 @@ In Memory Audio	ID	Name	Audio source file		Wwise Object Path	Notes	Data Size
 	494930737	SFX_OS_Ball_Bounce_var1_v1	C:\Users\ELE64f86f87a6b18\Documents\GitHub\BrickThemUp\Wwise Project\2023.12.08_Nano_SHMUP\.cache\Windows\SFX\SFX_OS_Ball_Bounce_var1_v1_10C4C929.wem		\Actor-Mixer Hierarchy\Default Work Unit\Ball\SFX_OS_Ball_Bounce\SFX_OS_Ball_Bounce_var1_v1		304144
 	503659095	onHitBoss	C:\Users\ELE64f86f87a6b18\Documents\GitHub\BrickThemUp\Wwise Project\2023.12.08_Nano_SHMUP\.cache\Windows\SFX\SFX_OS_PNJ_GrumpBossHit_10C4C929.wem		\Actor-Mixer Hierarchy\Default Work Unit\PNJ\hitBoss\onHitBoss		48944
 	515947237	SFX_OS_Player_BubbleIdle_var1_v2	C:\Users\ELE64f86f87a6b18\Documents\GitHub\BrickThemUp\Wwise Project\2023.12.08_Nano_SHMUP\.cache\Windows\SFX\SFX_OS_Player_BubbleIdle_var1_v2_10C4C929.wem		\Actor-Mixer Hierarchy\Default Work Unit\Player\SFX_LP_Player_BubbleIdle\SFX_OS_Player_BubbleIdle_var1_v2		280308
-	526021085	onKilledSpider_03	C:\Users\ELE64f86f87a6b18\Documents\GitHub\BrickThemUp\Wwise Project\2023.12.08_Nano_SHMUP\.cache\Windows\SFX\SFX_OS_PNJ_SpiderIsKilled_DD121B7A.wem		\Actor-Mixer Hierarchy\Default Work Unit\PNJ\killedSpider\onKilledSpider_03		44024
+	526021085	onKilledSpider_03	C:\Users\ELE64f86f87a6b18\Documents\GitHub\BrickThemUp\Wwise Project\2023.12.08_Nano_SHMUP\.cache\Windows\SFX\SFX_OS_PNJ_SpiderIsKilled_DD121B7A.wem		\Actor-Mixer Hierarchy\Default Work Unit\PNJ\KilledMob\onKilledSpider_03		44024
 	614848710	SFX_OS_Ball_AllyPassSweetener_v1	C:\Users\ELE64f86f87a6b18\Documents\GitHub\BrickThemUp\Wwise Project\2023.12.08_Nano_SHMUP\.cache\Windows\SFX\SFX_OS_Ball_AllyPassSweetener_v1_31E98A78.wem		\Actor-Mixer Hierarchy\Default Work Unit\Ball\SFX_OS_Ball_AllyPassSweetener_v1		398020
 	647956332	SFX_OS_Ball_AllyPass_v1	C:\Users\ELE64f86f87a6b18\Documents\GitHub\BrickThemUp\Wwise Project\2023.12.08_Nano_SHMUP\.cache\Windows\SFX\SFX_OS_Ball_AllyPass_v1_10C4C929.wem		\Actor-Mixer Hierarchy\Default Work Unit\Ball\SFX_OS_Ball_AllyPass_v1		321148
 	656014094	SFX_OS_Player_BubbleIdle_var4_v2	C:\Users\ELE64f86f87a6b18\Documents\GitHub\BrickThemUp\Wwise Project\2023.12.08_Nano_SHMUP\.cache\Windows\SFX\SFX_OS_Player_BubbleIdle_var4_v2_10C4C929.wem		\Actor-Mixer Hierarchy\Default Work Unit\Player\SFX_LP_Player_BubbleIdle\SFX_OS_Player_BubbleIdle_var4_v2		280308
 	773148055	SFX_OS_Ball_AllyShootSweetener_v1	C:\Users\ELE64f86f87a6b18\Documents\GitHub\BrickThemUp\Wwise Project\2023.12.08_Nano_SHMUP\.cache\Windows\SFX\SFX_OS_Ball_AllyShootSweetener_v1_10C4C929.wem		\Actor-Mixer Hierarchy\Default Work Unit\Ball\SFX_OS_Ball_AllyShootSweetener_v1		522196
 	795329812	SFX_OS_Ball_Bounce_var4_v1	C:\Users\ELE64f86f87a6b18\Documents\GitHub\BrickThemUp\Wwise Project\2023.12.08_Nano_SHMUP\.cache\Windows\SFX\SFX_OS_Ball_Bounce_var4_v1_10C4C929.wem		\Actor-Mixer Hierarchy\Default Work Unit\Ball\SFX_OS_Ball_Bounce\SFX_OS_Ball_Bounce_var4_v1		304144
-	896462248	onKilledSpider_02	C:\Users\ELE64f86f87a6b18\Documents\GitHub\BrickThemUp\Wwise Project\2023.12.08_Nano_SHMUP\.cache\Windows\SFX\SFX_OS_PNJ_SpiderIsKilled_AE73F82B.wem		\Actor-Mixer Hierarchy\Default Work Unit\PNJ\killedSpider\onKilledSpider_02		46476
+	896462248	onKilledSpider_02	C:\Users\ELE64f86f87a6b18\Documents\GitHub\BrickThemUp\Wwise Project\2023.12.08_Nano_SHMUP\.cache\Windows\SFX\SFX_OS_PNJ_SpiderIsKilled_AE73F82B.wem		\Actor-Mixer Hierarchy\Default Work Unit\PNJ\KilledMob\onKilledSpider_02		46476
 	980782775	SFX_OS_Ball_AllyShoot_v1	C:\Users\ELE64f86f87a6b18\Documents\GitHub\BrickThemUp\Wwise Project\2023.12.08_Nano_SHMUP\.cache\Windows\SFX\SFX_OS_Ball_AllyShoot_v1_10C4C929.wem		\Actor-Mixer Hierarchy\Default Work Unit\Ball\SFX_OS_Ball_AllyShoot_v1		522196
 	1066249834	onSpawnSpider	C:\Users\ELE64f86f87a6b18\Documents\GitHub\BrickThemUp\Wwise Project\2023.12.08_Nano_SHMUP\.cache\Windows\SFX\SFX_OS_PNJ_SpawnSpiders01_0CF63DB1.wem		\Actor-Mixer Hierarchy\Default Work Unit\PNJ\onSpawnSpider		1056620
 

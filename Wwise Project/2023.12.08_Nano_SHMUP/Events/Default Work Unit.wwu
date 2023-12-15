@@ -162,12 +162,12 @@
 								</Action>
 							</ChildrenList>
 						</Event>
-						<Event Name="E_KilledMob" ID="{8FB344D6-E500-4DE1-9920-B995E27EC891}">
+						<Event Name="E_onKilledSpider" ID="{8FB344D6-E500-4DE1-9920-B995E27EC891}">
 							<ChildrenList>
 								<Action Name="" ID="{7E100DDC-DDE1-48F8-ADF3-B204775F1CBB}" ShortID="480784343">
 									<ReferenceList>
 										<Reference Name="Target">
-											<ObjectRef Name="killedSpider" ID="{370C92BA-59D9-484C-8A64-918DB5EBD883}" WorkUnitID="{90D9CD61-7190-4799-9D6B-2A3BCEA18F27}"/>
+											<ObjectRef Name="onKilledSpider" ID="{370C92BA-59D9-484C-8A64-918DB5EBD883}" WorkUnitID="{90D9CD61-7190-4799-9D6B-2A3BCEA18F27}"/>
 										</Reference>
 									</ReferenceList>
 								</Action>
