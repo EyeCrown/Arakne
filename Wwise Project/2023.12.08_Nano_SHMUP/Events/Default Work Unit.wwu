@@ -149,6 +149,13 @@
 										</Reference>
 									</ReferenceList>
 								</Action>
+								<Action Name="" ID="{2BE3908C-56B1-4B66-B747-0E18A5649B8D}" ShortID="614102537">
+									<ReferenceList>
+										<Reference Name="Target">
+											<ObjectRef Name="hitBossBing" ID="{685EA05A-7D6A-4E84-BF7D-BBEF71BF7C77}" WorkUnitID="{90D9CD61-7190-4799-9D6B-2A3BCEA18F27}"/>
+										</Reference>
+									</ReferenceList>
+								</Action>
 							</ChildrenList>
 						</Event>
 						<Event Name="E_LastHitOnBoss" ID="{B195CFF7-B125-4080-BD16-7341DFA5D18D}">
@@ -168,6 +175,35 @@
 									<ReferenceList>
 										<Reference Name="Target">
 											<ObjectRef Name="onKilledSpider" ID="{370C92BA-59D9-484C-8A64-918DB5EBD883}" WorkUnitID="{90D9CD61-7190-4799-9D6B-2A3BCEA18F27}"/>
+										</Reference>
+									</ReferenceList>
+								</Action>
+								<Action Name="" ID="{590039BE-AC79-45AE-BF5B-E387D98F4A45}" ShortID="561519492">
+									<ReferenceList>
+										<Reference Name="Target">
+											<ObjectRef Name="onBingSpider" ID="{036D539C-FC8F-4D84-A2B2-3D7D0935201A}" WorkUnitID="{90D9CD61-7190-4799-9D6B-2A3BCEA18F27}"/>
+										</Reference>
+									</ReferenceList>
+								</Action>
+							</ChildrenList>
+						</Event>
+						<Event Name="E_HitBodyMosquito" ID="{AC043B22-5B36-4878-BC0E-A8F628391634}">
+							<ChildrenList>
+								<Action Name="" ID="{9E101F07-4004-417B-B5B6-210981DC563F}" ShortID="1061109315">
+									<ReferenceList>
+										<Reference Name="Target">
+											<ObjectRef Name="hitBodyMosquito" ID="{6F035B43-62B0-405B-AAED-F32EF42E31EC}" WorkUnitID="{90D9CD61-7190-4799-9D6B-2A3BCEA18F27}"/>
+										</Reference>
+									</ReferenceList>
+								</Action>
+							</ChildrenList>
+						</Event>
+						<Event Name="E_HitWingsMosquito" ID="{2DFE8985-DDDC-4062-9B79-8E8462164253}">
+							<ChildrenList>
+								<Action Name="" ID="{E36B1F59-1CA2-4F60-99E5-53B307B2DE8D}" ShortID="905775463">
+									<ReferenceList>
+										<Reference Name="Target">
+											<ObjectRef Name="hitWingsMosquito" ID="{C88C51FA-9FC4-41E1-861A-70D83332C21E}" WorkUnitID="{90D9CD61-7190-4799-9D6B-2A3BCEA18F27}"/>
 										</Reference>
 									</ReferenceList>
 								</Action>

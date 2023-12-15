@@ -119,6 +119,8 @@ GameObject:
   - component: {fileID: 6595609649862225270}
   - component: {fileID: 6532557492041115065}
   - component: {fileID: 6901457945524824608}
+  - component: {fileID: 2553062697338096293}
+  - component: {fileID: 257758611162778176}
   m_Layer: 0
   m_Name: Mosquito
   m_TagString: Enemy
@@ -164,7 +166,31 @@ MonoBehaviour:
   scorePerHealthPoint: 150
   Hit:
     m_PersistentCalls:
-      m_Calls: []
+      m_Calls:
+      - m_Target: {fileID: 2553062697338096293}
+        m_TargetAssemblyTypeName: akPlaySound, Assembly-CSharp
+        m_MethodName: PlaySound
+        m_Mode: 1
+        m_Arguments:
+          m_ObjectArgument: {fileID: 0}
+          m_ObjectArgumentAssemblyTypeName: UnityEngine.Object, UnityEngine
+          m_IntArgument: 0
+          m_FloatArgument: 0
+          m_StringArgument: 
+          m_BoolArgument: 0
+        m_CallState: 2
+      - m_Target: {fileID: 257758611162778176}
+        m_TargetAssemblyTypeName: akPlaySound, Assembly-CSharp
+        m_MethodName: PlaySound
+        m_Mode: 1
+        m_Arguments:
+          m_ObjectArgument: {fileID: 0}
+          m_ObjectArgumentAssemblyTypeName: UnityEngine.Object, UnityEngine
+          m_IntArgument: 0
+          m_FloatArgument: 0
+          m_StringArgument: 
+          m_BoolArgument: 0
+        m_CallState: 2
 --- !u!64 &6595609649862225270
 MeshCollider:
   m_ObjectHideFlags: 0
@@ -237,3 +263,35 @@ MeshRenderer:
   m_SortingLayer: 0
   m_SortingOrder: 0
   m_AdditionalVertexStreams: {fileID: 0}
+--- !u!114 &2553062697338096293
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 8270167112335963290}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 48c391a1bda02954ca033daeda4a94cb, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  CurrentSound:
+    idInternal: 0
+    valueGuidInternal: 
+    WwiseObjectReference: {fileID: 11400000, guid: 46a7262d038ee784088a6ea05e4ebc9c, type: 2}
+--- !u!114 &257758611162778176
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 8270167112335963290}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 48c391a1bda02954ca033daeda4a94cb, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  CurrentSound:
+    idInternal: 0
+    valueGuidInternal: 
+    WwiseObjectReference: {fileID: 11400000, guid: eaa94240d69b1a44d9c911fac92970b0, type: 2}

@@ -66,7 +66,7 @@ MonoBehaviour:
     ParentPath: SoundBanks\Default Work Unit
     guid: 11b32f2e3ee29e42aac88e4f8237d053
     GuidInternal: 
-    m_lastTime: -8584989757715734345
+    m_lastTime: -8584989535190557881
     List:
     - name: MainSoundBank
       guid: 755b33d932df0641a63ccf55283656eb
@@ -94,7 +94,7 @@ MonoBehaviour:
     ParentPath: Events\Default Work Unit
     guid: 84c25a4028b06c4684ceec8bda34eee5
     GuidInternal: 
-    m_lastTime: -8584989736540240397
+    m_lastTime: -8584989536375378146
     List:
     - name: Ball Interactions
       guid: 4f8c85a12dede241a535578d4344b995
@@ -133,6 +133,26 @@ MonoBehaviour:
       maxAttenuation: 0
       maxDuration: -1
       minDuration: -1
+    - name: E_HitBodyMosquito
+      guid: 223b04ac365b7848bc0ea8f628391634
+      id: 3263164701
+      PathAndIcons:
+      - ElementName: Events
+        ObjectType: 5
+        guid: 00000000000000000000000000000000
+      - ElementName: Default Work Unit
+        ObjectType: 12
+        guid: 84c25a4028b06c4684ceec8bda34eee5
+      - ElementName: Pnj
+        ObjectType: 4
+        guid: 521cdc3a14f1044a9e5cd08d849cad3f
+      - ElementName: E_HitBodyMosquito
+        ObjectType: 3
+        guid: 223b04ac365b7848bc0ea8f628391634
+      Path: Events\Default Work Unit\Pnj\E_HitBodyMosquito
+      maxAttenuation: 0
+      maxDuration: -1
+      minDuration: -1
     - name: E_HitOnBoss
       guid: e1496fb8a52e4b448910ee92344f9d60
       id: 2273985692
@@ -150,6 +170,26 @@ MonoBehaviour:
         ObjectType: 3
         guid: e1496fb8a52e4b448910ee92344f9d60
       Path: Events\Default Work Unit\Pnj\E_HitOnBoss
+      maxAttenuation: 0
+      maxDuration: -1
+      minDuration: -1
+    - name: E_HitWingsMosquito
+      guid: 8589fe2ddcdd62409b798e8462164253
+      id: 1159941129
+      PathAndIcons:
+      - ElementName: Events
+        ObjectType: 5
+        guid: 00000000000000000000000000000000
+      - ElementName: Default Work Unit
+        ObjectType: 12
+        guid: 84c25a4028b06c4684ceec8bda34eee5
+      - ElementName: Pnj
+        ObjectType: 4
+        guid: 521cdc3a14f1044a9e5cd08d849cad3f
+      - ElementName: E_HitWingsMosquito
+        ObjectType: 3
+        guid: 8589fe2ddcdd62409b798e8462164253
+      Path: Events\Default Work Unit\Pnj\E_HitWingsMosquito
       maxAttenuation: 0
       maxDuration: -1
       minDuration: -1
@@ -512,7 +552,7 @@ MonoBehaviour:
     m_lastTime: -8584990447000087962
     List: []
   ExpandedFileSystemItemIds: 
-  ExpandedWaapiItemIds: 05000000060000000a0000000b0000000e0000000f0000009300000094000000
+  ExpandedWaapiItemIds: 05000000060000000a0000000c0000000e0000000f0000009300000094000000
   AutoSyncSelection: 0
   autoPopulateEnabled: 1
   currentDataSource: 0

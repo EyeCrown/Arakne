@@ -13,6 +13,7 @@ GameObject:
   - component: {fileID: 5588938542510937667}
   - component: {fileID: 5307014724928231636}
   - component: {fileID: 1297063681714299762}
+  - component: {fileID: 3755780884691031088}
   m_Layer: 0
   m_Name: Player
   m_TagString: Player
@@ -173,6 +174,10 @@ MonoBehaviour:
   particle: {fileID: 576464719347597883}
   throwColor: {r: 1, g: 0.41960788, b: 0.6069195, a: 1}
   passColor: {r: 0.54379684, g: 1, b: 0.4235294, a: 1}
+  PlayerGetHit:
+    idInternal: 0
+    valueGuidInternal: 
+    WwiseObjectReference: {fileID: 11400000, guid: b124f249911112942b9c23c2768820d1, type: 2}
   Hit:
     m_PersistentCalls:
       m_Calls: []
@@ -203,6 +208,28 @@ Rigidbody:
   m_Interpolate: 0
   m_Constraints: 0
   m_CollisionDetection: 0
+--- !u!114 &3755780884691031088
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 28994589155886330}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 0a2fe28f01fd7904ea6c1e7505b7d882, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  m_listeners:
+    initialListenerList: []
+    useDefaultListeners: 1
+  isEnvironmentAware: 1
+  isStaticObject: 0
+  m_positionOffsetData:
+    KeepMe: 0
+    positionOffset: {x: 0, y: 0, z: 0}
+  m_posOffsetData: {fileID: 0}
+  listenerMask: 1
 --- !u!1 &2445248379148531757
 GameObject:
   m_ObjectHideFlags: 0

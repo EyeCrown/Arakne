@@ -84,11 +84,11 @@ MonoBehaviour:
   ballPrefab: {fileID: 9065021497008916572, guid: 56ce1e017bd9c9c469876831da611f87, type: 3}
   ballSpawnTime: 5
   ballAnimationTime: 1
-  HitBossSound:
+  BossHit:
     idInternal: 0
     valueGuidInternal: 
     WwiseObjectReference: {fileID: 11400000, guid: abad3f5090daff546a55a17702989e04, type: 2}
-  LastHitBoss:
+  BossLastHit:
     idInternal: 0
     valueGuidInternal: 
     WwiseObjectReference: {fileID: 11400000, guid: e93bc961b7df6e24c94d4ec31eae4ea4, type: 2}
