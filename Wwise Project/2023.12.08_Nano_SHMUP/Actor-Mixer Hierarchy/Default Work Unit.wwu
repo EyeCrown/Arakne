@@ -1048,7 +1048,7 @@
 								<Property Name="3DSpatialization" Type="int16" Value="1"/>
 								<Property Name="MaxSoundPerInstance" Type="int16">
 									<ValueList>
-										<Value>4</Value>
+										<Value>1</Value>
 									</ValueList>
 								</Property>
 								<Property Name="UseMaxSoundPerInstance" Type="bool">
@@ -1229,9 +1229,19 @@
 								</Sound>
 							</ChildrenList>
 						</RandomSequenceContainer>
-						<RandomSequenceContainer Name="killedSpider" ID="{370C92BA-59D9-484C-8A64-918DB5EBD883}" ShortID="965886075">
+						<RandomSequenceContainer Name="onKilledSpider" ID="{370C92BA-59D9-484C-8A64-918DB5EBD883}" ShortID="965886075">
 							<PropertyList>
 								<Property Name="3DSpatialization" Type="int16" Value="1"/>
+								<Property Name="MaxSoundPerInstance" Type="int16">
+									<ValueList>
+										<Value>4</Value>
+									</ValueList>
+								</Property>
+								<Property Name="UseMaxSoundPerInstance" Type="bool">
+									<ValueList>
+										<Value>True</Value>
+									</ValueList>
+								</Property>
 							</PropertyList>
 							<ReferenceList>
 								<Reference Name="Conversion">
@@ -1265,10 +1275,15 @@
 									</ReferenceList>
 									<ChildrenList>
 										<AudioFileSource Name="SFX_OS_PNJ_SpiderIsKilled" ID="{CD635742-D18D-4B7E-8F83-BC431D8E0492}">
+											<PropertyList>
+												<Property Name="LoopBegin" Type="Real64" Value="0.0729854556201566"/>
+												<Property Name="OverrideWavLoop" Type="bool" Value="True"/>
+												<Property Name="TrimBegin" Type="Real64" Value="0.0517133127760908"/>
+											</PropertyList>
 											<Language>SFX</Language>
 											<AudioFile>SFX_OS_PNJ_SpiderIsKilled.wav</AudioFile>
 											<MediaIDList>
-												<MediaID ID="526021085"/>
+												<MediaID ID="346070256"/>
 											</MediaIDList>
 										</AudioFileSource>
 									</ChildrenList>
@@ -1310,6 +1325,8 @@
 									<ChildrenList>
 										<AudioFileSource Name="SFX_OS_PNJ_SpiderIsKilled" ID="{0355AE73-0678-4009-937C-38C0AE84A9F8}">
 											<PropertyList>
+												<Property Name="OverrideWavLoop" Type="bool" Value="True"/>
+												<Property Name="TrimBegin" Type="Real64" Value="0.0615128713992097"/>
 												<Property Name="VolumeOffset" Type="Real64">
 													<ValueList>
 														<Value>-0.4</Value>
@@ -1319,7 +1336,7 @@
 											<Language>SFX</Language>
 											<AudioFile>SFX_OS_PNJ_SpiderIsKilled.wav</AudioFile>
 											<MediaIDList>
-												<MediaID ID="526021085"/>
+												<MediaID ID="148419861"/>
 											</MediaIDList>
 										</AudioFileSource>
 									</ChildrenList>
@@ -1351,7 +1368,7 @@
 										</Property>
 										<Property Name="Volume" Type="Real64">
 											<ValueList>
-												<Value>-6</Value>
+												<Value>-2</Value>
 											</ValueList>
 										</Property>
 									</PropertyList>
@@ -1365,10 +1382,15 @@
 									</ReferenceList>
 									<ChildrenList>
 										<AudioFileSource Name="SFX_OS_PNJ_SpiderIsKilled" ID="{56A5CA77-5381-4164-AA0E-65BC31502BB1}">
+											<PropertyList>
+												<Property Name="LoopBegin" Type="Real64" Value="0.0630010860298357"/>
+												<Property Name="OverrideWavLoop" Type="bool" Value="True"/>
+												<Property Name="TrimBegin" Type="Real64" Value="0.0550639413331635"/>
+											</PropertyList>
 											<Language>SFX</Language>
 											<AudioFile>SFX_OS_PNJ_SpiderIsKilled.wav</AudioFile>
 											<MediaIDList>
-												<MediaID ID="526021085"/>
+												<MediaID ID="896462248"/>
 											</MediaIDList>
 										</AudioFileSource>
 									</ChildrenList>
@@ -1398,6 +1420,11 @@
 												<Value>True</Value>
 											</ValueList>
 										</Property>
+										<Property Name="Volume" Type="Real64">
+											<ValueList>
+												<Value>3</Value>
+											</ValueList>
+										</Property>
 									</PropertyList>
 									<ReferenceList>
 										<Reference Name="Conversion">
@@ -1409,6 +1436,10 @@
 									</ReferenceList>
 									<ChildrenList>
 										<AudioFileSource Name="SFX_OS_PNJ_SpiderIsKilled" ID="{812C4853-744F-45EB-99BF-DBF8858CD80F}">
+											<PropertyList>
+												<Property Name="OverrideWavLoop" Type="bool" Value="True"/>
+												<Property Name="TrimBegin" Type="Real64" Value="0.0689539445523399"/>
+											</PropertyList>
 											<Language>SFX</Language>
 											<AudioFile>SFX_OS_PNJ_SpiderIsKilled.wav</AudioFile>
 											<MediaIDList>
