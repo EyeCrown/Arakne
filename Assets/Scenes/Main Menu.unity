@@ -3291,6 +3291,10 @@ PrefabInstance:
       propertyPath: maxHealth
       value: 3
       objectReference: {fileID: 0}
+    - target: {fileID: 2595437164961807108, guid: 5b8d0edda89d4ec47bae717e5956dc73, type: 3}
+      propertyPath: ContainerMusic.WwiseObjectReference
+      value: 
+      objectReference: {fileID: 0}
     - target: {fileID: 4783446780547390817, guid: 5b8d0edda89d4ec47bae717e5956dc73, type: 3}
       propertyPath: m_LocalPosition.x
       value: -10.01

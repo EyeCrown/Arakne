@@ -953,7 +953,7 @@
 								<Property Name="3DSpatialization" Type="int16" Value="2"/>
 								<Property Name="MaxSoundPerInstance" Type="int16">
 									<ValueList>
-										<Value>2</Value>
+										<Value>1</Value>
 									</ValueList>
 								</Property>
 								<Property Name="UseMaxSoundPerInstance" Type="bool">
@@ -963,7 +963,7 @@
 								</Property>
 								<Property Name="Volume" Type="Real64">
 									<ValueList>
-										<Value>4</Value>
+										<Value>6</Value>
 									</ValueList>
 								</Property>
 							</PropertyList>
@@ -1018,7 +1018,7 @@
 								</Property>
 								<Property Name="Volume" Type="Real64">
 									<ValueList>
-										<Value>7</Value>
+										<Value>3</Value>
 									</ValueList>
 								</Property>
 							</PropertyList>
@@ -1038,9 +1038,21 @@
 										<MediaID ID="356871656"/>
 									</MediaIDList>
 								</AudioFileSource>
+								<AudioFileSource Name="SFX_OS_PNJ_GrumpLastBossHit" ID="{EE95251A-A2AC-4949-9EC8-4AEAEC9D554B}">
+									<PropertyList>
+										<Property Name="FadeOutDuration" Type="Real64" Value="1.98225852727056"/>
+										<Property Name="OverrideWavLoop" Type="bool" Value="True"/>
+										<Property Name="TrimEnd" Type="Real64" Value="2.2083716672634"/>
+									</PropertyList>
+									<Language>SFX</Language>
+									<AudioFile>SFX_OS_PNJ_GrumpLastBossHit.wav</AudioFile>
+									<MediaIDList>
+										<MediaID ID="240645183"/>
+									</MediaIDList>
+								</AudioFileSource>
 							</ChildrenList>
 							<ActiveSourceList>
-								<ActiveSource Name="SFX_OS_PNJ_GrumpBossLastHit" ID="{30F60E26-1DA6-467C-912B-8B93C286EA0C}" Platform="Linked"/>
+								<ActiveSource Name="SFX_OS_PNJ_GrumpLastBossHit" ID="{EE95251A-A2AC-4949-9EC8-4AEAEC9D554B}" Platform="Linked"/>
 							</ActiveSourceList>
 						</Sound>
 						<RandomSequenceContainer Name="hitBoss" ID="{89528A1D-8B9D-4195-B119-C51D8DC9976E}" ShortID="811984682">
@@ -1054,6 +1066,11 @@
 								<Property Name="UseMaxSoundPerInstance" Type="bool">
 									<ValueList>
 										<Value>True</Value>
+									</ValueList>
+								</Property>
+								<Property Name="Volume" Type="Real64">
+									<ValueList>
+										<Value>4</Value>
 									</ValueList>
 								</Property>
 							</PropertyList>
@@ -1449,6 +1466,430 @@
 									</ChildrenList>
 									<ActiveSourceList>
 										<ActiveSource Name="SFX_OS_PNJ_SpiderIsKilled" ID="{812C4853-744F-45EB-99BF-DBF8858CD80F}" Platform="Linked"/>
+									</ActiveSourceList>
+								</Sound>
+							</ChildrenList>
+						</RandomSequenceContainer>
+						<RandomSequenceContainer Name="hitBodyMosquito" ID="{6F035B43-62B0-405B-AAED-F32EF42E31EC}" ShortID="900907074">
+							<PropertyList>
+								<Property Name="Volume" Type="Real64">
+									<ValueList>
+										<Value>-4</Value>
+									</ValueList>
+								</Property>
+							</PropertyList>
+							<ReferenceList>
+								<Reference Name="Conversion">
+									<ObjectRef Name="Default Conversion Settings" ID="{6D1B890C-9826-4384-BF07-C15223E9FB56}" WorkUnitID="{4E5C7FFC-E9B1-46F8-BCE3-EDA1EA7828DB}"/>
+								</Reference>
+								<Reference Name="OutputBus">
+									<ObjectRef Name="Master Audio Bus" ID="{1514A4D8-1DA6-412A-A17E-75CA0C2149F3}" WorkUnitID="{22522E0C-1537-4567-8D9E-301390427DB6}"/>
+								</Reference>
+							</ReferenceList>
+							<ChildrenList>
+								<Sound Name="SFX_OS_EnemyMoustik_IsHit_Base_var1_v1" ID="{B03D3AD2-003C-413C-992C-140573D2A790}" ShortID="682390920">
+									<ReferenceList>
+										<Reference Name="Conversion">
+											<ObjectRef Name="Default Conversion Settings" ID="{6D1B890C-9826-4384-BF07-C15223E9FB56}" WorkUnitID="{4E5C7FFC-E9B1-46F8-BCE3-EDA1EA7828DB}"/>
+										</Reference>
+										<Reference Name="OutputBus">
+											<ObjectRef Name="Master Audio Bus" ID="{1514A4D8-1DA6-412A-A17E-75CA0C2149F3}" WorkUnitID="{22522E0C-1537-4567-8D9E-301390427DB6}"/>
+										</Reference>
+									</ReferenceList>
+									<ChildrenList>
+										<AudioFileSource Name="SFX_OS_EnemyMoustik_IsHit_Base_var1_v1" ID="{599CF273-149F-4FF8-98F5-2993CE7C36D8}">
+											<Language>SFX</Language>
+											<AudioFile>SFX_OS_EnemyMoustik_IsHit_Base_var1_v1.wav</AudioFile>
+											<MediaIDList>
+												<MediaID ID="644169049"/>
+											</MediaIDList>
+										</AudioFileSource>
+									</ChildrenList>
+									<ActiveSourceList>
+										<ActiveSource Name="SFX_OS_EnemyMoustik_IsHit_Base_var1_v1" ID="{599CF273-149F-4FF8-98F5-2993CE7C36D8}" Platform="Linked"/>
+									</ActiveSourceList>
+								</Sound>
+								<Sound Name="SFX_OS_EnemyMoustik_IsHit_Base_var2_v1" ID="{2A3ED9AC-9164-4384-98CF-E148B4CFC829}" ShortID="900065785">
+									<ReferenceList>
+										<Reference Name="Conversion">
+											<ObjectRef Name="Default Conversion Settings" ID="{6D1B890C-9826-4384-BF07-C15223E9FB56}" WorkUnitID="{4E5C7FFC-E9B1-46F8-BCE3-EDA1EA7828DB}"/>
+										</Reference>
+										<Reference Name="OutputBus">
+											<ObjectRef Name="Master Audio Bus" ID="{1514A4D8-1DA6-412A-A17E-75CA0C2149F3}" WorkUnitID="{22522E0C-1537-4567-8D9E-301390427DB6}"/>
+										</Reference>
+									</ReferenceList>
+									<ChildrenList>
+										<AudioFileSource Name="SFX_OS_EnemyMoustik_IsHit_Base_var2_v1" ID="{7425EE1A-99E2-43DF-91BD-C66A3B820899}">
+											<Language>SFX</Language>
+											<AudioFile>SFX_OS_EnemyMoustik_IsHit_Base_var2_v1.wav</AudioFile>
+											<MediaIDList>
+												<MediaID ID="74860453"/>
+											</MediaIDList>
+										</AudioFileSource>
+									</ChildrenList>
+									<ActiveSourceList>
+										<ActiveSource Name="SFX_OS_EnemyMoustik_IsHit_Base_var2_v1" ID="{7425EE1A-99E2-43DF-91BD-C66A3B820899}" Platform="Linked"/>
+									</ActiveSourceList>
+								</Sound>
+								<Sound Name="SFX_OS_EnemyMoustik_IsHit_Base_var3_v1" ID="{FDC0EE80-6604-458E-B423-B0869AD4B52A}" ShortID="892496228">
+									<ReferenceList>
+										<Reference Name="Conversion">
+											<ObjectRef Name="Default Conversion Settings" ID="{6D1B890C-9826-4384-BF07-C15223E9FB56}" WorkUnitID="{4E5C7FFC-E9B1-46F8-BCE3-EDA1EA7828DB}"/>
+										</Reference>
+										<Reference Name="OutputBus">
+											<ObjectRef Name="Master Audio Bus" ID="{1514A4D8-1DA6-412A-A17E-75CA0C2149F3}" WorkUnitID="{22522E0C-1537-4567-8D9E-301390427DB6}"/>
+										</Reference>
+									</ReferenceList>
+									<ChildrenList>
+										<AudioFileSource Name="SFX_OS_EnemyMoustik_IsHit_Base_var3_v1" ID="{3120B656-0C9D-4F38-99D7-862D15C2822E}">
+											<Language>SFX</Language>
+											<AudioFile>SFX_OS_EnemyMoustik_IsHit_Base_var3_v1.wav</AudioFile>
+											<MediaIDList>
+												<MediaID ID="1024337526"/>
+											</MediaIDList>
+										</AudioFileSource>
+									</ChildrenList>
+									<ActiveSourceList>
+										<ActiveSource Name="SFX_OS_EnemyMoustik_IsHit_Base_var3_v1" ID="{3120B656-0C9D-4F38-99D7-862D15C2822E}" Platform="Linked"/>
+									</ActiveSourceList>
+								</Sound>
+							</ChildrenList>
+						</RandomSequenceContainer>
+						<RandomSequenceContainer Name="hitWingsMosquito" ID="{C88C51FA-9FC4-41E1-861A-70D83332C21E}" ShortID="160919855">
+							<ReferenceList>
+								<Reference Name="Conversion">
+									<ObjectRef Name="Default Conversion Settings" ID="{6D1B890C-9826-4384-BF07-C15223E9FB56}" WorkUnitID="{4E5C7FFC-E9B1-46F8-BCE3-EDA1EA7828DB}"/>
+								</Reference>
+								<Reference Name="OutputBus">
+									<ObjectRef Name="Master Audio Bus" ID="{1514A4D8-1DA6-412A-A17E-75CA0C2149F3}" WorkUnitID="{22522E0C-1537-4567-8D9E-301390427DB6}"/>
+								</Reference>
+							</ReferenceList>
+							<ChildrenList>
+								<Sound Name="SFX_OS_EnemyMoustik_IsHit_Wings_var1_v1" ID="{67F0663B-AC3A-4387-9E11-08843FAA5BE5}" ShortID="338800181">
+									<ReferenceList>
+										<Reference Name="Conversion">
+											<ObjectRef Name="Default Conversion Settings" ID="{6D1B890C-9826-4384-BF07-C15223E9FB56}" WorkUnitID="{4E5C7FFC-E9B1-46F8-BCE3-EDA1EA7828DB}"/>
+										</Reference>
+										<Reference Name="OutputBus">
+											<ObjectRef Name="Master Audio Bus" ID="{1514A4D8-1DA6-412A-A17E-75CA0C2149F3}" WorkUnitID="{22522E0C-1537-4567-8D9E-301390427DB6}"/>
+										</Reference>
+									</ReferenceList>
+									<ChildrenList>
+										<AudioFileSource Name="SFX_OS_EnemyMoustik_IsHit_Wings_var1_v1" ID="{6C0E85B8-524D-45CC-8C1A-5BF1435A8DE0}">
+											<Language>SFX</Language>
+											<AudioFile>SFX_OS_EnemyMoustik_IsHit_Wings_var1_v1.wav</AudioFile>
+											<MediaIDList>
+												<MediaID ID="340463517"/>
+											</MediaIDList>
+										</AudioFileSource>
+									</ChildrenList>
+									<ActiveSourceList>
+										<ActiveSource Name="SFX_OS_EnemyMoustik_IsHit_Wings_var1_v1" ID="{6C0E85B8-524D-45CC-8C1A-5BF1435A8DE0}" Platform="Linked"/>
+									</ActiveSourceList>
+								</Sound>
+								<Sound Name="SFX_OS_EnemyMoustik_IsHit_Wings_var2_v1" ID="{D21B270D-DB91-4409-93B6-DB3C0F5F33DC}" ShortID="453734536">
+									<ReferenceList>
+										<Reference Name="Conversion">
+											<ObjectRef Name="Default Conversion Settings" ID="{6D1B890C-9826-4384-BF07-C15223E9FB56}" WorkUnitID="{4E5C7FFC-E9B1-46F8-BCE3-EDA1EA7828DB}"/>
+										</Reference>
+										<Reference Name="OutputBus">
+											<ObjectRef Name="Master Audio Bus" ID="{1514A4D8-1DA6-412A-A17E-75CA0C2149F3}" WorkUnitID="{22522E0C-1537-4567-8D9E-301390427DB6}"/>
+										</Reference>
+									</ReferenceList>
+									<ChildrenList>
+										<AudioFileSource Name="SFX_OS_EnemyMoustik_IsHit_Wings_var2_v1" ID="{B3098964-3316-4691-840C-7F47FFCF0C2E}">
+											<Language>SFX</Language>
+											<AudioFile>SFX_OS_EnemyMoustik_IsHit_Wings_var2_v1.wav</AudioFile>
+											<MediaIDList>
+												<MediaID ID="388261189"/>
+											</MediaIDList>
+										</AudioFileSource>
+									</ChildrenList>
+									<ActiveSourceList>
+										<ActiveSource Name="SFX_OS_EnemyMoustik_IsHit_Wings_var2_v1" ID="{B3098964-3316-4691-840C-7F47FFCF0C2E}" Platform="Linked"/>
+									</ActiveSourceList>
+								</Sound>
+								<Sound Name="SFX_OS_EnemyMoustik_IsHit_Wings_var3_v1" ID="{03773090-A3AF-4328-B59B-91D7EF88C6D7}" ShortID="954944170">
+									<ReferenceList>
+										<Reference Name="Conversion">
+											<ObjectRef Name="Default Conversion Settings" ID="{6D1B890C-9826-4384-BF07-C15223E9FB56}" WorkUnitID="{4E5C7FFC-E9B1-46F8-BCE3-EDA1EA7828DB}"/>
+										</Reference>
+										<Reference Name="OutputBus">
+											<ObjectRef Name="Master Audio Bus" ID="{1514A4D8-1DA6-412A-A17E-75CA0C2149F3}" WorkUnitID="{22522E0C-1537-4567-8D9E-301390427DB6}"/>
+										</Reference>
+									</ReferenceList>
+									<ChildrenList>
+										<AudioFileSource Name="SFX_OS_EnemyMoustik_IsHit_Wings_var3_v1" ID="{AAAA737C-0203-40D1-8723-6DEDC2559A06}">
+											<Language>SFX</Language>
+											<AudioFile>SFX_OS_EnemyMoustik_IsHit_Wings_var3_v1.wav</AudioFile>
+											<MediaIDList>
+												<MediaID ID="1020306472"/>
+											</MediaIDList>
+										</AudioFileSource>
+									</ChildrenList>
+									<ActiveSourceList>
+										<ActiveSource Name="SFX_OS_EnemyMoustik_IsHit_Wings_var3_v1" ID="{AAAA737C-0203-40D1-8723-6DEDC2559A06}" Platform="Linked"/>
+									</ActiveSourceList>
+								</Sound>
+							</ChildrenList>
+						</RandomSequenceContainer>
+						<RandomSequenceContainer Name="hitBossBing" ID="{685EA05A-7D6A-4E84-BF7D-BBEF71BF7C77}" ShortID="740561378">
+							<PropertyList>
+								<Property Name="3DSpatialization" Type="int16" Value="1"/>
+								<Property Name="MaxSoundPerInstance" Type="int16">
+									<ValueList>
+										<Value>1</Value>
+									</ValueList>
+								</Property>
+								<Property Name="UseMaxSoundPerInstance" Type="bool">
+									<ValueList>
+										<Value>True</Value>
+									</ValueList>
+								</Property>
+								<Property Name="Volume" Type="Real64">
+									<ValueList>
+										<Value>-4</Value>
+									</ValueList>
+								</Property>
+							</PropertyList>
+							<ReferenceList>
+								<Reference Name="Conversion">
+									<ObjectRef Name="Default Conversion Settings" ID="{6D1B890C-9826-4384-BF07-C15223E9FB56}" WorkUnitID="{4E5C7FFC-E9B1-46F8-BCE3-EDA1EA7828DB}"/>
+								</Reference>
+								<Reference Name="OutputBus">
+									<ObjectRef Name="Master Audio Bus" ID="{1514A4D8-1DA6-412A-A17E-75CA0C2149F3}" WorkUnitID="{22522E0C-1537-4567-8D9E-301390427DB6}"/>
+								</Reference>
+							</ReferenceList>
+							<ChildrenList>
+								<Sound Name="bingBoss_01" ID="{4DC1A855-6495-4D53-8394-4930D02C67D3}" ShortID="172145848">
+									<ReferenceList>
+										<Reference Name="Conversion">
+											<ObjectRef Name="Default Conversion Settings" ID="{6D1B890C-9826-4384-BF07-C15223E9FB56}" WorkUnitID="{4E5C7FFC-E9B1-46F8-BCE3-EDA1EA7828DB}"/>
+										</Reference>
+										<Reference Name="OutputBus">
+											<ObjectRef Name="Master Audio Bus" ID="{1514A4D8-1DA6-412A-A17E-75CA0C2149F3}" WorkUnitID="{22522E0C-1537-4567-8D9E-301390427DB6}"/>
+										</Reference>
+									</ReferenceList>
+									<ChildrenList>
+										<AudioFileSource Name="SFX_OS_PNJ_GrumpBossHit01" ID="{429D6969-6299-46A4-94B5-A93B12E4EEC1}">
+											<Language>SFX</Language>
+											<AudioFile>SFX_OS_PNJ_GrumpBossHit01.wav</AudioFile>
+											<MediaIDList>
+												<MediaID ID="1044833721"/>
+											</MediaIDList>
+										</AudioFileSource>
+									</ChildrenList>
+									<ActiveSourceList>
+										<ActiveSource Name="SFX_OS_PNJ_GrumpBossHit01" ID="{429D6969-6299-46A4-94B5-A93B12E4EEC1}" Platform="Linked"/>
+									</ActiveSourceList>
+								</Sound>
+								<Sound Name="bingBoss_02" ID="{CF3CE201-9D70-4BF4-A93F-1F24B67B0AB4}" ShortID="980261773">
+									<PropertyList>
+										<Property Name="Pitch" Type="int32">
+											<ValueList>
+												<Value>-30</Value>
+											</ValueList>
+										</Property>
+									</PropertyList>
+									<ReferenceList>
+										<Reference Name="Conversion">
+											<ObjectRef Name="Default Conversion Settings" ID="{6D1B890C-9826-4384-BF07-C15223E9FB56}" WorkUnitID="{4E5C7FFC-E9B1-46F8-BCE3-EDA1EA7828DB}"/>
+										</Reference>
+										<Reference Name="OutputBus">
+											<ObjectRef Name="Master Audio Bus" ID="{1514A4D8-1DA6-412A-A17E-75CA0C2149F3}" WorkUnitID="{22522E0C-1537-4567-8D9E-301390427DB6}"/>
+										</Reference>
+									</ReferenceList>
+									<ChildrenList>
+										<AudioFileSource Name="SFX_OS_PNJ_GrumpBossHit02" ID="{23F78EFC-4770-4B65-8F44-C33398EBE215}">
+											<Language>SFX</Language>
+											<AudioFile>SFX_OS_PNJ_GrumpBossHit02.wav</AudioFile>
+											<MediaIDList>
+												<MediaID ID="141475137"/>
+											</MediaIDList>
+										</AudioFileSource>
+									</ChildrenList>
+									<ActiveSourceList>
+										<ActiveSource Name="SFX_OS_PNJ_GrumpBossHit02" ID="{23F78EFC-4770-4B65-8F44-C33398EBE215}" Platform="Linked"/>
+									</ActiveSourceList>
+								</Sound>
+								<Sound Name="bingBoss_03" ID="{6FF46DC2-17E3-4261-B80D-21091EB7D08C}" ShortID="791766229">
+									<ReferenceList>
+										<Reference Name="Conversion">
+											<ObjectRef Name="Default Conversion Settings" ID="{6D1B890C-9826-4384-BF07-C15223E9FB56}" WorkUnitID="{4E5C7FFC-E9B1-46F8-BCE3-EDA1EA7828DB}"/>
+										</Reference>
+										<Reference Name="OutputBus">
+											<ObjectRef Name="Master Audio Bus" ID="{1514A4D8-1DA6-412A-A17E-75CA0C2149F3}" WorkUnitID="{22522E0C-1537-4567-8D9E-301390427DB6}"/>
+										</Reference>
+									</ReferenceList>
+									<ChildrenList>
+										<AudioFileSource Name="SFX_OS_PNJ_GrumpBossHit03" ID="{BD3BB9F6-4E79-4145-B766-B065CAB77758}">
+											<Language>SFX</Language>
+											<AudioFile>SFX_OS_PNJ_GrumpBossHit03.wav</AudioFile>
+											<MediaIDList>
+												<MediaID ID="219020540"/>
+											</MediaIDList>
+										</AudioFileSource>
+									</ChildrenList>
+									<ActiveSourceList>
+										<ActiveSource Name="SFX_OS_PNJ_GrumpBossHit03" ID="{BD3BB9F6-4E79-4145-B766-B065CAB77758}" Platform="Linked"/>
+									</ActiveSourceList>
+								</Sound>
+								<Sound Name="bingBoss_04" ID="{68385B51-8387-4A1B-860B-52C57DE04022}" ShortID="778678477">
+									<ReferenceList>
+										<Reference Name="Conversion">
+											<ObjectRef Name="Default Conversion Settings" ID="{6D1B890C-9826-4384-BF07-C15223E9FB56}" WorkUnitID="{4E5C7FFC-E9B1-46F8-BCE3-EDA1EA7828DB}"/>
+										</Reference>
+										<Reference Name="OutputBus">
+											<ObjectRef Name="Master Audio Bus" ID="{1514A4D8-1DA6-412A-A17E-75CA0C2149F3}" WorkUnitID="{22522E0C-1537-4567-8D9E-301390427DB6}"/>
+										</Reference>
+									</ReferenceList>
+									<ChildrenList>
+										<AudioFileSource Name="SFX_OS_PNJ_GrumpBossHit04" ID="{D4EE430A-F1F8-4546-9C53-28E29738CE60}">
+											<Language>SFX</Language>
+											<AudioFile>SFX_OS_PNJ_GrumpBossHit04.wav</AudioFile>
+											<MediaIDList>
+												<MediaID ID="207884386"/>
+											</MediaIDList>
+										</AudioFileSource>
+									</ChildrenList>
+									<ActiveSourceList>
+										<ActiveSource Name="SFX_OS_PNJ_GrumpBossHit04" ID="{D4EE430A-F1F8-4546-9C53-28E29738CE60}" Platform="Linked"/>
+									</ActiveSourceList>
+								</Sound>
+								<Sound Name="bingBoss_05" ID="{09AC683F-45B2-43EE-B272-80665F327344}" ShortID="988891401">
+									<PropertyList>
+										<Property Name="Pitch" Type="int32">
+											<ValueList>
+												<Value>-100</Value>
+											</ValueList>
+										</Property>
+									</PropertyList>
+									<ReferenceList>
+										<Reference Name="Conversion">
+											<ObjectRef Name="Default Conversion Settings" ID="{6D1B890C-9826-4384-BF07-C15223E9FB56}" WorkUnitID="{4E5C7FFC-E9B1-46F8-BCE3-EDA1EA7828DB}"/>
+										</Reference>
+										<Reference Name="OutputBus">
+											<ObjectRef Name="Master Audio Bus" ID="{1514A4D8-1DA6-412A-A17E-75CA0C2149F3}" WorkUnitID="{22522E0C-1537-4567-8D9E-301390427DB6}"/>
+										</Reference>
+									</ReferenceList>
+									<ChildrenList>
+										<AudioFileSource Name="SFX_OS_PNJ_GrumpBossHit04" ID="{2F249FDA-8A00-40DB-9F97-E9EEFC963EB0}">
+											<Language>SFX</Language>
+											<AudioFile>SFX_OS_PNJ_GrumpBossHit04.wav</AudioFile>
+											<MediaIDList>
+												<MediaID ID="207884386"/>
+											</MediaIDList>
+										</AudioFileSource>
+									</ChildrenList>
+									<ActiveSourceList>
+										<ActiveSource Name="SFX_OS_PNJ_GrumpBossHit04" ID="{2F249FDA-8A00-40DB-9F97-E9EEFC963EB0}" Platform="Linked"/>
+									</ActiveSourceList>
+								</Sound>
+							</ChildrenList>
+						</RandomSequenceContainer>
+						<RandomSequenceContainer Name="onBingSpider" ID="{036D539C-FC8F-4D84-A2B2-3D7D0935201A}" ShortID="105627929">
+							<PropertyList>
+								<Property Name="Volume" Type="Real64">
+									<ValueList>
+										<Value>-6</Value>
+									</ValueList>
+								</Property>
+							</PropertyList>
+							<ReferenceList>
+								<Reference Name="Conversion">
+									<ObjectRef Name="Default Conversion Settings" ID="{6D1B890C-9826-4384-BF07-C15223E9FB56}" WorkUnitID="{4E5C7FFC-E9B1-46F8-BCE3-EDA1EA7828DB}"/>
+								</Reference>
+								<Reference Name="OutputBus">
+									<ObjectRef Name="Master Audio Bus" ID="{1514A4D8-1DA6-412A-A17E-75CA0C2149F3}" WorkUnitID="{22522E0C-1537-4567-8D9E-301390427DB6}"/>
+								</Reference>
+							</ReferenceList>
+							<ChildrenList>
+								<Sound Name="SFX_OS_PNJ_SpiderBingHit01" ID="{4BEF05CC-AC7E-4AC7-A97B-F5848B25EA9B}" ShortID="588087283">
+									<ReferenceList>
+										<Reference Name="Conversion">
+											<ObjectRef Name="Default Conversion Settings" ID="{6D1B890C-9826-4384-BF07-C15223E9FB56}" WorkUnitID="{4E5C7FFC-E9B1-46F8-BCE3-EDA1EA7828DB}"/>
+										</Reference>
+										<Reference Name="OutputBus">
+											<ObjectRef Name="Master Audio Bus" ID="{1514A4D8-1DA6-412A-A17E-75CA0C2149F3}" WorkUnitID="{22522E0C-1537-4567-8D9E-301390427DB6}"/>
+										</Reference>
+									</ReferenceList>
+									<ChildrenList>
+										<AudioFileSource Name="SFX_OS_PNJ_SpiderBingHit01" ID="{59B07BA0-986E-44F1-BE03-F8E6AF2ADF96}">
+											<Language>SFX</Language>
+											<AudioFile>SFX_OS_PNJ_SpiderBingHit01.wav</AudioFile>
+											<MediaIDList>
+												<MediaID ID="378717148"/>
+											</MediaIDList>
+										</AudioFileSource>
+									</ChildrenList>
+									<ActiveSourceList>
+										<ActiveSource Name="SFX_OS_PNJ_SpiderBingHit01" ID="{59B07BA0-986E-44F1-BE03-F8E6AF2ADF96}" Platform="Linked"/>
+									</ActiveSourceList>
+								</Sound>
+								<Sound Name="SFX_OS_PNJ_SpiderBingHit02" ID="{33892326-0442-4813-AB9F-1378D364B79C}" ShortID="371368451">
+									<ReferenceList>
+										<Reference Name="Conversion">
+											<ObjectRef Name="Default Conversion Settings" ID="{6D1B890C-9826-4384-BF07-C15223E9FB56}" WorkUnitID="{4E5C7FFC-E9B1-46F8-BCE3-EDA1EA7828DB}"/>
+										</Reference>
+										<Reference Name="OutputBus">
+											<ObjectRef Name="Master Audio Bus" ID="{1514A4D8-1DA6-412A-A17E-75CA0C2149F3}" WorkUnitID="{22522E0C-1537-4567-8D9E-301390427DB6}"/>
+										</Reference>
+									</ReferenceList>
+									<ChildrenList>
+										<AudioFileSource Name="SFX_OS_PNJ_SpiderBingHit02" ID="{713D5134-317C-46BF-8A84-52FA8105DA6A}">
+											<Language>SFX</Language>
+											<AudioFile>SFX_OS_PNJ_SpiderBingHit02.wav</AudioFile>
+											<MediaIDList>
+												<MediaID ID="808474229"/>
+											</MediaIDList>
+										</AudioFileSource>
+									</ChildrenList>
+									<ActiveSourceList>
+										<ActiveSource Name="SFX_OS_PNJ_SpiderBingHit02" ID="{713D5134-317C-46BF-8A84-52FA8105DA6A}" Platform="Linked"/>
+									</ActiveSourceList>
+								</Sound>
+								<Sound Name="SFX_OS_PNJ_SpiderBingHit03" ID="{208DE05F-1F37-494C-A9C8-AA687852179E}" ShortID="717705137">
+									<ReferenceList>
+										<Reference Name="Conversion">
+											<ObjectRef Name="Default Conversion Settings" ID="{6D1B890C-9826-4384-BF07-C15223E9FB56}" WorkUnitID="{4E5C7FFC-E9B1-46F8-BCE3-EDA1EA7828DB}"/>
+										</Reference>
+										<Reference Name="OutputBus">
+											<ObjectRef Name="Master Audio Bus" ID="{1514A4D8-1DA6-412A-A17E-75CA0C2149F3}" WorkUnitID="{22522E0C-1537-4567-8D9E-301390427DB6}"/>
+										</Reference>
+									</ReferenceList>
+									<ChildrenList>
+										<AudioFileSource Name="SFX_OS_PNJ_SpiderBingHit03" ID="{CA415871-BD74-4CCA-B331-3164DB571AAF}">
+											<Language>SFX</Language>
+											<AudioFile>SFX_OS_PNJ_SpiderBingHit03.wav</AudioFile>
+											<MediaIDList>
+												<MediaID ID="42830077"/>
+											</MediaIDList>
+										</AudioFileSource>
+									</ChildrenList>
+									<ActiveSourceList>
+										<ActiveSource Name="SFX_OS_PNJ_SpiderBingHit03" ID="{CA415871-BD74-4CCA-B331-3164DB571AAF}" Platform="Linked"/>
+									</ActiveSourceList>
+								</Sound>
+								<Sound Name="SFX_OS_PNJ_SpiderBingHit04" ID="{71C337FE-2923-4DE1-8CB7-E2A2A1C1F407}" ShortID="981289807">
+									<ReferenceList>
+										<Reference Name="Conversion">
+											<ObjectRef Name="Default Conversion Settings" ID="{6D1B890C-9826-4384-BF07-C15223E9FB56}" WorkUnitID="{4E5C7FFC-E9B1-46F8-BCE3-EDA1EA7828DB}"/>
+										</Reference>
+										<Reference Name="OutputBus">
+											<ObjectRef Name="Master Audio Bus" ID="{1514A4D8-1DA6-412A-A17E-75CA0C2149F3}" WorkUnitID="{22522E0C-1537-4567-8D9E-301390427DB6}"/>
+										</Reference>
+									</ReferenceList>
+									<ChildrenList>
+										<AudioFileSource Name="SFX_OS_PNJ_SpiderBingHit04" ID="{B0407A55-F311-487A-B9D6-0AD3491D1744}">
+											<Language>SFX</Language>
+											<AudioFile>SFX_OS_PNJ_SpiderBingHit04.wav</AudioFile>
+											<MediaIDList>
+												<MediaID ID="85277368"/>
+											</MediaIDList>
+										</AudioFileSource>
+									</ChildrenList>
+									<ActiveSourceList>
+										<ActiveSource Name="SFX_OS_PNJ_SpiderBingHit04" ID="{B0407A55-F311-487A-B9D6-0AD3491D1744}" Platform="Linked"/>
 									</ActiveSourceList>
 								</Sound>
 							</ChildrenList>

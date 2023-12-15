@@ -119,6 +119,7 @@ GameObject:
   - component: {fileID: 7597890108419749832}
   - component: {fileID: 8436588418860086300}
   - component: {fileID: 4854903296989854034}
+  - component: {fileID: 107013154228500782}
   m_Layer: 0
   m_Name: Spider
   m_TagString: Enemy
@@ -164,7 +165,23 @@ MonoBehaviour:
   scorePerHealthPoint: 50
   Hit:
     m_PersistentCalls:
-      m_Calls: []
+      m_Calls:
+      - m_Target: {fileID: 107013154228500782}
+        m_TargetAssemblyTypeName: 
+        m_MethodName: 
+        m_Mode: 0
+        m_Arguments:
+          m_ObjectArgument: {fileID: 0}
+          m_ObjectArgumentAssemblyTypeName: 
+          m_IntArgument: 0
+          m_FloatArgument: 0
+          m_StringArgument: 
+          m_BoolArgument: 0
+        m_CallState: 2
+  SpawnSpider:
+    idInternal: 0
+    valueGuidInternal: 
+    WwiseObjectReference: {fileID: 11400000, guid: 62930861fe934bf48896eaebe11a9d09, type: 2}
   minHangingDistance: 0
   maxHangingDistance: 0
 --- !u!64 &7597890108419749832
@@ -239,3 +256,19 @@ MeshRenderer:
   m_SortingLayer: 0
   m_SortingOrder: 0
   m_AdditionalVertexStreams: {fileID: 0}
+--- !u!114 &107013154228500782
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 7872044675077308325}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 48c391a1bda02954ca033daeda4a94cb, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  CurrentSound:
+    idInternal: 0
+    valueGuidInternal: 
+    WwiseObjectReference: {fileID: 11400000, guid: 46a7262d038ee784088a6ea05e4ebc9c, type: 2}

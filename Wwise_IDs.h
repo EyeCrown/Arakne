@@ -14,7 +14,9 @@ namespace AK
     namespace EVENTS
     {
         static const AkUniqueID E_CATERPILLARMOVING = 896192876U;
+        static const AkUniqueID E_HITBODYMOSQUITO = 3263164701U;
         static const AkUniqueID E_HITONBOSS = 2273985692U;
+        static const AkUniqueID E_HITWINGSMOSQUITO = 1159941129U;
         static const AkUniqueID E_LASTHITONBOSS = 3066051804U;
         static const AkUniqueID E_ONKILLEDSPIDER = 3936685706U;
         static const AkUniqueID E_PLAY_ALLYPASS = 129291699U;

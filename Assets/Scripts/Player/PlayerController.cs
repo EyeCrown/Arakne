@@ -56,7 +56,7 @@ public class PlayerController : MonoBehaviour
 
     private Transform bottomLeftBorder;
     private Transform topRightBorder;
-
+    public AK.Wwise.Event PlayerGetHit;
 
     public int ID { get; private set; }
     #endregion
@@ -179,6 +179,7 @@ public class PlayerController : MonoBehaviour
     {
         if (isHittable)
         {
+            PlayerGetHit.Post(gameObject);
             StartCoroutine(HittableCoroutine());
             health--;
             Debug.Log("Player take damage");
@@ -269,6 +270,7 @@ public class PlayerController : MonoBehaviour
     #region EVENT HANDLERS
     public void HitHandler(bool fromBouncingBall)
     {
+        
         if (isAlive)
             TakeDamage();
         else if (fromBouncingBall)

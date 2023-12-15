@@ -9,13 +9,25 @@
 	</RootPaths>
 	<DialogueEvents/>
 	<SoundBanks>
-		<SoundBank Id="534561221" Type="User" Language="SFX" Hash="{4512FB73-762B-7529-10BA-28C1402217BC}">
+		<SoundBank Id="534561221" Type="User" Language="SFX" Hash="{ACA69331-3FE8-70DA-1829-BA0625B207E2}">
 			<ShortName>MainSoundBank</ShortName>
 			<Path>MainSoundBank.bnk</Path>
 			<Media>
 				<File Id="13779944" Language="SFX" Streaming="false" Location="Memory">
 					<ShortName>SFX_OS_Player_BubbleIdle_var5_v2.wav</ShortName>
 					<CachePath>SFX/SFX_OS_Player_BubbleIdle_var5_v2_10C4C929.wem</CachePath>
+				</File>
+				<File Id="42830077" Language="SFX" Streaming="false" Location="Memory">
+					<ShortName>SFX_OS_PNJ_SpiderBingHit03.wav</ShortName>
+					<CachePath>SFX/SFX_OS_PNJ_SpiderBingHit03_10C4C929.wem</CachePath>
+				</File>
+				<File Id="74860453" Language="SFX" Streaming="false" Location="Memory">
+					<ShortName>SFX_OS_EnemyMoustik_IsHit_Base_var2_v1.wav</ShortName>
+					<CachePath>SFX/SFX_OS_EnemyMoustik_IsHit_Base_var2_v1_10C4C929.wem</CachePath>
+				</File>
+				<File Id="85277368" Language="SFX" Streaming="false" Location="Memory">
+					<ShortName>SFX_OS_PNJ_SpiderBingHit04.wav</ShortName>
+					<CachePath>SFX/SFX_OS_PNJ_SpiderBingHit04_10C4C929.wem</CachePath>
 				</File>
 				<File Id="105036165" Language="SFX" Streaming="false" Location="Memory">
 					<ShortName>SFX_OS_Player_Bubbled_var3_v1.wav</ShortName>
@@ -25,6 +37,10 @@
 					<ShortName>Unfolding Secrets BGM.wav</ShortName>
 					<CachePath>SFX/Unfolding Secrets BGM_FB742EC8.wem</CachePath>
 				</File>
+				<File Id="141475137" Language="SFX" Streaming="false" Location="Memory">
+					<ShortName>SFX_OS_PNJ_GrumpBossHit02.wav</ShortName>
+					<CachePath>SFX/SFX_OS_PNJ_GrumpBossHit02_10C4C929.wem</CachePath>
+				</File>
 				<File Id="148419861" Language="SFX" Streaming="false" Location="Memory">
 					<ShortName>SFX_OS_PNJ_SpiderIsKilled.wav</ShortName>
 					<CachePath>SFX/SFX_OS_PNJ_SpiderIsKilled_BF6D5BBC.wem</CachePath>
@@ -32,6 +48,18 @@
 				<File Id="194210561" Language="SFX" Streaming="false" Location="Memory">
 					<ShortName>SFX_OS_Ball_Bounce_var6_v1.wav</ShortName>
 					<CachePath>SFX/SFX_OS_Ball_Bounce_var6_v1_10C4C929.wem</CachePath>
+				</File>
+				<File Id="207884386" Language="SFX" Streaming="false" Location="Memory">
+					<ShortName>SFX_OS_PNJ_GrumpBossHit04.wav</ShortName>
+					<CachePath>SFX/SFX_OS_PNJ_GrumpBossHit04_10C4C929.wem</CachePath>
+				</File>
+				<File Id="219020540" Language="SFX" Streaming="false" Location="Memory">
+					<ShortName>SFX_OS_PNJ_GrumpBossHit03.wav</ShortName>
+					<CachePath>SFX/SFX_OS_PNJ_GrumpBossHit03_10C4C929.wem</CachePath>
+				</File>
+				<File Id="240645183" Language="SFX" Streaming="false" Location="Memory">
+					<ShortName>SFX_OS_PNJ_GrumpLastBossHit.wav</ShortName>
+					<CachePath>SFX/SFX_OS_PNJ_GrumpLastBossHit_8248E0E4.wem</CachePath>
 				</File>
 				<File Id="316789632" Language="SFX" Streaming="false" Location="Memory">
 					<ShortName>SFX_OS_Ball_Bounce_var2_v1.wav</ShortName>
@@ -41,6 +69,10 @@
 					<ShortName>SFX_OS_PNJ_WiggleCaterpillar.wav</ShortName>
 					<CachePath>SFX/SFX_OS_PNJ_WiggleCaterpillar_10C4C929.wem</CachePath>
 				</File>
+				<File Id="340463517" Language="SFX" Streaming="false" Location="Memory">
+					<ShortName>SFX_OS_EnemyMoustik_IsHit_Wings_var1_v1.wav</ShortName>
+					<CachePath>SFX/SFX_OS_EnemyMoustik_IsHit_Wings_var1_v1_10C4C929.wem</CachePath>
+				</File>
 				<File Id="346070256" Language="SFX" Streaming="false" Location="Memory">
 					<ShortName>SFX_OS_PNJ_SpiderIsKilled.wav</ShortName>
 					<CachePath>SFX/SFX_OS_PNJ_SpiderIsKilled_71D71904.wem</CachePath>
@@ -49,17 +81,21 @@
 					<ShortName>SFX_OS_Ball_Bounce_var3_v1.wav</ShortName>
 					<CachePath>SFX/SFX_OS_Ball_Bounce_var3_v1_10C4C929.wem</CachePath>
 				</File>
-				<File Id="356871656" Language="SFX" Streaming="false" Location="Memory">
-					<ShortName>SFX_OS_PNJ_GrumpBossLastHit.wav</ShortName>
-					<CachePath>SFX/SFX_OS_PNJ_GrumpBossLastHit_10C4C929.wem</CachePath>
-				</File>
 				<File Id="368209062" Language="SFX" Streaming="false" Location="Memory">
 					<ShortName>SFX_OS_Player_Bubbled_var2_v1.wav</ShortName>
 					<CachePath>SFX/SFX_OS_Player_Bubbled_var2_v1_10C4C929.wem</CachePath>
 				</File>
+				<File Id="378717148" Language="SFX" Streaming="false" Location="Memory">
+					<ShortName>SFX_OS_PNJ_SpiderBingHit01.wav</ShortName>
+					<CachePath>SFX/SFX_OS_PNJ_SpiderBingHit01_10C4C929.wem</CachePath>
+				</File>
 				<File Id="382577284" Language="SFX" Streaming="false" Location="Memory">
 					<ShortName>SFX_OS_Ball_Bounce_var5_v1.wav</ShortName>
 					<CachePath>SFX/SFX_OS_Ball_Bounce_var5_v1_10C4C929.wem</CachePath>
+				</File>
+				<File Id="388261189" Language="SFX" Streaming="false" Location="Memory">
+					<ShortName>SFX_OS_EnemyMoustik_IsHit_Wings_var2_v1.wav</ShortName>
+					<CachePath>SFX/SFX_OS_EnemyMoustik_IsHit_Wings_var2_v1_10C4C929.wem</CachePath>
 				</File>
 				<File Id="393701652" Language="SFX" Streaming="false" Location="Memory">
 					<ShortName>SFX_OS_Player_BubbleIdle_var3_v2.wav</ShortName>
@@ -97,6 +133,10 @@
 					<ShortName>SFX_OS_Ball_AllyPassSweetener_v1.wav</ShortName>
 					<CachePath>SFX/SFX_OS_Ball_AllyPassSweetener_v1_31E98A78.wem</CachePath>
 				</File>
+				<File Id="644169049" Language="SFX" Streaming="false" Location="Memory">
+					<ShortName>SFX_OS_EnemyMoustik_IsHit_Base_var1_v1.wav</ShortName>
+					<CachePath>SFX/SFX_OS_EnemyMoustik_IsHit_Base_var1_v1_10C4C929.wem</CachePath>
+				</File>
 				<File Id="647956332" Language="SFX" Streaming="false" Location="Memory">
 					<ShortName>SFX_OS_Ball_AllyPass_v1.wav</ShortName>
 					<CachePath>SFX/SFX_OS_Ball_AllyPass_v1_10C4C929.wem</CachePath>
@@ -113,6 +153,10 @@
 					<ShortName>SFX_OS_Ball_Bounce_var4_v1.wav</ShortName>
 					<CachePath>SFX/SFX_OS_Ball_Bounce_var4_v1_10C4C929.wem</CachePath>
 				</File>
+				<File Id="808474229" Language="SFX" Streaming="false" Location="Memory">
+					<ShortName>SFX_OS_PNJ_SpiderBingHit02.wav</ShortName>
+					<CachePath>SFX/SFX_OS_PNJ_SpiderBingHit02_10C4C929.wem</CachePath>
+				</File>
 				<File Id="896462248" Language="SFX" Streaming="false" Location="Memory">
 					<ShortName>SFX_OS_PNJ_SpiderIsKilled.wav</ShortName>
 					<CachePath>SFX/SFX_OS_PNJ_SpiderIsKilled_AE73F82B.wem</CachePath>
@@ -120,6 +164,18 @@
 				<File Id="980782775" Language="SFX" Streaming="false" Location="Memory">
 					<ShortName>SFX_OS_Ball_AllyShoot_v1.wav</ShortName>
 					<CachePath>SFX/SFX_OS_Ball_AllyShoot_v1_10C4C929.wem</CachePath>
+				</File>
+				<File Id="1020306472" Language="SFX" Streaming="false" Location="Memory">
+					<ShortName>SFX_OS_EnemyMoustik_IsHit_Wings_var3_v1.wav</ShortName>
+					<CachePath>SFX/SFX_OS_EnemyMoustik_IsHit_Wings_var3_v1_10C4C929.wem</CachePath>
+				</File>
+				<File Id="1024337526" Language="SFX" Streaming="false" Location="Memory">
+					<ShortName>SFX_OS_EnemyMoustik_IsHit_Base_var3_v1.wav</ShortName>
+					<CachePath>SFX/SFX_OS_EnemyMoustik_IsHit_Base_var3_v1_10C4C929.wem</CachePath>
+				</File>
+				<File Id="1044833721" Language="SFX" Streaming="false" Location="Memory">
+					<ShortName>SFX_OS_PNJ_GrumpBossHit01.wav</ShortName>
+					<CachePath>SFX/SFX_OS_PNJ_GrumpBossHit01_10C4C929.wem</CachePath>
 				</File>
 				<File Id="1066249834" Language="SFX" Streaming="false" Location="Memory">
 					<ShortName>SFX_OS_PNJ_SpawnSpiders01.wav</ShortName>
@@ -132,21 +188,43 @@
 						<MediaRef Id="317200093"/>
 					</MediaRefs>
 				</Event>
+				<Event Id="3263164701" Name="E_HitBodyMosquito">
+					<MediaRefs>
+						<MediaRef Id="74860453"/>
+						<MediaRef Id="644169049"/>
+						<MediaRef Id="1024337526"/>
+					</MediaRefs>
+				</Event>
 				<Event Id="2273985692" Name="E_HitOnBoss">
 					<MediaRefs>
+						<MediaRef Id="141475137"/>
+						<MediaRef Id="207884386"/>
+						<MediaRef Id="219020540"/>
 						<MediaRef Id="503659095"/>
+						<MediaRef Id="1044833721"/>
+					</MediaRefs>
+				</Event>
+				<Event Id="1159941129" Name="E_HitWingsMosquito">
+					<MediaRefs>
+						<MediaRef Id="340463517"/>
+						<MediaRef Id="388261189"/>
+						<MediaRef Id="1020306472"/>
 					</MediaRefs>
 				</Event>
 				<Event Id="3066051804" Name="E_LastHitOnBoss">
 					<MediaRefs>
-						<MediaRef Id="356871656"/>
+						<MediaRef Id="240645183"/>
 					</MediaRefs>
 				</Event>
 				<Event Id="3936685706" Name="E_onKilledSpider">
 					<MediaRefs>
+						<MediaRef Id="42830077"/>
+						<MediaRef Id="85277368"/>
 						<MediaRef Id="148419861"/>
 						<MediaRef Id="346070256"/>
+						<MediaRef Id="378717148"/>
 						<MediaRef Id="526021085"/>
+						<MediaRef Id="808474229"/>
 						<MediaRef Id="896462248"/>
 					</MediaRefs>
 				</Event>
@@ -234,5 +312,5 @@
 			</GameParameters>
 		</SoundBank>
 	</SoundBanks>
-	<FileHash>{649618C7-3C76-7BAA-3394-09203C3A8302}</FileHash>
+	<FileHash>{27CD8C99-7FA3-4445-FF26-47010F2D0ABD}</FileHash>
 </SoundBanksInfo>
