@@ -211,7 +211,7 @@ public class CheesyGrid : MonoBehaviour
 
             if(i== 180)
             {
-                GameManager.Instance.GameOver();
+               // GameManager.Instance.GameOver();
             }
 
             yield return new WaitForSeconds(1f);

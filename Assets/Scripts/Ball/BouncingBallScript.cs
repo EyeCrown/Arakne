@@ -1,4 +1,5 @@
 using System.Collections;
+using TMPro;
 using UnityEngine;
 using UnityEngine.Events;
 
@@ -28,6 +29,7 @@ public class BouncingBallScript : MonoBehaviour
     [SerializeField] private GameObject playerHitParticle;
     [SerializeField] private GameObject enemyHitParticle;
     [SerializeField] private GameObject bossHitParticle;
+    [SerializeField] private GameObject multiplierText;
     [SerializeField] private States fxState;
 
     public enum BallMode
@@ -137,7 +139,7 @@ public class BouncingBallScript : MonoBehaviour
                 transform.up = reflectVec.normalized;
                 if (hit.collider.gameObject.CompareTag("Enemy"))
                 {
-                    CollideEnemy(hit.collider.gameObject);
+                    CollideEnemy(hit.collider.gameObject, hit.point, hit.normal);
                 } else if(hit.collider.gameObject.CompareTag("Wall"))
                 {
                     CollideWall();
@@ -188,7 +190,7 @@ public class BouncingBallScript : MonoBehaviour
             //Debug.Log("Ball collision");
             if (hit.transform.gameObject.CompareTag("Enemy"))
             {
-                CollideEnemy(hit.transform.gameObject);
+                CollideEnemy(hit.transform.gameObject,hit.point,hit.normal);
             }
             else if (hit.transform.gameObject.CompareTag("Boss"))
             {
@@ -226,7 +228,7 @@ public class BouncingBallScript : MonoBehaviour
 
     private void Die()
     {
-        GameManager.Instance.multiplier = 1;
+        GameManager.Instance.MultiplicatorChange.Invoke(1);
         GameManager.Instance.ballCount--;
         Destroy(gameObject);
     }
@@ -235,7 +237,7 @@ public class BouncingBallScript : MonoBehaviour
 
 
     #region COLLISION HANDLERS
-    private void CollideEnemy(GameObject enemy)
+    private void CollideEnemy(GameObject enemy,Vector3 point, Vector3 direction)
     {
         if(mode == BallMode.fall)
         {
@@ -252,6 +254,9 @@ public class BouncingBallScript : MonoBehaviour
         {
             Instantiate(enemyHitParticle, enemy.transform.position, Quaternion.identity);
             enemyHit.Hit.Invoke(power * GameManager.Instance.multiplier);
+            GameManager.Instance.MultiplicatorChange.Invoke(GameManager.Instance.multiplier + 1);
+            Instantiate(multiplierText, point - direction * 3f, Quaternion.identity);
+
         }
     }
 

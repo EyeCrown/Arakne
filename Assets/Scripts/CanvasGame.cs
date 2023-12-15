@@ -19,6 +19,14 @@ public class CanvasGame : MonoBehaviour
     [SerializeField] private GameObject[] heartP1;
     [SerializeField] private GameObject[] heartP2;
 
+    [SerializeField] public TextMeshProUGUI multiplicatorTMP;
+    [SerializeField] public TextMeshProUGUI timerTMP;
+    [SerializeField] public GameObject timer;
+    [SerializeField] public GameObject healthBar;
+    [SerializeField] public GameObject player1;
+    [SerializeField] public GameObject player2;
+
+
 
     private void Start()
     {
@@ -27,6 +35,7 @@ public class CanvasGame : MonoBehaviour
         UpdateScore(GameManager.Instance.score);
         winScreen.SetActive(false);
         looseScreen.SetActive(false);
+        SetActiveGameplayUI(true);
         scoreText.text = "0";
 
         bossHealthBar.maxValue = boss.GetComponent<Boss>().GetHealth();
@@ -48,19 +57,25 @@ public class CanvasGame : MonoBehaviour
     {
         winScreen.SetActive(true);
         winScreen.GetComponent<score_display>().SetScoreToText();
-        scoreText.enabled = false;
-        panelScoreScreen.SetActive(false);
+        SetActiveGameplayUI(false);
     }
 
     public void DisplayLooseScreen()
     {
         looseScreen.SetActive(true);
         looseScreen.GetComponent<score_display>().SetScoreToText();
-        scoreText.enabled = false;
-        panelScoreScreen.SetActive(false);
+        SetActiveGameplayUI(false);
     }
 
-
+    void SetActiveGameplayUI(bool state)
+    {
+        scoreText.enabled = false;
+        timer.SetActive(state);
+        player1.SetActive(state);
+        player2.SetActive(state);
+        healthBar.SetActive(state);
+        panelScoreScreen.SetActive(false);
+    }
     public void UpdateBossHealth()
     {
         bossHealthBar.value = boss.GetComponent<Boss>().GetHealth();
@@ -125,6 +140,18 @@ public class CanvasGame : MonoBehaviour
                 Debug.LogError("UpdatePlayerHealth: Error invalid health > " + hp);
                 break;
         }
+    }
+
+    public void UpdateMultiplier(int value)
+    {
+        multiplicatorTMP.text = "x" + value;
+    }
+
+    public void UpdateTimer(float value)
+    {
+        float minutes = value / 60f;
+        float seconds = value % 60f;
+        timerTMP.text = minutes.ToString("00") + ":" + seconds.ToString("00");
     }
 
 
