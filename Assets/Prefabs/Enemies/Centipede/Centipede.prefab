@@ -59,6 +59,10 @@ MonoBehaviour:
   Hit:
     m_PersistentCalls:
       m_Calls: []
+  movingCaterpillar:
+    idInternal: 0
+    valueGuidInternal: 
+    WwiseObjectReference: {fileID: 11400000, guid: 84edcb1446e985f479d62aa05e710ec4, type: 2}
 --- !u!64 &5160803600984714501
 MeshCollider:
   m_ObjectHideFlags: 0

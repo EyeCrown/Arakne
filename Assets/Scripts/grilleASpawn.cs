@@ -209,7 +209,7 @@ public class CheesyGrid : MonoBehaviour
                 Instantiate(centipede, new Vector3(0, 15, 0), Quaternion.identity);
             }
 
-            if(i== 180)
+            if(i == 180)
             {
                // GameManager.Instance.GameOver();
             }

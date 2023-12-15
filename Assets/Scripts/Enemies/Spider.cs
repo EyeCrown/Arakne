@@ -4,6 +4,7 @@ using UnityEngine;
 
 public class Spider : Enemy
 {
+    public AK.Wwise.Event SpawnSpider;
     #region ATTRIBUTES
     [Header("Movement")]
     [SerializeField] private float minHangingDistance;
@@ -16,6 +17,7 @@ public class Spider : Enemy
     void Start()
     {
         Random.Range(minHangingDistance, maxHangingDistance);
+        SpawnSpider.Post(gameObject);
     }
 
 
