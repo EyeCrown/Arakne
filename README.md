@@ -36,6 +36,7 @@ If you want to play again after a game, you currently have to restart the game.
 
 ## Features
 
+- Playable with controller
 - Cooperation local
 - Bouncing ball
 - Boss fight
