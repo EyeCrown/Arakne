@@ -30,6 +30,11 @@ This game is playable only on PC with two controllers.
 
 If you want to play again after a game, you currently have to restart the game.
 
+### Screenshots in-game
+![InGame1](img/ingame1.png)
+![InGame2](img/ingame2.png)
+
+
 [![ItchIo](https://img.shields.io/badge/Itch.io-FA5C5C?style=for-the-badge&logo=itchdotio&logoColor=white)](https://boolti.itch.io/araknealightgame)
 [![Youtube Trailer](https://img.shields.io/badge/Trailer-ff0000?style=for-the-badge&logo=youtube)](https://www.youtube.com/watch?v=K5TqSyxehdk)
 
